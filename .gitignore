@@ -1,0 +1,24 @@
+# Raw asset staging — never publish to GitHub Pages
+incoming/
+
+# Local archive of the pre-rebrand site and working files (not repo content)
+old material/
+
+# Claude Code local session config
+.claude/
+
+# Build output + deps
+site/node_modules/
+site/dist/
+*.tsbuildinfo
+
+# Scratch imagery from logo recon sessions
+logo-recon.svg
+site/logo-recon-v2.svg
+site/logo-compare*.png
+site/logo-zoom.png
+site/favicon-check.png
+
+# OS noise
+Thumbs.db
+.DS_Store
