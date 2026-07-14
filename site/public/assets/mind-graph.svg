@@ -32,4 +32,8 @@
 <circle cx="1300" cy="470" r="3.2" fill="none" stroke="#E8EAED" stroke-width="1.4"/>
 <circle cx="1136" cy="519" r="3.2" fill="none" stroke="#E8EAED" stroke-width="1.4"/>
 <circle cx="625" cy="720" r="3.2" fill="none" stroke="#E8EAED" stroke-width="1.4"/>
+<circle cx="470" cy="700" r="3.6" fill="#E8EAED"/>
+<circle cx="452" cy="779" r="3.6" fill="#E8EAED"/>
+<circle cx="584" cy="624" r="3.6" fill="#E8EAED"/>
+<circle cx="315" cy="765" r="3.6" fill="#E8EAED"/>
 </svg>
