@@ -36,4 +36,9 @@
 <circle cx="452" cy="779" r="3.6" fill="#E8EAED"/>
 <circle cx="584" cy="624" r="3.6" fill="#E8EAED"/>
 <circle cx="315" cy="765" r="3.6" fill="#E8EAED"/>
+<path d="M 177.0 764.4 L 178.8 768.2 L 182.6 770.0 L 178.8 771.8 L 177.0 775.6 L 175.2 771.8 L 171.4 770.0 L 175.2 768.2 Z" fill="#E8EAED"/>
+<path d="M 90.0 767.4 L 91.8 771.2 L 95.6 773.0 L 91.8 774.8 L 90.0 778.6 L 88.2 774.8 L 84.4 773.0 L 88.2 771.2 Z" fill="#E8EAED"/>
+<circle cx="450" cy="759" r="3.6" fill="#E8EAED"/>
+<circle cx="382" cy="762" r="3.6" fill="#E8EAED"/>
+<circle cx="627" cy="644" r="3.6" fill="#E8EAED"/>
 </svg>
