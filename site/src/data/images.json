@@ -319,24 +319,6 @@
       ]
     },
     {
-      "name": "what-stays-open",
-      "role": "gallery",
-      "alt": "The jury deck’s last honest column: could we ever prove it, what if a sense does not apply, does Sensi help you decide or decide for you",
-      "aspect": 1.8873,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/what-stays-open-640.webp",
-          "kb": 23
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/what-stays-open-1024.webp",
-          "kb": 41
-        }
-      ]
-    },
-    {
       "name": "landing",
       "role": "gallery",
       "alt": "Sensi’s front door: borrow Wren’s senses for an instant read-only tour, or be the person the next plan is scored for",

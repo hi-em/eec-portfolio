@@ -37,8 +37,10 @@ const spine: ProjectSpine = {
   ),
   how: [
     <>
-      Onboarding calibrates the copilot to one person, their thermal grudges, their noise
-      tolerance.
+      {/* THE SHORT HOW (Emilie, 2026-09-11): 12 lines to 9 so the sheet fits
+          her 1080-tall screen without scrolling; measured at the real wrap.
+          The facts did not move, the words did. */}
+      Onboarding calibrates it to one person: thermal grudges, noise tolerance.
     </>,
     <>
       {/* The evals clause (the researcher pass, Emilie 2026-08-26, "c and a
@@ -46,9 +48,9 @@ const spine: ProjectSpine = {
           gates every reply APPROVED or REVISE, nodes/scoring/
           suggestion_critic.py reads each suggestion for feasibility and
           cross-sense consequences. draftCopy until she signs the words. */}
-      One action classifier, a single LLM call per turn, routes each request through a LangGraph
-      state graph: analyze, edit, preview, audit. Two evals ride inside it: a critic reads every
-      suggestion for cross-sense damage, and an evaluator reads every reply before you do.
+      One LLM call per turn routes each request through a LangGraph graph: analyze, edit,
+      preview, audit. Two evals ride inside: a critic on every suggestion, an evaluator on every
+      reply.
     </>,
     <>
       A coupling matrix ripples every change into the neighboring senses, so a fix that quietly
@@ -56,32 +58,31 @@ const spine: ProjectSpine = {
       <NB note={'the six scores argue like a family. the coupling matrix is the dinner table.'} />
     </>,
     <>
-      The copilot suggests edits the layout can absorb and previews them without committing: a
-      vision model redraws the room’s atmosphere while keeping its structure, then hands over the
-      comparison and the report.
+      Edits preview before they commit, then a vision model redraws the room, structure intact,
+      and hands over the report.
     </>,
   ],
   outcome: (
     <>
-      We benched the judgment before trusting it: two LLM providers scored the same three scenes
-      end to end, including a living room arranged to fail. They mostly agreed, and it would have
-      been easy to call that validation. We wrote agreement is not truth into the notes instead,
-      and kept every disagreement as data.
+      {/* THE SHORT OUTCOME (Emilie, 2026-09-11): 11 lines to 8, same reason
+          as the HOW above. "agreement is not truth" is her frozen line. */}
+      Two LLM providers scored the same three scenes, one arranged to fail, and mostly agreed.
+      Easy to call that validation. We wrote agreement is not truth into the notes instead, and
+      kept every disagreement as data.
       {/* The a sentence (same ruling): drafted from bench_quality.py — the
           blind A/B that replays each node's captured prompts through the old
           and new model before a swap is adopted. draftCopy until signed. */}{' '}
-      That habit hardened into evals: swap a model and the same apartment replays through the
-      same captured prompts, old against new, judged blind before the swap is believed.
+      It hardened into evals: swap a model and the same apartment replays through the same
+      prompts, judged blind before the swap is believed.
       {/* THE LIMITS (Emilie, 2026-09-10, after the Hesham Shawqy review): the
           walkthrough ends on what the built tool does not do, in the order she
           ruled: validation first, then estimates, then the labelled couplings.
           Facts from the repo: README ("it models and estimates; it does not
           measure"), python/comfort/sense_model.py (every coupling tagged
           verified or inferred). draftCopy until she signs the words. */}{' '}
-      Nobody has stood in a room Sensi scored and told us whether it was right: there is no human
-      validation. It estimates, it does not measure, and every coupling in the code wears a label,
-      verified or inferred, so you can see which links rest on published research and which on our
-      own reasoning.
+      Nobody has stood in a room Sensi scored and said whether it was right. It estimates, it does
+      not measure, and every coupling in the code is labeled verified or inferred, so you can see
+      which links rest on research and which on our reasoning.
     </>
   ),
 }

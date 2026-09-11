@@ -27,8 +27,10 @@ export const MANIFEST = {
   // THE STRIP FOLLOWS THE JURY DECK (docs/week09/deliverables, 21 slides):
   // why and what first (slides 2-5), how (10-12), one worked room (14), the
   // room graph (15), every edit tracked (16), ONE galaxy, the report (19),
-  // what stays open (20), then the door out (the live app as it stands).
-  // The five deck-week09/ sources are crops of the deck's own diagrams,
+  // then the door out (the live app as it stands). Slide 20 (what stays
+  // open) was captured too and then CUT by her (2026-09-11): the limits
+  // live in the spine's last sentence, not on a plate.
+  // The four deck-week09/ sources are crops of the deck's own diagrams,
   // captured headless from deck/index.html at 2x the same way the three
   // June blog stills were made. 09-shape and 10-shape were already staged.
   // The 45 s video leads by the hero rule (work.ts), so the flip-through
@@ -100,10 +102,6 @@ export const MANIFEST = {
     {
       src: 'academic/iaac/sensi/app-screenshots/13-report.png', role: 'gallery', name: 'vision-report',
       alt: "The report’s kitchen card: scores become a prompt, the prompt becomes a render, discomfort made visible room by room",
-    },
-    {
-      src: 'academic/iaac/sensi/deck-week09/what-stays-open.png', role: 'gallery', name: 'what-stays-open',
-      alt: "The jury deck’s last honest column: could we ever prove it, what if a sense does not apply, does Sensi help you decide or decide for you",
     },
     {
       src: 'academic/iaac/sensi/app-screenshots/00-landing.png', role: 'gallery', name: 'landing',
