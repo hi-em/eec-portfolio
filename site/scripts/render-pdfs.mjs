@@ -170,8 +170,12 @@ function assertCv(text) {
   // The writing line's third part links a title MID-SENTENCE, which is the
   // only boundary on the page that does not fall on a space. Its two halves are
   // asserted contiguous for the same reason.
+  // COUNT-AGNOSTIC (2026-09-11). This read `18 essays at` as a literal and broke
+  // the build the day the record reached 20 (T-120 and T-121). The guard is
+  // about the LINK BOUNDARY surviving extraction, not about the number, so it
+  // matches any count; cv.test.ts is what keeps ESSAY_COUNT honest.
   check(
-    all.includes('18 essays at emiliechidiac.com/thoughts'),
+    /\b\d+ essays at emiliechidiac\.com\/thoughts\b/.test(all),
     'the writing line still reads through its first link',
   )
   check(
