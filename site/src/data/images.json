@@ -32,25 +32,94 @@
       ]
     },
     {
-      "name": "landing",
+      "name": "sensory-layer",
       "role": "gallery",
-      "alt": "Sensi’s front door: borrow Wren’s senses for an instant read-only tour, or be the person the next plan is scored for",
-      "aspect": 1.7778,
+      "alt": "The missing layer drawn onto the BIM stack: six senses above energy, cost and structure, the claim Sensi is built on",
+      "aspect": 2.6643,
       "variants": [
         {
           "w": 640,
-          "file": "assets/projects/sensi/landing-640.webp",
+          "file": "assets/projects/sensi/sensory-layer-640.webp",
           "kb": 7
         },
         {
           "w": 1024,
-          "file": "assets/projects/sensi/landing-1024.webp",
-          "kb": 18
+          "file": "assets/projects/sensi/sensory-layer-1024.webp",
+          "kb": 14
         },
         {
           "w": 1600,
-          "file": "assets/projects/sensi/landing-1600.webp",
-          "kb": 37
+          "file": "assets/projects/sensi/sensory-layer-1600.webp",
+          "kb": 23
+        }
+      ]
+    },
+    {
+      "name": "the-gap",
+      "role": "gallery",
+      "alt": "The gap the studio started from: six comfort gauges read one at a time on the left, one coupled system on the right",
+      "aspect": 2.2961,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/the-gap-640.webp",
+          "kb": 11
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/the-gap-1024.webp",
+          "kb": 21
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/sensi/the-gap-1600.webp",
+          "kb": 41
+        }
+      ]
+    },
+    {
+      "name": "the-ripple",
+      "role": "gallery",
+      "alt": "The ripple drawn once: a bigger window lifts daylight, thins the sound barrier and leaks heat, and the noise dims the light it gained",
+      "aspect": 2.3492,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/the-ripple-640.webp",
+          "kb": 9
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/the-ripple-1024.webp",
+          "kb": 17
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/sensi/the-ripple-1600.webp",
+          "kb": 32
+        }
+      ]
+    },
+    {
+      "name": "two-people",
+      "role": "gallery",
+      "alt": "The same plan read through two people: a child who minds noise lights up the living room, a grandmother who minds cold, the bedroom",
+      "aspect": 2.2002,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/two-people-640.webp",
+          "kb": 7
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/two-people-1024.webp",
+          "kb": 13
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/sensi/two-people-1600.webp",
+          "kb": 25
         }
       ]
     },
@@ -73,25 +142,6 @@
       ]
     },
     {
-      "name": "app-shape",
-      "role": "hero",
-      "alt": "The Sensi workspace mid-edit: a floor plan scored across six senses, conflicts flagged while the layout is still soft",
-      "screen": false,
-      "aspect": 1.8757,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/app-shape-640.webp",
-          "kb": 19
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/app-shape-1024.webp",
-          "kb": 41
-        }
-      ]
-    },
-    {
       "name": "comfort-profile",
       "role": "gallery",
       "alt": "The comfort profile beside the plan: Em’s priorities weighed against research baselines, the persona the scores answer to",
@@ -106,151 +156,6 @@
           "w": 1024,
           "file": "assets/projects/sensi/comfort-profile-1024.webp",
           "kb": 29
-        }
-      ]
-    },
-    {
-      "name": "green-lens",
-      "role": "gallery",
-      "alt": "The green lens over a city apartment plan: what shapes nature here, the kitchen flagged thirsty for daylight and plants",
-      "aspect": 1.8681,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/green-lens-640.webp",
-          "kb": 13
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/green-lens-1024.webp",
-          "kb": 29
-        }
-      ]
-    },
-    {
-      "name": "checkpoints-timeline",
-      "role": "gallery",
-      "alt": "Senses across checkpoints: each edit a step on the timeline, six sense lines rising and trading as the layout learns",
-      "aspect": 1.8685,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/checkpoints-timeline-640.webp",
-          "kb": 12
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/checkpoints-timeline-1024.webp",
-          "kb": 25
-        }
-      ]
-    },
-    {
-      "name": "report",
-      "role": "gallery",
-      "alt": "The vision report Sensi hands over: comfort scores shaped for one person, with the edits the layout absorbed",
-      "screen": false,
-      "aspect": 1.8685,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/report-640.webp",
-          "kb": 12
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/report-1024.webp",
-          "kb": 26
-        }
-      ]
-    },
-    {
-      "name": "relationship-galaxy",
-      "role": "gif",
-      "alt": "Animated relationship galaxy in Sensi, the comfort copilot, mapping how six sense scores pull on each other across a floor plan",
-      "aspect": 1.8723,
-      "animated": true,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/relationship-galaxy-640.webp",
-          "kb": 142
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/relationship-galaxy-1024.webp",
-          "kb": 288
-        }
-      ],
-      "static": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/relationship-galaxy-static-640.webp",
-          "kb": 3
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/relationship-galaxy-static-1024.webp",
-          "kb": 7
-        }
-      ]
-    },
-    {
-      "name": "galaxy-bloom",
-      "role": "gallery",
-      "alt": "The relationship galaxy in full bloom: every coupling fibered out, six senses pulling on each other across the whole home",
-      "aspect": 1.8819,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/galaxy-bloom-640.webp",
-          "kb": 11
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/galaxy-bloom-1024.webp",
-          "kb": 23
-        }
-      ]
-    },
-    {
-      "name": "vision-report",
-      "role": "gallery",
-      "alt": "The report’s kitchen card: scores become a prompt, the prompt becomes a render, discomfort made visible room by room",
-      "aspect": 1.9082,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/vision-report-640.webp",
-          "kb": 15
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/vision-report-1024.webp",
-          "kb": 33
-        }
-      ]
-    },
-    {
-      "name": "sensory-layer",
-      "role": "gallery",
-      "alt": "The missing layer drawn onto the BIM stack: six senses above energy, cost and structure, the claim Sensi is built on",
-      "aspect": 2.6643,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/sensi/sensory-layer-640.webp",
-          "kb": 7
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/sensi/sensory-layer-1024.webp",
-          "kb": 14
-        },
-        {
-          "w": 1600,
-          "file": "assets/projects/sensi/sensory-layer-1600.webp",
-          "kb": 23
         }
       ]
     },
@@ -278,6 +183,29 @@
       ]
     },
     {
+      "name": "coupling-matrix",
+      "role": "gallery",
+      "alt": "The coupling matrix and the veto: which sense moves which, solid where research backs it, and the worst sense floors the score",
+      "aspect": 2.3951,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/coupling-matrix-640.webp",
+          "kb": 8
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/coupling-matrix-1024.webp",
+          "kb": 16
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/sensi/coupling-matrix-1600.webp",
+          "kb": 32
+        }
+      ]
+    },
+    {
       "name": "act-2-flow",
       "role": "gallery",
       "alt": "Act 2 of the pipeline as a flowchart: score, edit, ripple and galaxy loops around the plan while it is still soft",
@@ -297,6 +225,175 @@
           "w": 1600,
           "file": "assets/projects/sensi/act-2-flow-1600.webp",
           "kb": 48
+        }
+      ]
+    },
+    {
+      "name": "app-shape",
+      "role": "hero",
+      "alt": "The Sensi workspace mid-edit: a floor plan scored across six senses, conflicts flagged while the layout is still soft",
+      "aspect": 1.8757,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/app-shape-640.webp",
+          "kb": 19
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/app-shape-1024.webp",
+          "kb": 41
+        }
+      ]
+    },
+    {
+      "name": "room-graph",
+      "role": "gallery",
+      "alt": "The room graph over the plan: rooms as nodes, doors as edges, the kitchen’s sound and smell bleeding toward the bedroom",
+      "aspect": 1.8723,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/room-graph-640.webp",
+          "kb": 10
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/room-graph-1024.webp",
+          "kb": 21
+        }
+      ]
+    },
+    {
+      "name": "checkpoints-timeline",
+      "role": "gallery",
+      "alt": "Senses across checkpoints: each edit a step on the timeline, six sense lines rising and trading as the layout learns",
+      "aspect": 1.8685,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/checkpoints-timeline-640.webp",
+          "kb": 12
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/checkpoints-timeline-1024.webp",
+          "kb": 25
+        }
+      ]
+    },
+    {
+      "name": "galaxy-problems",
+      "role": "gallery",
+      "alt": "The relationship galaxy in its problems lens: six senses named, the rooms failing each one drawn larger, every thread a coupling",
+      "aspect": 1.8738,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/galaxy-problems-640.webp",
+          "kb": 9
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/galaxy-problems-1024.webp",
+          "kb": 18
+        }
+      ]
+    },
+    {
+      "name": "vision-report",
+      "role": "gallery",
+      "alt": "The report’s kitchen card: scores become a prompt, the prompt becomes a render, discomfort made visible room by room",
+      "aspect": 1.9082,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/vision-report-640.webp",
+          "kb": 15
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/vision-report-1024.webp",
+          "kb": 33
+        }
+      ]
+    },
+    {
+      "name": "what-stays-open",
+      "role": "gallery",
+      "alt": "The jury deck’s last honest column: could we ever prove it, what if a sense does not apply, does Sensi help you decide or decide for you",
+      "aspect": 1.8873,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/what-stays-open-640.webp",
+          "kb": 23
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/what-stays-open-1024.webp",
+          "kb": 41
+        }
+      ]
+    },
+    {
+      "name": "landing",
+      "role": "gallery",
+      "alt": "Sensi’s front door: borrow Wren’s senses for an instant read-only tour, or be the person the next plan is scored for",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/landing-640.webp",
+          "kb": 7
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/landing-1024.webp",
+          "kb": 18
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/sensi/landing-1600.webp",
+          "kb": 37
+        }
+      ]
+    },
+    {
+      "name": "green-lens",
+      "role": "gallery",
+      "alt": "The green lens over a city apartment plan: what shapes nature here, the kitchen flagged thirsty for daylight and plants",
+      "screen": false,
+      "aspect": 1.8681,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/green-lens-640.webp",
+          "kb": 13
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/green-lens-1024.webp",
+          "kb": 29
+        }
+      ]
+    },
+    {
+      "name": "report",
+      "role": "gallery",
+      "alt": "The vision report Sensi hands over: comfort scores shaped for one person, with the edits the layout absorbed",
+      "screen": false,
+      "aspect": 1.8685,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/sensi/report-640.webp",
+          "kb": 12
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/sensi/report-1024.webp",
+          "kb": 26
         }
       ]
     }

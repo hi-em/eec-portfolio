@@ -26,10 +26,13 @@ const spine: ProjectSpine = {
   ),
   why: (
     <>
-      Comfort is usually the thing we hope shows up after the design is done. I wanted it to be a
-      layer you can interrogate while the plan is still soft, because you do not walk into a room
-      and average your experience: the thing that is wrong is the thing you notice. And nothing
-      you fix stays fixed alone: the whole project is the ripple, what a change drags along.
+      {/* A statement, no I and no we (Emilie, 2026-09-10, the walkthrough
+          reopen): the motivation reads as the project's, not a person's. */}
+      Comfort is usually the thing that shows up, or does not, after the design is done. Sensi
+      makes it a layer you can interrogate while the plan is still soft, because you do not walk
+      into a room and average your experience: the thing that is wrong is the thing you notice.
+      And nothing you fix stays fixed alone: the whole project is the ripple, what a change drags
+      along.
     </>
   ),
   how: [
@@ -69,6 +72,16 @@ const spine: ProjectSpine = {
           and new model before a swap is adopted. draftCopy until signed. */}{' '}
       That habit hardened into evals: swap a model and the same apartment replays through the
       same captured prompts, old against new, judged blind before the swap is believed.
+      {/* THE LIMITS (Emilie, 2026-09-10, after the Hesham Shawqy review): the
+          walkthrough ends on what the built tool does not do, in the order she
+          ruled: validation first, then estimates, then the labelled couplings.
+          Facts from the repo: README ("it models and estimates; it does not
+          measure"), python/comfort/sense_model.py (every coupling tagged
+          verified or inferred). draftCopy until she signs the words. */}{' '}
+      Nobody has stood in a room Sensi scored and told us whether it was right: there is no human
+      validation. It estimates, it does not measure, and every coupling in the code wears a label,
+      verified or inferred, so you can see which links rest on published research and which on our
+      own reasoning.
     </>
   ),
 }

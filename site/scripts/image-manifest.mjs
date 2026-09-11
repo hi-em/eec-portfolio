@@ -20,17 +20,24 @@
 // browser tabs).
 export const MANIFEST = {
   // SENSI (finalized with Emilie at the desk, 2026-07-14; REFRESHED with her
-  // 2026-08-25, the asset pass riding the flow redesign): the galaxy IS the
-  // card cover (still constellation at rest, ripples on hover; web intermediate
-  // galaxy-cover-web.webp cut from her galaxy-cover-dynamic master, 8s @ 8fps,
-  // ffmpeg, local derived file like the pasta-atlas crop).
-  // THE TWO DEMO GIFS ARE GONE (her ruling: they retold the 45s scored video,
-  // 1.2MB of duplication); the flip-through runs in JOURNEY ORDER behind the
-  // video: the app's front door, the onboarding chat, the comfort profile
-  // beside the plan, the green lens, the checkpoints timeline, the galaxy
-  // (gif + full bloom), the report's kitchen card, then the idea frames.
-  // app-shape and report carry screen:false — the printed spread and register
-  // keep those exact ruled plates while the SCREEN shows the richer captures.
+  // 2026-08-25; REBUILT SLIDE BY SLIDE 2026-09-10, her ruling after the 9 Sep
+  // Hesham Shawqy review): the galaxy IS the card cover (still constellation at
+  // rest, ripples on hover; web intermediate galaxy-cover-web.webp cut from her
+  // galaxy-cover-dynamic master, 8s @ 8fps, ffmpeg, local derived file).
+  // THE STRIP FOLLOWS THE JURY DECK (docs/week09/deliverables, 21 slides):
+  // why and what first (slides 2-5), how (10-12), one worked room (14), the
+  // room graph (15), every edit tracked (16), ONE galaxy, the report (19),
+  // what stays open (20), then the door out (the live app as it stands).
+  // The five deck-week09/ sources are crops of the deck's own diagrams,
+  // captured headless from deck/index.html at 2x the same way the three
+  // June blog stills were made. 09-shape and 10-shape were already staged.
+  // The 45 s video leads by the hero rule (work.ts), so the flip-through
+  // reads: video, then this order.
+  // LEFT THE STRIP (her ruling): the green lens (July, not in the deck) now
+  // prints only (screen:false, the book register keeps it); the galaxy gif
+  // and the bloom ("too much and unclear") are gone; app-shape RETURNS to
+  // the screen as the worked room (it stays the book's spread plate).
+  // screen:false rows sit last: print reads assets by NAME, never by order.
   // 00-landing captured headless from the live app 2026-08-25 (fresh browser:
   // the generic Google button ships, never her signed-in chip).
   sensi: [
@@ -39,56 +46,77 @@ export const MANIFEST = {
       alt: "Sensi’s relationship galaxy at rest: six senses as glowing constellations, every thread a coupling between two scores",
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/00-landing.png', role: 'gallery', name: 'landing',
-      alt: "Sensi’s front door: borrow Wren’s senses for an instant read-only tour, or be the person the next plan is scored for",
+      src: 'academic/iaac/sensi/blog/Screenshot-2026-06-28-074954.png', role: 'gallery', name: 'sensory-layer',
+      alt: 'The missing layer drawn onto the BIM stack: six senses above energy, cost and structure, the claim Sensi is built on',
+    },
+    {
+      src: 'academic/iaac/sensi/deck-week09/the-gap.png', role: 'gallery', name: 'the-gap',
+      alt: 'The gap the studio started from: six comfort gauges read one at a time on the left, one coupled system on the right',
+    },
+    {
+      src: 'academic/iaac/sensi/deck-week09/the-ripple.png', role: 'gallery', name: 'the-ripple',
+      alt: 'The ripple drawn once: a bigger window lifts daylight, thins the sound barrier and leaks heat, and the noise dims the light it gained',
+    },
+    {
+      src: 'academic/iaac/sensi/deck-week09/two-people.png', role: 'gallery', name: 'two-people',
+      alt: 'The same plan read through two people: a child who minds noise lights up the living room, a grandmother who minds cold, the bedroom',
     },
     {
       src: 'academic/iaac/sensi/app-screenshots/01-onboarding.png', role: 'gallery', name: 'onboarding',
       alt: "Sensi’s onboarding chat calibrating the comfort copilot to one person: their noise tolerance, their thermal grudges",
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/06-shape.png', role: 'hero', name: 'app-shape', screen: false,
-      alt: 'The Sensi workspace mid-edit: a floor plan scored across six senses, conflicts flagged while the layout is still soft',
-    },
-    {
       src: 'academic/iaac/sensi/app-screenshots/04-shape.png', role: 'gallery', name: 'comfort-profile',
       alt: "The comfort profile beside the plan: Em’s priorities weighed against research baselines, the persona the scores answer to",
-    },
-    {
-      src: 'academic/iaac/sensi/app-screenshots/09.2-shape.png', role: 'gallery', name: 'green-lens',
-      alt: 'The green lens over a city apartment plan: what shapes nature here, the kitchen flagged thirsty for daylight and plants',
-    },
-    {
-      src: 'academic/iaac/sensi/app-screenshots/08-shape.png', role: 'gallery', name: 'checkpoints-timeline',
-      alt: 'Senses across checkpoints: each edit a step on the timeline, six sense lines rising and trading as the layout learns',
-    },
-    {
-      src: 'academic/iaac/sensi/app-screenshots/11-report.png', role: 'gallery', name: 'report', screen: false,
-      alt: 'The vision report Sensi hands over: comfort scores shaped for one person, with the edits the layout absorbed',
-    },
-    {
-      src: 'academic/iaac/sensi/demos/blog gifs/Sensi_Demo3.2.gif', role: 'gif', name: 'relationship-galaxy',
-      alt: 'Animated relationship galaxy in Sensi, the comfort copilot, mapping how six sense scores pull on each other across a floor plan',
-    },
-    {
-      src: 'academic/iaac/sensi/app-screenshots/10.3-shape.png', role: 'gallery', name: 'galaxy-bloom',
-      alt: 'The relationship galaxy in full bloom: every coupling fibered out, six senses pulling on each other across the whole home',
-    },
-    {
-      src: 'academic/iaac/sensi/app-screenshots/13-report.png', role: 'gallery', name: 'vision-report',
-      alt: "The report’s kitchen card: scores become a prompt, the prompt becomes a render, discomfort made visible room by room",
-    },
-    {
-      src: 'academic/iaac/sensi/blog/Screenshot-2026-06-28-074954.png', role: 'gallery', name: 'sensory-layer',
-      alt: 'The missing layer drawn onto the BIM stack: six senses above energy, cost and structure, the claim Sensi is built on',
     },
     {
       src: 'academic/iaac/sensi/blog/Screenshot-2026-06-28-080611.png', role: 'gallery', name: 'coupling-map',
       alt: 'The levers-to-senses coupling map, every link grounded in research from BS 8233 to ASHRAE before it entered the model',
     },
     {
+      src: 'academic/iaac/sensi/deck-week09/coupling-matrix.png', role: 'gallery', name: 'coupling-matrix',
+      alt: 'The coupling matrix and the veto: which sense moves which, solid where research backs it, and the worst sense floors the score',
+    },
+    {
       src: 'academic/iaac/sensi/blog/Screenshot-2026-06-28-081039.png', role: 'gallery', name: 'act-2-flow',
       alt: 'Act 2 of the pipeline as a flowchart: score, edit, ripple and galaxy loops around the plan while it is still soft',
+    },
+    {
+      src: 'academic/iaac/sensi/app-screenshots/06-shape.png', role: 'hero', name: 'app-shape',
+      alt: 'The Sensi workspace mid-edit: a floor plan scored across six senses, conflicts flagged while the layout is still soft',
+    },
+    {
+      src: 'academic/iaac/sensi/app-screenshots/09-shape.png', role: 'gallery', name: 'room-graph',
+      alt: "The room graph over the plan: rooms as nodes, doors as edges, the kitchen’s sound and smell bleeding toward the bedroom",
+    },
+    {
+      src: 'academic/iaac/sensi/app-screenshots/08-shape.png', role: 'gallery', name: 'checkpoints-timeline',
+      alt: 'Senses across checkpoints: each edit a step on the timeline, six sense lines rising and trading as the layout learns',
+    },
+    {
+      src: 'academic/iaac/sensi/app-screenshots/10-shape.png', role: 'gallery', name: 'galaxy-problems',
+      alt: 'The relationship galaxy in its problems lens: six senses named, the rooms failing each one drawn larger, every thread a coupling',
+    },
+    {
+      src: 'academic/iaac/sensi/app-screenshots/13-report.png', role: 'gallery', name: 'vision-report',
+      alt: "The report’s kitchen card: scores become a prompt, the prompt becomes a render, discomfort made visible room by room",
+    },
+    {
+      src: 'academic/iaac/sensi/deck-week09/what-stays-open.png', role: 'gallery', name: 'what-stays-open',
+      alt: "The jury deck’s last honest column: could we ever prove it, what if a sense does not apply, does Sensi help you decide or decide for you",
+    },
+    {
+      src: 'academic/iaac/sensi/app-screenshots/00-landing.png', role: 'gallery', name: 'landing',
+      alt: "Sensi’s front door: borrow Wren’s senses for an instant read-only tour, or be the person the next plan is scored for",
+    },
+    // print only from here: the book register reads these by name.
+    {
+      src: 'academic/iaac/sensi/app-screenshots/09.2-shape.png', role: 'gallery', name: 'green-lens', screen: false,
+      alt: 'The green lens over a city apartment plan: what shapes nature here, the kitchen flagged thirsty for daylight and plants',
+    },
+    {
+      src: 'academic/iaac/sensi/app-screenshots/11-report.png', role: 'gallery', name: 'report', screen: false,
+      alt: 'The vision report Sensi hands over: comfort scores shaped for one person, with the edits the layout absorbed',
     },
   ],
   // NEUROSPACE (finalized with Emilie, 2026-07-15): the cover is a live cut
