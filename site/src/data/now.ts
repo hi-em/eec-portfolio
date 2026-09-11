@@ -9,7 +9,7 @@
 // draftCopy: every line below is drafted in Emilie's voice, unsigned.
 
 export const NOW = {
-  date: '2026-07', // 'YYYY-MM' · must remain the newest date in the registry
+  date: '2026-09', // 'YYYY-MM' · must remain the newest date in the registry
   building: 'the MaCAD thesis year, and the site you are standing in',
   reading: 'neuroaesthetics papers, faster than I can annotate them',
   thinking: 'what a facade knows about your cortisol',

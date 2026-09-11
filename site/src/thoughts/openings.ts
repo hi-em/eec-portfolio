@@ -46,4 +46,5 @@ export const THOUGHT_OPENINGS: Record<string, string> = {
     'I build things that give a room a score. The obvious next question, and the one I would ask me, is what happens the day somebody uses that score to decide who gets the room.',
   rules:
     'Computation is not the same as using a computer, and separating the two took me longer than I would like to admit.',
+  dark: 'So your eyes signal your brain when they see light? Well, no. It is literally the opposite.',
 }

@@ -257,6 +257,14 @@ const GEOM: Record<string, Geom> = {
   // exactly what it was told; GEOMETRY's best remaining slot was 66 units and
   // would have crowded the drawing for the sake of taxonomy.
   rules: { ...pointOnThread('AI', 0.68), th: ['AI'], a: 'middle', d: [0, -16] },
+  // T-120 we see in silence, appended 2026-09-11. Re-probed after `rules`
+  // landed. Inside the composition's mass the widest gaps left are NEURO's
+  // run between podcast and the right edge (t 0.76..0.90, 126..156 units).
+  // 0.78 is the slot that stays clear of the thread's own edge label (the
+  // word NEURO ends at x=1408) while keeping 128 units to its nearest mark
+  // (explain), 130 to bim and 149 to podcast. NEURO because the note is about
+  // perception itself; the label sits above the line, where nothing else is.
+  dark: { ...pointOnThread('NEURO', 0.78), th: ['NEURO'], a: 'middle', d: [0, -16] },
 }
 
 export interface MindNode {

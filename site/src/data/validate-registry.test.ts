@@ -233,6 +233,12 @@ test('every project or note a thought names in its prose also carries a thread',
 // plate, because it carries her actual charcoals on sketch dots instead. If a
 // note gains or loses a figure and nobody updates PLATES_PER_THOUGHT, every
 // number after it goes quietly wrong, which is the worst kind of wrong.
+// The declared exceptions, mirrored from PLATES_PER_THOUGHT in figures.tsx:
+// charcoal carries her charcoals instead of a plate; dark (T-120) carries
+// three plates, one where each of its three arguments is made (Emilie,
+// 2026-09-11: "fig 19 and 20 should be in the chronology of where they are
+// mentioned, not at the end").
+const PLATES_EXPECTED: Record<string, number> = { charcoal: 0, dark: 3 }
 test('every thought renders exactly the number of plates the figure run expects', () => {
   const notesFile = join(dirname(fileURLToPath(import.meta.url)), '..', 'thoughts', 'notes.tsx')
   const src = readFileSync(notesFile, 'utf8').split(/\r?\n/)
@@ -247,7 +253,7 @@ test('every thought renders exactly the number of plates the figure run expects'
   }
   const thoughts = ENTRIES.filter(e => e.kind === 'thought' && e.note?.status === 'drafted')
   const mismatched = thoughts
-    .map(e => ({ id: e.id, actual: rendered[e.id] ?? 0, expected: e.id === 'charcoal' ? 0 : 1 }))
+    .map(e => ({ id: e.id, actual: rendered[e.id] ?? 0, expected: PLATES_EXPECTED[e.id] ?? 1 }))
     .filter(r => r.actual !== r.expected)
     .map(r => `${r.id}: renders ${r.actual} plate(s), the run expects ${r.expected}`)
   expect(mismatched).toEqual([])

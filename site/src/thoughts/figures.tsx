@@ -71,6 +71,10 @@ const PLATES_PER_THOUGHT: Record<string, number> = {
   // `charcoal` is the deliberate exception: it carries three of her actual
   // charcoals on sketch dots instead, so it takes no number in the run.
   charcoal: 0,
+  // T-120 `dark` carries THREE plates, one where each of its three arguments
+  // lands (Emilie, 2026-09-11: "fig 19 and 20 should be in the chronology of
+  // where they are mentioned, not at the end"). Figs i=1..3 below.
+  dark: 3,
 }
 
 const FIG_NUMBER: Record<string, number> = (() => {
@@ -749,6 +753,125 @@ export const ComputationFigure = (
     <path className="th" d="M126 128h152" />
     <text className="lbl" x="130" y="146">
       RULE OUTPUT
+    </text>
+  </Fig>
+)
+
+// ===========================================================================
+// T-120 · we see in silence (2026-09-11). THREE plates, one per argument, in
+// the order the note makes them (her ruling on the first draft).
+//
+// A · SilenceFigure: what anyone would assume against what is true, as four
+//     drawn neural traces. THIRD DRAWING (2026-09-11). The first was one row of
+//     ticks ("something nicer and more graphic"), the second a seven-row spike
+//     raster; off a five-option board rendered in the note she picked the
+//     assumed-against-actual grid, "but maybe we can draw it as a real brain
+//     signal". So each cell is a trace built by spikeTrain(): a wobbling
+//     baseline, action potentials with the fast rise, fast fall and small
+//     undershoot, deterministic per seed so the plate never shimmers. The
+//     assumption row is thin ink, the fact row full ink, the quiet trace red.
+//     It is also the opening sentence of the note, drawn.
+// B · SilenceCurveFigure: response against surprise, the inverted U (Berlyne).
+// C · SilenceBarsFigure: the score bar drawn twice, as Sensi draws it and as
+//     the room is felt.
+// ===========================================================================
+// A drawn neural trace for T-120. Pure and deterministic: the same seed draws
+// the same wobble and the same spike times on every render and in the
+// prerender. `quiet` is the baseline alone; `spikes` adds action potentials at
+// pseudo-random intervals, each a fast rise, a fast fall past the baseline and
+// a short recovery, which is roughly what one looks like on an oscilloscope.
+function spikeTrain(x0: number, base: number, w: number, seed: number, kind: 'spikes' | 'quiet'): string {
+  const wobble = (k: number) => (((k * 7919 + seed * 104729) % 7) - 3) * 0.3
+  const d: string[] = [`M${x0} ${(base + wobble(0)).toFixed(1)}`]
+  let x = x0
+  let i = 0
+  while (x < x0 + w) {
+    i++
+    x = Math.min(x + 2, x0 + w)
+    const fire = kind === 'spikes' && (i * 48271 + seed * 12345) % 233 < 26 && x < x0 + w - 6
+    if (fire) {
+      const h = 12 + ((i * 13 + seed) % 5) * 2
+      d.push(`L${x.toFixed(1)} ${(base + wobble(i)).toFixed(1)}`)
+      d.push(`L${(x + 1.2).toFixed(1)} ${(base - h).toFixed(1)}`)
+      d.push(`L${(x + 2.4).toFixed(1)} ${(base + 3).toFixed(1)}`)
+      d.push(`L${(x + 4).toFixed(1)} ${(base + wobble(i + 1)).toFixed(1)}`)
+      x += 4
+    } else {
+      d.push(`L${x.toFixed(1)} ${(base + wobble(i)).toFixed(1)}`)
+    }
+  }
+  return d.join('')
+}
+
+export const SilenceFigure = (
+  <Fig
+    alt="A two by two grid of drawn neural traces. Top row, the assumption: a flat line in the dark, a spike train in the light. Bottom row, the fact: a spike train in the dark, and in the light a quiet line drawn in red."
+    caption="A rod's output in the dark and in the light, at the back of the eye, drawn twice. Above, the way anyone would assume it works; below, the way it does. The quiet trace, in red, is the signal."
+  >
+    <text className="lbl" x="40" y="30">
+      DARK
+    </text>
+    <text className="lbl" x="160" y="30">
+      LIGHT
+    </text>
+    <text className="lbl" x="22" y="62" transform="rotate(-90 22 62)">
+      ASSUMED
+    </text>
+    <text className="lbl" x="22" y="132" transform="rotate(-90 22 132)">
+      ACTUAL
+    </text>
+    <path className="th" d={spikeTrain(40, 68, 110, 1, 'quiet')} />
+    <path className="th" d={spikeTrain(160, 68, 110, 2, 'spikes')} />
+    <path className="ax" d="M40 100h230" />
+    <path className="ln" d={spikeTrain(40, 138, 110, 3, 'spikes')} />
+    <path className="acs" d={spikeTrain(160, 138, 110, 4, 'quiet')} />
+  </Fig>
+)
+
+export const SilenceCurveFigure = (
+  <Fig
+    i={2}
+    alt="An inverted U curve on two axes. Both ends of the curve sit low, the left end labelled predicted and the right end chaotic. A hollow red point sits on the rising slope, labelled comfort."
+    caption="Response against surprise, after Berlyne. Both ends sit low: a fully predicted room on the left, a chaotic one on the right. The hollow point marks a comfortable room, on the slope rather than at the peak."
+  >
+    <path className="ax" d="M40 140h230M40 140V26" />
+    <path className="ln" d="M44 132C80 130 100 44 150 44C200 44 230 128 266 128" />
+    <circle className="acs" cx="102" cy="74" r="5.5" />
+    <text className="lbl" x="112" y="78">
+      COMFORT
+    </text>
+    <text className="lbl" x="22" y="118" transform="rotate(-90 22 118)">
+      RESPONSE
+    </text>
+    <text className="lbl" x="40" y="158">
+      PREDICTED
+    </text>
+    <text className="lbl" x="216" y="158">
+      CHAOTIC
+    </text>
+  </Fig>
+)
+
+export const SilenceBarsFigure = (
+  <Fig
+    i={3}
+    alt="Two groups of six bars. Left, six outlined bars all at full height. Right, six dashed empty outlines of the same height, one of which carries a small solid red fill at its base."
+    caption="Six sensory scores for one comfortable room, drawn two ways. Left, the convention: every bar full. Right, the same room drawn as what is still reporting: five silent, one talking, in red."
+  >
+    <path className="ax" d="M30 130h116" />
+    {Array.from({ length: 6 }, (_, i) => (
+      <rect key={`l${i}`} className="th" x={36 + i * 18} y="30" width="14" height="100" />
+    ))}
+    <path className="ax" d="M160 130h116" />
+    {Array.from({ length: 6 }, (_, i) => (
+      <rect key={`r${i}`} className="th dash" x={166 + i * 18} y="30" width="14" height="100" />
+    ))}
+    <rect className="ac" x="220" y="100" width="14" height="30" />
+    <text className="lbl" x="30" y="150">
+      AS DRAWN
+    </text>
+    <text className="lbl" x="160" y="150">
+      AS FELT
     </text>
   </Fig>
 )

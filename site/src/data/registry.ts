@@ -822,6 +822,30 @@ export const ENTRIES: RegistryEntry[] = [
     // SIGNED by Emilie at the walk, 2026-07-29 ("I like the computation thought").
   },
 
+  {
+    // T-120, appended 2026-09-11. Her pick off The Rest Is Science, "The
+    // Smallest Thing You Can Feel" (Sep 2026): the rods go quiet in light, and
+    // the brain guesses the room and receives only the corrections. DATED BY
+    // EMILIE 2026-09-11 ("a week ago"), per the standing rule.
+    //
+    // THE ID IS `dark`, NOT `silence`, for the same reason `rules` is not
+    // `computation`: the world walk breaks a same-month tie alphabetically by
+    // id, and this note shares its month with NOW. An id after `now` would
+    // take the newest rank and push the live red tip one step back from the
+    // edge; `dark` sorts before it, so NOW keeps the edge. It is also honest
+    // about the subject: the dark is where the rods are loudest.
+    id: 'dark',
+    kind: 'thought',
+    date: '2026-09', // RULED by Emilie 2026-09-11 ("a week ago")
+    title: 'we see in silence',
+    lens: 'computation',
+    tags: ['neuro', 'comfort', 'ai', 'research'],
+    note: note('dark', 'T-120'),
+    explore: { label: 'we see in silence', nodeKind: 'thought', order: 39 },
+    // UNSIGNED. Three plates, one where each argument lands (her ruling,
+    // 2026-09-11); the words rebuilt from her own session sentences.
+  },
+
   // ---- Milestones (where Em shows up on the record; dates from cv.ts) ----
   {
     id: 'xrlab-start',
@@ -1455,6 +1479,12 @@ export const CORRELATIONS: readonly Correlation[] = [
   // void closed, and the design led from the first sketch to the proposal.
   // Strength 1 by her call: the monument is drawing STEERING a build, where
   // the note is about drawing as the interface itself.
+  // ---- T-120 we see in silence (2026-09-11), threads named in its prose ---
+  ['comfort', 'dark', 2], // the wrong thing is the thing you notice, now with the why
+  ['learning', 'dark', 2], // "one process twice in two vocabularies", answered
+  ['llm', 'dark', 2], // the next-word guess, found in the cortex too (Goldstein 2022)
+  ['sensi', 'dark', 2], // the full bar the note wants to redraw
+  ['neuroaes', 'dark', 1], // Ellard's facades, the Humanise argument: the research it sits under
 ]
 
 // THE PAIRS SHE HAS LOOKED AT AND RULED ARE NOT NEAR-MISSES (2026-08-07).

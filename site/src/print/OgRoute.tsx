@@ -42,6 +42,7 @@ import {
   NeuroaesFigure,
   RespondFigure,
   ScoreFigure,
+  SilenceFigure,
   SolversFigure,
   XrealFigure,
 } from '../thoughts/figures'
@@ -81,6 +82,7 @@ const THOUGHT_PLATE: Record<string, ReactNode> = {
   latent: LatentFigure,
   scoring: ScoreFigure,
   rules: ComputationFigure,
+  dark: SilenceFigure,
   // `charcoal` is deliberately absent: it is the one note whose figures are her
   // actual charcoal drawings rather than a drawn plate, so it keeps the graph
   // slice. A missing key falls back, it never renders blank.

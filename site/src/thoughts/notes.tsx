@@ -31,10 +31,16 @@ import {
   NeuroaesFigure,
   RespondFigure,
   ScoreFigure,
+  SilenceBarsFigure,
+  SilenceCurveFigure,
+  SilenceFigure,
   SolversFigure,
   XrealFigure,
 } from './figures'
 import Ref from './Ref'
+// External doors (Emilie, 2026-09-11: "if i mention the project it needs to be
+// clickable"): the same quiet link as a Ref, opening in a new tab.
+import { QUIET_LINK_TAP } from '../lib/linkStyles'
 
 
 // THE OPENINGS (G2) live in openings.ts (JSX-free so index surfaces can
@@ -650,6 +656,118 @@ export const THOUGHT_NOTES: Record<string, ReactNode> = {
         out to be the hardest sentence anyone in this field ever has to write. Is that still
         drawing?
       </p>
+    </>
+  ),
+
+  // T-120 · we see in silence. Her pick off The Rest Is Science ("The Smallest
+  // Thing You Can Feel", Sep 2026): the two passages she marked were the rods
+  // going quiet in light and the brain guessing the room.
+  //
+  // ROUND 2 (2026-09-11), her five notes on the first draft: the opening did
+  // not sound like her, so it is rebuilt from what she actually said in the
+  // session ("I would have never thought", "how many other things work
+  // backwards than what we would assume? in the senses? in architecture? in
+  // tech?"); paragraph 3 opens on her "I have never noticed this works just
+  // like an LLM"; paragraph 4 carries her sentence nearly verbatim ("if
+  // architecture is boring then it's literally less stimulating because it
+  // was predicted"); paragraph 5 carries "now it's a full one but maybe it
+  // should be the opposite". All three n.b. dots CUT ("I don't like most of
+  // the dots"). Every project named is a door, including the two outside the
+  // site (the episode, the Humanise campaign). THREE PLATES, each where its
+  // argument is made, not parked at the end.
+  //
+  // Sources behind each claim: Hagins 1970 (dark current), Rao & Ballard 1999
+  // (predictive coding), Schultz, Dayan & Montague 1997 (dopamine), Goldstein
+  // et al. 2022 (the podcast electrodes), Ellard, Places of the Heart (the
+  // Manhattan walks), Berlyne 1971 (the inverted U), Humanise launched Oct
+  // 2023. "Hyperpolarised" is the physiology; the note says "goes quiet".
+  // ROUND 3 (2026-09-11): the opener is HER sentence, nearly verbatim ("So your
+  // eyes signal your brain when they see light? well no. it's literally the
+  // opposite"). Flagged to her: it is a question hook, which she ruled against
+  // for the bio on 2026-07-06 ("don't love the question"); here she wrote it
+  // herself, so her rewrite is the brief. Fig. 18 is now that sentence drawn.
+  // ROUND 4 (2026-09-11, her B): the source credit is ONE clause after the fact
+  // ("The title is Hannah Fry's, from The Rest Is Science last week"), the
+  // episode's subject dropped. The credit stays because the title is her phrase.
+  // ROUND 5 (2026-09-11): the RETINA sentence opens paragraph 2, because she
+  // mistook the fact herself ("people don't mistake it like i did"): the rods go
+  // quiet, the cells behind them pass the silence on, the cortex fires as usual.
+  // UNSIGNED.
+  dark: (
+    <>
+      <p>
+        So your eyes signal your brain when they see light? Well, no. It is literally the
+        opposite. In the dark, the rods at the back of your eye fire the whole night, a steady
+        report that nothing is happening, and when light lands on one it goes quiet. The quiet is
+        the signal. The title is Hannah Fry's, from{' '}
+        <a
+          href="https://www.youtube.com/watch?v=-a6zw7HFk3Y"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={QUIET_LINK_TAP}
+        >
+          The Rest Is Science
+        </a>{' '}
+        last week, and I would never have thought it worked that way. Now I keep wondering how
+        many other things work backwards from what we assume. In the senses? In architecture? In
+        the tech I build with?
+      </p>
+      {SilenceFigure}
+      <p>
+        To be exact, because I got this wrong on the first listen: it is the rods that go quiet,
+        not the brain. The cells behind them read the silence and pass it on, and by the time the
+        message reaches the cortex it is a signal like any other. The backwards step is the first
+        one, in the retina. And it is not a quirk of the retina. It is the current best guess about
+        how the whole brain works: you do not receive the room, you guess it, top down, and the
+        senses send back only
+        the difference between the guess and what arrived. The expected thing produces no signal
+        at all. The cells that hand out dopamine do the same, firing for the reward you did not
+        see coming, silent for the one you did, and dipping when the one you expected never
+        shows. Which is why you never hear the fridge until it stops.
+      </p>
+      <p>
+        It took me a week to notice that this is exactly what{' '}
+        <Ref id="llm">a language model</Ref> does. It guesses the next word, and it turns out so
+        do you: put electrodes on people listening to a podcast and the cortex predicts each word
+        before it lands, then reports the surprise. In{' '}
+        <Ref id="learning">experiences are data</Ref> I asked whether we had described one
+        process twice in two vocabularies. Apparently we had. The difference is what happens
+        after the guess. Mine is corrected every second by my own senses; the model was corrected
+        once, in training, and never again. And I have a second way to cancel an error that no
+        model has: I can get up and move the plant.
+      </p>
+      <p>
+        Now put a building in front of it. A facade the brain predicts perfectly, the same window
+        forty times, produces no signal. So a boring building is not a matter of taste. It is
+        literally less stimulating, because it was predicted. Colin Ellard walked people past a
+        blank Whole Foods wall in Manhattan and their arousal dropped, and they said so, and
+        Heatherwick's{' '}
+        <a
+          href="https://www.humanise.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={QUIET_LINK_TAP}
+        >
+          Humanise
+        </a>{' '}
+        campaign has been arguing since 2023 that boring buildings are bad for us. This is at
+        least a mechanism for why: nothing wrong, nothing to report, nothing happening in you. I
+        want to be careful, because the opposite failure exists and every airport proves it. A
+        room that surprises you at every step is not stimulating, it is exhausting. The old
+        research on this has a shape, an inverted U, and comfort sits somewhere on the slope, not
+        at either end.
+      </p>
+      {SilenceCurveFigure}
+      <p>
+        Which leaves me with a drawing problem. <Ref id="sensi">Sensi</Ref> scores a room across
+        six senses, and right now a perfect score is a full bar, the way every score bar since
+        scores began has been full. Maybe it should be the opposite. If comfort is the sense
+        going quiet, the honest drawing is the empty one: the comfortable room is the one with
+        nothing to report, and a full bar is a room that would not stop talking. The wrong thing
+        is the thing you notice, I wrote in <Ref id="comfort">comfort as data</Ref>, before I
+        knew why. So do I redraw it? And would anyone trust a tool that shows them nothing?
+      </p>
+      {SilenceBarsFigure}
     </>
   ),
 }
