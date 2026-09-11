@@ -75,6 +75,8 @@ const PLATES_PER_THOUGHT: Record<string, number> = {
   // lands (Emilie, 2026-09-11: "fig 19 and 20 should be in the chronology of
   // where they are mentioned, not at the end"). Figs i=1..3 below.
   dark: 3,
+  // T-121 `plant` carries three as well, the same shape.
+  plant: 3,
 }
 
 const FIG_NUMBER: Record<string, number> = (() => {
@@ -872,6 +874,105 @@ export const SilenceBarsFigure = (
     </text>
     <text className="lbl" x="160" y="150">
       AS FELT
+    </text>
+  </Fig>
+)
+
+// ===========================================================================
+// T-121 · where the plant is (2026-09-11). Three plates, one where
+// each argument lands, the shape T-120 set. Her opener is the plant moved
+// from the sofa to the chair, so the last plate draws exactly that.
+//
+// A · MirrorFigure: carvone built two ways, mirror images across the red
+//     line; the only accent is the mirror, because the mirror is the whole
+//     difference.
+// B · VectorCellFigure: the firing map of one object-vector cell (Høydal et
+//     al. 2019): a field at a fixed distance and direction from the object.
+// C · TwoRoomsFigure: one room, the same four things, drawn twice.
+// ===========================================================================
+export const MirrorFigure = (
+  <Fig
+    alt="Two identical molecules drawn as a central atom with four bonds, one of them a wedge, mirrored across a dashed red vertical line. The left is labelled spearmint, the right caraway."
+    caption="Carvone, the two ways it can be built. Same atoms, same bonds, mirror images across the red line; the left smells of spearmint, the right of caraway."
+  >
+    <path className="acs dash" d="M150 28V144" />
+    {[84, 216].map((cx, side) => {
+      const s = side === 0 ? -1 : 1
+      return (
+        <g key={cx}>
+          <path className="ln" d={`M${cx} 86V52M${cx} 86L${cx - 26} 108M${cx} 86L${cx + 26} 108`} />
+          <polygon className="dt" points={`${cx},86 ${cx + s * 30},69 ${cx + s * 30},75`} />
+          <circle className="dt" cx={cx} cy="86" r="3.5" />
+          <circle className="dt" cx={cx} cy="50" r="3" />
+          <circle className="dt" cx={cx - 27} cy="110" r="3" />
+          <circle className="dt" cx={cx + 27} cy="110" r="3" />
+          <circle className="th" cx={cx + s * 33} cy="72" r="3.5" />
+        </g>
+      )
+    })}
+    <text className="lbl" x="44" y="150">
+      SPEARMINT
+    </text>
+    <text className="lbl" x="184" y="150">
+      CARAWAY
+    </text>
+  </Fig>
+)
+
+export const VectorCellFigure = (
+  <Fig
+    i={2}
+    alt="A top-down box for an arena. A red dot marks the object. A cloud of small ink dots sits up and to the right of it, at a fixed distance, joined to the object by a thin dashed line."
+    caption="Firing map of one object-vector cell, after Høydal et al. 2019. The cell fires only in the field at a fixed distance and direction from the object, in red; move the object and the field moves with it."
+  >
+    <rect className="ax" x="40" y="30" width="220" height="112" />
+    <path className="th dash" d="M110 96L158 62" />
+    {Array.from({ length: 48 }, (_, i) => {
+      const a = ((i * 137.5) % 360) * (Math.PI / 180)
+      const r = 17 * Math.sqrt(((i * 7919) % 97) / 97)
+      return (
+        <circle
+          key={i}
+          className="dt"
+          cx={(158 + r * Math.cos(a)).toFixed(1)}
+          cy={(62 + r * 0.8 * Math.sin(a)).toFixed(1)}
+          r="1.6"
+        />
+      )
+    })}
+    <circle className="ac" cx="110" cy="96" r="4.5" />
+    <text className="lbl" x="92" y="116">
+      PLANT
+    </text>
+    <text className="lbl" x="180" y="46">
+      FIELD
+    </text>
+  </Fig>
+)
+
+export const TwoRoomsFigure = (
+  <Fig
+    i={3}
+    alt="Two dashed rectangles for the same room, side by side. Each holds a window on the top wall, a sofa, a chair and a red dot for the plant. On the left the plant sits beside the sofa; on the right, beside the chair."
+    caption="One room, the same four things, drawn twice: the plant beside the sofa, then beside the chair. The list is identical; the arrangement is the whole difference."
+  >
+    {[36, 156].map((x0, side) => (
+      <g key={x0}>
+        <rect className="th dash" x={x0} y="34" width="108" height="96" />
+        <path className="ln" d={`M${x0 + 24} 34h36`} />
+        <rect className="th" x={x0 + 12} y="104" width="26" height="9" />
+        <rect className="th" x={x0 + 82} y="52" width="9" height="9" />
+        <circle className="ac" cx={side === 0 ? x0 + 48 : x0 + 74} cy={side === 0 ? 108 : 66} r="3.5" />
+      </g>
+    ))}
+    <text className="lbl" x="36" y="146">
+      BEFORE
+    </text>
+    <text className="lbl" x="156" y="146">
+      AFTER
+    </text>
+    <text className="lbl" x="40" y="162">
+      THE SAME FOUR THINGS
     </text>
   </Fig>
 )

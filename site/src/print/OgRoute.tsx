@@ -39,6 +39,7 @@ import {
   HeritageFigure,
   LatentFigure,
   LlmFigure,
+  MirrorFigure,
   NeuroaesFigure,
   RespondFigure,
   ScoreFigure,
@@ -83,6 +84,7 @@ const THOUGHT_PLATE: Record<string, ReactNode> = {
   scoring: ScoreFigure,
   rules: ComputationFigure,
   dark: SilenceFigure,
+  plant: MirrorFigure,
   // `charcoal` is deliberately absent: it is the one note whose figures are her
   // actual charcoal drawings rather than a drawn plate, so it keeps the graph
   // slice. A missing key falls back, it never renders blank.

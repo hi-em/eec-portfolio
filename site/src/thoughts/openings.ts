@@ -47,4 +47,5 @@ export const THOUGHT_OPENINGS: Record<string, string> = {
   rules:
     'Computation is not the same as using a computer, and separating the two took me longer than I would like to admit.',
   dark: 'So your eyes signal your brain when they see light? Well, no. It is literally the opposite.',
+  plant: 'You know how, when you live with your mother, one day you think that plant would look better next to the chair than next to the sofa, so you move it, and the moment she walks in she goes ballistic, as if you had changed the whole feel of the room? Well.',
 }

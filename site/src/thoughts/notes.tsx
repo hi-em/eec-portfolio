@@ -28,6 +28,7 @@ import {
   HeritageFigure,
   LatentFigure,
   LlmFigure,
+  MirrorFigure,
   NeuroaesFigure,
   RespondFigure,
   ScoreFigure,
@@ -35,6 +36,8 @@ import {
   SilenceCurveFigure,
   SilenceFigure,
   SolversFigure,
+  TwoRoomsFigure,
+  VectorCellFigure,
   XrealFigure,
 } from './figures'
 import Ref from './Ref'
@@ -692,6 +695,8 @@ export const THOUGHT_NOTES: Record<string, ReactNode> = {
   // ROUND 5 (2026-09-11): the RETINA sentence opens paragraph 2, because she
   // mistook the fact herself ("people don't mistake it like i did"): the rods go
   // quiet, the cells behind them pass the silence on, the cortex fires as usual.
+  // ROUND 6 (2026-09-11): the TAG TEAM. She asked that this note nudge back to
+  // where the plant is, since that question is what sent her to the episode.
   // UNSIGNED.
   dark: (
     <>
@@ -708,9 +713,10 @@ export const THOUGHT_NOTES: Record<string, ReactNode> = {
         >
           The Rest Is Science
         </a>{' '}
-        last week, and I would never have thought it worked that way. Now I keep wondering how
-        many other things work backwards from what we assume. In the senses? In architecture? In
-        the tech I build with?
+        last week, an episode I only found because <Ref id="plant">where the plant is</Ref> had
+        sent me reading about the senses. I would never have thought it worked that way, and now
+        I keep wondering how many other things work backwards from what we assume. In the senses?
+        In architecture? In the tech I build with?
       </p>
       {SilenceFigure}
       <p>
@@ -768,6 +774,76 @@ export const THOUGHT_NOTES: Record<string, ReactNode> = {
         knew why. So do I redraw it? And would anyone trust a tool that shows them nothing?
       </p>
       {SilenceBarsFigure}
+    </>
+  ),
+
+  // T-121 · where the plant is (RENAMED by Emilie 2026-09-11; drafted as "same atoms, different room"). The second thought off The Rest Is
+  // Science ("The Smallest Thing You Can Feel", Sep 2026): carvone's mirror
+  // (27:23-29:36), and her leap, "this proves how much the positioning of
+  // things matters ... does it matter where the plant is relative to where I
+  // stand?" Drafted 2026-09-11 from her own directions: open on her joke
+  // (moving her mother's plant from the sofa to the chair, "she goes
+  // ballistic"), then "well, turns out we can feel a change at the molecular
+  // level through our nose! who knew". Sources: Leitereg et al. 1971 and
+  // Friedman & Miller 1971 (carvone), Buck & Axel 1991 (chiral receptors),
+  // Dehaene et al. 2010 (mirror invariance, unlearned to read), Høydal et al.
+  // Nature 2019 (object-vector cells, in mice, and the note says so). Three
+  // plates where the arguments land, the shape T-120 set.
+  //
+  // NO PODCAST HERE (her ruling, 2026-09-11: "a lot of my thoughts might be
+  // derived from there but I don't want to always mention it"). The rule: credit
+  // a PERSON for their words or idea (T-120's title is Hannah Fry's, so T-120
+  // credits her), cite RESEARCH for a fact (1971 for carvone, 2019 for the
+  // cell), and a podcast that pointed at a paper is a bibliography, not a
+  // co-author. The Ref to `dark` stays as a sibling idea, not as a source.
+  // UNSIGNED.
+  plant: (
+    <>
+      <p>
+        You know how, when you live with your mother, one day you think that plant would look
+        better next to the chair than next to the sofa, so you move it, and the moment she walks
+        in she goes ballistic, as if you had changed the whole feel of the room? Well.
+      </p>
+      <p>
+        It turns out you can smell a change in arrangement at the scale of one molecule. Carvone
+        comes in two versions built from the same atoms with the same bonds, mirror images of
+        each other, and one smells of spearmint and the other of caraway. Nothing in the
+        chemistry is different. The positions are, and your nose reads the positions, because
+        the receptors it uses are shaped molecules too, and a mirrored key does not sit in the
+        lock the same way. Who knew.
+      </p>
+      {MirrorFigure}
+      <p>
+        Before I get carried away: you need a great many molecules to smell anything, so this is
+        a small difference done to a lot of things, and chemists settled it in 1971 with a panel
+        of noses. But the question would not leave, and it sent me reading and listening for two
+        weeks, and the reading kept handing me things that work backwards. One of them became{' '}
+        <Ref id="dark">we see in silence</Ref>. Another is the eye. It is built to treat a shape
+        and its mirror image as the same thing, which is why children write b for d and have to
+        unlearn it to read. So a plan and its mirror look like the same room to you, and would
+        not smell like one.
+      </p>
+      <p>
+        And the plant. There is, it turns out, a cell for where the plant is. In 2019 the Moser
+        lab found neurons in the entorhinal cortex of mice that fire only when the animal is at
+        one particular distance and direction from an object, any object, in any room. Move the
+        object and the field moves with it. So your mother was not being dramatic. She has
+        hardware for where the plant is relative to her, and you moved it.
+      </p>
+      {VectorCellFigure}
+      <p>
+        Which is a problem for how we draw. A building is specified as a list, every beam, every
+        duct, every clash, tracked to the millimeter, and I have written about what that list
+        leaves out in <Ref id="bim">behavior information modeling</Ref>. A list has no
+        arrangement in it. The same four things make two different rooms depending on where they
+        stand, and the body reads the arrangement, not the inventory.{' '}
+        <Ref id="adjacency">Adjacency is not access</Ref> was the same idea for doors.{' '}
+        <Ref id="sensi">Sensi</Ref>'s coupling matrix is the same idea for senses: the score lives
+        in the relations, not the items. So what would a tool look like that scored where the
+        plant is, relative to you, to the window, to the door you came in through? I know one
+        person who would use it.
+      </p>
+      {TwoRoomsFigure}
     </>
   ),
 }

@@ -265,6 +265,12 @@ const GEOM: Record<string, Geom> = {
   // (explain), 130 to bim and 149 to podcast. NEURO because the note is about
   // perception itself; the label sits above the line, where nothing else is.
   dark: { ...pointOnThread('NEURO', 0.78), th: ['NEURO'], a: 'middle', d: [0, -16] },
+  // T-121 where the plant is, appended 2026-09-11. Re-probed after
+  // `dark` landed. Inside the mass, XR excluded, the widest slot left is
+  // NEURO at 0.28 (817,318): 98 units from neuroaes, 107 from scoring. NEURO
+  // because the note's turn is a cell in the entorhinal cortex; the label
+  // goes BELOW the line, since both neighbours carry theirs above.
+  plant: { ...pointOnThread('NEURO', 0.28), th: ['NEURO'], a: 'middle', d: [0, 22] },
 }
 
 export interface MindNode {

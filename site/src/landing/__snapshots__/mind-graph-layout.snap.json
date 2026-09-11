@@ -446,5 +446,16 @@
     ],
     "x": 1269,
     "y": 261
+  },
+  {
+    "id": "plant",
+    "kind": "thought",
+    "lens": "c",
+    "award": false,
+    "threads": [
+      "NEURO"
+    ],
+    "x": 817,
+    "y": 318
   }
 ]

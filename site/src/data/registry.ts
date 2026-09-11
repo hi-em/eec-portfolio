@@ -846,6 +846,28 @@ export const ENTRIES: RegistryEntry[] = [
     // 2026-09-11); the words rebuilt from her own session sentences.
   },
 
+  {
+    // T-121, appended 2026-09-11. The second thought off the same episode as
+    // T-120: carvone's mirror (27:23-29:36) and her leap, "this proves how
+    // much the positioning of things matters ... does it matter where the
+    // plant is relative to where I stand?" The opener is her own joke about
+    // moving her mother's plant. DATED BY EMILIE 2026-09-11 ("two weeks ago")
+    // to 2026-08, which INSERTS it between July and September on the world:
+    // `dark` moves one rank right, a sanctioned, reviewed change.
+    // THE ID IS `plant`, the title's noun, so the route reads /thoughts/plant.
+    // 2026-08 has no sibling entries, so the world's same-month tie-break
+    // never sees this id.
+    id: 'plant',
+    kind: 'thought',
+    date: '2026-08', // RULED by Emilie 2026-09-11 ("two weeks ago")
+    title: 'where the plant is', // RENAMED by Emilie 2026-09-11 (was 'same atoms, different room')
+    lens: 'computation',
+    tags: ['neuro', 'geometry', 'research', 'comfort'],
+    note: note('plant', 'T-121'),
+    explore: { label: 'where the plant is', nodeKind: 'thought', order: 40 },
+    // UNSIGNED. Three plates, one where each argument lands, the shape T-120 set.
+  },
+
   // ---- Milestones (where Em shows up on the record; dates from cv.ts) ----
   {
     id: 'xrlab-start',
@@ -1485,6 +1507,11 @@ export const CORRELATIONS: readonly Correlation[] = [
   ['llm', 'dark', 2], // the next-word guess, found in the cortex too (Goldstein 2022)
   ['sensi', 'dark', 2], // the full bar the note wants to redraw
   ['neuroaes', 'dark', 1], // Ellard's facades, the Humanise argument: the research it sits under
+  // ---- T-121 where the plant is (2026-09-11), threads named in its prose
+  ['bim', 'plant', 1], // the building as a list: every beam, every duct, every clash
+  ['adjacency', 'plant', 2], // the same rooms with and without doors: arrangement, again
+  ['sensi', 'plant', 2], // the coupling matrix: the score lives in the relations
+  ['plant', 'dark', 1], // the fortnight of reading this question started is where the silence note came from; both notes say so
 ]
 
 // THE PAIRS SHE HAS LOOKED AT AND RULED ARE NOT NEAR-MISSES (2026-08-07).

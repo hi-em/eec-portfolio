@@ -453,7 +453,7 @@ export const SKILLS = [
 // nothing else on the document did. Visible effect: the WRITING & RESEARCH
 // line now reads "18 essays" instead of "14 essays", on the page and in the
 // PDF. Flagged to her rather than changed quietly.
-export const ESSAY_COUNT = 19
+export const ESSAY_COUNT = 20
 export const BLOG_COUNT = 12
 
 // ---- THE WRITING LINE RESOLVES (board B2, her ruling 2026-07-28) -----------
