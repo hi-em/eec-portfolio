@@ -6,6 +6,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { expect, test } from 'vitest'
+import { THOUGHT_READING } from '../thoughts/reading'
 import { AWARD_WINNER_IDS, CORRELATIONS, ENTRIES, EXPLORE_NODES, timelineEntries } from './registry'
 import {
   AWARD_ANCHOR_OVERRIDE,
@@ -393,3 +394,27 @@ test('every videos.json file exists on disk', () => {
 // (G1: the sheet-source video-ref scan retired with the sheet tier; the
 // showcase's hero video is data-driven from videos.json itself, so a rename
 // can no longer strand a JSX ref.)
+
+// THE READING LINE (2026-09-11). Every entry names a drafted thought, every
+// door is https, nothing is listed twice, and a label reads as author + year.
+// The links themselves were verified by hand against api.crossref.org and
+// doi.org the day they were added (see thoughts/reading.ts); a test that hit
+// the network would make the build depend on publishers being up.
+test('every reading line belongs to a drafted thought and every door is well formed', () => {
+  const drafted = new Set(
+    ENTRIES.filter(e => e.kind === 'thought' && e.note?.status === 'drafted').map(e => e.id),
+  )
+  const broken: string[] = []
+  for (const [id, items] of Object.entries(THOUGHT_READING)) {
+    if (!drafted.has(id)) broken.push(`${id}: no drafted thought`)
+    const seen = new Set<string>()
+    for (const r of items) {
+      if (!/^https:\/\//.test(r.href)) broken.push(`${id}: ${r.href} is not https`)
+      if (seen.has(r.href)) broken.push(`${id}: ${r.href} listed twice`)
+      seen.add(r.href)
+      if (!/\d{4}$/.test(r.label)) broken.push(`${id}: "${r.label}" does not end in a year`)
+      if (!r.title) broken.push(`${id}: "${r.label}" has no title`)
+    }
+  }
+  expect(broken).toEqual([])
+})

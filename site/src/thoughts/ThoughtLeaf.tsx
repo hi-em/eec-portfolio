@@ -17,6 +17,8 @@ import SheetPage from '../components/SheetPage'
 // one was on the page whose whole job is to be read.
 import { fmtMonthYear } from '../components/ThoughtIndexRows'
 import { FigNumberContext } from './figures'
+import { THOUGHT_READING } from './reading'
+import { QUIET_LINK_TAP } from '../lib/linkStyles'
 import useIsDesktop from '../hooks/useIsDesktop'
 import type { ReachSet } from '../components/reach/verbs'
 import { LensPill } from '../components/ui/Pill'
@@ -240,6 +242,30 @@ export default function ThoughtLeaf(props: {
               to look itself up in that run rather than read a local label. */}
           <FigNumberContext.Provider value={id ?? null}>{children}</FigNumberContext.Provider>
         </div>
+        {/* THE READING LINE (Emilie's A, 2026-09-11): the research the note leans
+            on, first author and year, each a door to the paper. Under the words,
+            in the caption's mono, inside the note's own hairline grammar, so the
+            prose never carries a footnote. Only a note with an entry in
+            THOUGHT_READING renders it; the paper's title rides as the tooltip. */}
+        {id && THOUGHT_READING[id] && (
+          <footer className="thought-reading">
+            <span className="thought-reading__k">Reading</span>
+            {THOUGHT_READING[id].map((r) => (
+              <span key={r.href}>
+                {' · '}
+                <a
+                  href={r.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={QUIET_LINK_TAP}
+                  title={r.title}
+                >
+                  {r.label}
+                </a>
+              </span>
+            ))}
+          </footer>
+        )}
       </article>
     </SheetPage>
   )

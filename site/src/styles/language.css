@@ -1662,3 +1662,23 @@ li[data-glow] > button {
     animation: hold-in 1ms linear 200ms both;
   }
 }
+
+/* THE READING LINE (2026-09-11, Emilie's A). One mono line under the words
+   naming the research a note leans on, each item a door. The same hairline
+   and the same mono as a plate caption, so it reads as part of the note's
+   apparatus rather than as prose. The key is a label, so it is uppercase and
+   tracked like the plate labels; the items are names and years, as written. */
+.thought-reading {
+  margin-top: 1.9em;
+  border-top: 0.5px solid var(--lang-hairline);
+  padding-top: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--text-nav);
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+  color: var(--lang-ink-muted);
+}
+.thought-reading__k {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
