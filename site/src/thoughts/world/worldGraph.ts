@@ -846,7 +846,9 @@ export function buildWorld(): World {
     ...CORRELATIONS.map(([a, b, s]) => ({ a, b, strength: s })),
     ...placed
       .filter((p) => p.kind === 'award' && anchorIdOf(p) && byId.has(anchorIdOf(p)!))
-      .map((p) => ({ a: p.id, b: anchorIdOf(p)!, strength: 1 })),
+      // Project first, award second (her ruling 2026-09-12): the thread fires from
+      // the work to the honour, so the list reads "led to", never "grew out of".
+      .map((p) => ({ a: anchorIdOf(p)!, b: p.id, strength: 1 })),
   ]
 
   const links: WorldLink[] = linkSpecs

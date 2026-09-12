@@ -13,11 +13,15 @@ const spine: ProjectSpine = {
     { q: 'Is a facade a public health decision?', beat: 'why' },
     { q: 'What would it take for cognitive performance to become a building standard?', beat: 'why' },
   ],
+  // Her affiliations updated 2026-09-12 from her own email signature (Cambridge,
+  // UCL/RISE, Harvard Chan); the HKS line described her at recording time.
   what: (
     <>
-      A conversation with Dr. Cleo Valentine, a design researcher at HKS and affiliate lecturer at
-      Cambridge who is building the field of architectural neuroimmunology, for the MaCAD Theory
-      Podcast, co-hosted with Charles Abi Chahine. Her research studies how architectural geometry
+      A conversation with Dr. Cleo Valentine, affiliate lecturer in architecture at Cambridge, senior
+      research and innovation lead at the UCL/RISE Centre for NeuroArchitecture and NeuroDesign, and
+      a department associate at the Harvard T.H. Chan School of Public Health, who is building the
+      field of architectural neuroimmunology, for the MaCAD Theory Podcast, co-hosted with Charles
+      Abi Chahine. Her research studies how architectural geometry
       affects neuroinflammation and stress regulation; we asked what it would take for cognitive
       performance to become a building standard.
     </>
