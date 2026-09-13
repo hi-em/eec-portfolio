@@ -690,8 +690,11 @@ export const THOUGHT_NOTES: Record<string, ReactNode> = {
   // for the bio on 2026-07-06 ("don't love the question"); here she wrote it
   // herself, so her rewrite is the brief. Fig. 18 is now that sentence drawn.
   // ROUND 4 (2026-09-11, her B): the source credit is ONE clause after the fact
-  // ("The title is Hannah Fry's, from The Rest Is Science last week"), the
-  // episode's subject dropped. The credit stays because the title is her phrase.
+  // ("The title is Michael Stevens's, from The Rest Is Science last week"), the
+  // episode's subject dropped. The credit stays because the title is his phrase.
+  // CORRECTED 2026-09-13: the line is MICHAEL STEVENS's, not Hannah Fry's. She
+  // re-listened: at 45:03 he says "so we see in silence", right after her
+  // "upside down". The wrong name stood on the live note for two days.
   // ROUND 5 (2026-09-11): the RETINA sentence opens paragraph 2, because she
   // mistook the fact herself ("people don't mistake it like i did"): the rods go
   // quiet, the cells behind them pass the silence on, the cortex fires as usual.
@@ -704,7 +707,7 @@ export const THOUGHT_NOTES: Record<string, ReactNode> = {
         So your eyes signal your brain when they see light? Well, no. It is literally the
         opposite. In the dark, the rods at the back of your eye fire the whole night, a steady
         report that nothing is happening, and when light lands on one it goes quiet. The quiet is
-        the signal. The title is Hannah Fry's, from{' '}
+        the signal. The title is Michael Stevens's, from{' '}
         <a
           href="https://www.youtube.com/watch?v=-a6zw7HFk3Y"
           target="_blank"
@@ -792,8 +795,8 @@ export const THOUGHT_NOTES: Record<string, ReactNode> = {
   //
   // NO PODCAST HERE (her ruling, 2026-09-11: "a lot of my thoughts might be
   // derived from there but I don't want to always mention it"). The rule: credit
-  // a PERSON for their words or idea (T-120's title is Hannah Fry's, so T-120
-  // credits her), cite RESEARCH for a fact (1971 for carvone, 2019 for the
+  // a PERSON for their words or idea (T-120's title is Michael Stevens's, so T-120
+  // credits him), cite RESEARCH for a fact (1971 for carvone, 2019 for the
   // cell), and a podcast that pointed at a paper is a bibliography, not a
   // co-author. The Ref to `dark` stays as a sibling idea, not as a source.
   // UNSIGNED.
