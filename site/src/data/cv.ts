@@ -174,13 +174,25 @@ export const EXPERIENCE: CvEntry[] = [
       // VERBS LEAD ON DUTY BULLETS, present tense for the current job. Named
       // projects elsewhere keep the NAME first: the name is the scannable
       // thing and a verb in front of it would bury it.
-      // "parametric design" and "generative design" are spelled WHOLE on
-      // purpose: the build's keyword check reads literal strings, and
-      // "parametric and generative design" does not contain either of them.
-      'Drive parametric design and generative design for exhibitions and brand experiences: Rhino, Grasshopper, Kangaroo.',
-      'Direct generative AI from text to image and text to deck, and judge which outputs are worth keeping.',
-      'Prototype web and VR experiences for clients, designed human-centered and detailed for disassembly.',
-      'Prepare and present concept and pitch for sports, F&B and automotive brands. Interdisciplinary teams.',
+      // THE WEBSITE SESSION (2026-09-16, her picks from a measured board): all
+      // four bullets rewritten from her own account of the job (interviewed
+      // in-session) toward the four titles she ruled the CV serves (AI Product
+      // Engineer, Customer Success Engineer in AEC-tech, Design Engineer,
+      // Foster's Design Systems Analyst), in the verbs 31 fetched Design
+      // Technologist postings use: own/drive, workflows, prototype, user test,
+      // bridge, feasibility. Each was measured at ONE printed line on the real
+      // sheet before she picked it. "parametric design" is spelled WHOLE on
+      // purpose: the build's keyword check reads literal strings.
+      // ⚠ Her pick for bullet 1 carries neither the count of three built
+      // installations nor the brand names (Lincoln, MG Motors, Red Bull, all
+      // cleared by her): both were offered and she chose the wording without
+      // them. Flagged at the time, not changed quietly.
+      'Drive parametric design in Grasshopper and Kangaroo: option studies, form-finding, fabrication files for the build.',
+      'Build generative AI workflows for imagery, video and decks, and set the quality bar on what reaches a client.',
+      // Unity is on the line at her confirmation (she builds the headset
+      // prototypes in it); React and Three.js are the web half.
+      'Prototype event apps, brand games and VR in React, Three.js and Unity, AI-assisted, and test them with users on site.',
+      'Bridge creative and engineering: research decks, feasibility calls and tool trials, presented to clients and leadership.',
     ],
   },
   {
@@ -209,10 +221,11 @@ export const EXPERIENCE: CvEntry[] = [
     title: 'Design Architect',
     org: 'Self-employed',
     projects: [
-      // Extended at the audit: the line was 73 characters on a 118-character
-      // measure, so it had the room to say what the work actually was. SubD
-      // and the AI workflows are both on the project's own tech row.
-      'Rings of Mars: Ring 4000, a Marsception entry with Charles Abi Chahine: SubD modeling and generative AI.',
+      // RINGS OF MARS LEFT THIS BLOCK (the website session, 2026-09-16): the
+      // one-page sheet had 6.8px of slack, the new Geometry and BIM skills
+      // row costs one line, and the checklist named this line as the one to
+      // trade. The award line below still names the project, its /work page
+      // is untouched, and its CV link left CV_PROJECT_LINKS with it.
       // THE WORDS PASS (2026-08-19, her ruling): "design system" claimed. The
       // Pen Table is real and countable (tokens + type shared by the site, the
       // printed book and the share cards), and the term is near-universal in
@@ -288,7 +301,7 @@ export const CV_PROJECT_LINKS: Record<string, string> = {
   // The showcase is filed under the practice that made them, not under one of
   // the four tower names the bullet lists.
   'Verve City Walk': 'soma',
-  'Rings of Mars: Ring 4000': 'mars',
+  // 'Rings of Mars: Ring 4000' -> 'mars' retired with its bullet (2026-09-16).
   'The Encounter': 'encounter',
   'Falcon Square': 'falcon',
 }
@@ -399,14 +412,28 @@ export const SKILLS = [
       'AI agents and LLM copilots (LangGraph) · evals and benchmarking · GenAI pipelines (LoRA fine-tuning · FLUX · ComfyUI · ControlNet) · Weights & Biases · rapid prototyping · design automation',
   },
   {
-    // Speckle restored (a named filter term for consultancy roles, and The
-    // Lungs genuinely used it); WebGL sits beside Three.js. TAILWIND DROPPED at
-    // the audit: the row overran its line by one word, leaving "Compute"
-    // stranded alone on the next, and a CSS framework is the least-screened
-    // term in the row.
+    // THE WEBSITE SESSION (2026-09-16, checklist item 1, her ruling): the
+    // geometry and BIM tools that were scattered across Ships with and the
+    // experience bullets now sit in ONE row, which is also what puts the word
+    // "geometry" on the page (it appeared zero times). Nothing here is new:
+    // every token was already on the sheet. Measured at one printed line.
+    group: 'Geometry and BIM',
+    items:
+      'Rhino · Grasshopper · Kangaroo · Rhino.Inside · Rhino Compute · Revit (LOD 300) · Speckle',
+  },
+  {
+    // Speckle, Rhino.Inside and Rhino Compute moved UP to the Geometry and BIM
+    // row (2026-09-16); the room they left holds the production words the
+    // Sensi repo actually backs, checked that day: a Dockerfile at the root,
+    // seven pytest files under python/tests, SSE streaming in
+    // python/api/server.py. NO CI is written because the repo has no
+    // .github/workflows. JavaScript joins TypeScript (genai-legoarch is
+    // JavaScript; Foster's posting screens the literal word). WebGL sits
+    // beside Three.js. TAILWIND DROPPED at the 2026-07 audit: a CSS framework
+    // is the least-screened term in the row. Measured at one printed line.
     group: 'Ships with',
     items:
-      'Python · React · Vue · TypeScript · Three.js · WebGL · FastAPI · Speckle · Rhino.Inside · Rhino Compute',
+      'Python · JavaScript · TypeScript · React · Vue · FastAPI · SSE streaming · pytest · Docker · Three.js · WebGL',
   },
   {
     // The vocabulary a hiring manager uses for this subject, plus the research
