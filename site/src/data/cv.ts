@@ -234,7 +234,11 @@ export const EXPERIENCE: CvEntry[] = [
       "Pen Table, this portfolio's design system: one token set governing the site, a printed book and the share cards.",
       // Workshops dropped: she ATTENDS them, and attending a workshop is not a
       // self-employed activity. Only the research claim survives.
-      'Ongoing independent research in computational design and emerging technologies.',
+      // HER OWN WORDING (2026-09-16, the website session): she noticed the CV
+      // never said neuroarchitecture plainly, asked for the essays as the proof
+      // of research, and wrote this line herself from two drafted mixes.
+      // "tech" is her word. Measured at one printed line before it went in.
+      'Ongoing research in neuroarchitecture, computational design and emerging tech, written up in essays and tools.',
     ],
   },
   {
@@ -408,8 +412,13 @@ export const SKILLS = [
     // to three with only "design automation" stranded on the last. Only the
     // connective glosses went ("of model output", "experiment tracking");
     // every searchable term survived. Measured at 2 lines on the web CV.
+    // THE WEBSITE SESSION (2026-09-16, her pick P1b): the two coding agents she
+    // actually ships with are named. Seven of the twenty postings for the
+    // titles she ruled the CV serves name Claude Code or Cursor by tool, and
+    // the page said only "AI-assisted". Nothing removed; the row still prints
+    // on two lines (measured).
     items:
-      'AI agents and LLM copilots (LangGraph) · evals and benchmarking · GenAI pipelines (LoRA fine-tuning · FLUX · ComfyUI · ControlNet) · Weights & Biases · rapid prototyping · design automation',
+      'AI agents and LLM copilots (LangGraph) · evals and benchmarking · GenAI pipelines (LoRA fine-tuning · FLUX · ComfyUI · ControlNet) · Weights & Biases · Claude Code · Cursor · rapid prototyping · design automation',
   },
   {
     // THE WEBSITE SESSION (2026-09-16, checklist item 1, her ruling): the
