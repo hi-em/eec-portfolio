@@ -245,10 +245,13 @@ export default function Work() {
       </p>
 
       {/* ONE uniform grid, filtered or not (the book index's manner): two
-          per row on phones, the printed index's 7-across on xl (21 tiles =
-          exactly 3 rows at 186px, the one-page fit with the bar above). */}
-      <ul className="grid list-none grid-cols-2 gap-3 p-0 pb-2 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-7">
-        {gridReady ? cards(entries, 7) : null}
+          per row on phones, 7-across on xl, and 8-across from 1400px
+          (.work-grid, language.css): Emilie's Gate 3 pick, 2026-09-27, when
+          Tideline + Codependent made 23 tiles = 3 rows of 8, one page on her
+          1600x810 screen at 181px tiles. Below 1400 the 8th column would
+          crush the plates to 142px, so 7-across stays and the page scrolls. */}
+      <ul className="work-grid grid list-none grid-cols-2 gap-3 p-0 pb-2 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-7">
+        {gridReady ? cards(entries, 8) : null}
       </ul>
 
       {/* THE THOUGHTS (REINDEX, Emilie's IA gate 2026-07-16): the printed

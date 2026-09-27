@@ -213,8 +213,9 @@ export default function Rights() {
               </Clause>
               <Clause n="1.2">
                 Work produced in the course of employment remains the property of the commissioning
-                practice: SOMA (Verve City Walk, District O, Enara and Saria) and JEMMA Chidiac
-                Architects (The Encounter, the Falcon). Project imagery remains theirs.
+                practice: SOMA (Verve City Walk, District O, Enara and Saria), JEMMA Chidiac
+                Architects (The Encounter, the Falcon) and Dynamic Solution (Tideline,
+                Codependent). Project imagery remains theirs.
               </Clause>
               {/* BOTH INSTITUTIONS (her correction, 2026-07-30): IAAC covers the
                   MaCAD year, the Lebanese American University covers the

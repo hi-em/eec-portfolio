@@ -219,6 +219,11 @@ const GEOM: Record<string, Geom> = {
   // astroidal sits above; pelagñou + explaining-things ride AI (the theory
   // reading + the explaining instinct, whose proof is the AI work).
   charcoal: { ...pointOnThread('GEOMETRY', 0.33), th: ['GEOMETRY'], a: 'middle', d: [0, 22] },
+  // ---- DYNAMIC SOLUTION appends (2026-09-27): the two built installations
+  // ride GEOMETRY in the free stretch between A Playscape (0.4) and latent
+  // space (0.6), labels alternating above/below like the lead-in.
+  codependent: { ...pointOnThread('GEOMETRY', 0.47), th: ['GEOMETRY'], a: 'middle', d: [0, -16] },
+  tideline: { ...pointOnThread('GEOMETRY', 0.53), th: ['GEOMETRY'], a: 'middle', d: [0, 22] },
   // (pelagnou's mark removed 2026-07-29 with the note. Its slot on AI at 0.1
   // is free again; nothing else moved, because every coord here is hand-placed
   // rather than derived, so a removal is a removal and not a reflow.)

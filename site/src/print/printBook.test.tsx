@@ -542,7 +542,8 @@ describe('the ATS CV page', () => {
     const metaFiles = readdirSync(mastersDir).filter(
       f => f.endsWith('.ts') && !f.endsWith('.spine.ts') && !NOT_A_PROJECT.has(f),
     )
-    expect(metaFiles.length).toBe(21)
+    // 21 -> 23 on 2026-09-27: Tideline + Codependent (Dynamic Solution).
+    expect(metaFiles.length).toBe(23)
     const withBlog = metaFiles.filter(f =>
       readFileSync(join(mastersDir, f), 'utf8').includes('blog.iaac.net'),
     ).length

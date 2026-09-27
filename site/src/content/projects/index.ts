@@ -45,6 +45,11 @@ import falcon from './falcon'
 import astroidal from './astroidal'
 import chairSim from './chair-sim'
 import playscape from './playscape'
+// DYNAMIC SOLUTION (2026-09-27): the two built installations from the
+// current job, Tideline (Lincoln, 2025) and Codependent (2024), added at
+// Emilie's ask; all copy signed at her Gate 2.
+import tideline from './tideline'
+import codependent from './codependent'
 
 export type { ProjectMeta, ProjectSpine, ProjectMaster } from './types'
 
@@ -70,6 +75,8 @@ export const ALL_PROJECT_METAS: ProjectMeta[] = [
   astroidal,
   chairSim,
   playscape,
+  tideline,
+  codependent,
 ]
 
 export const METAS_BY_SLUG: Record<string, ProjectMeta> = Object.fromEntries(

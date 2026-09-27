@@ -52,7 +52,9 @@
 // RECOGNITION (Emilie's ruling 2026-07-27; the dossier's S2 ruling 2 had
 // conflated it with The Encounter's Cemetery Challenge certificate) · the neuro
 // verbs are score / estimate / model, never "measure" · Dynamic Solution is the
-// current job, so the role appears and its project work does not.
+// current job, so the role appears and its project work does not. (REVERSED
+// ON THE SITE by Emilie, 2026-09-27: Tideline and Codependent now live on
+// /work. The CV bullets below stay unnamed, her 2026-09-16 pick.)
 
 // One record entry. `projects` is the in-place project line added at the CV
 // pass: optional, because Dynamic Solution (the current job) cannot name its

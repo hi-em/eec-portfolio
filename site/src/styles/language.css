@@ -864,7 +864,55 @@ textarea,
   .thought-row .thought-open {
     transition:
       opacity 200ms var(--ease-soft),
-      visibility 200ms;
+      visibility 200ms,
+      display 200ms allow-discrete;
+  }
+  @starting-style {
+    .thought-row .thought-open {
+      opacity: 0;
+    }
+  }
+}
+/* THE PHANTOM SCROLL (the Gate 3 grid audit, 2026-09-27, fix at Emilie's
+   yes). A hidden slip was still a box: absolutely placed under its row, so
+   the LAST row's slips hung below the page and grew the frame's scroll area
+   (54px of nothing on her 1600x810 screen, 22px at 1280x800). Hidden now
+   means display:none (the fade still runs: allow-discrete + @starting-style
+   above), and on /work the last row's slip opens UPWARD, over its own row,
+   so a hover can never push the page either. The last row is found per
+   column count (1 / sm 2 / xl 4, the .thought-rail grid). */
+.thought-row .thought-open {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .thought-row:hover .thought-open {
+    display: block;
+  }
+}
+.thought-row:has(:focus-visible) .thought-open {
+  display: block;
+}
+.thought-rail > .thought-row:last-child .thought-open {
+  top: auto;
+  bottom: 100%;
+}
+@media (min-width: 640px) {
+  .thought-rail > .thought-row:nth-child(2n + 1):nth-last-child(-n + 2) .thought-open,
+  .thought-rail > .thought-row:nth-child(2n + 1):nth-last-child(-n + 2) ~ .thought-row .thought-open {
+    top: auto;
+    bottom: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  /* reset the sm rule, then mark the 4-column last row */
+  .thought-rail > .thought-row .thought-open {
+    top: 100%;
+    bottom: auto;
+  }
+  .thought-rail > .thought-row:nth-child(4n + 1):nth-last-child(-n + 4) .thought-open,
+  .thought-rail > .thought-row:nth-child(4n + 1):nth-last-child(-n + 4) ~ .thought-row .thought-open {
+    top: auto;
+    bottom: 100%;
   }
 }
 /* The cross-glow: a quiet ink ring, no red (red = interaction, not a
@@ -872,6 +920,61 @@ textarea,
 li[data-glow] > button {
   border-color: var(--lang-ink-muted);
   box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--lang-ink) 30%, transparent);
+}
+
+/* THE SHARE CARD'S PLATE (found at the Gate 3 audit, 2026-09-27). OgRoute
+   wraps each project's ink parti in .og-plate, and nothing ever styled it, so
+   every class fell back to SVG defaults: black fill, no stroke. Every project
+   card shipped a black silhouette instead of her drawing (Mars read as a
+   blob). Same four classes as .pr-art (here, not print.css: the card is not a .pr-doc, so the --pr-* tokens never reach it), in the card's own lang tokens and the logo's red, weighted for a 1200px card that is
+   mostly seen at ~500px in a feed. */
+.og-plate svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.og-plate .ln {
+  fill: none;
+  stroke: var(--lang-ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.og-plate .th {
+  fill: none;
+  stroke: var(--lang-ink-muted);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.og-plate .dt {
+  fill: var(--lang-ink);
+}
+.og-plate .ac {
+  fill: var(--lang-interaction);
+}
+.og-plate .acs {
+  fill: none;
+  stroke: var(--lang-interaction);
+  stroke-width: 3.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+/* 8-ACROSS FROM 1400px (Emilie's Gate 3 pick, 2026-09-27): 23 tiles = 3
+   rows of 8, the one-page fit on her 1600x810 screen. Plain CSS because a
+   Tailwind arbitrary min-[1400px] variant did not generate in this repo.
+   The plate's side padding steps 12 -> 10 so the longer titles hold. */
+@media (min-width: 1400px) {
+  .work-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  .work-grid .work-plate {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /* THE ONE-PAGE FIT (2026-07-18, round 4: option B + the bar): the closing

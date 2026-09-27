@@ -957,6 +957,143 @@ export const MANIFEST = {
       alt: 'The full Grasshopper canvas behind the playscape: Python base surfaces, pressure and net goals, and bouncy solvers',
     },
   ],
+  // TIDELINE (Dynamic Solution, Kuwait, 2025-09; added 2026-09-27, her Gate 1
+  // picks). The Lincoln enclosure: 60 mirrored fins on a wave that hides the
+  // car, then lifts. Every source is a derived copy in final-assets/ (her
+  // curation convention): the explainer boards had their working-note footers
+  // and "CURRENT REVIEW" kickers cropped (her ruling), and each clip ships ONCE
+  // as an animated webp from its gif (the mp4 twins and posters stay out).
+  // Cover = a crop of the complex form-finding clip, her pick (D), so it is a
+  // made-up cut (coverMontage in tideline.ts); the full board is its own page.
+  // HONESTY: the diagram boards were rebuilt after the project from its saved
+  // Rhino geometry to explain it; their alts say so. The photographs are the
+  // real event, colour-graded only (her answer, 2026-09-27). Dropped:
+  // 05-curves-and-seeds (its own footer: a new extension, not the native
+  // definition), 01-enclosure + 07-archived-alternatives (duplicates).
+  tideline: [
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/tideline-cover.webp', role: 'gif', name: 'tideline-cover',
+      alt: 'The wave ring finding its form: a red crest line lifts and the sixty folded fins follow it around the enclosure',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/concealment-at-the-event.png', role: 'hero', name: 'concealment-at-the-event',
+      alt: 'At the Lincoln event in Kuwait, a visitor leans in to look between the mirrored fins at the car hidden inside the ring',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/attention-glimpse-reveal.png', role: 'gallery', name: 'attention-glimpse-reveal', frame16x9: true, bg: '#ffffff',
+      alt: 'The visit as a sequence: the enclosure draws you in, reflects the room, offers glimpses, then rises to reveal the car',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/wave-attractor-study.webp', role: 'gif', name: 'wave-attractor-study',
+      alt: 'Explanatory rebuild from the saved Rhino curve: the sea-wave attractor meets each vertical line and sets its fin',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/inside-the-definition.png', role: 'gallery', name: 'inside-the-definition', frame16x9: true, bg: '#ffffff',
+      alt: 'Six steps of the Grasshopper definition, rebuilt to explain it: attractor, carrier, pull, connect, orient, number the kit',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/complex-form-finding.webp', role: 'gif', name: 'complex-form-finding',
+      alt: 'What happens when the wave keeps moving: the crest lifts, the folds follow, settling into the archived complex form',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/wave-option-matrix.webp', role: 'gif', name: 'wave-option-matrix',
+      alt: 'An explanatory option matrix: four wave families against panel count, fin depth and rotation, different ways to hide',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/glimpse-sight-fan.webp', role: 'gif', name: 'glimpse-sight-fan',
+      alt: 'A visitor at eye height circles the ring: the plan sight fan shows how much of the car each position catches',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/panel-rotation-study.webp', role: 'gif', name: 'panel-rotation-study',
+      alt: 'The wave and the visitor stay fixed while the fins rotate, opening and closing the view of the car behind them',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/what-makes-an-option.png', role: 'gallery', name: 'what-makes-an-option', frame16x9: true, bg: '#ffffff',
+      alt: 'What makes an option worth building: visibility, reflection and mass weighed together before clearance and rigging',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/exploded-kit.png', role: 'gallery', name: 'exploded-kit', frame16x9: true, bg: '#ffffff',
+      alt: 'The kit exploded from the saved construction geometry: a top ring, a base ring and each fin with its own number',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/behind-the-scenes.png', role: 'gallery', name: 'behind-the-scenes',
+      alt: 'Behind the scenes: a mirrored fin carried by hand, 3D-printed prototype rings, and the wave traced on the built frame',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/assembly-and-reveal.webp', role: 'gif', name: 'assembly-and-reveal',
+      alt: 'The build in sequence, the rigging drawn as a schematic: fins placed on the base ring, the top ring closed, then the lift',
+    },
+    {
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/the-lift.png', role: 'gallery', name: 'the-lift',
+      alt: 'The reveal in a long exposure: the mirrored enclosure lifts off the car into the rig as visitors gather around it',
+    },
+  ],
+  // CODEPENDENT (Dynamic Solution, Kuwait, 2024-12; added 2026-09-27, her
+  // Gate 1 picks). Two interlocking CNC-cut panel types, no glue or screws.
+  // The event's name is never used. Cover = a 3x crop of the pre-assembly
+  // clip, her pick (B), a made-up cut (coverMontage in codependent.ts); the
+  // full clip is its own page. Hero = the seaside night shot (her pick over
+  // the hall; they are the same booth, real photos, colour-graded only). The
+  // whole definition (tall flow chart) is IN at her ask. Clips from the mp4s,
+  // long ones at 2x; the five posters stay out.
+  codependent: [
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/codependent-cover.webp', role: 'gif', name: 'codependent-cover',
+      alt: 'The pre-assembly at speed: each white panel slots in upright and each black one lands flat until the booth stands',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/seaside-night.png', role: 'hero', name: 'seaside-night',
+      alt: 'The booth at night by the sea in Kuwait: interlocking white panels and black shelves form seats, counters and open edges',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/slot-support-gather.png', role: 'gallery', name: 'slot-support-gather', frame16x9: true, bg: '#ffffff',
+      alt: 'The idea in three moves: slot together, support one another, make room to gather on a lower seat and a higher counter',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/growth-logic.png', role: 'gallery', name: 'growth-logic', frame16x9: true, bg: '#ffffff',
+      alt: 'The growth rule: start with one white, try a direction, add the support, then check space, clearance and mass',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/the-whole-definition.png', role: 'gallery', name: 'the-whole-definition',
+      alt: 'The whole Grasshopper definition as a flow: two master pieces, design controls, form finding, checks, the kit of parts',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/growth.webp', role: 'gif', name: 'growth',
+      alt: 'The assembly growing part by part, the white, black, seat and counter counts and the estimated mass rising beside it',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/design-space-30-10-1.webp', role: 'gif', name: 'design-space-30-10-1',
+      alt: 'Thirty generated arrangements laid out, turned to plan, narrowed to ten candidates and then to one: option 29',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/ten-options.png', role: 'gallery', name: 'ten-options', frame16x9: true, bg: '#ffffff',
+      alt: 'Ten candidate assemblies side by side with their seeds, sizes, densities and white and black panel counts',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/option-29-in-use.png', role: 'gallery', name: 'option-29-in-use', frame16x9: true, bg: '#ffffff',
+      alt: 'Option 29 in use: counter panels at 948 mm to stand and talk, seat panels at 408 mm to stay a little longer',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/preassembly.webp', role: 'gif', name: 'preassembly',
+      alt: 'Pre-assembly group by group: each numbered panel placed in order until all thirty-four stand as one connected piece',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/model-to-cuts.webp', role: 'gif', name: 'model-to-cuts',
+      alt: 'From model to cutting sheets: master size, corner radius and density change, and the nested sheets update with them',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/part-data.png', role: 'gallery', name: 'part-data',
+      alt: 'Every part labelled: thirty-four unique IDs with axis, level, position, mass and the stock sheet each one is cut from',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/reality-check.png', role: 'gallery', name: 'reality-check',
+      alt: 'On site, some pieces went missing and there were no spares: the team reworking connections so the seats still worked',
+    },
+    {
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/the-joints-built.png', role: 'gallery', name: 'the-joints-built',
+      alt: 'The joints, built: slotted white and black panels in the workshop and on the stand, every slot fitting its mate',
+    },
+  ],
 }
 
 // Output size ladder per role (max widths; smaller sources stay at native width).

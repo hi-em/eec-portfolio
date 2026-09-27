@@ -4175,5 +4175,664 @@
         }
       ]
     }
+  ],
+  "tideline": [
+    {
+      "name": "tideline-cover",
+      "role": "gif",
+      "alt": "The wave ring finding its form: a red crest line lifts and the sixty folded fins follow it around the enclosure",
+      "aspect": 1.7778,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/tideline-cover-640.webp",
+          "kb": 725
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/tideline-cover-static-640.webp",
+          "kb": 5
+        }
+      ]
+    },
+    {
+      "name": "concealment-at-the-event",
+      "role": "hero",
+      "alt": "At the Lincoln event in Kuwait, a visitor leans in to look between the mirrored fins at the car hidden inside the ring",
+      "aspect": 1.5,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/concealment-at-the-event-640.webp",
+          "kb": 63
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/concealment-at-the-event-1024.webp",
+          "kb": 119
+        }
+      ]
+    },
+    {
+      "name": "attention-glimpse-reveal",
+      "role": "gallery",
+      "alt": "The visit as a sequence: the enclosure draws you in, reflects the room, offers glimpses, then rises to reveal the car",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/attention-glimpse-reveal-640.webp",
+          "kb": 12
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/attention-glimpse-reveal-1024.webp",
+          "kb": 24
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/tideline/attention-glimpse-reveal-1600.webp",
+          "kb": 41
+        }
+      ]
+    },
+    {
+      "name": "wave-attractor-study",
+      "role": "gif",
+      "alt": "Explanatory rebuild from the saved Rhino curve: the sea-wave attractor meets each vertical line and sets its fin",
+      "aspect": 1.8351,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/wave-attractor-study-640.webp",
+          "kb": 148
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/wave-attractor-study-1024.webp",
+          "kb": 232
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/wave-attractor-study-static-640.webp",
+          "kb": 11
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/wave-attractor-study-static-1024.webp",
+          "kb": 20
+        }
+      ]
+    },
+    {
+      "name": "inside-the-definition",
+      "role": "gallery",
+      "alt": "Six steps of the Grasshopper definition, rebuilt to explain it: attractor, carrier, pull, connect, orient, number the kit",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/inside-the-definition-640.webp",
+          "kb": 13
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/inside-the-definition-1024.webp",
+          "kb": 26
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/tideline/inside-the-definition-1600.webp",
+          "kb": 47
+        }
+      ]
+    },
+    {
+      "name": "complex-form-finding",
+      "role": "gif",
+      "alt": "What happens when the wave keeps moving: the crest lifts, the folds follow, settling into the archived complex form",
+      "aspect": 1.9397,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/complex-form-finding-640.webp",
+          "kb": 915
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/complex-form-finding-static-640.webp",
+          "kb": 5
+        }
+      ]
+    },
+    {
+      "name": "wave-option-matrix",
+      "role": "gif",
+      "alt": "An explanatory option matrix: four wave families against panel count, fin depth and rotation, different ways to hide",
+      "aspect": 1.9068,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/wave-option-matrix-640.webp",
+          "kb": 20
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/wave-option-matrix-static-640.webp",
+          "kb": 6
+        }
+      ]
+    },
+    {
+      "name": "glimpse-sight-fan",
+      "role": "gif",
+      "alt": "A visitor at eye height circles the ring: the plan sight fan shows how much of the car each position catches",
+      "aspect": 1.9397,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/glimpse-sight-fan-640.webp",
+          "kb": 638
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/glimpse-sight-fan-static-640.webp",
+          "kb": 10
+        }
+      ]
+    },
+    {
+      "name": "panel-rotation-study",
+      "role": "gif",
+      "alt": "The wave and the visitor stay fixed while the fins rotate, opening and closing the view of the car behind them",
+      "aspect": 1.9397,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/panel-rotation-study-640.webp",
+          "kb": 944
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/panel-rotation-study-static-640.webp",
+          "kb": 12
+        }
+      ]
+    },
+    {
+      "name": "what-makes-an-option",
+      "role": "gallery",
+      "alt": "What makes an option worth building: visibility, reflection and mass weighed together before clearance and rigging",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/what-makes-an-option-640.webp",
+          "kb": 8
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/what-makes-an-option-1024.webp",
+          "kb": 16
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/tideline/what-makes-an-option-1600.webp",
+          "kb": 30
+        }
+      ]
+    },
+    {
+      "name": "exploded-kit",
+      "role": "gallery",
+      "alt": "The kit exploded from the saved construction geometry: a top ring, a base ring and each fin with its own number",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/exploded-kit-640.webp",
+          "kb": 9
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/exploded-kit-1024.webp",
+          "kb": 17
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/tideline/exploded-kit-1600.webp",
+          "kb": 30
+        }
+      ]
+    },
+    {
+      "name": "behind-the-scenes",
+      "role": "gallery",
+      "alt": "Behind the scenes: a mirrored fin carried by hand, 3D-printed prototype rings, and the wave traced on the built frame",
+      "aspect": 1.3077,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/behind-the-scenes-640.webp",
+          "kb": 37
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/behind-the-scenes-1024.webp",
+          "kb": 73
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/tideline/behind-the-scenes-1600.webp",
+          "kb": 140
+        }
+      ]
+    },
+    {
+      "name": "assembly-and-reveal",
+      "role": "gif",
+      "alt": "The build in sequence, the rigging drawn as a schematic: fins placed on the base ring, the top ring closed, then the lift",
+      "aspect": 1.9397,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/assembly-and-reveal-640.webp",
+          "kb": 573
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/assembly-and-reveal-static-640.webp",
+          "kb": 6
+        }
+      ]
+    },
+    {
+      "name": "the-lift",
+      "role": "gallery",
+      "alt": "The reveal in a long exposure: the mirrored enclosure lifts off the car into the rig as visitors gather around it",
+      "aspect": 1.5,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/tideline/the-lift-640.webp",
+          "kb": 61
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/the-lift-1024.webp",
+          "kb": 116
+        }
+      ]
+    }
+  ],
+  "codependent": [
+    {
+      "name": "codependent-cover",
+      "role": "gif",
+      "alt": "The pre-assembly at speed: each white panel slots in upright and each black one lands flat until the booth stands",
+      "aspect": 1.7778,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/codependent-cover-640.webp",
+          "kb": 254
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/codependent-cover-static-640.webp",
+          "kb": 2
+        }
+      ]
+    },
+    {
+      "name": "seaside-night",
+      "role": "hero",
+      "alt": "The booth at night by the sea in Kuwait: interlocking white panels and black shelves form seats, counters and open edges",
+      "aspect": 1.5,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/seaside-night-640.webp",
+          "kb": 37
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/seaside-night-1024.webp",
+          "kb": 78
+        }
+      ]
+    },
+    {
+      "name": "slot-support-gather",
+      "role": "gallery",
+      "alt": "The idea in three moves: slot together, support one another, make room to gather on a lower seat and a higher counter",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/slot-support-gather-640.webp",
+          "kb": 8
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/slot-support-gather-1024.webp",
+          "kb": 16
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/codependent/slot-support-gather-1600.webp",
+          "kb": 29
+        }
+      ]
+    },
+    {
+      "name": "growth-logic",
+      "role": "gallery",
+      "alt": "The growth rule: start with one white, try a direction, add the support, then check space, clearance and mass",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/growth-logic-640.webp",
+          "kb": 10
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/growth-logic-1024.webp",
+          "kb": 20
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/codependent/growth-logic-1600.webp",
+          "kb": 36
+        }
+      ]
+    },
+    {
+      "name": "the-whole-definition",
+      "role": "gallery",
+      "alt": "The whole Grasshopper definition as a flow: two master pieces, design controls, form finding, checks, the kit of parts",
+      "aspect": 0.81,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/the-whole-definition-640.webp",
+          "kb": 18
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/the-whole-definition-1024.webp",
+          "kb": 39
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/codependent/the-whole-definition-1600.webp",
+          "kb": 77
+        }
+      ]
+    },
+    {
+      "name": "growth",
+      "role": "gif",
+      "alt": "The assembly growing part by part, the white, black, seat and counter counts and the estimated mass rising beside it",
+      "aspect": 1.6,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/growth-640.webp",
+          "kb": 65
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/growth-1024.webp",
+          "kb": 96
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/growth-static-640.webp",
+          "kb": 3
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/growth-static-1024.webp",
+          "kb": 5
+        }
+      ]
+    },
+    {
+      "name": "design-space-30-10-1",
+      "role": "gif",
+      "alt": "Thirty generated arrangements laid out, turned to plan, narrowed to ten candidates and then to one: option 29",
+      "aspect": 1.6,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/design-space-30-10-1-640.webp",
+          "kb": 335
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/design-space-30-10-1-1024.webp",
+          "kb": 561
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/design-space-30-10-1-static-640.webp",
+          "kb": 1
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/design-space-30-10-1-static-1024.webp",
+          "kb": 2
+        }
+      ]
+    },
+    {
+      "name": "ten-options",
+      "role": "gallery",
+      "alt": "Ten candidate assemblies side by side with their seeds, sizes, densities and white and black panel counts",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/ten-options-640.webp",
+          "kb": 14
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/ten-options-1024.webp",
+          "kb": 29
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/codependent/ten-options-1600.webp",
+          "kb": 51
+        }
+      ]
+    },
+    {
+      "name": "option-29-in-use",
+      "role": "gallery",
+      "alt": "Option 29 in use: counter panels at 948 mm to stand and talk, seat panels at 408 mm to stay a little longer",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/option-29-in-use-640.webp",
+          "kb": 11
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/option-29-in-use-1024.webp",
+          "kb": 22
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/codependent/option-29-in-use-1600.webp",
+          "kb": 38
+        }
+      ]
+    },
+    {
+      "name": "preassembly",
+      "role": "gif",
+      "alt": "Pre-assembly group by group: each numbered panel placed in order until all thirty-four stand as one connected piece",
+      "aspect": 1.6,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/preassembly-640.webp",
+          "kb": 289
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/preassembly-1024.webp",
+          "kb": 443
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/preassembly-static-640.webp",
+          "kb": 5
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/preassembly-static-1024.webp",
+          "kb": 8
+        }
+      ]
+    },
+    {
+      "name": "model-to-cuts",
+      "role": "gif",
+      "alt": "From model to cutting sheets: master size, corner radius and density change, and the nested sheets update with them",
+      "aspect": 1.6,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/model-to-cuts-640.webp",
+          "kb": 504
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/model-to-cuts-1024.webp",
+          "kb": 755
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/model-to-cuts-static-640.webp",
+          "kb": 11
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/model-to-cuts-static-1024.webp",
+          "kb": 18
+        }
+      ]
+    },
+    {
+      "name": "part-data",
+      "role": "gallery",
+      "alt": "Every part labelled: thirty-four unique IDs with axis, level, position, mass and the stock sheet each one is cut from",
+      "aspect": 1.6,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/part-data-640.webp",
+          "kb": 28
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/part-data-1024.webp",
+          "kb": 57
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/codependent/part-data-1600.webp",
+          "kb": 105
+        }
+      ]
+    },
+    {
+      "name": "reality-check",
+      "role": "gallery",
+      "alt": "On site, some pieces went missing and there were no spares: the team reworking connections so the seats still worked",
+      "aspect": 1.9565,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/reality-check-640.webp",
+          "kb": 24
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/reality-check-1024.webp",
+          "kb": 49
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/codependent/reality-check-1600.webp",
+          "kb": 95
+        }
+      ]
+    },
+    {
+      "name": "the-joints-built",
+      "role": "gallery",
+      "alt": "The joints, built: slotted white and black panels in the workshop and on the stand, every slot fitting its mate",
+      "aspect": 1.9481,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/codependent/the-joints-built-640.webp",
+          "kb": 24
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/the-joints-built-1024.webp",
+          "kb": 47
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/codependent/the-joints-built-1600.webp",
+          "kb": 88
+        }
+      ]
+    }
   ]
 }

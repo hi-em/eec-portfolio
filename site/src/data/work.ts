@@ -118,7 +118,9 @@ const featuredRank = (slug: string): number => {
 // index, and Verve City Walk leads the practice tail ahead of Mars). A
 // slug not listed falls back after the list, newest-first (append-safe).
 // This list orders the WHOLE grid; FEATURED_SLUGS keeps its original
-// membership for the eager-load flag only.
+// membership for the eager-load flag only. (2026-09-27: the grid is now
+// newest first; this list only breaks ties within a month. Tideline and
+// Codependent sit in the practice tail so a future same-month tie has a rank.)
 const CURATED_ORDER: readonly string[] = [
   'sensi',
   'legoarch',
@@ -136,6 +138,8 @@ const CURATED_ORDER: readonly string[] = [
   'astroidal',
   'playscape',
   'homage',
+  'tideline',
+  'codependent',
   'soma-towers',
   'marsception',
   'encounter',
@@ -268,12 +272,15 @@ export const WORK_ENTRIES: WorkEntry[] = ENTRIES.filter((e) => e.kind === 'proje
   .map(toWorkEntry)
   .filter((w): w is WorkEntry => w !== null)
   .sort((a, b) => {
-    // S2 round 6: HER list orders everything; date only breaks ties for
-    // slugs the list does not know yet (future appends).
-    const ra = curatedRank(a.slug)
-    const rb = curatedRank(b.slug)
-    if (ra !== rb) return ra - rb
-    return b.date.localeCompare(a.date)
+    // NEWEST FIRST (Emilie, Gate 3, 2026-09-27, shown three orders on her own
+    // screen): the grid reads as a timeline, like the thoughts list under it.
+    // This supersedes S2 round 6, where her list ordered everything. The list
+    // survives as the tie-break inside a month (lEgoarCh before Narkomfin,
+    // The Huddle before the Ballooning Market...), so her curation still
+    // decides wherever the calendar cannot.
+    const byDate = b.date.localeCompare(a.date)
+    if (byDate !== 0) return byDate
+    return curatedRank(a.slug) - curatedRank(b.slug)
   })
 
 export function workEntryById(id: string): WorkEntry | undefined {

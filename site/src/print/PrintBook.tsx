@@ -957,8 +957,11 @@ function IndexPage({ side }: { side: PageSide }) {
             no photograph exists (the podcast honestly says LISTEN).
             (S2, 2026-07-16: 20 projects. At 6-across the fourth tile row
             pushed the page 181px past its A4 box, so the index runs 7-across
-            = 3 rows and the page keeps its box; measured live.) */}
-        <div className="pr-index__grid" style={{ gridTemplateColumns: 'repeat(7, 1fr)' }}>
+            = 3 rows and the page keeps its box; measured live.)
+            (2026-09-27, Tideline + Codependent: 23 projects. 8-across = 3 rows
+            again, the same arithmetic as the screen grid at 1400px+, her
+            Gate 3 pick.) */}
+        <div className="pr-index__grid" style={{ gridTemplateColumns: 'repeat(8, 1fr)' }}>
           {WORK_ENTRIES.map(w => {
             // THE TILES ARE HER DRAWINGS (Emilie, 2026-08-11). Each project’s
             // parti from /work, in ink. A photograph printed 36mm wide reads as
@@ -989,7 +992,12 @@ function IndexPage({ side }: { side: PageSide }) {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '1.6mm', marginTop: '1.6mm' }}>
                   <PrLensTick lens={w.lens} size={6} />
-                  <span className="pr-body" style={{ fontSize: '8pt', fontFamily: 'var(--font-display)', fontWeight: 600 }}>
+                  {/* TWO LINES RESERVED (2026-09-27): at 8-across four names
+                      wrap (Narkomfin, Urban Risk, Ballooning, Optimizing), so
+                      every title keeps a two-line box and the origin stamps
+                      share one baseline per row again (the 2026-08-18 rule:
+                      a wrap must never break its row's baseline). */}
+                  <span className="pr-body" style={{ fontSize: '8pt', fontFamily: 'var(--font-display)', fontWeight: 600, minHeight: '2lh' }}>
                     {title}
                   </span>
                 </div>

@@ -492,6 +492,40 @@ export const ENTRIES: RegistryEntry[] = [
     },
     explore: { label: 'FALCON SQUARE', nodeKind: 'project', order: 30 },
   },
+  // DYNAMIC SOLUTION (2026-09-27, Emilie's ask): the two built installations
+  // from the current job. Titles hers; the Nexus event name is never used.
+  {
+    id: 'tideline',
+    kind: 'project',
+    date: '2025-09',
+    title: 'Tideline',
+    lens: 'practice',
+    tags: ['practice', 'geometry'],
+    sheet: sheet('P-122', 'in-preparation', 'tideline'),
+    project: 'tideline',
+    image: {
+      slug: 'tideline',
+      name: 'tideline-cover',
+      alt: 'The wave ring finding its form: a red crest line lifts and the sixty folded fins follow it around the enclosure',
+    },
+    explore: { label: 'TIDELINE', nodeKind: 'project', order: 41 },
+  },
+  {
+    id: 'codependent',
+    kind: 'project',
+    date: '2024-12',
+    title: 'Codependent',
+    lens: 'practice',
+    tags: ['practice', 'geometry'],
+    sheet: sheet('P-123', 'in-preparation', 'codependent'),
+    project: 'codependent',
+    image: {
+      slug: 'codependent',
+      name: 'codependent-cover',
+      alt: 'The pre-assembly at speed: each white panel slots in upright and each black one lands flat until the booth stands',
+    },
+    explore: { label: 'CODEPENDENT', nodeKind: 'project', order: 42 },
+  },
   {
     id: 'astroidal',
     kind: 'project',
@@ -1512,6 +1546,10 @@ export const CORRELATIONS: readonly Correlation[] = [
   ['adjacency', 'plant', 2], // the same rooms with and without doors: arrangement, again
   ['sensi', 'plant', 2], // the coupling matrix: the score lives in the relations
   ['plant', 'dark', 1], // the fortnight of reading this question started is where the silence note came from; both notes say so
+  // ---- DYNAMIC SOLUTION (2026-09-27), the threads she approved at Gate 2 --
+  ['codependent', 'rules', 2], // DEC 2024 -> OCT 2025: connection rules grow the assembly, the definition decides
+  ['tideline', 'rules', 2], // SEP 2025 -> OCT 2025: one attractor curve, sixty fins, the rule makes the form
+  ['tideline', 'neuroaes', 1], // SEP 2025 -> DEC 2025: attention drawn by glimpses and reflections
 ]
 
 // THE PAIRS SHE HAS LOOKED AT AND RULED ARE NOT NEAR-MISSES (2026-08-07).

@@ -457,5 +457,27 @@
     ],
     "x": 817,
     "y": 318
+  },
+  {
+    "id": "tideline",
+    "kind": "project",
+    "lens": "p",
+    "award": false,
+    "threads": [
+      "GEOMETRY"
+    ],
+    "x": 726,
+    "y": 619
+  },
+  {
+    "id": "codependent",
+    "kind": "project",
+    "lens": "p",
+    "award": false,
+    "threads": [
+      "GEOMETRY"
+    ],
+    "x": 689,
+    "y": 544
   }
 ]

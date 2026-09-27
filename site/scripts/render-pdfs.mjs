@@ -397,7 +397,8 @@ async function assertLinks(bytes, spreads, workCount, footWorkHrefs) {
   // report 0 and ">= 0" would pass. The registry's own count is pinned at
   // exactly 21 in validate-registry.test.ts; restating it here as an
   // independent expectation makes the scrape falsifiable.
-  check(workCount === 21, `the index page draws all 21 project tiles (found ${workCount})`)
+  // (21 -> 23 on 2026-09-27: Tideline + Codependent; the index runs 8-across.)
+  check(workCount === 23, `the index page draws all 23 project tiles (found ${workCount})`)
   const idx = pages[pages.length - 2].uris.filter(u => u.includes('/work/')).length
   check(idx === workCount, `the index reaches exactly ${workCount} projects (found ${idx})`)
 
