@@ -928,6 +928,20 @@ li[data-glow] > button {
    card shipped a black silhouette instead of her drawing (Mars read as a
    blob). Same four classes as .pr-art (here, not print.css: the card is not a .pr-doc, so the --pr-* tokens never reach it), in the card's own lang tokens and the logo's red, weighted for a 1200px card that is
    mostly seen at ~500px in a feed. */
+/* THE THOUGHT CARDS' CAPTION (her note, 2026-09-27, on T-120). A thought's
+   plate is its whole note figure, caption and rules included, so on every
+   thought card the caption ran under the opening line and off the right edge,
+   and the figure's hairlines crossed the header. On a card the drawing is the
+   picture and the line on the left says the rest: the caption and the rules
+   stay in the note. */
+.og-plate .thought-fig {
+  margin: 0;
+  padding: 18px 0 0; /* the drawing keeps the height it always sat at */
+  border: 0;
+}
+.og-plate .thought-fig figcaption {
+  display: none;
+}
 .og-plate svg {
   display: block;
   width: 100%;

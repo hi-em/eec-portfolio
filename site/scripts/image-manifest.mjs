@@ -965,6 +965,10 @@ export const MANIFEST = {
   // as an animated webp from its gif (the mp4 twins and posters stay out).
   // Cover = a crop of the complex form-finding clip, her pick (D), so it is a
   // made-up cut (coverMontage in tideline.ts); the full board is its own page.
+  // HIGH QUALITY (her note after review, 2026-09-27): every clip is rebuilt
+  // from its MP4 (1440 px, 20 fps; the gifs were 900 px, 256 colours) at
+  // 1024 px / 12 fps, and encoded at quality 92 (covers 90) with smart
+  // subsampling via the per-entry quality field.
   // HONESTY: the diagram boards were rebuilt after the project from its saved
   // Rhino geometry to explain it; their alts say so. The photographs are the
   // real event, colour-graded only (her answer, 2026-09-27). Dropped:
@@ -972,7 +976,7 @@ export const MANIFEST = {
   // definition), 01-enclosure + 07-archived-alternatives (duplicates).
   tideline: [
     {
-      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/tideline-cover.webp', role: 'gif', name: 'tideline-cover',
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/tideline-cover.webp', role: 'gif', name: 'tideline-cover', quality: 88,
       alt: 'The wave ring finding its form: a red crest line lifts and the sixty folded fins follow it around the enclosure',
     },
     {
@@ -984,7 +988,7 @@ export const MANIFEST = {
       alt: 'The visit as a sequence: the enclosure draws you in, reflects the room, offers glimpses, then rises to reveal the car',
     },
     {
-      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/wave-attractor-study.webp', role: 'gif', name: 'wave-attractor-study',
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/wave-attractor-study.webp', role: 'gif', name: 'wave-attractor-study', quality: 92,
       alt: 'Explanatory rebuild from the saved Rhino curve: the sea-wave attractor meets each vertical line and sets its fin',
     },
     {
@@ -992,19 +996,19 @@ export const MANIFEST = {
       alt: 'Six steps of the Grasshopper definition, rebuilt to explain it: attractor, carrier, pull, connect, orient, number the kit',
     },
     {
-      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/complex-form-finding.webp', role: 'gif', name: 'complex-form-finding',
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/complex-form-finding.webp', role: 'gif', name: 'complex-form-finding', quality: 92,
       alt: 'What happens when the wave keeps moving: the crest lifts, the folds follow, settling into the archived complex form',
     },
     {
-      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/wave-option-matrix.webp', role: 'gif', name: 'wave-option-matrix',
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/wave-option-matrix.webp', role: 'gif', name: 'wave-option-matrix', quality: 92,
       alt: 'An explanatory option matrix: four wave families against panel count, fin depth and rotation, different ways to hide',
     },
     {
-      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/glimpse-sight-fan.webp', role: 'gif', name: 'glimpse-sight-fan',
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/glimpse-sight-fan.webp', role: 'gif', name: 'glimpse-sight-fan', quality: 92,
       alt: 'A visitor at eye height circles the ring: the plan sight fan shows how much of the car each position catches',
     },
     {
-      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/panel-rotation-study.webp', role: 'gif', name: 'panel-rotation-study',
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/panel-rotation-study.webp', role: 'gif', name: 'panel-rotation-study', quality: 92,
       alt: 'The wave and the visitor stay fixed while the fins rotate, opening and closing the view of the car behind them',
     },
     {
@@ -1020,7 +1024,7 @@ export const MANIFEST = {
       alt: 'Behind the scenes: a mirrored fin carried by hand, 3D-printed prototype rings, and the wave traced on the built frame',
     },
     {
-      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/assembly-and-reveal.webp', role: 'gif', name: 'assembly-and-reveal',
+      src: 'work/dynamic-solutions-co/lincoln-booth-wave-structure/final-assets/assembly-and-reveal.webp', role: 'gif', name: 'assembly-and-reveal', quality: 92,
       alt: 'The build in sequence, the rigging drawn as a schematic: fins placed on the base ring, the top ring closed, then the lift',
     },
     {
@@ -1038,7 +1042,7 @@ export const MANIFEST = {
   // long ones at 2x; the five posters stay out.
   codependent: [
     {
-      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/codependent-cover.webp', role: 'gif', name: 'codependent-cover',
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/codependent-cover.webp', role: 'gif', name: 'codependent-cover', quality: 90,
       alt: 'The pre-assembly at speed: each white panel slots in upright and each black one lands flat until the booth stands',
     },
     {
@@ -1058,11 +1062,11 @@ export const MANIFEST = {
       alt: 'The whole Grasshopper definition as a flow: two master pieces, design controls, form finding, checks, the kit of parts',
     },
     {
-      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/growth.webp', role: 'gif', name: 'growth',
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/growth.webp', role: 'gif', name: 'growth', quality: 92,
       alt: 'The assembly growing part by part, the white, black, seat and counter counts and the estimated mass rising beside it',
     },
     {
-      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/design-space-30-10-1.webp', role: 'gif', name: 'design-space-30-10-1',
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/design-space-30-10-1.webp', role: 'gif', name: 'design-space-30-10-1', quality: 92,
       alt: 'Thirty generated arrangements laid out, turned to plan, narrowed to ten candidates and then to one: option 29',
     },
     {
@@ -1074,11 +1078,11 @@ export const MANIFEST = {
       alt: 'Option 29 in use: counter panels at 948 mm to stand and talk, seat panels at 408 mm to stay a little longer',
     },
     {
-      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/preassembly.webp', role: 'gif', name: 'preassembly',
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/preassembly.webp', role: 'gif', name: 'preassembly', quality: 92,
       alt: 'Pre-assembly group by group: each numbered panel placed in order until all thirty-four stand as one connected piece',
     },
     {
-      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/model-to-cuts.webp', role: 'gif', name: 'model-to-cuts',
+      src: 'work/dynamic-solutions-co/nexus-booth-modular-design/final-assets/model-to-cuts.webp', role: 'gif', name: 'model-to-cuts', quality: 92,
       alt: 'From model to cutting sheets: master size, corner radius and density change, and the nested sheets update with them',
     },
     {

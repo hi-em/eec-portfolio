@@ -73,7 +73,11 @@ for (const [slug, items] of Object.entries(MANIFEST)) {
       const out = join(outDir, name)
       const r = await sharp(src, { animated: isGif, limitInputPixels: false })
         .resize(...resizeArgs(w))
-        .webp({ quality: isGif ? 74 : 82, effort: 4 })
+        // item.quality (Emilie, 2026-09-27: "high quality gifs"): a manifest
+        // entry can lift its own quality above the site default, and then
+        // gets smart chroma subsampling too, which keeps thin red lines and
+        // small text from smearing. Only entries that ask for it change.
+        .webp({ quality: item.quality ?? (isGif ? 74 : 82), effort: 4, smartSubsample: !!item.quality })
         .toFile(out)
       totalBytes += r.size
       variants.push({ w, file: `assets/projects/${slug}/${name}`, kb: Math.round(r.size / 1024) })

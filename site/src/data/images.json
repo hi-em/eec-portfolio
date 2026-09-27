@@ -4187,14 +4187,24 @@
         {
           "w": 640,
           "file": "assets/projects/tideline/tideline-cover-640.webp",
-          "kb": 725
+          "kb": 1224
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/tideline-cover-1024.webp",
+          "kb": 2040
         }
       ],
       "static": [
         {
           "w": 640,
           "file": "assets/projects/tideline/tideline-cover-static-640.webp",
-          "kb": 5
+          "kb": 8
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/tideline-cover-static-1024.webp",
+          "kb": 13
         }
       ]
     },
@@ -4249,12 +4259,12 @@
         {
           "w": 640,
           "file": "assets/projects/tideline/wave-attractor-study-640.webp",
-          "kb": 148
+          "kb": 798
         },
         {
           "w": 1024,
           "file": "assets/projects/tideline/wave-attractor-study-1024.webp",
-          "kb": 232
+          "kb": 1340
         }
       ],
       "static": [
@@ -4266,7 +4276,7 @@
         {
           "w": 1024,
           "file": "assets/projects/tideline/wave-attractor-study-static-1024.webp",
-          "kb": 20
+          "kb": 22
         }
       ]
     },
@@ -4297,13 +4307,18 @@
       "name": "complex-form-finding",
       "role": "gif",
       "alt": "What happens when the wave keeps moving: the crest lifts, the folds follow, settling into the archived complex form",
-      "aspect": 1.9397,
+      "aspect": 1.9394,
       "animated": true,
       "variants": [
         {
           "w": 640,
           "file": "assets/projects/tideline/complex-form-finding-640.webp",
-          "kb": 915
+          "kb": 2380
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/complex-form-finding-1024.webp",
+          "kb": 4295
         }
       ],
       "static": [
@@ -4311,6 +4326,11 @@
           "w": 640,
           "file": "assets/projects/tideline/complex-form-finding-static-640.webp",
           "kb": 5
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/complex-form-finding-static-1024.webp",
+          "kb": 10
         }
       ]
     },
@@ -4318,13 +4338,18 @@
       "name": "wave-option-matrix",
       "role": "gif",
       "alt": "An explanatory option matrix: four wave families against panel count, fin depth and rotation, different ways to hide",
-      "aspect": 1.9068,
+      "aspect": 1.9104,
       "animated": true,
       "variants": [
         {
           "w": 640,
           "file": "assets/projects/tideline/wave-option-matrix-640.webp",
-          "kb": 20
+          "kb": 220
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/wave-option-matrix-1024.webp",
+          "kb": 311
         }
       ],
       "static": [
@@ -4332,6 +4357,11 @@
           "w": 640,
           "file": "assets/projects/tideline/wave-option-matrix-static-640.webp",
           "kb": 6
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/wave-option-matrix-static-1024.webp",
+          "kb": 12
         }
       ]
     },
@@ -4339,20 +4369,30 @@
       "name": "glimpse-sight-fan",
       "role": "gif",
       "alt": "A visitor at eye height circles the ring: the plan sight fan shows how much of the car each position catches",
-      "aspect": 1.9397,
+      "aspect": 1.9394,
       "animated": true,
       "variants": [
         {
           "w": 640,
           "file": "assets/projects/tideline/glimpse-sight-fan-640.webp",
-          "kb": 638
+          "kb": 1795
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/glimpse-sight-fan-1024.webp",
+          "kb": 3144
         }
       ],
       "static": [
         {
           "w": 640,
           "file": "assets/projects/tideline/glimpse-sight-fan-static-640.webp",
-          "kb": 10
+          "kb": 11
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/glimpse-sight-fan-static-1024.webp",
+          "kb": 19
         }
       ]
     },
@@ -4360,13 +4400,18 @@
       "name": "panel-rotation-study",
       "role": "gif",
       "alt": "The wave and the visitor stay fixed while the fins rotate, opening and closing the view of the car behind them",
-      "aspect": 1.9397,
+      "aspect": 1.9394,
       "animated": true,
       "variants": [
         {
           "w": 640,
           "file": "assets/projects/tideline/panel-rotation-study-640.webp",
-          "kb": 944
+          "kb": 2475
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/panel-rotation-study-1024.webp",
+          "kb": 4345
         }
       ],
       "static": [
@@ -4374,6 +4419,11 @@
           "w": 640,
           "file": "assets/projects/tideline/panel-rotation-study-static-640.webp",
           "kb": 12
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/panel-rotation-study-static-1024.webp",
+          "kb": 21
         }
       ]
     },
@@ -4450,20 +4500,30 @@
       "name": "assembly-and-reveal",
       "role": "gif",
       "alt": "The build in sequence, the rigging drawn as a schematic: fins placed on the base ring, the top ring closed, then the lift",
-      "aspect": 1.9397,
+      "aspect": 1.9394,
       "animated": true,
       "variants": [
         {
           "w": 640,
           "file": "assets/projects/tideline/assembly-and-reveal-640.webp",
-          "kb": 573
+          "kb": 2197
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/assembly-and-reveal-1024.webp",
+          "kb": 3515
         }
       ],
       "static": [
         {
           "w": 640,
           "file": "assets/projects/tideline/assembly-and-reveal-static-640.webp",
-          "kb": 6
+          "kb": 7
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/tideline/assembly-and-reveal-static-1024.webp",
+          "kb": 13
         }
       ]
     },
@@ -4497,7 +4557,12 @@
         {
           "w": 640,
           "file": "assets/projects/codependent/codependent-cover-640.webp",
-          "kb": 254
+          "kb": 547
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/codependent-cover-1024.webp",
+          "kb": 848
         }
       ],
       "static": [
@@ -4505,6 +4570,11 @@
           "w": 640,
           "file": "assets/projects/codependent/codependent-cover-static-640.webp",
           "kb": 2
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/codependent/codependent-cover-static-1024.webp",
+          "kb": 4
         }
       ]
     },
@@ -4605,12 +4675,12 @@
         {
           "w": 640,
           "file": "assets/projects/codependent/growth-640.webp",
-          "kb": 65
+          "kb": 263
         },
         {
           "w": 1024,
           "file": "assets/projects/codependent/growth-1024.webp",
-          "kb": 96
+          "kb": 367
         }
       ],
       "static": [
@@ -4622,7 +4692,7 @@
         {
           "w": 1024,
           "file": "assets/projects/codependent/growth-static-1024.webp",
-          "kb": 5
+          "kb": 6
         }
       ]
     },
@@ -4636,12 +4706,12 @@
         {
           "w": 640,
           "file": "assets/projects/codependent/design-space-30-10-1-640.webp",
-          "kb": 335
+          "kb": 793
         },
         {
           "w": 1024,
           "file": "assets/projects/codependent/design-space-30-10-1-1024.webp",
-          "kb": 561
+          "kb": 1352
         }
       ],
       "static": [
@@ -4713,12 +4783,12 @@
         {
           "w": 640,
           "file": "assets/projects/codependent/preassembly-640.webp",
-          "kb": 289
+          "kb": 894
         },
         {
           "w": 1024,
           "file": "assets/projects/codependent/preassembly-1024.webp",
-          "kb": 443
+          "kb": 1335
         }
       ],
       "static": [
@@ -4730,7 +4800,7 @@
         {
           "w": 1024,
           "file": "assets/projects/codependent/preassembly-static-1024.webp",
-          "kb": 8
+          "kb": 9
         }
       ]
     },
@@ -4744,12 +4814,12 @@
         {
           "w": 640,
           "file": "assets/projects/codependent/model-to-cuts-640.webp",
-          "kb": 504
+          "kb": 1341
         },
         {
           "w": 1024,
           "file": "assets/projects/codependent/model-to-cuts-1024.webp",
-          "kb": 755
+          "kb": 2135
         }
       ],
       "static": [
@@ -4761,7 +4831,7 @@
         {
           "w": 1024,
           "file": "assets/projects/codependent/model-to-cuts-static-1024.webp",
-          "kb": 18
+          "kb": 21
         }
       ]
     },
