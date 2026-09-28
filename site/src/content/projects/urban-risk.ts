@@ -13,7 +13,9 @@ const urbanRisk: ProjectMeta = {
   // Emilie at the constellation gate (2026-07-14): "urban risk was a machine
   // learning project", so the credit row says so in standard vocabulary.
   meta: 'MACAD MACHINE LEARNING · TEAM OF 4',
-  myPart: 'Team of four, all hands on everything.',
+  where: 'IAAC · MACAD MACHINE LEARNING',
+  who: 'TEAM OF 4',
+  myPart: 'python feature encoding and the assessment interface',
   dek: 'Street shape alone predicts crime poorly. Saying precisely where the certainty ends was the most honest thing the pipeline produced.',
   dekSigned: true, // Emilie, S4b copy gate, 2026-07-14
   // THE QUESTION (D4 round 2, Emilie's phrasing 2026-07-14: "can we predict

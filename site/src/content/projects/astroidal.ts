@@ -10,6 +10,8 @@ const astroidal: ProjectMeta = {
   title: 'Astroidal Ellipsoid',
   lens: 'explorations',
   meta: 'MACAD BOOTCAMP · SEMINAR 3',
+  where: 'IAAC · MACAD BOOTCAMP · SEMINAR 3',
+  who: 'SOLO',
   dek: 'Six coefficients, one scripted surface: an astroidal ellipsoid pushed until it can hold a floor plan.',
   dekSigned: true, // SIGNED by Emilie (S2 sign-off, 2026-07-17)
   question: 'Can a math equation become a building?',

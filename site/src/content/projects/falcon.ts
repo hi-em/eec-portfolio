@@ -22,7 +22,9 @@ const falcon: ProjectMeta = {
   // sketch"), woven as an ordinary sentence, which is where the brief’s floor
   // puts a credit and why no page gains a PROJECT LEAD chip.
   meta: 'JEMMA CHIDIAC ARCHITECTS · 2022',
-  myPart: 'I led the design from the first aircraft sketches to the proposal, as an architectural designer at Jemma Chidiac Architects.',
+  where: 'JEMMA CHIDIAC ARCHITECTS',
+  who: 'PRACTICE TEAM',
+  myPart: 'led the design, sketches to proposal, rhino subd',
   dek: 'An aircraft’s takeoff lines become a steel falcon: a monument for Al Khobar, led from the first sketch.',
   dekSigned: true, // SIGNED by Emilie (S2 sign-off, 2026-07-17)
   question: "Can an airplane’s takeoff become a monument?",
@@ -95,7 +97,7 @@ const falcon: ProjectMeta = {
     { slug: 'falcon', name: 'site-plan' },
   ],
   links: [
-    { label: 'JEMMA CHIDIAC · PROJECT', href: 'https://jemmachidiacarchitects.com/projects/midan-chahine/' },
+    { label: 'PROJECT @ JEMMA CHIDIAC', href: 'https://jemmachidiacarchitects.com/projects/midan-chahine/' },
   ],
   // Round 3 cover: a 6s cut of HER teaser video (real footage, so it stays
   // a deck page; the earlier created crossfade retired per her rule).

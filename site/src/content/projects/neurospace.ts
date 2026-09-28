@@ -16,6 +16,8 @@ const neurospace: ProjectMeta = {
   // · LIVE APP left the meta string 2026-08-20 (the TEAM-label ruling; see
   // sensi.ts). The book still prints it via `liveApp`.
   meta: 'MACAD · SOLO',
+  where: 'IAAC · MACAD',
+  who: 'SOLO',
   liveApp: true,
   dek: 'Your room is doing something to you right now: move a slider and watch a browser score it live.',
   dekSigned: true,
@@ -41,7 +43,7 @@ const neurospace: ProjectMeta = {
     // half-broken demo unwarned. Emilie’s voice for it ("maybe try it, almost").
     // CONSTRAINT: `live` must survive as a standalone word or the red liveness
     // dot in the links row (WorkOverlay’s /\blive\b/i test) silently vanishes.
-    { label: 'TRY IT LIVE, ALMOST · NO 3D', href: 'https://hi-em.github.io/neurospace' },
+    { label: 'TRY IT LIVE, ALMOST (NO 3D)', href: 'https://hi-em.github.io/neurospace' },
     { label: 'GITHUB', href: 'https://github.com/hi-em/neurospace' },
     { label: 'BLOG', href: 'https://blog.iaac.net/the-data-pipeline-behind-neurospace-from-sliders-to-synapses/' },
   ],

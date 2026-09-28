@@ -18,7 +18,8 @@ const homage: ProjectMeta = {
   title: 'The Homage',
   lens: 'explorations',
   meta: 'LAU THESIS · TRIPOLI · 2023',
-  myPart: 'My bachelor thesis at LAU, supervised by Issam Barhouch.',
+  where: 'LAU THESIS · TRIPOLI',
+  who: 'SOLO',
   dek: 'A homage to Oscar Niemeyer’s unfinished fair in Tripoli: the housing bar brought back to life, past, present and future in one section.',
   dekSigned: true, // SIGNED by Emilie (S2 sign-off, 2026-07-17)
   // THE QUESTION (D4, S2 draft): search-shaped, the way someone would ask it.

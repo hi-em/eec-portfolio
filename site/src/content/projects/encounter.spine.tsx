@@ -19,7 +19,7 @@ const spine: ProjectSpine = {
       Anfeh: concentric crescents of semi-buried, planted tombs rotating around a sunken court,
       with a slit-lit chapel, a condolences hall and a split bell tower crossing the terraces. As
       an architectural designer at Jemma Chidiac Architects, my part was concept support, the
-      planning of the landscape, the trials for the tomb details, and rendering alongside the
+      planning of the landscape, the trials for the tomb details and rendering alongside the
       team.
     </>
   ),

@@ -540,7 +540,7 @@ describe('the ATS CV page', () => {
     const mastersDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'content', 'projects')
     const NOT_A_PROJECT = new Set(['index.ts', 'types.ts', 'spines.eager.ts'])
     const metaFiles = readdirSync(mastersDir).filter(
-      f => f.endsWith('.ts') && !f.endsWith('.spine.ts') && !NOT_A_PROJECT.has(f),
+      f => f.endsWith('.ts') && !f.endsWith('.spine.ts') && !f.endsWith('.test.ts') && !NOT_A_PROJECT.has(f),
     )
     // 21 -> 23 on 2026-09-27: Tideline + Codependent (Dynamic Solution).
     expect(metaFiles.length).toBe(23)

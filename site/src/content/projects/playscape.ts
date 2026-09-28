@@ -10,6 +10,8 @@ const playscape: ProjectMeta = {
   title: 'A Playscape',
   lens: 'explorations',
   meta: 'MACAD BOOTCAMP · JUST FOR FUN',
+  where: 'IAAC · MACAD BOOTCAMP · JUST FOR FUN',
+  who: 'SOLO',
   dek: 'Pressure goals inflate the mounds, two nets drop and settle on top: a playground form found in Kangaroo, just for fun.',
   dekSigned: true, // SIGNED by Emilie (S2 sign-off, 2026-07-17)
   question: 'What happens when you drop a climbing net on balloons?',

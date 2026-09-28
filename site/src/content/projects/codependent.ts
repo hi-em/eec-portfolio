@@ -18,7 +18,9 @@ const codependent: ProjectMeta = {
   title: 'Codependent',
   lens: 'practice',
   meta: 'DYNAMIC SOLUTION · KUWAIT · 2024',
-  myPart: 'Design lead at Dynamic Solution: the concept, the Grasshopper definition and the fabrication files.',
+  where: 'DYNAMIC SOLUTION · KUWAIT',
+  who: 'PRACTICE TEAM',
+  myPart: 'design lead: concept, grasshopper, cnc cutting files',
   dek: 'Two interlocking wooden panels, no glue or screws: seats and counters that stand only because each piece holds up another.',
   dekSigned: true, // SIGNED by Emilie (Gate 2, 2026-09-27)
   question: 'What if no piece could stand on its own?',

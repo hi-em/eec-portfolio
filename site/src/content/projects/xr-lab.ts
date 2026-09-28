@@ -19,6 +19,9 @@ const xrLab: ProjectMeta = {
   title: 'XR for Education',
   lens: 'explorations',
   meta: 'LAU XR LAB · RESEARCH ASSISTANT · 2021-23',
+  where: 'LAU XR LAB',
+  who: 'LAB TEAM',
+  myPart: 'research assistant: maya models, ar, unity vr builds',
   dek: 'Where the XR thread started: point a phone at a molecule and watch it react in the room.',
   dekSigned: true,
   // THE QUESTION (D4 round 2, Emilie 2026-07-14). Question + dot set SIGNED

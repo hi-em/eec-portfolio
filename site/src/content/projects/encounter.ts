@@ -16,7 +16,9 @@ const encounter: ProjectMeta = {
   title: 'The Encounter',
   lens: 'practice',
   meta: 'JEMMA CHIDIAC ARCHITECTS · ANFEH · 2022',
-  myPart: 'Concept support, landscape planning, tomb detail trials, and renders, as an architectural designer at Jemma Chidiac Architects.',
+  where: 'JEMMA CHIDIAC ARCHITECTS · ANFEH',
+  who: 'PRACTICE TEAM',
+  myPart: 'concept support, landscape, tomb details, renders',
   dek: 'A cemetery for Anfeh that rotates around life: planted tomb terraces circling a sunken court, shortlisted as finalist.',
   dekSigned: true, // SIGNED by Emilie (S2 sign-off, 2026-07-17)
   question: 'Can a cemetery be designed around life instead of loss?',
@@ -29,7 +31,7 @@ const encounter: ProjectMeta = {
   awardShort: 'SHORTLISTED',
   tech: 'SKETCHUP · AUTOCAD · PHOTOSHOP',
   links: [
-    { label: 'JEMMA CHIDIAC · PROJECT', href: 'https://jemmachidiacarchitects.com/projects/anfeh-cemetery/' },
+    { label: 'PROJECT @ JEMMA CHIDIAC', href: 'https://jemmachidiacarchitects.com/projects/anfeh-cemetery/' },
   ],
   image: {
     slug: 'encounter',

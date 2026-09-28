@@ -1127,8 +1127,19 @@ export default function WorkOverlay({ entry, onClose }: { entry: WorkEntry; onCl
                   )}
                 </>
               )}
-              <span className="text-[0.85em] tracking-[0.15em] opacity-70">TEAM</span>
-              <span className="lowercase">{entry.meta}</span>
+              {/* WHERE · WHO · MY PART (ruling 96, 2026-09-28) replaced the
+                  TEAM row, which held context rather than a team on 10 of 23
+                  sheets. Same rows, same words on the book plate. */}
+              <span className="text-[0.85em] tracking-[0.15em] opacity-70">WHERE</span>
+              <span className="lowercase">{entry.where}</span>
+              <span className="text-[0.85em] tracking-[0.15em] opacity-70">WHO</span>
+              <span className="lowercase">{entry.who}</span>
+              {entry.myPart && (
+                <>
+                  <span className="text-[0.85em] tracking-[0.15em] opacity-70">MY PART</span>
+                  <span className="lowercase">{entry.myPart}</span>
+                </>
+              )}
               <span className="text-[0.85em] tracking-[0.15em] opacity-70">STACK</span>
               <span className="lowercase">{entry.tech}</span>
               {/* LINKS IS THE FIFTH ROW (her C ruling off the six real

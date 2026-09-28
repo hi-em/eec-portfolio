@@ -31,7 +31,7 @@ const spine: ProjectSpine = {
   ),
   how: [
     <>
-      Research 3D printing on Mars: regolith melted into paste, printed by drone robotics, and
+      Research 3D printing on Mars: regolith melted into paste, printed by drone robotics and
       shaped so every surface stands at an angle that needs no support, because we all hate
       support with 3D printers.
     </>,

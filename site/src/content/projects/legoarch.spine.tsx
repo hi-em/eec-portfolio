@@ -36,7 +36,7 @@ const spine: ProjectSpine = {
     </>,
     <>TRELLIS lifts the render into a 3D mesh, and the mesh is voxelized into brick space.</>,
     <>
-      An optimizer places real catalog bricks into the voxels, enforcing connectivity, support,
+      An optimizer places real catalog bricks into the voxels, enforcing connectivity, support
       and perceptual color accuracy.
     </>,
     <>The set exports as LDraw, the format the brick world already speaks.</>,

@@ -558,7 +558,11 @@
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 3mm;
-  row-gap: 1.3mm;
+  /* 1.3 → 0.7mm, and the padding floor below 4.5 → 1.5mm (her rulings,
+     2026-09-28): WHERE · WHO · MY PART made the ledger seven rows, and on the
+     tightest plates (Sensi, lEgoarCh, Huddle, Verve) only both together keep
+     it on the hero's baseline. Measured on all eight plates. */
+  row-gap: 0.7mm;
   align-items: baseline;
   /* THE ANCHOR (the File Card, 2026-08-20): auto takes ALL the cell's free
      height, so the ledger + live row stand on the cell's foot — the same
@@ -566,7 +570,7 @@
      band under the question instead of 6–17mm pooling invisibly down here.
      The padding is the floor that air can never drop below. */
   margin-top: auto;
-  padding-top: 4.5mm;
+  padding-top: 1.5mm;
 }
 .pr-plate-grid__label {
   font-size: 5.6pt; /* the mono scale's smallest lawful rung */

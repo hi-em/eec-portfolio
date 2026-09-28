@@ -21,6 +21,9 @@ const sensi: ProjectMeta = {
   // why the segment joined on 2026-08-19 when Sensi moved to her own GitHub
   // and went up as a public demo.
   meta: 'MACAD STUDIO · TEAM OF 4',
+  where: 'IAAC · MACAD STUDIO',
+  who: 'TEAM OF 4',
+  myPart: 'project lead; built agent, evals, react ui, deploy',
   liveApp: true,
   award: 'MACAD AWARDS 2026 · DESIGN COPILOTS · WINNER',
   awardShort: "MACAD '26 WINNER",
@@ -31,7 +34,6 @@ const sensi: ProjectMeta = {
   // words); the searchable people-question moved into alsoAnswers (the
   // question dot). Verb rule holds: score, never measure. Question + dot set SIGNED by Emilie (REINDEX batch A, 2026-07-16).
   question: 'When you fix one sense in a floor plan, what happens to the other five?',
-  myPart: 'Project lead in a team of four; framed together, built by me: agent, evals, interface, deploy.',
   stat: 'LLM BENCH · 2 PROVIDERS × 3 SCENES',
   tech: 'PYTHON · LANGGRAPH · FASTAPI · REACT',
   // SENSI MOVED HOUSE (2026-08-19). The code used to live in the studio's
@@ -45,8 +47,8 @@ const sensi: ProjectMeta = {
   // caveat earns it, which is why NeuroSpace's says ALMOST.
   links: [
     { label: 'LIVE APP', href: 'https://sensi.emiliechidiac.com' },
-    { label: 'BLOG', href: 'https://blog.iaac.net/sensi-making-comfort-a-design-layer/' },
     { label: 'GITHUB', href: 'https://github.com/hi-em/sensi' },
+    { label: 'BLOG', href: 'https://blog.iaac.net/sensi-making-comfort-a-design-layer/' },
   ],
   // THE COVER = THE GALAXY (Emilie’s pick at the desk, 2026-07-14): the sense
   // constellation sits still on the card and ripples on hover, rhyming with

@@ -585,8 +585,19 @@ function Spread({ data, side, plate, page }: { data: SpreadData; side: PageSide;
             <span className="pr-mono--muted pr-plate-grid__award">{entry.recognition}</span>
           </>
         )}
-        <span className="pr-plate-grid__label">TEAM</span>
-        <span className="pr-mono--muted">{rail(master.meta)}</span>
+        {/* WHERE · WHO · MY PART, the site's rows word for word (ruling 96).
+            Seven rows stand on the hero's baseline only at the tightened
+            row gap (print.css), measured on Sensi, lEgoarCh and Huddle. */}
+        <span className="pr-plate-grid__label">WHERE</span>
+        <span className="pr-mono--muted">{rail(master.where)}</span>
+        <span className="pr-plate-grid__label">WHO</span>
+        <span className="pr-mono--muted">{master.who}</span>
+        {master.myPart && (
+          <>
+            <span className="pr-plate-grid__label">MY PART</span>
+            <span className="pr-mono--muted">{master.myPart}</span>
+          </>
+        )}
         <span className="pr-plate-grid__label">STACK</span>
         <span className="pr-mono--muted">{rail(master.tech)}</span>
         {(master.links?.length ?? 0) > 0 && (

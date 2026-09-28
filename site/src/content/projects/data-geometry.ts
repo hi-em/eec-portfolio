@@ -11,7 +11,9 @@ const dataGeometry: ProjectMeta = {
   title: 'Data into Geometry',
   lens: 'computation',
   meta: 'MACAD BIM · DATA TEAM OF 3',
-  myPart: 'Data team of three, shared end to end.',
+  where: 'IAAC · MACAD BIM',
+  who: 'DATA TEAM OF 3',
+  myPart: 'contributed to speckle, rhino.inside revit families',
   dek: 'The data team does not produce geometry, so we turned the numbers into it: KPIs you can stand inside the Revit model and see.',
   dekSigned: true, // Emilie, S4b copy gate, 2026-07-14
   // THE QUESTION (D4 round 2, Emilie 2026-07-14: "good" to the Revit tune).

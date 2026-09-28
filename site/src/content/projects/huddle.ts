@@ -10,8 +10,10 @@ const huddle: ProjectMeta = {
   title: 'The Huddle',
   lens: 'computation',
   meta: 'MACAD STUDIO · TEAM OF 4',
+  where: 'IAAC · MACAD STUDIO',
+  who: 'TEAM OF 4',
+  myPart: 'wasp growth study and panel distribution',
   award: 'STUDIO AWARD',
-  myPart: 'Team of four, all hands on everything.',
   dek: 'Stop fighting the wind and build with it: modules that grow along the gusts instead of bracing against them.',
   dekSigned: true,
   // THE QUESTION (D4 round 2, Emilie 2026-07-14: "okay", lead kept; team of

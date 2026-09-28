@@ -15,11 +15,11 @@ const spine: ProjectSpine = {
   ],
   what: (
     <>
-      An applied machine-learning pipeline that classifies street segments into low, medium, and
+      An applied machine-learning pipeline that classifies street segments into low, medium and
       high risk from morphological features: connectivity, visibility, enclosure, proximity to
       transit. It trains on roughly 36,000 London street segments and stands on the urban safety
       literature, Jacobs to Space Syntax, encoded as measurable features. A team of four, all
-      hands on everything: María Sánchez Domínguez, Charles Abi Chahine, Lakzhmy Mari Zaro, and
+      hands on everything: Charles Abi Chahine, Lakzhmy Mari Zaro, María Sánchez Domínguez and
       me.
     </>
   ),
@@ -36,7 +36,7 @@ const spine: ProjectSpine = {
       literature.
     </>,
     <>
-      Test the model family honestly: regressions, decision trees, random forests, clustering,
+      Test the model family honestly: regressions, decision trees, random forests, clustering
       and a Kohonen map, with SHAP explaining every prediction.
     </>,
     <>

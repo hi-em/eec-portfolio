@@ -19,6 +19,9 @@ const marsception: ProjectMeta = {
   title: 'Rings of Mars: Ring 4000',
   lens: 'practice',
   meta: 'MARSCEPTION COMPETITION · WITH CHARLES ABI CHAHINE',
+  where: 'MARSCEPTION COMPETITION',
+  who: 'WITH CHARLES ABI CHAHINE',
+  myPart: 'concept, rhino subd, 3d printing, ai renders',
   dek: "An early bet that generative tools belonged on an architect's desk, back when that still raised eyebrows.",
   dekSigned: true,
   // THE QUESTION (D4 round 2, Emilie 2026-07-14: she hated the desk line;
@@ -34,7 +37,6 @@ const marsception: ProjectMeta = {
   // TOP 50 alone. VOLUME ZERO stays on the sheet's full award line and
   // everywhere else the long form prints.
   awardShort: 'TOP 50',
-  myPart: 'A two-person entry with Charles Abi Chahine.',
   tech: 'RHINO · SUBD · AI WORKFLOWS · V-RAY',
   links: [],
   // S2 cover: a crossfade cut of the crater hero, the farming interior, the

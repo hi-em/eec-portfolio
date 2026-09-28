@@ -11,6 +11,8 @@ const ballooningMarket: ProjectMeta = {
   title: 'A Ballooning Market',
   lens: 'computation',
   meta: 'MACAD · SOLO',
+  where: 'IAAC · MACAD',
+  who: 'SOLO',
   dek: 'Physics is the difference between a mess and a roof: the balloons ghosted through each other until Kangaroo gave them awareness.',
   dekSigned: true,
   // THE QUESTION (D4 round 2, Emilie 2026-07-14: she hated the mess line as

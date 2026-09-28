@@ -16,7 +16,9 @@ const somaTowers: ProjectMeta = {
   title: 'Verve City Walk',
   lens: 'practice',
   meta: 'SOMA · DESIGN ARCHITECT · 2023-24',
-  myPart: 'Design architect at SOMA: parametric facade studies in Rhino and Grasshopper, carried into the Revit BIM set.',
+  where: 'SOMA',
+  who: 'PRACTICE TEAM',
+  myPart: 'design architect: grasshopper facades, revit bim',
   dek: 'Verve at City Walk, from parametric facade studies to the BIM set.',
   dekSigned: true, // SIGNED by Emilie (S2 sign-off, 2026-07-17)
   // THE QUESTION (D4 round 2, Emilie 2026-07-14: "good", lead kept; still

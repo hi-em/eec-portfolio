@@ -10,7 +10,9 @@ const tsukiji: ProjectMeta = {
   title: 'Tsukiji Fish Market',
   lens: 'computation',
   meta: 'MACAD ENVIRONMENTAL · TEAM OF 4',
-  myPart: 'Team of four, all hands on everything.',
+  where: 'IAAC · MACAD ENVIRONMENTAL',
+  who: 'TEAM OF 4',
+  myPart: 'ladybug simulations, testing if tweaks were enough',
   dek: 'Tokyo’s climate stress-tested a 19-hectare market hall, and the polite tweaks changed nothing: the form itself had to give.',
   dekSigned: true, // Emilie, S4b copy gate, 2026-07-14
   // THE QUESTION (D4 round 2, Emilie 2026-07-14: "okay" to the fusion; the

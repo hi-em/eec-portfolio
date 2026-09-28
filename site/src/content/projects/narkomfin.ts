@@ -13,7 +13,9 @@ const narkomfin: ProjectMeta = {
   title: 'Narkomfin as a Graph',
   lens: 'computation',
   meta: 'MACAD GRAPH ML · TEAM OF 4',
-  myPart: 'Team of four, all hands on everything.',
+  where: 'IAAC · MACAD GRAPH ML',
+  who: 'TEAM OF 4',
+  myPart: 'spatial graphs from the plans in python, centrality',
   dek: 'Read a 1930 experiment in communal living as a graph and its real spatial units turn out to be vertical slices, not rooms.',
   dekSigned: true, // Emilie, S4b copy gate, 2026-07-14
   // THE QUESTION (D4 round 2, Emilie 2026-07-14: "okay" to the one-word tune;

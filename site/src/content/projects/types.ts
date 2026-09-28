@@ -136,8 +136,20 @@ export interface ProjectMeta {
   // frames instead of replaying the reel (podcast quote reel).
   coverMontage?: boolean
   draftCopy?: boolean
-  // Session 7 rulings: myPart NEVER renders as a labeled line; it is woven
-  // into `what` as an ordinary sentence. `stat` = the one defensible number.
+  // THE LEDGER'S CREDIT ROWS (ruling 96, 2026-09-28, reversing Session 7's
+  // "myPart never renders as a labeled line"): recruiters scan a sheet in
+  // seconds, so the credit left the prose for three rows beside each other,
+  // on the sheet AND the book plate. `meta` stays as data (the card kicker,
+  // the book's facing-page rail); the ledger no longer prints it.
+  //   WHERE   the school or firm, never a date ("iaac · macad studio")
+  //   WHO     the team as a count or a kind ("team of 4", "solo")
+  //   MY PART her part only, ONE line on both surfaces: ≤ 52 characters
+  //           (measured: the book's value column, 107mm beside the wider
+  //           label, wraps at 53). Absent on solo work and the podcast (08-19:
+  //           "genuinely co-hosted, don't split"). ledger.test.ts guards it.
+  // The WHAT paragraphs keep naming the team. `stat` = the one defensible number.
+  where: string
+  who: string
   myPart?: string
   stat?: string
   // The card's ONE authored "what it proves" line; the showcase's claim.

@@ -10,6 +10,8 @@ const chairSim: ProjectMeta = {
   title: 'Chair Simulation',
   lens: 'explorations',
   meta: 'MACAD BOOTCAMP · SIMULATION',
+  where: 'IAAC · MACAD BOOTCAMP · SIMULATION',
+  who: 'SOLO',
   dek: 'Kangaroo inflates a pillow under eight sitting poses: every posture molds its own voxel chair.',
   dekSigned: true, // SIGNED by Emilie (S2 sign-off, 2026-07-17)
   question: 'Can your sitting posture design its own chair?',

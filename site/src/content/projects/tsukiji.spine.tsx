@@ -16,10 +16,10 @@ const spine: ProjectSpine = {
   what: (
     <>
       A computational environmental analysis of the proposed 19-hectare redevelopment of Tokyo’s
-      Tsukiji fish market site. We simulated thermal comfort, daylight, wind, and heat mitigation
+      Tsukiji fish market site. We simulated thermal comfort, daylight, wind and heat mitigation
       under a climate that swings from wet and cold to hot and humid inside a single day. A team
-      of four, all hands on everything: María Sánchez Domínguez, Charles Abi Chahine, Lakzhmy
-      Mari Zaro, and me.
+      of four, all hands on everything: Charles Abi Chahine, Lakzhmy Mari Zaro, María Sánchez
+      Domínguez and me.
     </>
   ),
   why: (
@@ -32,7 +32,7 @@ const spine: ProjectSpine = {
   how: [
     <>
       Model the site and venue in Rhino and run Ladybug and Infrared.City across thermal comfort,
-      daylight, wind, and heat.
+      daylight, wind and heat.
     </>,
     <>Test the starting hypothesis: that minor modifications to the original form would be enough.</>,
     <>

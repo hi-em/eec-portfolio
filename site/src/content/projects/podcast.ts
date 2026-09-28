@@ -17,6 +17,8 @@ const podcast: ProjectMeta = {
   title: 'Optimizing for the Mind',
   lens: 'computation',
   meta: 'MACAD PODCAST · CO-HOSTED WITH CHARLES ABI CHAHINE',
+  where: 'IAAC · MACAD PODCAST',
+  who: 'CO-HOSTED WITH CHARLES ABI CHAHINE',
   dek: 'The conversation with Dr. Cleo Valentine where Behavior Information Modeling got its name: architecture as a public health question.',
   dekSigned: true, // re-signed by Emilie off the verbatim rewrite (REINDEX batch B, 2026-07-16)
   // THE QUESTION (D4 round 2, Emilie's direction 2026-07-14): the highest

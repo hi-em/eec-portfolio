@@ -15,7 +15,7 @@ const spine: ProjectSpine = {
   ],
   what: (
     <>
-      Look closely at a piece of pasta: the curves, ridges, and hollows are structural
+      Look closely at a piece of pasta: the curves, ridges and hollows are structural
       engineering in miniature. We scaled up dinner: the equations describing a cappelletti
       became a pavilion shell at human scale, in glass-reinforced recycled PET. A duo with Ahmad
       Baltaji, shared end to end.

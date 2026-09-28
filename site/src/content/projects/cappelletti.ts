@@ -11,7 +11,9 @@ const cappelletti: ProjectMeta = {
   title: 'Cappelletti Pavilion',
   lens: 'explorations',
   meta: 'MACAD STRUCTURAL OPTIMIZATION · WITH AHMAD BALTAJI',
-  myPart: 'A duo with Ahmad Baltaji, shared end to end.',
+  where: 'IAAC · MACAD STRUCTURAL OPTIMIZATION',
+  who: 'WITH AHMAD BALTAJI',
+  myPart: 'cappelletti math in grasshopper, crystallon lattice',
   dek: 'A pasta shape is quietly structural: evolutionary optimization scaled a cappelletti shell to a 160 kg pavilion.',
   dekSigned: true,
   // THE QUESTION (D4 round 2, Emilie 2026-07-14: "good" to the pavilion

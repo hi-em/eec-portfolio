@@ -11,7 +11,7 @@ const spine: ProjectSpine = {
     { q: 'Can a KPI be a building component instead of a row you have to believe?', beat: 'what' },
     { q: 'What happens when the data team has to show up in the model?', beat: 'why' },
     { q: 'How do Rhino.Inside Revit workflows turn performance data into parametric families?', beat: 'how' },
-    { q: 'How does analysis data stay visible all the way to RVT, IFC, and PDF?', beat: 'outcome' },
+    { q: 'How does analysis data stay visible all the way to RVT, IFC and PDF?', beat: 'outcome' },
   ],
   what: (
     <>
@@ -19,9 +19,9 @@ const spine: ProjectSpine = {
       architectural geometry, and that was the problem: if we do not produce geometry, how can
       our work be read spatially inside the model? We built Rhino.Inside Revit workflows that
       turn the studio’s performance metrics into parametric Revit families, so thermal comfort,
-      acoustic impact, and air purification become visible components of the architecture. The
-      same data team of three as The Lungs, shared end to end: María Sánchez Domínguez, Lakzhmy
-      Mari Zaro, and me.
+      acoustic impact and air purification become visible components of the architecture. The
+      same data team of three as The Lungs, shared end to end: Lakzhmy Mari Zaro, María Sánchez
+      Domínguez and me.
     </>
   ),
   why: (
@@ -38,7 +38,7 @@ const spine: ProjectSpine = {
       carrying the analysis results into the model.
     </>,
     <>
-      Automate the views, sheets, and filters, so the model documents itself as RVT, IFC, and
+      Automate the views, sheets and filters, so the model documents itself as RVT, IFC and
       PDF.
     </>,
   ],

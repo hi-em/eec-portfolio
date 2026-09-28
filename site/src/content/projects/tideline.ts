@@ -16,7 +16,9 @@ const tideline: ProjectMeta = {
   title: 'Tideline',
   lens: 'practice',
   meta: 'DYNAMIC SOLUTION · KUWAIT · 2025',
-  myPart: 'Design lead at Dynamic Solution: the concept, the Grasshopper definition and the fabrication files.',
+  where: 'DYNAMIC SOLUTION · KUWAIT',
+  who: 'PRACTICE TEAM',
+  myPart: 'design lead: concept, grasshopper, fabrication files',
   dek: 'Sixty mirrored fins on a wave hide a Lincoln and pull visitors closer, until the enclosure lifts and the car takes over.',
   dekSigned: true, // SIGNED by Emilie (Gate 2, 2026-09-27)
   question: 'Can hiding a car be the reason everyone comes to look?',

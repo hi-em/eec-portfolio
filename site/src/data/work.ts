@@ -49,7 +49,10 @@ export interface WorkEntry {
   tags: string[]
   dek: string // the one authored "what it proves" line; the showcase's claim
   question?: string // D4 (S4/S5): the one question the project answers; headData prefers it as the meta description
-  meta: string // the plate's credit/context row (e.g. 'MACAD STUDIO · TEAM OF 4')
+  meta: string // the context string (e.g. 'MACAD STUDIO · TEAM OF 4'); the ledger prints where/who/myPart instead
+  where: string // ledger WHERE row (ruling 96)
+  who: string // ledger WHO row
+  myPart?: string // ledger MY PART row; absent on solo work
   origin: string // the face's origin stamp (MACAD/LAU/SOMA/JEMMA/SELF), derived from meta
   tech: string // the mono tech row
   stat?: string // Session 7: the one defensible number, data-plate style
@@ -236,6 +239,9 @@ function toWorkEntry(entry: RegistryEntry): WorkEntry | null {
     // The plate rows (S4a): the showcase now mirrors the printed spread, so
     // it reads the same meta credit line + stat the book plate prints.
     meta: p.meta,
+    where: p.where,
+    who: p.who,
+    myPart: p.myPart,
     origin: originOf(p),
     tech: p.tech,
     stat: p.stat,

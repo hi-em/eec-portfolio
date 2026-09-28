@@ -29,7 +29,7 @@ const spine: ProjectSpine = {
   why: (
     <>
       A facade is not just an aesthetic choice; it is a public health decision. Codes certify
-      energy, fire, and structure, yet nothing certifies what a building does to your brain. We
+      energy, fire and structure, yet nothing certifies what a building does to your brain. We
       argued the field deserves a data layer for exactly that.
     </>
   ),
