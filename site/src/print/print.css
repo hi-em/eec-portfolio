@@ -258,9 +258,12 @@
    names and the writing line alike. (The book marks only its footers because
    21 marks would turn its index into a list; this page is 15 marks across a
    whole A4 of prose, which is a different picture, and she looked at it.) */
+/* TIGHTENED (her ruling, 2026-09-28): once The Lungs wrapped to two lines, the
+   0.35mm hang put its hairline on "KPI map" below, reading as a second link.
+   The mark now sits on the descender line itself, for all fifteen links. */
 .pr-ats .pr-link {
   border-bottom: 0.3pt solid var(--pr-rule);
-  padding-bottom: 0.35mm;
+  padding-bottom: 0;
 }
 
 .pr-mono {

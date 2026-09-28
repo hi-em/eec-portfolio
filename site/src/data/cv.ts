@@ -128,13 +128,25 @@ export const EDUCATION: CvEntry[] = [
       // "evals" could NOT also fit here without cutting either the six-senses
       // claim or "calibrated to a person", so it lands on the methods line
       // directly below, in the skills row, and in the lead. Flagged to her.
-      'Sensi, an agentic LLM copilot scoring a floor plan across six senses, calibrated to a person. Project lead, team of four.',
-      "The Lungs, the deployed app that ran the studio: a hyperbuilding designed to filter a city's air. Data team of three.",
+      // THE "WHAT I BUILT" PASS (2026-09-28, her rulings, one card each): UK
+      // and EU CV guidance (Imperial careers, Prospects, Bespoke/Arup) wants
+      // the team size, then her own part, verb-led with no "I". Every line
+      // below is built from her interview answers and checked against the
+      // git history (Sensi: every commit hers; The Lungs: timeline, stress
+      // scores, KPI map, tour and annotations are her commits, the backend and
+      // sign-in were Lakzhmy's; lEgoarCh: the brick solver and interface hers,
+      // the LoRA and image-to-3D Charles's). "calibrated to a person" and
+      // "hyperbuilding" leave the CV; the site sheets keep both.
+      'Sensi, an agentic LLM copilot scoring a plan by six senses. Led a team of four; built the agent, evals, UI and deploy.',
+      // The one project allowed TWO printed lines: the Methods line below was
+      // cut to pay for it (its words already print in the skills rows; only
+      // "agent orchestration" left the page, "machine learning" moved up).
+      'The Lungs, the app that ran a three-team studio for ten weeks. In a data team of three, designed and built its timeline, KPI map, stress-test game, guided tour and public page, saved to PostgreSQL.',
       // THE SWEEP (2026-08-19, her ruling): the input is a TEXT prompt, not
       // images (the renders are the pipeline's intermediate), and "catalog"
-      // takes the US spelling the spine already uses.
-      'lEgoarCh, a pipeline turning a text prompt into brick sets verified buildable against the real catalog.',
-      'Methods: agent orchestration, evals, generative pipelines, Rhino Compute, machine learning applied in teams.',
+      // takes the US spelling the spine already uses. 2026-09-28: her part
+      // only; Charles is credited on the site sheet (her call).
+      'lEgoarCh, a text prompt turned into brick sets verified buildable. Built the brick solver and the whole interface.',
     ],
   },
   {
@@ -419,8 +431,10 @@ export const SKILLS = [
     // titles she ruled the CV serves name Claude Code or Cursor by tool, and
     // the page said only "AI-assisted". Nothing removed; the row still prints
     // on two lines (measured).
+    // 2026-09-28 ("what I built" pass): "machine learning" moves up from the
+    // cut Methods line; "AI agents and LLM copilots" shortens to pay for it.
     items:
-      'AI agents and LLM copilots (LangGraph) · evals and benchmarking · GenAI pipelines (LoRA fine-tuning · FLUX · ComfyUI · ControlNet) · Weights & Biases · Claude Code · Cursor · rapid prototyping · design automation',
+      'LLM agents (LangGraph) · machine learning · evals and benchmarking · GenAI pipelines (LoRA fine-tuning · FLUX · ComfyUI · ControlNet) · Weights & Biases · Claude Code · Cursor · rapid prototyping · design automation',
   },
   {
     // THE WEBSITE SESSION (2026-09-16, checklist item 1, her ruling): the
@@ -442,9 +456,13 @@ export const SKILLS = [
     // JavaScript; Foster's posting screens the literal word). WebGL sits
     // beside Three.js. TAILWIND DROPPED at the 2026-07 audit: a CSS framework
     // is the least-screened term in the row. Measured at one printed line.
+    // 2026-09-28 (her ruling): PostgreSQL (The Lungs: her DB-backed features)
+    // and Cloud Run (Sensi's host, her deploy) replace SSE streaming and
+    // WebGL; Vue stays; "Cloud Run" not "Google Cloud Run" so the row keeps
+    // one printed line.
     group: 'Ships with',
     items:
-      'Python · JavaScript · TypeScript · React · Vue · FastAPI · SSE streaming · pytest · Docker · Three.js · WebGL',
+      'Python · JavaScript · TypeScript · React · Vue · FastAPI · PostgreSQL · Docker · Cloud Run · pytest · Three.js',
   },
   {
     // The vocabulary a hiring manager uses for this subject, plus the research

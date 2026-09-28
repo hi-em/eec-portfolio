@@ -15,7 +15,7 @@ const lungs: ProjectMeta = {
   meta: 'MACAD STUDIO · DATA TEAM OF 3',
   liveApp: true,
   award: 'STUDIO AWARD',
-  myPart: 'Data team of three: we built the app that ran the studio.',
+  myPart: 'Data team of three; my part: the UX, timeline, KPI map, stress-test game, guided tour and public page.',
   dek: "The studio’s data was the architecture: a live app running a hyperbuilding designed to filter a city’s air.",
   dekSigned: true,
   // THE QUESTION (D4 round 2, Emilie’s direction 2026-07-14): the dashboard /

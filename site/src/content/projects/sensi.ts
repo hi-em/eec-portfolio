@@ -31,7 +31,7 @@ const sensi: ProjectMeta = {
   // words); the searchable people-question moved into alsoAnswers (the
   // question dot). Verb rule holds: score, never measure. Question + dot set SIGNED by Emilie (REINDEX batch A, 2026-07-16).
   question: 'When you fix one sense in a floor plan, what happens to the other five?',
-  myPart: 'Project lead, A to Z. Built with a team of four.',
+  myPart: 'Project lead in a team of four; framed together, built by me: agent, evals, interface, deploy.',
   stat: 'LLM BENCH · 2 PROVIDERS × 3 SCENES',
   tech: 'PYTHON · LANGGRAPH · FASTAPI · REACT',
   // SENSI MOVED HOUSE (2026-08-19). The code used to live in the studio's

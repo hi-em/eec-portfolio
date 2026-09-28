@@ -14,7 +14,7 @@ const legoarch: ProjectMeta = {
   lens: 'computation',
   meta: 'MACAD GENERATIVE AI · WITH CHARLES ABI CHAHINE',
   award: 'JURY AWARD',
-  myPart: 'Built with Charles Abi Chahine, end to end as a pair.',
+  myPart: 'Built with Charles Abi Chahine; my part: the brick solver and the whole interface.',
   dek: 'A render is only a promise until the bricks fit: AI imagines the set, code makes it actually buildable.',
   dekSigned: true,
   // THE QUESTION (D4 round 2, Emilie’s direction 2026-07-14): her "how can AI
