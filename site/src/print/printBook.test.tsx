@@ -21,7 +21,6 @@ import { PRINT_FIGURES } from './figures'
 import printImages from '../data/print-images.json'
 import { WORK_ENTRIES } from '../data/work'
 import { ENTRIES, CORRELATIONS, thoughtIndexEntries } from '../data/registry'
-import { fmtMonthYear } from '../components/ThoughtIndexRows'
 import { BIO, BIO_VARIABLES } from '../landing/identity'
 import { layoutAssetPage, LEAD_HEMLINE_MM, LEAD_CAP_MM, LEAD_GAP_MM } from './assetGeometry'
 import { EDUCATION, EXPERIENCE, ESSAY_COUNT, BLOG_COUNT } from '../data/cv'
@@ -605,12 +604,20 @@ describe('the ATS CV page', () => {
       // is written, everything else is shouted. Measuring the wrong string
       // would make this guard agree with a book that overflows.
       const title = THREAD_LABEL[id!] ?? (ENTRIES.find(e => e.id === id)?.title ?? '').toUpperCase()
-      const left = `${master.tech} · MADE ME THINK OF: ${title}`
-      const right = `emiliechidiac.com/work/${entry.id} · ${fmtMonthYear(entry.date)}`
-      const total = left.length + right.length
+      // THE FOOT AS IT PRINTS (2026-09-29). This guard used to measure
+      // `tech · MADE ME THINK OF` beside `url · date`, but the tech list left
+      // the foot at round 4 of the book audit (2026-08-19, see PrintBook's
+      // ONE FOOT comment) and the date left project feet with it. The printed
+      // foot is url | thought | folio, measured in the render on Sensi's plate
+      // with MCP in its stack: one line, no overflow. Same 121-character
+      // budget, now spent on the strings that actually print.
+      const left = `emiliechidiac.com/work/${entry.id}`
+      const middle = `MADE ME THINK OF: ${title}`
+      const folio = '00'
+      const total = left.length + middle.length + folio.length
       expect(
         total,
-        `${master.slug}'s rail needs ${total} characters (${left.length} left + ${right.length} right): "${left}"`,
+        `${master.slug}'s foot needs ${total} characters: "${left} | ${middle} | ${folio}"`,
       ).toBeLessThanOrEqual(RAIL_CHARS)
     }
   })

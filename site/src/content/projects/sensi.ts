@@ -35,7 +35,9 @@ const sensi: ProjectMeta = {
   // question dot). Verb rule holds: score, never measure. Question + dot set SIGNED by Emilie (REINDEX batch A, 2026-07-16).
   question: 'When you fix one sense in a floor plan, what happens to the other five?',
   stat: 'LLM BENCH · 2 PROVIDERS × 3 SCENES',
-  tech: 'PYTHON · LANGGRAPH · FASTAPI · REACT',
+  // MCP joined 2026-09-29 (her ask): Sensi was prototyped as an MCP tool, a line
+  // the band pass cut from WHAT, so the keyword lives here now.
+  tech: 'PYTHON · LANGGRAPH · MCP · FASTAPI · REACT',
   // SENSI MOVED HOUSE (2026-08-19). The code used to live in the studio's
   // shared repo, in a team folder under someone else's account
   // (sclebow/AIA26_Studio/tree/main/team_02) — an address that made the

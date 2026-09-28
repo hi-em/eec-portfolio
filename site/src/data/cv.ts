@@ -141,7 +141,7 @@ export const EDUCATION: CvEntry[] = [
       // The one project allowed TWO printed lines: the Methods line below was
       // cut to pay for it (its words already print in the skills rows; only
       // "agent orchestration" left the page, "machine learning" moved up).
-      'The Lungs, the app that ran a three-team studio for ten weeks. In a data team of three, designed and built its timeline, KPI map, stress-test game, guided tour and public page, saved to PostgreSQL.',
+      'The Lungs, the app that ran a three-team studio for ten weeks. In a data team of three, designed and built its UX, timeline, KPI map, stress-test game, guided tour and public page, saved to PostgreSQL.',
       // THE SWEEP (2026-08-19, her ruling): the input is a TEXT prompt, not
       // images (the renders are the pipeline's intermediate), and "catalog"
       // takes the US spelling the spine already uses. 2026-09-28: her part
