@@ -44,7 +44,7 @@ const spine: ProjectSpine = {
     </>,
     <>
       Let the in-between carry the landscape: courtyards and gathering pockets where the planting
-      runs with the built form. 
+      runs with the built form.
     </>,
     <>
       Carry the entry in renders with the team: the split bell tower, the chapel light, the sunken
@@ -53,8 +53,10 @@ const spine: ProjectSpine = {
   ],
   outcome: (
     <>
-      The entry was shortlisted as finalist and the certificate of achievement carries my name.
-      The full project lives on the practice&rsquo;s site.
+      The entry was shortlisted as finalist, my first competition shortlist, and the certificate
+      of achievement carries my name. Ctrl Act Design published the finalists. The tomb detail
+      trials taught me detailing: how a flowerbed roof actually sits on a tomb. The full project
+      lives on the practice&rsquo;s site.
     </>
   ),
 }

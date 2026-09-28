@@ -15,7 +15,9 @@ const spine: ProjectSpine = {
     <>
       The installation turns concealment into the main attraction. Instead of hiding the
       Lincoln behind a curtain, a wave-inspired enclosure of mirrored fins draws visitors
-      closer through reflections and partial glimpses of the car.
+      closer through reflections and partial glimpses of the car. Sixty parametrically
+      generated fins, 1.70 m high, ring a 7 by 4 m ellipse on two metal perimeter rings: foam
+      core, a thin wood layer, reflective aluminum.
     </>
   ),
   why: (
@@ -25,15 +27,19 @@ const spine: ProjectSpine = {
     </>
   ),
   how: [
-    <>In Grasshopper, an attractor curve shapes the wave.</>,
-    <>Panel spacing and rotation control what visitors can see as they move around it.</>,
-    <>Physical prototypes and on-site checks explored the balance between reflection,
-      concealment and the weight of the assembly.</>,
+    <>Shape the wave in Grasshopper with an attractor curve.</>,
+    <>Set panel spacing and rotation to control what visitors can see as they move around it.</>,
+    <>Test the balance between reflection, concealment and the weight of the assembly with
+      physical prototypes and on-site checks.</>,
+    <>Take the same definition to fabrication: profiles, ring intersections, part numbers,
+      flattening and nesting, 62 parts in all.</>,
   ],
   outcome: (
     <>
       At the reveal, the enclosure lifts: the object that first captured everyone&rsquo;s
-      attention gives way to the car hidden inside.
+      attention gives way to the car hidden inside. It was a real showpiece, the unpredictable thing in
+      the event: people were very curious what this structure was, and stopped to photograph
+      it. Concept to reveal took under a month.
     </>
   ),
 }

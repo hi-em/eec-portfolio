@@ -14,7 +14,9 @@ const spine: ProjectSpine = {
   what: (
     <>
       It begins with a simple idea: each piece needs another to stand. Two interlocking
-      wooden panel types form a modular assembly without glue or screws between pieces.
+      wooden panel types form a modular assembly without glue or screws between pieces. An exhibition stand on a 6 by 6 m platform: 780 mm
+      panels, white and black, slot into a structure 2.94 m high, and the same system becomes
+      seats at 408 mm and counters at 948 mm.
     </>
   ),
   why: (
@@ -25,16 +27,19 @@ const spine: ProjectSpine = {
     </>
   ),
   how: [
-    <>The Grasshopper definition explores how that system can grow, using connection rules,
+    <>Explore how that system can grow in the Grasshopper definition, using connection rules,
       spatial limits and support checks.</>,
-    <>Thirty arrangements narrow to ten, and ten to one: option 29, 34 parts.</>,
-    <>The selected option becomes numbered parts and cutting layouts.</>,
+    <>Narrow thirty arrangements to ten, and ten to one: option 29, 34 parts.</>,
+    <>Turn the selected option into numbered parts and CNC cutting layouts, each part ID tied
+      to its geometry, assembly and parts schedule.</>,
   ],
   outcome: (
     <>
-      On site, misplaced pieces and no spares made that adaptability real. Connections had
-      to be reconsidered while keeping the seating and counters useful. We designed a
-      puzzle, and then had to solve it together.
+      Option 29 went to site as 34 panels with no spares, and some were misplaced. We went
+      back and cut new ones, but pieces were already connected, so the layout had to be
+      improvised around them: the booth stood with 39, still balanced. We designed a puzzle,
+      and then had to solve it together. Afterwards the panels moved into the brand&rsquo;s
+      office as small grouped pieces.
     </>
   ),
 }

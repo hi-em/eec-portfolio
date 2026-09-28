@@ -11,6 +11,9 @@
 // dek, HOW 2 and tech line were drafted from them and the design-space clip
 // (thirty arrangements, ten candidates, option 29, 34 parts). ALL COPY
 // SIGNED by Emilie as drafted (Gate 2, 2026-09-27).
+// REOPENED knowingly at the band pass (2026-09-28): WHAT, HOW and OUTCOME gained
+// her interview facts (dimensions, the definition-to-fabrication pipeline, the
+// reveal or the 34-to-39 story), HOW turned imperative. Signed the same day.
 import type { ProjectMeta } from './types'
 
 const codependent: ProjectMeta = {

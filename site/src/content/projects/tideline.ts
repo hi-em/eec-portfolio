@@ -9,6 +9,9 @@
 // and the fabrication files. The WHAT, HOW and OUTCOME are her own concept
 // paragraphs verbatim; the question, dek, WHY and tech line were drafted
 // from them. ALL COPY SIGNED by Emilie as drafted (Gate 2, 2026-09-27).
+// REOPENED knowingly at the band pass (2026-09-28): WHAT, HOW and OUTCOME gained
+// her interview facts (dimensions, the definition-to-fabrication pipeline, the
+// reveal or the 34-to-39 story), HOW turned imperative. Signed the same day.
 import type { ProjectMeta } from './types'
 
 const tideline: ProjectMeta = {
