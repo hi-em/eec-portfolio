@@ -18,7 +18,7 @@ const spine: ProjectSpine = {
       In Punta Arenas the wind never stops, so we stopped fighting it. The Huddle is a research
       and education hub grown from 4×4×4 m modules aggregated along the wind itself, wrapped in
       an envelope of three panel types (Shields, Lenses, Gills), each answering a different face
-      of the weather. A team of four, all hands on everything: Charles Abi Chahine, Lakzhmy
+      of the weather. A team of four: Charles Abi Chahine, Lakzhmy
       Mari Zaro, María Sánchez Domínguez and me.
     </>
   ),

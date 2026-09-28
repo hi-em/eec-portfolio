@@ -19,7 +19,7 @@ const spine: ProjectSpine = {
       communal living. We converted its Type K and Type F duplex units from Rhino geometry into
       spatial graphs, grid sampling the plans, ray casting the connections, adding the stairs as
       vertical links, then read the building through centrality, shortest paths and community
-      detection. A team of four, all hands on everything: Charles Abi Chahine, Lakzhmy
+      detection. A team of four: Charles Abi Chahine, Lakzhmy
       Mari Zaro, María Sánchez Domínguez and me.
     </>
   ),

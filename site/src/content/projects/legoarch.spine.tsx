@@ -18,8 +18,7 @@ const spine: ProjectSpine = {
       A render is a promise, not a product: you cannot snap a JPEG together on your living-room
       floor. lEgoarCh takes a text prompt and returns a LEGO Architecture set that is digitally
       verified buildable: AI imagines it, deterministic code makes it snap together, brick by
-      brick, out of real catalog parts. Built with Charles Abi Chahine. My part was the brick
-      solver and the whole interface: I stitched the stages into one flow, prompt in, set out.
+      brick, out of real catalog parts. Built with Charles Abi Chahine. I stitched the stages into one flow, prompt in, set out.
     </>
   ),
   why: (

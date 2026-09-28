@@ -22,8 +22,7 @@ const spine: ProjectSpine = {
       A monument for a highway roundabout in Al Khobar: MIDAN AL SAKR, the office&rsquo;s
       Moujassam Watan competition entry. Layered steel blades form a falcon, two wings of
       pierced Arabic calligraphy between them. As an architectural designer at Jemma Chidiac
-      Architects, I started the concept sketches and led the design from brainstorming to
-      proposal.
+      Architects, I started the concept sketches.
     </>
   ),
   why: (

@@ -29,7 +29,8 @@ const lungs: ProjectMeta = {
   // The cold-start wording retired on Emilie’s instruction (2026-07-15): the
   // link is plain LIVE APP and wears the liveness dot in the links row (the
   // film now carries the tour; the app itself is IAAC-gated anyway). The
-  // myPart credit line signed at G4 (2026-07-12); the blurb stays locked.
+  // blurb stays locked. (The G4 myPart sentence moved to the MY PART row,
+  // ruling 96, 2026-09-28.)
   links: [
     { label: 'LIVE APP', href: 'https://bimscstudiohb1-production.up.railway.app/' },
     { label: 'BLOG', href: 'https://blog.iaac.net/building-the-nervous-system-how-we-turned-a-hyper-building-studio-into-a-web-app/' },

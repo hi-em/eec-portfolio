@@ -21,8 +21,7 @@ const spine: ProjectSpine = {
       across six senses (thermal, visual, acoustic, spatial, olfactory, tactile), calibrated to
       one person at a time, not an average. It was prototyped first as an MCP tool, then rebuilt
       as a standalone app. Project lead in a team of four (Charles Abi Chahine, Lakzhmy
-      Mari Zaro, María Sánchez Domínguez and me): we framed the question together, and I built it,
-      the agent, the evals, the interface and the deploy.
+      Mari Zaro, María Sánchez Domínguez and me): we framed the question together.
     </>
   ),
   why: (

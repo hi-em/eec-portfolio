@@ -20,7 +20,7 @@ const spine: ProjectSpine = {
       our work be read spatially inside the model? We built Rhino.Inside Revit workflows that
       turn the studio’s performance metrics into parametric Revit families, so thermal comfort,
       acoustic impact and air purification become visible components of the architecture. The
-      same data team of three as The Lungs, shared end to end: Lakzhmy Mari Zaro, María Sánchez
+      same data team of three as The Lungs: Lakzhmy Mari Zaro, María Sánchez
       Domínguez and me.
     </>
   ),

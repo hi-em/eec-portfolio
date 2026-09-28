@@ -18,8 +18,7 @@ const spine: ProjectSpine = {
       Santiago has an air problem, the kind that sits in the valley like a guest who will not
       leave. The Lungs is a hyperbuilding designed to filter 12 million m³ of air a year, and the
       data team of three (Lakzhmy Mari Zaro, María Sánchez Domínguez and me) built the live web
-      app the whole studio ran on while designing it. My part: the UX, the timeline, the KPI map,
-      the stress-test game, the guided tour and the public page.
+      app the whole studio ran on while designing it.
     </>
   ),
   // ✔ SIGNED by Emilie, 2026-08-18 (the book audit). The WHY lost the dek’s

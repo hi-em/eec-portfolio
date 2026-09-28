@@ -18,7 +18,7 @@ const spine: ProjectSpine = {
       A computational environmental analysis of the proposed 19-hectare redevelopment of Tokyo’s
       Tsukiji fish market site. We simulated thermal comfort, daylight, wind and heat mitigation
       under a climate that swings from wet and cold to hot and humid inside a single day. A team
-      of four, all hands on everything: Charles Abi Chahine, Lakzhmy Mari Zaro, María Sánchez
+      of four: Charles Abi Chahine, Lakzhmy Mari Zaro, María Sánchez
       Domínguez and me.
     </>
   ),

@@ -17,10 +17,8 @@ const spine: ProjectSpine = {
     <>
       The Encounter, the practice&rsquo;s entry to Ctrl Act Design&rsquo;s Cemetery Challenge for
       Anfeh: concentric crescents of semi-buried, planted tombs rotating around a sunken court,
-      with a slit-lit chapel, a condolences hall and a split bell tower crossing the terraces. As
-      an architectural designer at Jemma Chidiac Architects, my part was concept support, the
-      planning of the landscape, the trials for the tomb details and rendering alongside the
-      team.
+      with a slit-lit chapel, a condolences hall and a split bell tower crossing the terraces. I
+      worked on it as an architectural designer at Jemma Chidiac Architects, alongside the team.
     </>
   ),
   why: (
