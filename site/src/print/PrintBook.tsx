@@ -483,8 +483,13 @@ function Folio({ n, side }: { n: number; side: PageSide }) {
  *  this rail is the plate's only liveness mention, and it joined deliberately
  *  on 2026-08-19. Derived from the master's `liveApp` flag so the printed
  *  words are exactly what the book said before the string moved. */
-const metaRail = (master: { meta: string; liveApp?: boolean }) =>
-  rail(master.liveApp ? `${master.meta} · LIVE APP` : master.meta)
+// (2026-09-28, ruling 96: the rail prints WHERE · WHO, the plate's own words,
+// so the facing page never contradicts the ledger opposite it. `meta` carried
+// a role and a year on Verve and Falcon; WHERE is date-free by her ruling.)
+const metaRail = (master: { where: string; who: string; liveApp?: boolean }) => {
+  const s = `${master.where} · ${master.who}`
+  return rail(master.liveApp ? `${s} · LIVE APP` : s)
+}
 const rail = (s: string) => s.replace(/ · /g, ' · ')
 
 function Spread({ data, side, plate, page }: { data: SpreadData; side: PageSide; plate: number; page: number }) {
