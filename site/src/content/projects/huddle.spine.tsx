@@ -32,16 +32,16 @@ const spine: ProjectSpine = {
   ),
   how: [
     <>
-      WASP grows the module cluster along the wind patterns, solar exposure and program, the way
+      Grow the module cluster with WASP along the wind patterns, solar exposure and program, the way
       the Kawésqar huts huddled.
     </>,
-    <>Kangaroo settles the layout; Alpaca4D checks the structural behavior of the result.</>,
+    <>Settle the layout in Kangaroo; check the structural behavior of the result in Alpaca4D.</>,
     <>
-      A Global Index algorithm distributes the three envelope panels, so the facade reads the
+      Distribute the three envelope panels with a Global Index algorithm, so the facade reads the
       climate back to you.
     </>,
     <>
-      Vertical turbines sit in the aggregation’s own wind tunnels, harvesting the force the form
+      Set vertical turbines in the aggregation’s own wind tunnels, harvesting the force the form
       was grown from.
     </>,
   ],

@@ -35,21 +35,16 @@ const spine: ProjectSpine = {
   // realization about found geometry, and the thread to Cappelletti.
   how: [
     <>
-      The function, scripted in Python inside Grasshopper: x = a·cos³u·cos³v, y = b·sin³u·cos³v,
+      Script the function in Python inside Grasshopper: x = a·cos³u·cos³v, y = b·sin³u·cos³v,
       z = c·sin³v. Cubing the sines and cosines is the whole trick: the ellipsoid pulls in toward
       its axes and the star appears.
     </>,
     <>
-      Six dials on one surface: the radii a, b and c stretch the star; f, d and e scale how far u
-      and v sweep, so the shell can open, close or wrap partway around.
-    </>,
-    <>
-      A point grid evaluates the formula and a NURBS surface lofts through the points. Three
+      Evaluate the formula on a point grid and loft a NURBS surface through the points. Three
       sweeps of the dials, three stars.
     </>,
     <>
-      ReduceMesh facets the chosen star into an envelope; floor plates, a core and a six part
-      program are sliced in, and the formula has to answer as a building.
+      Facet the chosen star into an envelope with ReduceMesh; slice in floor plates, a core and a six part program, and the formula has to answer as a building.
     </>,
   ],
   outcome: (
@@ -58,8 +53,7 @@ const spine: ProjectSpine = {
       everywhere, closed form equations included, and the concavities were rooms before I asked
       them to be. That curiosity is what led to the next found shape, a pasta: the Cappelletti
       Pavilion starts exactly where this exercise ends, with a form nobody drew being taken
-      seriously as a building. One function raised the question. The pavilion had to answer it as
-      structure.
+      seriously as a building. 
     </>
   ),
 }

@@ -19,8 +19,7 @@ const spine: ProjectSpine = {
       Every tool in the stack could tell us how a building performs. None of them would say how a
       room feels. Sensi closes that gap: a copilot that reads a floor plan and scores comfort
       across six senses (thermal, visual, acoustic, spatial, olfactory, tactile), calibrated to
-      one person at a time, not an average. It was prototyped first as an MCP tool, then rebuilt
-      as a standalone app. Project lead in a team of four (Charles Abi Chahine, Lakzhmy
+      one person at a time, not an average. Project lead in a team of four (Charles Abi Chahine, Lakzhmy
       Mari Zaro, María Sánchez Domínguez and me): we framed the question together.
     </>
   ),
@@ -31,8 +30,6 @@ const spine: ProjectSpine = {
       Comfort is usually the thing that shows up, or does not, after the design is done. Sensi
       makes it a layer you can interrogate while the plan is still soft, because you do not walk
       into a room and average your experience: the thing that is wrong is the thing you notice.
-      And nothing you fix stays fixed alone: the whole project is the ripple, what a change drags
-      along.
     </>
   ),
   how: [
@@ -40,7 +37,7 @@ const spine: ProjectSpine = {
       {/* THE SHORT HOW (Emilie, 2026-09-11): 12 lines to 9 so the sheet fits
           her 1080-tall screen without scrolling; measured at the real wrap.
           The facts did not move, the words did. */}
-      Onboarding calibrates it to one person: thermal grudges, noise tolerance.
+      Calibrate it to one person at onboarding: thermal grudges, noise tolerance.
     </>,
     <>
       {/* The evals clause (the researcher pass, Emilie 2026-08-26, "c and a
@@ -48,18 +45,18 @@ const spine: ProjectSpine = {
           gates every reply APPROVED or REVISE, nodes/scoring/
           suggestion_critic.py reads each suggestion for feasibility and
           cross-sense consequences. draftCopy until she signs the words. */}
-      One LLM call per turn routes each request through a LangGraph graph: analyze, edit,
+      Route each request, one LLM call per turn, through a LangGraph graph: analyze, edit,
       preview, audit. Two evals ride inside: a critic on every suggestion, an evaluator on every
       reply.
     </>,
     <>
-      A coupling matrix ripples every change into the neighboring senses, so a fix that quietly
-      breaks another score gets flagged, not hidden.
+      Ripple every change, through a coupling matrix, into the neighboring senses, so a fix that
+      quietly breaks another score gets flagged, not hidden.
       <NB note={'the six scores argue like a family. the coupling matrix is the dinner table.'} />
     </>,
     <>
-      Edits preview before they commit, then a vision model redraws the room, structure intact,
-      and hands over the report.
+      Preview edits before they commit, then let a vision model redraw the room, structure
+      intact, and hand over the report.
     </>,
   ],
   outcome: (
@@ -69,19 +66,18 @@ const spine: ProjectSpine = {
       Two LLM providers scored the same three scenes, one arranged to fail, and mostly agreed.
       Easy to call that validation. We wrote agreement is not truth into the notes instead, and
       kept every disagreement as data.
-      {/* The a sentence (same ruling): drafted from bench_quality.py — the
-          blind A/B that replays each node's captured prompts through the old
-          and new model before a swap is adopted. draftCopy until signed. */}{' '}
-      It hardened into evals: swap a model and the same apartment replays through the same
-      prompts, judged blind before the swap is believed.
+      {/* The evals sentence, cut to its first clause at the band pass (Emilie,
+          2026-09-28: the blind A/B detail from bench_quality.py left for the
+          range; evals stays named here, in HOW and in MY PART). */}{' '}
+      It hardened into evals.
       {/* THE LIMITS (Emilie, 2026-09-10, after the Hesham Shawqy review): the
-          walkthrough ends on what the built tool does not do, in the order she
-          ruled: validation first, then estimates, then the labelled couplings.
+          walkthrough ends on what the built tool does not do: estimates, then
+          the labelled couplings (the "nobody has stood in a room" validation
+          line was cut at the band pass, her ruling 2026-09-28).
           Facts from the repo: README ("it models and estimates; it does not
           measure"), python/comfort/sense_model.py (every coupling tagged
           verified or inferred). draftCopy until she signs the words. */}{' '}
-      Nobody has stood in a room Sensi scored and said whether it was right. It estimates, it does
-      not measure, and every coupling in the code is labeled verified or inferred, so you can see
+      It estimates, it does not measure, and every coupling in the code is labeled verified or inferred, so you can see
       which links rest on research and which on our reasoning.
     </>
   ),

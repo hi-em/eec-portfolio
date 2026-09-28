@@ -30,15 +30,15 @@ const spine: ProjectSpine = {
   ),
   how: [
     <>
-      A LoRA fine-tuned on a 40-image dataset teaches FLUX the LEGO Architecture look; the prompt
+      Fine-tune a LoRA on a 40-image dataset to teach FLUX the LEGO Architecture look; the prompt
       becomes a styled render.
     </>,
-    <>TRELLIS lifts the render into a 3D mesh, and the mesh is voxelized into brick space.</>,
+    <>Lift the render into a 3D mesh with TRELLIS, and voxelize the mesh into brick space.</>,
     <>
-      An optimizer places real catalog bricks into the voxels, enforcing connectivity, support
+      Place real catalog bricks into the voxels with an optimizer, enforcing connectivity, support
       and perceptual color accuracy.
     </>,
-    <>The set exports as LDraw, the format the brick world already speaks.</>,
+    <>Export the set as LDraw, the format the brick world already speaks.</>,
   ],
   outcome: (
     <>

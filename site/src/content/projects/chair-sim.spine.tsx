@@ -36,19 +36,13 @@ const spine: ProjectSpine = {
   // breathable, comfortable) is hers verbatim in spirit.
   how: [
     <>
-      A sitting body does the designing: the posed human mesh is fixed, and an inflatable pillow
-      mesh is pressurized against it in Kangaroo.
+      Let a sitting body do the designing: fix the posed human mesh and pressurize an inflatable pillow mesh against it in Kangaroo.
     </>,
     <>
-      Collision is the pencil. Pressure pushes the pillow out, the body pushes back, and the
-      settled mesh is captured as the chair.
+      Rebuild the soft result with a voxel pass from one repeated caoutchouc ring module, damping and voxel size as the two dials.
     </>,
     <>
-      A voxel pass rebuilds the soft result from one repeated caoutchouc ring module, with
-      damping and voxel size as the two dials.
-    </>,
-    <>
-      It is one Grasshopper pipeline end to end, so swapping the sitter reruns everything: eight
+      Keep it one Grasshopper pipeline end to end, so swapping the sitter reruns everything: eight
       postures in the matrix, the trials for babies included.
     </>,
   ],

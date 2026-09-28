@@ -25,7 +25,12 @@ const homage: ProjectMeta = {
   // THE QUESTION (D4, S2 draft): search-shaped, the way someone would ask it.
   question: 'How do you revive an unfinished Niemeyer masterpiece?',
   award: 'TOP 100 @ TAMAYOUZ',
-  tech: 'ADAPTIVE REUSE · COLLECTIVE HOUSING · EXHIBITION',
+  // The face and ledger short form (A11, 2026-09-28: TAMAYOUZ truncated on
+  // the 1440 face). The book and the dek keep the full line.
+  awardShort: 'TOP 100',
+  // A9 (2026-09-28): the row names tools, not topics (her list: Enscape for
+  // the visuals, the virtual tour and the video, edited in Premiere).
+  tech: 'RHINO · REVIT · ENSCAPE · PREMIERE',
   links: [],
   // S2 fix round cover: the crossfade cut (still = the moonlit slab).
   image: {

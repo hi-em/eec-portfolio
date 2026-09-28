@@ -60,20 +60,15 @@ const spine: ProjectSpine = {
   // STILL draftCopy: this is my edit of her account, not her sentence.
   how: [
     <>
-      Concept stays in Rhino and Grasshopper, where the massing can still change its mind:
-      plot, podium, unit mix, all of it still cheap to move.
-    </>,
-    <>
-      Design development, and everything moves into Revit: landscape planning, the typical
+      Move everything into Revit at design development: landscape planning, the typical
       floor plates, the interior layouts of a luxury tower. This is where gross floor area
       starts running the project.
     </>,
     <>
-      Revit families built with the visualization team, and the same model going out three
-      ways: 3D prints, renders, a VR walkthrough in Unreal.
+      Build Revit families with the visualization team, and send the same model out three ways: 3D prints, renders, a VR walkthrough in Unreal.
     </>,
     <>
-      Then every consultant back into the file, structure, MEP, facade, because the Revit model
+      Then bring every consultant back into the file, structure, MEP, facade, because the Revit model
       is the submission and it has to be true on the day it leaves.
     </>,
   ],
@@ -84,8 +79,7 @@ const spine: ProjectSpine = {
     <>
       At university nobody pays for the square meters, so nobody counts them. Then you are in
       practice and gross floor area is the only number in the room: every balcony, every core
-      shifted, every planted terrace, weighed against that one figure. I used to think that was
-      the boring part. It turns out to be the part that decides what gets built. The proof of
+      shifted, every planted terrace, weighed against that one figure.  The proof of
       the coordination came the day a client put on a headset and walked a tower that did not
       exist yet.
     </>

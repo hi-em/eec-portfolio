@@ -35,18 +35,18 @@ const spine: ProjectSpine = {
   // mattered.
   how: [
     <>
-      Python scripts the base surfaces; Kangaroo pressure goals inflate them into five soft
+      Script the base surfaces in Python; inflate them with Kangaroo pressure goals into five soft
       mounds.
     </>,
     <>
-      Two square rope nets drop in sequence: gravity pulls, collision catches them on the
+      Drop two square rope nets in sequence: gravity pulls, collision catches them on the
       inflatables, and they tension into a double layer climbing canopy.
     </>,
     <>
-      Wind and force loads shake the settled state to see what holds; anchor heights and net
+      Shake the settled state with wind and force loads to see what holds; anchor heights and net
       rotation are the iteration dials.
     </>,
-    <>A section grounds it: padded floors and porthole openings for kids.</>,
+    <>Ground it with a section: padded floors and porthole openings for kids.</>,
   ],
   outcome: (
     <>

@@ -35,20 +35,19 @@ const spine: ProjectSpine = {
   // per her signed myPart; approved by her as drafted, same day.
   how: [
     <>
-      The concept set the rotation: the chapel as epicenter, crescents of semi buried tombs
+      Set the rotation from the concept: the chapel as epicenter, crescents of semi buried tombs
       turning around it, every burial keeping its claim on the living.
     </>,
     <>
-      A directional line bounds the view toward the burials and walks the visitor through the
+      Bound the view toward the burials with a directional line that walks the visitor through the
       landscape to the chapel and the condolences hall.
     </>,
     <>
-      The in-between carries the landscape: courtyards and gathering pockets where the planting
-      runs with the built form. My part lived here and in the trials for the tomb details,
-      planning the terraces and testing how a flowerbed roof sits on a tomb.
+      Let the in-between carry the landscape: courtyards and gathering pockets where the planting
+      runs with the built form. 
     </>,
     <>
-      Renders with the team carried the entry: the split bell tower, the chapel light, the sunken
+      Carry the entry in renders with the team: the split bell tower, the chapel light, the sunken
       court.
     </>,
   ],

@@ -266,6 +266,8 @@ export const ENTRIES: RegistryEntry[] = [
     kind: 'project',
     date: '2026-01',
     title: 'Optimizing for the Mind',
+    // Signed 2026-09-28 (A11): the full title truncated on the 1440 face.
+    faceTitle: 'For the Mind',
     lens: 'computation',
     tags: ['neuro', 'ai', 'research', 'future'],
     sheet: sheet('P-107', 'in-preparation', 'podcast'),
@@ -355,6 +357,8 @@ export const ENTRIES: RegistryEntry[] = [
     // 2026 05".
     date: '2026-05',
     title: 'Narkomfin as a Graph',
+    // Signed 2026-09-28 (A11): the full title truncated on the 1440 face.
+    faceTitle: 'Narkomfin',
     lens: 'computation',
     tags: ['data', 'ai', 'heritage', 'research'],
     sheet: sheet('P-112', 'in-preparation', 'narkomfin'),
@@ -374,6 +378,8 @@ export const ENTRIES: RegistryEntry[] = [
     // Sensi is genuinely the newest project rather than one of three tied.
     date: '2026-04',
     title: 'Encoding Urban Risk',
+    // Signed 2026-09-28 (A11): the full title truncated on the 1440 face.
+    faceTitle: 'Urban Risk',
     lens: 'computation',
     tags: ['data', 'ai', 'research'],
     sheet: sheet('P-113', 'in-preparation', 'urban-risk'),

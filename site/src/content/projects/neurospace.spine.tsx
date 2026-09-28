@@ -19,10 +19,7 @@ const spine: ProjectSpine = {
       You are sitting in a room right now, and its defaults are quietly working on you: the
       ceiling height nudging your cortisol, the daylight setting your circadian clock. NeuroSpace
       makes that invisible layer legible: move a slider and the room rebuilds while a score
-      answers back, live. I built it on my own: a Grasshopper definition doing the heavy geometry
-      on the server through Rhino.Compute, Three.js drawing the room in the browser, and a
-      scoring pass that estimates the behavioral effect the moment you let go. It is built to be
-      played with, not read.
+      answers back, live. It is built to be played with, not read.
     </>
   ),
   why: (
@@ -42,13 +39,11 @@ const spine: ProjectSpine = {
       and streams the heavy geometry back, so the browser never has to model anything itself.
     </>,
     <>
-      Draw the returned room with Three.js. Geometry is the slow path; it only recomputes when
-      the shape actually changes.
+      Draw the returned room with Three.js.
     </>,
     <>
       Score the behavior on the fast path, in the browser, the instant a slider settles: a
-      transparent weighted sum over the dimensions the research cares about. No server round
-      trip, so the number answers as fast as you can drag.
+      transparent weighted sum over the dimensions the research cares about.
     </>,
   ],
   // ✔ SIGNED by Emilie, 2026-08-18 (the book audit): the slot used to carry no
@@ -61,8 +56,7 @@ const spine: ProjectSpine = {
       It shipped live: the app runs in the browser today, and the weights it scores with sit in
       the public repo, which means you can read them and argue with them.
       <NB note="a score you can argue with beats a number you have to trust." /> The score stays
-      a heuristic, not an instrument. It estimates; it never measures your body, and it shows
-      every assumption on the way to the number so you are free to overrule it. When Dr. Cleo
+      a heuristic, not an instrument: it never measures your body. When Dr. Cleo
       Valentine saw it, her note set the frame I kept: treat every score as a hypothesis, then
       watch how it translates.
     </>

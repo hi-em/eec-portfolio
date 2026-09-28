@@ -27,8 +27,7 @@ const spine: ProjectSpine = {
   ),
   why: (
     <>
-      The concept began with my ink studies of an aircraft: takeoff angles, control surfaces,
-      the lines a plane draws when it leaves the ground. Mirrored once, the drawings opened a
+       Mirrored once, the drawings opened a
       void; mirrored again, they closed into a falcon, the national bird carrying the national
       script. A monument for a roundabout has one job, to be read at speed, and a takeoff line
       is the fastest line there is.
