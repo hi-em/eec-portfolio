@@ -607,19 +607,21 @@ export default function NeuralWorld() {
     }
   }, [])
 
-  // THE LAB (branch thoughts-lab): `?lab=a|b|c` mounts one canvas UNDER the
-  // drawing. Its own chunk, never prerendered, never under reduced motion.
+  // THE SIGNAL LAYER (her pick off the lab, 2026-09-29): impulses along the
+  // drawn threads and very faint growth cones on the near-misses, on one
+  // canvas UNDER the drawing (signalLayer.ts has the why). Its own chunk, never
+  // prerendered, never under reduced motion. `?lab=off` shows the map without
+  // it, for side-by-side checks; nothing links there.
   useEffect(() => {
     if (PRERENDERING || prm) return
-    const lab = new URLSearchParams(window.location.search).get('lab')
-    if (lab !== 'a' && lab !== 'b' && lab !== 'c') return
+    if (new URLSearchParams(window.location.search).get('lab') === 'off') return
     let on = true
     let stop: (() => void) | undefined
-    import('./lab/labLayer').then((m) => {
+    import('./signalLayer').then((m) => {
       const stage = stageRef.current
       const svg = svgRef.current
       if (!on || !stage || !svg) return
-      stop = m.startLab(lab, { stage, svg, nodes: nodesRef.current, conns: connsRef.current, vertical })
+      stop = m.startSignal({ stage, svg, nodes: nodesRef.current, conns: connsRef.current, vertical })
     })
     return () => {
       on = false
