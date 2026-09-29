@@ -102,11 +102,6 @@ function nodeAria(n: WorldNode): string {
   return n.route ? `${base}. Open it.` : base
 }
 
-/** THE FLOW TRIALS (branch thoughts-lab, 2026-09-29): `?flow=f1`, `?flow=f2`
- *  or both, so she can try them in her own hands before ruling. Unlinked. */
-const flowHas = (f: string) =>
-  typeof window !== 'undefined' && (new URLSearchParams(window.location.search).get('flow') ?? '').split(',').includes(f)
-
 const HIT_R = 34 // 68 canvas units: >= 44px down to ~560px-tall viewports
 
 // THE DRAWING IS NOT PRERENDERED (Emilie's ruling 2026-08-02, phone pass; the
@@ -615,9 +610,12 @@ export default function NeuralWorld() {
 
   const signalRef = useRef<SignalApi | null>(null)
   const codaTimer = useRef(0)
-  // F1 on trial: the chosen rung's pulse in each thread's own lens, running
-  // older to newer like every other signal on the map
-  const f1 = useMemo(() => flowHas('f1'), [])
+  // ONE MOTION ACROSS THE RUNGS (her pick F1, 2026-09-29): the chosen rung's
+  // pulse runs in each thread's own lens, older to newer, like every other
+  // signal on the map. It used to run INWARD in red at 2.2px, which said
+  // "this is the subject" in a colour this map keeps for liveness, under the
+  // 3px floor red is allowed to be drawn at; the ring and the door still name
+  // the subject.
   const pairOf = useMemo(() => {
     const m = new Map<string, { lens: string; older: string }>()
     const rank = new Map(WORLD.nodes.map((n) => [n.id, n.rank]))
@@ -730,10 +728,10 @@ export default function NeuralWorld() {
         // ~4.3s -> ~5.8s) and brighter (0.55 -> 0.75). The two move in opposite
         // directions on purpose — a brighter wave can afford to travel slower,
         // because the thing you are being given time to read is now legible.
-        // F2 on trial replays the door on every load, so it can be judged
         const first =
+          !(Number.isFinite(stored) && stored > 0) &&
           !prm &&
-          (flowHas('f2') || (!(Number.isFinite(stored) && stored > 0) && !sessionStorage.getItem('nw-grew')))
+          !sessionStorage.getItem('nw-grew')
         if (first) {
           try {
             sessionStorage.setItem('nw-grew', '1')
@@ -761,12 +759,10 @@ export default function NeuralWorld() {
               ? { step, peak: 0.75, decay: 460, to: vertical ? 0 : rest, vertical }
               : { step, peak: 0.75, decay: 900, to: vertical ? 0 : rest, vertical },
           )
-          // F2 · THE INVITATION (on trial): once the door has landed on NOW,
-          // the near-miss nearest NOW reaches once.
-          if (flowHas('f2')) {
-            const at = ranks.length * step + 900
-            inviteTimer = window.setTimeout(() => signalRef.current?.invite(), at)
-          }
+          // THE INVITATION (her pick F2, 2026-09-29): once the door has landed
+          // on NOW, the near-miss nearest NOW reaches once. The map opens on
+          // what is almost connected, and then it is yours.
+          inviteTimer = window.setTimeout(() => signalRef.current?.invite(), ranks.length * step + 900)
         }
       }
     })
@@ -2338,13 +2334,13 @@ export default function NeuralWorld() {
                         one flash, and it is a loop rather than a one-shot
                         because it is the only thing naming the subject. */}
                     <path
-                      className={`nw-foldpulse${f1 ? ` sig${pairOf.get(l.key.replace('>', '|'))?.older === fold.subject ? ' out' : ''}` : ''}`}
+                      className={`nw-foldpulse${pairOf.get(l.key.replace('>', '|'))?.older === fold.subject ? ' out' : ''}`}
                       d={l.pulseD}
                       pathLength={1}
                       strokeDasharray="0.1 1"
                       style={{
                         animationDelay: `${(i % 6) * 460}ms`,
-                        ...(f1 ? { stroke: pairOf.get(l.key.replace('>', '|'))?.lens } : null),
+                        stroke: pairOf.get(l.key.replace('>', '|'))?.lens,
                       }}
                     />
                   </g>

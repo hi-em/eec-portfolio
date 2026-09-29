@@ -7,6 +7,9 @@
 //   in, never the live red). A near-miss arm carries one too, and it dies at
 //   the arm's tip: the signal reaches the brink and nothing is there to take it.
 //   Arriving at the newer mark, it leaves a thin ring.
+//   THE CODA AND THE INVITATION. WATCH IT GROW ends with the near-misses
+//   reaching as the wiring lets go; the arrival ends with the one nearest NOW
+//   reaching once.
 //   THE GROWTH CONES. The two arms of a near-miss reach toward each other and
 //   pull back, a stem and two splayed filopodia, very faint. `coneAt` bounds
 //   them so a fifth of every gap is always empty paper (signalLayer.test.ts):
@@ -107,8 +110,8 @@ export interface SignalApi {
   /** WATCH IT GROW's coda (her pick G1, 2026-09-29): as the wiring fades, the
    *  near-misses stay reaching for a few seconds. What could grow next. */
   coda: () => void
-  /** The arrival's last beat (F2, on trial): the near-miss nearest NOW
-   *  reaches once. */
+  /** The arrival's last beat (her pick F2, 2026-09-29): the near-miss
+   *  nearest NOW reaches once. */
   invite: () => void
 }
 

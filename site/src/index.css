@@ -975,8 +975,8 @@ h3 {
    `nw-travel` — so the dash walks from the far end IN to the chosen mark. */
 .nw-foldpulse {
   fill: none;
-  stroke: var(--lang-interaction);
-  stroke-width: 2.2;
+  stroke: var(--lang-ink);
+  stroke-width: 1.8;
   stroke-linecap: round;
   opacity: 0;
   animation: nw-foldtravel 2760ms linear infinite;
@@ -1001,13 +1001,10 @@ h3 {
     stroke-dashoffset: 1;
   }
 }
-/* F1 on trial (?flow=f1): the chosen rung's pulse in the thread's own lens,
-   thinner, and FORWARD: older to newer, so a newer neighbour's pulse leaves
-   the subject instead of arriving at it. */
-.nw-foldpulse.sig {
-  stroke-width: 1.8;
-}
-.nw-foldpulse.sig.out {
+/* FORWARD, like every signal on the map (her pick F1, 2026-09-29): older to
+   newer, so a newer neighbour's pulse LEAVES the subject. The colour is the
+   thread's own lens, set inline; the red inward pulse retired. */
+.nw-foldpulse.out {
   animation-name: nw-foldout;
 }
 @keyframes nw-foldout {
