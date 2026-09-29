@@ -607,6 +607,26 @@ export default function NeuralWorld() {
     }
   }, [])
 
+  // THE LAB (branch thoughts-lab): `?lab=a|b|c` mounts one canvas UNDER the
+  // drawing. Its own chunk, never prerendered, never under reduced motion.
+  useEffect(() => {
+    if (PRERENDERING || prm) return
+    const lab = new URLSearchParams(window.location.search).get('lab')
+    if (lab !== 'a' && lab !== 'b' && lab !== 'c') return
+    let on = true
+    let stop: (() => void) | undefined
+    import('./lab/labLayer').then((m) => {
+      const stage = stageRef.current
+      const svg = svgRef.current
+      if (!on || !stage || !svg) return
+      stop = m.startLab(lab, { stage, svg, nodes: nodesRef.current, conns: connsRef.current, vertical })
+    })
+    return () => {
+      on = false
+      stop?.()
+    }
+  }, [prm, vertical])
+
   // Arrival: a #<id> deep link centres + wakes its piece (the notes' "SEE
   // THIS THOUGHT IN TIME" corridor); otherwise restore the last scroll (so
   // returning from a note lands where you left), else start mid-world.

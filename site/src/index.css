@@ -649,6 +649,18 @@ h3 {
 .nw-stage::-webkit-scrollbar {
   display: none;
 }
+/* THE LAB LAYER (?lab= only): one canvas under the drawing, on the stage's
+   own rect and mask; the stage goes clear so the canvas shows through. */
+.nw-lab {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 34px, #000 calc(100% - 34px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 34px, #000 calc(100% - 34px), transparent 100%);
+}
+.nw-stage.has-lab {
+  background-color: transparent;
+}
 .nw-stage.dragging {
   cursor: grabbing;
 }
