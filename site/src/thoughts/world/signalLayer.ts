@@ -191,18 +191,34 @@ export function startSignal(env: SignalEnv): () => void {
   // a soma's drawn radius in canvas px (NeuralWorld's `vr`, turned: r x VTYPE)
   const px = (r: number) => (vertical ? r * 0.78 : r * scale)
 
-  // ---- the world, sampled once ----
+  // ---- the world, sampled LAZILY ----
+  // ⚠ Sampling every thread up front measured ~1s of blocked main thread at
+  // load (getPointAtLength walks the path from its start on every call), and it
+  // landed in the middle of the arrival sweep. A thread is sampled the first
+  // time it carries a signal, which is the held mark's handful, not all 80.
   const S = sampler()
   const nodeBy = new Map(WORLD.nodes.map((n) => [n.id, n]))
-  const links = WORLD.links.map((l, i) => ({ i, key: `${l.a}>${l.b}`, b: l.b, poly: S.sample(l.pulseD, 4) }))
+  const lazy = (d: string, step: number) => {
+    let p: Poly | null = null
+    return () => {
+      if (!p) {
+        const t0 = performance.now()
+        p = S.sample(d, step)
+        const w = window as unknown as Record<string, number>
+        w.__nwSampleMs = (w.__nwSampleMs ?? 0) + performance.now() - t0
+      }
+      return p
+    }
+  }
+  const links = WORLD.links.map((l, i) => ({ i, key: `${l.a}>${l.b}`, b: l.b, poly: lazy(l.pulseD, 8) }))
   const reaches = WORLD.reaches.map((r) => ({
     a: r.a,
     b: r.b,
+    gap: r.gap,
     phase: r.gap % 7,
-    armA: S.sample(r.armA[0]!.d, 3),
-    armB: S.sample(r.armB[0]!.d, 3),
+    armA: lazy(r.armA[0]!.d, 4),
+    armB: lazy(r.armB[0]!.d, 4),
   }))
-  S.done()
 
   const at = (p: Poly, t: number): [number, number] => {
     const n = p.pts.length / 2
@@ -281,10 +297,11 @@ export function startSignal(env: SignalEnv): () => void {
       // threshold, so a sweep's constellation stays marks without wiring
       if (!c || c.E < DRAWN || !(touched(c.a) || touched(c.b))) continue
       busy = true
-      if (!onScreen(l.poly)) continue
+      const poly = l.poly()
+      if (!onScreen(poly)) continue
       const k = ease((c.E - DRAWN) / (1 - DRAWN))
-      const count = Math.max(1, Math.round(l.poly.len / 260))
-      const period = l.poly.len / SPEED
+      const count = Math.max(1, Math.round(poly.len / 260))
+      const period = poly.len / SPEED
       const base = (now % period) / period
       const prev = lastPhase.get(l.key) ?? base
       if (base < prev) {
@@ -292,14 +309,14 @@ export function startSignal(env: SignalEnv): () => void {
         if (nb) ripples.push({ x: nb.x, y: nb.y, r: nb.style.r, t0: now })
       }
       lastPhase.set(l.key, base)
-      const tail = Math.min(0.35, 34 / l.poly.len)
+      const tail = Math.min(0.35, 34 / poly.len)
       const col = linkCol[l.i]!
       for (let i = 0; i < count && spent < BUDGET; i++, spent++) {
         const t = (base + i / count) % 1
         // the impulse: strokes wider and denser toward the head (one, on a phone)
         for (let s = 3 - STROKES; s < 3; s++) {
           ctx.beginPath()
-          stretch(l.poly, Math.max(0, t - tail * (1 - s / 3)), t)
+          stretch(poly, Math.max(0, t - tail * (1 - s / 3)), t)
           ctx.strokeStyle = rgba(col, (0.25 + s * 0.3) * k)
           ctx.lineWidth = 1 + s * 0.9
           ctx.stroke()
@@ -314,7 +331,7 @@ export function startSignal(env: SignalEnv): () => void {
       const e = (E - AWAKE) / (1 - AWAKE)
       const t = (now % 1400) / 1400
       const fade = t < 0.7 ? 1 : 1 - (t - 0.7) / 0.3
-      for (const arm of [r.armA, r.armB]) {
+      for (const arm of [r.armA(), r.armB()]) {
         if (!onScreen(arm)) continue
         ctx.beginPath()
         stretch(arm, Math.max(0, t - 0.3), t * 0.94)
@@ -349,15 +366,18 @@ export function startSignal(env: SignalEnv): () => void {
       if (E < AWAKE || !(touched(r.a) || touched(r.b))) continue
       busy = true
       const e = (E - AWAKE) / (1 - AWAKE)
-      if (!onScreen(r.armA, 80) && !onScreen(r.armB, 80)) continue
-      const [ax, ay] = at(r.armA, 1)
-      const [bx, by] = at(r.armB, 1)
+      const armA = r.armA(), armB = r.armB()
+      if (!onScreen(armA, 80) && !onScreen(armB, 80)) continue
+      const [ax, ay] = at(armA, 1)
+      const [bx, by] = at(armB, 1)
       const dx = bx - ax, dy = by - ay
       const d = Math.hypot(dx, dy) || 1
       const ux = dx / d, uy = dy / d
       const cyc = 0.5 - 0.5 * Math.cos((now / 3200) * Math.PI * 2 + r.phase)
       const strain = cyc > 0.8 ? (cyc - 0.8) / 0.2 : 0
-      const cone = coneAt(d, ease(cyc) * ease(e), strain)
+      // the snapshot's gap is the clear space between the arms, twigs included,
+      // so it binds when it is the shorter of the two
+      const cone = coneAt(Math.min(d, r.gap), ease(cyc) * ease(e), strain)
       ctx.strokeStyle = rgba(muted, 0.32 * ease(e))
       for (const [x0, y0, sgn] of [[ax, ay, 1], [bx, by, -1]] as const) {
         const tx = x0 + ux * sgn * cone.reach
@@ -431,6 +451,7 @@ export function startSignal(env: SignalEnv): () => void {
     window.removeEventListener('focusin', wake)
     document.removeEventListener('visibilitychange', onVis)
     unmount()
+    S.done()
     probe.remove()
   }
 }
