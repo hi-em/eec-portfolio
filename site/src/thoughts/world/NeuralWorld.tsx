@@ -42,6 +42,7 @@ import { useProximityEngine, TUNE, type ConnHandle, type NodeHandle } from './us
 import WorldSrNav from './WorldSrNav'
 import { LABEL_GROW, labelBaseline, planFold, type FoldPlan } from './foldView'
 import { PRERENDERING } from '../../lib/prerender'
+import type { SignalApi } from './signalLayer'
 
 // The lens accents come from the one source (components/Lens.tsx): these land
 // on SVG presentation attributes, so they must be the literal light-dark()
@@ -100,6 +101,11 @@ function nodeAria(n: WorldNode): string {
   const base = `${n.title} · ${KIND_NAME[n.kind]}, ${n.date}`
   return n.route ? `${base}. Open it.` : base
 }
+
+/** THE FLOW TRIALS (branch thoughts-lab, 2026-09-29): `?flow=f1`, `?flow=f2`
+ *  or both, so she can try them in her own hands before ruling. Unlinked. */
+const flowHas = (f: string) =>
+  typeof window !== 'undefined' && (new URLSearchParams(window.location.search).get('flow') ?? '').split(',').includes(f)
 
 const HIT_R = 34 // 68 canvas units: >= 44px down to ~560px-tall viewports
 
@@ -607,6 +613,22 @@ export default function NeuralWorld() {
     }
   }, [])
 
+  const signalRef = useRef<SignalApi | null>(null)
+  const codaTimer = useRef(0)
+  // F1 on trial: the chosen rung's pulse in each thread's own lens, running
+  // older to newer like every other signal on the map
+  const f1 = useMemo(() => flowHas('f1'), [])
+  const pairOf = useMemo(() => {
+    const m = new Map<string, { lens: string; older: string }>()
+    const rank = new Map(WORLD.nodes.map((n) => [n.id, n.rank]))
+    for (const l of WORLD.links) {
+      const older = (rank.get(l.a) ?? 0) <= (rank.get(l.b) ?? 0) ? l.a : l.b
+      const v = { lens: lensColor(l.lens), older }
+      m.set(`${l.a}|${l.b}`, v)
+      m.set(`${l.b}|${l.a}`, v)
+    }
+    return m
+  }, [])
   // THE SIGNAL LAYER (her pick off the lab, 2026-09-29): impulses along the
   // drawn threads and very faint growth cones on the near-misses, on one
   // canvas UNDER the drawing (signalLayer.ts has the why). Its own chunk, never
@@ -616,16 +638,16 @@ export default function NeuralWorld() {
     if (PRERENDERING || prm) return
     if (new URLSearchParams(window.location.search).get('lab') === 'off') return
     let on = true
-    let stop: (() => void) | undefined
     import('./signalLayer').then((m) => {
       const stage = stageRef.current
       const svg = svgRef.current
       if (!on || !stage || !svg) return
-      stop = m.startSignal({ stage, svg, nodes: nodesRef.current, conns: connsRef.current, vertical })
+      signalRef.current = m.startSignal({ stage, svg, nodes: nodesRef.current, conns: connsRef.current, vertical })
     })
     return () => {
       on = false
-      stop?.()
+      signalRef.current?.stop()
+      signalRef.current = null
     }
   }, [prm, vertical])
 
@@ -639,6 +661,7 @@ export default function NeuralWorld() {
     const id = window.location.hash.slice(1)
     const target = id ? nodesRef.current.get(id) : undefined
     let wakeTimer = 0
+    let inviteTimer = 0
     const raf = requestAnimationFrame(() => {
       const scale = svg.getBoundingClientRect().height / WORLD.h || 1
       // The arrival position is chosen, so the year snap must not adjust it.
@@ -707,10 +730,10 @@ export default function NeuralWorld() {
         // ~4.3s -> ~5.8s) and brighter (0.55 -> 0.75). The two move in opposite
         // directions on purpose — a brighter wave can afford to travel slower,
         // because the thing you are being given time to read is now legible.
+        // F2 on trial replays the door on every load, so it can be judged
         const first =
-          !(Number.isFinite(stored) && stored > 0) &&
           !prm &&
-          !sessionStorage.getItem('nw-grew')
+          (flowHas('f2') || (!(Number.isFinite(stored) && stored > 0) && !sessionStorage.getItem('nw-grew')))
         if (first) {
           try {
             sessionStorage.setItem('nw-grew', '1')
@@ -732,17 +755,25 @@ export default function NeuralWorld() {
           // to rest at the top, which is now (her ruling 2026-08-07: "the
           // opening should start from bottom to top so we see the full map and
           // then land on now at the top").
+          const step = coarse ? 115 : 90
           engine.replay(
             coarse
-              ? { step: 115, peak: 0.75, decay: 460, to: vertical ? 0 : rest, vertical }
-              : { step: 90, peak: 0.75, decay: 900, to: vertical ? 0 : rest, vertical },
+              ? { step, peak: 0.75, decay: 460, to: vertical ? 0 : rest, vertical }
+              : { step, peak: 0.75, decay: 900, to: vertical ? 0 : rest, vertical },
           )
+          // F2 · THE INVITATION (on trial): once the door has landed on NOW,
+          // the near-miss nearest NOW reaches once.
+          if (flowHas('f2')) {
+            const at = ranks.length * step + 900
+            inviteTimer = window.setTimeout(() => signalRef.current?.invite(), at)
+          }
         }
       }
     })
     return () => {
       cancelAnimationFrame(raf)
       window.clearTimeout(wakeTimer)
+      window.clearTimeout(inviteTimer)
     }
     // engine is stable; run once on mount.
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -1602,6 +1633,45 @@ export default function NeuralWorld() {
    *  `hold` stays as the mechanism — the fold's subject is still the held mark,
    *  and the NOW tip still only ever holds, because it has no page to open and
    *  no threads to gather. It is simply no longer a rung of its own. */
+  // WATCH IT GROW (her pick G1, 2026-09-29). The flood stays as signed, with
+  // two changes. TURNED, IT CLIMBS, as the door does: the button called replay
+  // bare, which pans scrollLeft, and a turned map has no width to pan, so on a
+  // phone it sat on NOW while the threads arrived from off-screen. And AS THE
+  // WIRING LETS GO, THE NEAR-MISSES STAY REACHING for a few seconds: the
+  // button ends on what could grow next. Through the flood the signal layer
+  // is quiet (a light on every thread is noise); the coda is the one beat.
+  function grow() {
+    engine.replay(vertical ? { vertical: true, to: 0 } : undefined)
+    // the replay's own clock: 130ms a rank, held lit 2200ms, then the fade
+    const lit = ranks.length * 130 + 2200
+    signalRef.current?.quiet(lit + 8000)
+    window.clearTimeout(codaTimer.current)
+    // the coda starts once the wiring is visibly letting go (the threads fall
+    // with their marks over ~3s), so the near-misses are not lost inside it
+    // On a phone it waits for the wiring to finish letting go: measured at
+    // 390x844 with the CPU throttled 4x, a coda that overlapped the fade (850
+    // threads repainting under a cleared stage) collapsed 2 runs in 4 to 12-15fps.
+    const coarse = window.matchMedia('(pointer: coarse)').matches
+    codaTimer.current = window.setTimeout(() => signalRef.current?.coda(), lit + (coarse ? 3300 : 400))
+    const stage = stageRef.current
+    if (!stage) return
+    // any real input takes the map back, the coda included
+    const off = () => {
+      stage.removeEventListener('pointerdown', cancel)
+      stage.removeEventListener('wheel', cancel)
+      window.removeEventListener('keydown', cancel)
+    }
+    const cancel = () => {
+      window.clearTimeout(codaTimer.current)
+      signalRef.current?.quiet(0)
+      off()
+    }
+    stage.addEventListener('pointerdown', cancel)
+    stage.addEventListener('wheel', cancel)
+    window.addEventListener('keydown', cancel)
+    window.setTimeout(off, lit + 8200)
+  }
+
   function hold(id: string) {
     if (lockedId.current && lockedId.current !== id) setForce(lockedId.current, 0)
     lockedId.current = id
@@ -1722,7 +1792,7 @@ export default function NeuralWorld() {
           !prm ? (
             <button
               type="button"
-              onClick={() => engine.replay()}
+              onClick={grow}
               className="hidden min-h-11 items-center rounded-[var(--r-pill)] border border-[var(--lang-hairline)] px-3 font-mono text-label tracking-[0.1em] text-[var(--lang-ink)] hover:border-[var(--lang-interaction)] hover:text-[var(--lang-interaction)] focus-visible:outline-2 focus-visible:outline-[var(--lang-interaction)] lg:inline-flex"
             >
               ⟳ WATCH IT GROW
@@ -1796,7 +1866,7 @@ export default function NeuralWorld() {
               {!prm && (
                 <button
                   type="button"
-                  onClick={() => engine.replay()}
+                  onClick={grow}
                   className="pointer-events-auto inline-flex min-h-11 items-center gap-1.5 font-mono text-micro tracking-[0.12em] text-[var(--lang-ink)] transition-colors hover:text-[var(--lang-interaction)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--lang-interaction)] lg:hidden"
                 >
                   <span aria-hidden="true">⟳</span> WATCH IT GROW
@@ -2268,11 +2338,14 @@ export default function NeuralWorld() {
                         one flash, and it is a loop rather than a one-shot
                         because it is the only thing naming the subject. */}
                     <path
-                      className="nw-foldpulse"
+                      className={`nw-foldpulse${f1 ? ` sig${pairOf.get(l.key.replace('>', '|'))?.older === fold.subject ? ' out' : ''}` : ''}`}
                       d={l.pulseD}
                       pathLength={1}
                       strokeDasharray="0.1 1"
-                      style={{ animationDelay: `${(i % 6) * 460}ms` }}
+                      style={{
+                        animationDelay: `${(i % 6) * 460}ms`,
+                        ...(f1 ? { stroke: pairOf.get(l.key.replace('>', '|'))?.lens } : null),
+                      }}
                     />
                   </g>
                 ))}

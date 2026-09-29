@@ -407,7 +407,16 @@ export function useProximityEngine(opts: {
         }
       }
 
-      if (replayState && now - replayState.t0 > replayState.until) replayState = null
+      // ⚠ THE FRAME A SWEEP ENDS IS NOT SETTLED (found 2026-09-29). Every
+      // mark sits exactly on the wave's target in that frame, so `settled` was
+      // true and the loop suspended with the whole map at full wake: WATCH IT
+      // GROW never came back to rest until something moved (on a phone, until
+      // the next touch). The targets have just dropped to zero; one more frame
+      // sees it and the decay runs.
+      if (replayState && now - replayState.t0 > replayState.until) {
+        replayState = null
+        settled = false
+      }
 
       // self-suspend: nothing moving, nothing forcing, no attention parked on
       // a not-yet-settled field.

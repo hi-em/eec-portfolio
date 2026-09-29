@@ -99,7 +99,20 @@ function resolve(css: string, probe: HTMLElement) {
 }
 const rgba = (rgb: string, a: number) => `rgba(${rgb},${a.toFixed(3)})`
 
-export function startSignal(env: SignalEnv): () => void {
+export interface SignalApi {
+  stop: () => void
+  /** For `ms`, draw only what a visitor is holding: the button's flood lights
+   *  every thread, and a signal on all of them is noise, not a signal. */
+  quiet: (ms: number) => void
+  /** WATCH IT GROW's coda (her pick G1, 2026-09-29): as the wiring fades, the
+   *  near-misses stay reaching for a few seconds. What could grow next. */
+  coda: () => void
+  /** The arrival's last beat (F2, on trial): the near-miss nearest NOW
+   *  reaches once. */
+  invite: () => void
+}
+
+export function startSignal(env: SignalEnv): SignalApi {
   const { stage, svg, nodes, conns, vertical } = env
 
   // ---- the canvas: fixed on the stage's own rect, one layer UNDER it ----
@@ -140,7 +153,9 @@ export function startSignal(env: SignalEnv): () => void {
   // thread lit by WATCH IT GROW (390x844, CPU 4x, 3 runs), the layer still cost
   // ~2.7fps against the map without it, so a phone draws only the threads and
   // near-misses of a mark you are holding. The button's flood stays the SVG's.
-  const touched = (id: string) => !coarse || (nodes.get(id)?.forceT ?? 0) > 0.5
+  let quietUntil = 0
+  const quietNow = () => performance.now() < quietUntil
+  const touched = (id: string) => (!coarse && !quietNow()) || (nodes.get(id)?.forceT ?? 0) > 0.5
 
   // ---- colours ----
   const probe = document.createElement('span')
@@ -273,7 +288,8 @@ export function startSignal(env: SignalEnv): () => void {
     if (!stage.classList.contains('is-folded')) {
       const a = drawSignal(now)
       const b = drawCones(now)
-      busy = a || b
+      const c = drawShow(now)
+      busy = a || b || c
     }
     drew = busy
     if (busy) quietSince = 0
@@ -300,7 +316,7 @@ export function startSignal(env: SignalEnv): () => void {
       const poly = l.poly()
       if (!onScreen(poly)) continue
       const k = ease((c.E - DRAWN) / (1 - DRAWN))
-      const count = Math.max(1, Math.round(poly.len / 260))
+      const count = Math.max(1, Math.round(poly.len / 520))
       const period = poly.len / SPEED
       const base = (now % period) / period
       const prev = lastPhase.get(l.key) ?? base
@@ -309,7 +325,7 @@ export function startSignal(env: SignalEnv): () => void {
         if (nb) ripples.push({ x: nb.x, y: nb.y, r: nb.style.r, t0: now })
       }
       lastPhase.set(l.key, base)
-      const tail = Math.min(0.35, 34 / poly.len)
+      const tail = Math.min(0.3, 26 / poly.len)
       const col = linkCol[l.i]!
       for (let i = 0; i < count && spent < BUDGET; i++, spent++) {
         const t = (base + i / count) % 1
@@ -317,8 +333,8 @@ export function startSignal(env: SignalEnv): () => void {
         for (let s = 3 - STROKES; s < 3; s++) {
           ctx.beginPath()
           stretch(poly, Math.max(0, t - tail * (1 - s / 3)), t)
-          ctx.strokeStyle = rgba(col, (0.25 + s * 0.3) * k)
-          ctx.lineWidth = 1 + s * 0.9
+          ctx.strokeStyle = rgba(col, (0.18 + s * 0.28) * k)
+          ctx.lineWidth = 0.8 + s * 0.6
           ctx.stroke()
         }
       }
@@ -335,8 +351,8 @@ export function startSignal(env: SignalEnv): () => void {
         if (!onScreen(arm)) continue
         ctx.beginPath()
         stretch(arm, Math.max(0, t - 0.3), t * 0.94)
-        ctx.strokeStyle = rgba(muted, 0.75 * ease(e) * fade)
-        ctx.lineWidth = 1.8
+        ctx.strokeStyle = rgba(muted, 0.5 * ease(e) * fade)
+        ctx.lineWidth = 1.3
         ctx.stroke()
       }
     }
@@ -350,8 +366,8 @@ export function startSignal(env: SignalEnv): () => void {
       }
       busy = true
       ctx.beginPath()
-      ctx.arc(sx(rp.x, rp.y), sy(rp.x, rp.y), px(rp.r + 3 + age * 14), 0, Math.PI * 2)
-      ctx.strokeStyle = rgba(ink, 0.45 * (1 - age))
+      ctx.arc(sx(rp.x, rp.y), sy(rp.x, rp.y), px(rp.r + 3 + age * 10), 0, Math.PI * 2)
+      ctx.strokeStyle = rgba(ink, 0.3 * (1 - age))
       ctx.lineWidth = 1
       ctx.stroke()
     }
@@ -398,10 +414,65 @@ export function startSignal(env: SignalEnv): () => void {
     return busy
   }
 
+  // THE CODA AND THE INVITATION -------------------------------------------
+  // A few near-misses drawn outright, arm and cone, for a set time and then
+  // gone, whatever the engine is doing: the one moment the unmade connections
+  // are the whole picture. Faded in and out, one reach per 3.2s.
+  let show: { t0: number; dur: number; pick: typeof reaches } | null = null
+  function drawShow(now: number): boolean {
+    if (!show) return false
+    const age = now - show.t0
+    if (age > show.dur) {
+      show = null
+      return false
+    }
+    const env = Math.min(1, age / 700, (show.dur - age) / 700)
+    for (const r of show.pick) {
+      const armA = r.armA(), armB = r.armB()
+      if (!onScreen(armA, 80) && !onScreen(armB, 80)) continue
+      ctx.strokeStyle = rgba(muted, 0.5 * ease(env))
+      ctx.lineWidth = 1.2
+      for (const arm of [armA, armB]) {
+        ctx.beginPath()
+        stretch(arm, 0, 1)
+        ctx.stroke()
+      }
+      const [ax, ay] = at(armA, 1)
+      const [bx, by] = at(armB, 1)
+      const dx = bx - ax, dy = by - ay
+      const d = Math.hypot(dx, dy) || 1
+      const ux = dx / d, uy = dy / d
+      const cyc = 0.5 - 0.5 * Math.cos((age / 3200) * Math.PI * 2)
+      const strain = cyc > 0.8 ? (cyc - 0.8) / 0.2 : 0
+      const cone = coneAt(Math.min(d, r.gap), ease(cyc), strain)
+      ctx.strokeStyle = rgba(muted, 0.4 * ease(env))
+      for (const [x0, y0, sgn] of [[ax, ay, 1], [bx, by, -1]] as const) {
+        const tx = x0 + ux * sgn * cone.reach
+        const ty = y0 + uy * sgn * cone.reach
+        ctx.beginPath()
+        ctx.moveTo(sx(x0, y0), sy(x0, y0))
+        ctx.lineTo(sx(tx, ty), sy(tx, ty))
+        const fwd = Math.atan2(uy * sgn, ux * sgn)
+        for (const k of [-1, 1]) {
+          const ang = fwd + k * cone.spread
+          const fx = tx + Math.cos(ang) * cone.L, fy = ty + Math.sin(ang) * cone.L
+          ctx.moveTo(sx(tx, ty), sy(tx, ty))
+          ctx.lineTo(sx(fx, fy), sy(fx, fy))
+        }
+        ctx.lineWidth = 0.9
+        ctx.stroke()
+      }
+    }
+    return true
+  }
+
   /** Is there anything this layer would draw? The same gates the drawing uses. */
   function wanted(): boolean {
+    if (show) return true
+    // the chosen rung draws nothing here (its own pulse runs in the SVG)
+    if (stage.classList.contains('is-folded')) return false
     for (const n of nodes.values()) if (n.E >= AWAKE && touched(n.id)) return true
-    if (!coarse) for (const c of conns.values()) if (c.E >= DRAWN) return true
+    if (!coarse && !quietNow()) for (const c of conns.values()) if (c.E >= DRAWN) return true
     return false
   }
 
@@ -437,7 +508,12 @@ export function startSignal(env: SignalEnv): () => void {
     if (!running && wanted()) wake()
   }, 250)
 
-  return () => {
+  const newest = reaches.reduce((best, r) => {
+    const t = Math.max(nodeBy.get(r.a)?.x ?? 0, nodeBy.get(r.b)?.x ?? 0)
+    return !best || t > best.t ? { r, t } : best
+  }, null as { r: (typeof reaches)[number]; t: number } | null)
+
+  const stop = () => {
     cancelAnimationFrame(raf)
     window.clearInterval(beat)
     window.clearTimeout(unmountTimer)
@@ -453,5 +529,20 @@ export function startSignal(env: SignalEnv): () => void {
     unmount()
     S.done()
     probe.remove()
+  }
+  return {
+    stop,
+    quiet: (ms) => {
+      quietUntil = performance.now() + ms
+    },
+    coda: () => {
+      show = { t0: performance.now(), dur: 4200, pick: reaches }
+      wake()
+    },
+    invite: () => {
+      if (!newest) return
+      show = { t0: performance.now(), dur: 3400, pick: [newest.r] }
+      wake()
+    },
   }
 }

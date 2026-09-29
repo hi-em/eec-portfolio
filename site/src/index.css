@@ -1001,6 +1001,35 @@ h3 {
     stroke-dashoffset: 1;
   }
 }
+/* F1 on trial (?flow=f1): the chosen rung's pulse in the thread's own lens,
+   thinner, and FORWARD: older to newer, so a newer neighbour's pulse leaves
+   the subject instead of arriving at it. */
+.nw-foldpulse.sig {
+  stroke-width: 1.8;
+}
+.nw-foldpulse.sig.out {
+  animation-name: nw-foldout;
+}
+@keyframes nw-foldout {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  8% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  38% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .nw-foldpulse {
     animation: none;
