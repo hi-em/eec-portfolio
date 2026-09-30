@@ -95,7 +95,10 @@ describe('the book contents', () => {
     // facing pair, and the two new ones are the practice pages.
     expect(BOOK_SLUGS.length).toBe(8)
     expect(BOOK_SLUGS).toContain('soma-towers')
-    expect(BOOK_SLUGS).toContain('falcon')
+    // THE BOOK SWAP v2 (2026-09-30, rulings 99 + 103): Falcon Square left and
+    // Codependent came in, the one page that turns fabrication / DfMA green.
+    expect(BOOK_SLUGS).toContain('codependent')
+    expect(BOOK_SLUGS).not.toContain('falcon')
   })
 
   test('every plate has a committed print rung (manifest + file on disk + width floor)', () => {
@@ -105,7 +108,7 @@ describe('the book contents', () => {
     // softness does not. lEgoarCh's 1024px sagrada render left this list when
     // its plate moved to `outputs`, which is the point of pinning them.
     const PRINT_MIN_W = 1700
-    // ⚠ TWO SANCTIONS, both real originals rather than excuses:
+    // ⚠ THREE SANCTIONS, all real originals rather than excuses:
     //   sensi/app-shape is a 1388px screenshot, all that exists.
     //   verve/dusk-facade is an 880px square export, and so is every Verve
     //     render. Emilie asked for it as the plate, was shown that it lands near
@@ -121,6 +124,10 @@ describe('the book contents', () => {
     const SANCTIONED_SOFT = new Map([
       ['sensi/app-shape', 1388],
       ['verve/dusk-facade', 880],
+      // ballooning-market/ground-floor is her enhanced render at 1679px, the
+      // largest export she has (the book swap v2, 2026-09-30: "we have to work
+      // with that"). ~294dpi at the plate width, a hair under the line.
+      ['ballooning-market/ground-floor', 1679],
     ])
     for (const { master } of BOOK_SPREADS) {
       expect(master.spreadAssets, `${master.slug} declares spreadAssets`).toBeTruthy()

@@ -5,6 +5,8 @@
 // neurospace.ts and is still statically barrelled, because the grid, the plate
 // face, the CV line, headData and the OG card all need it synchronously.
 import NB from '../../components/ui/NB'
+import { PILLAR_SHORT } from '../../lib/pillar'
+import Ref from '../../thoughts/Ref'
 import type { ProjectSpine } from './types'
 
 const spine: ProjectSpine = {
@@ -26,10 +28,12 @@ const spine: ProjectSpine = {
       a server that has since died. This one runs entirely in your browser.
     </>
   ),
+  // THE COINAGE IS A DOOR (her ask, 2026-09-30): the phrase links to its
+  // thought and carries its short form, spelled from lib/pillar.
   why: (
     <>
-      This is the thesis I keep circling: BIM, reframed from Building Information Modeling to
-      Behavior Information Modeling. The information that matters is not just what a building is
+      This is the thesis I keep circling: BIM, reframed from Building Information Modeling to{' '}
+      <Ref id="bim">Behavior Information Modeling ({PILLAR_SHORT})</Ref>. The information that matters is not just what a building is
       made of; it is what the building is doing to the person inside it.
     </>
   ),

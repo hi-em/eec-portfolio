@@ -233,6 +233,17 @@ const BOOK_TITLE_BY_ROUTE = new Map(
   BOOK_SPREADS.map(d => [`/work/${d.entry.id}`, d.master.title]),
 )
 
+// ONE LABEL MOVES (her pick 3 off a drawn board, the book swap v2,
+// 2026-09-30). Codependent's mark lands a few units from lEgoarCh's, so the two
+// names printed on top of each other. The 12 Aug rule (every name centred ABOVE
+// its mark, the one direction nothing else uses) stands for the other seven;
+// this one name sits BELOW its mark, clear of lEgoarCh above and of A
+// Ballooning Market's name below. Keyed by route, like the titles.
+const LABEL_BELOW = new Set(['/work/codependent'])
+function labelAt(n: { x: number; y: number; sheetRoute?: string }) {
+  return LABEL_BELOW.has(n.sheetRoute ?? '') ? { x: n.x, y: n.y + 20 } : { x: n.x, y: n.y - 12 }
+}
+
 /** Is this node one of the eight the book holds a pair for? */
 function isInBook(marked: boolean, n: { sheetRoute?: string }): boolean {
   return marked && n.sheetRoute ? BOOK_PAGE_BY_ROUTE.has(n.sheetRoute) : false
@@ -350,8 +361,8 @@ function MindGraphArt({ ink, marked = false }: { ink: string; marked?: boolean }
                  loses the one thing lEgoarCh’s name is doing. */}
           {inBook && (
             <text
-              x={n.x}
-              y={n.y - 12}
+              x={labelAt(n).x}
+              y={labelAt(n).y}
               textAnchor="middle"
               fontFamily="var(--font-display)"
               fontSize={11.5}

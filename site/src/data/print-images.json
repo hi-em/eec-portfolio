@@ -15,10 +15,10 @@
       }
     },
     "neurospace": {
-      "view": {
-        "file": "assets/print/neurospace/view-print.jpg",
+      "compare": {
+        "file": "assets/print/neurospace/compare-print.jpg",
         "w": 1800,
-        "h": 963
+        "h": 1013
       }
     },
     "lungs": {
@@ -36,10 +36,17 @@
       }
     },
     "ballooning-market": {
-      "render-1": {
-        "file": "assets/print/ballooning-market/render-1-print.jpg",
+      "ground-floor": {
+        "file": "assets/print/ballooning-market/ground-floor-print.jpg",
+        "w": 1679,
+        "h": 937
+      }
+    },
+    "codependent": {
+      "reality-check": {
+        "file": "assets/print/codependent/reality-check-print.jpg",
         "w": 1800,
-        "h": 1005
+        "h": 920
       }
     },
     "verve": {
@@ -47,13 +54,6 @@
         "file": "assets/print/verve/dusk-facade-print.jpg",
         "w": 880,
         "h": 860
-      }
-    },
-    "falcon": {
-      "storm-takeoff-view": {
-        "file": "assets/print/falcon/storm-takeoff-view-print.jpg",
-        "w": 1800,
-        "h": 1013
       }
     }
   },
@@ -83,18 +83,18 @@
     "legoarch": {
       "honest-part": {
         "file": "assets/print/legoarch/honest-part-grid.jpg",
-        "w": 697,
-        "h": 363
+        "w": 713,
+        "h": 371
       },
       "split-and-merge": {
         "file": "assets/print/legoarch/split-and-merge-grid.jpg",
-        "w": 834,
-        "h": 363
+        "w": 854,
+        "h": 371
       },
       "real-parts": {
         "file": "assets/print/legoarch/real-parts-grid.jpg",
-        "w": 696,
-        "h": 363
+        "w": 713,
+        "h": 371
       },
       "pipeline": {
         "file": "assets/print/legoarch/pipeline-grid.jpg",
@@ -103,27 +103,32 @@
       }
     },
     "neurospace": {
-      "score-1": {
-        "file": "assets/print/neurospace/score-1-grid.jpg",
-        "w": 1142,
-        "h": 598
+      "the-rules": {
+        "file": "assets/print/neurospace/the-rules-grid.jpg",
+        "w": 1161,
+        "h": 627
       },
-      "score-2": {
-        "file": "assets/print/neurospace/score-2-grid.jpg",
-        "w": 1128,
-        "h": 598
+      "the-form-finding": {
+        "file": "assets/print/neurospace/the-form-finding-grid.jpg",
+        "w": 1161,
+        "h": 627
+      },
+      "weights": {
+        "file": "assets/print/neurospace/weights-grid.jpg",
+        "w": 1386,
+        "h": 713
       }
     },
     "lungs": {
       "kpi-map": {
         "file": "assets/print/lungs/kpi-map-grid.jpg",
-        "w": 1378,
-        "h": 669
+        "w": 1410,
+        "h": 684
       },
       "stress-test": {
         "file": "assets/print/lungs/stress-test-grid.jpg",
-        "w": 892,
-        "h": 669
+        "w": 912,
+        "h": 684
       },
       "timeline": {
         "file": "assets/print/lungs/timeline-grid.jpg",
@@ -139,18 +144,18 @@
     "huddle": {
       "global-index": {
         "file": "assets/print/huddle/global-index-grid.jpg",
-        "w": 788,
-        "h": 402
+        "w": 806,
+        "h": 411
       },
       "perspective-1": {
         "file": "assets/print/huddle/perspective-1-grid.jpg",
-        "w": 720,
-        "h": 402
+        "w": 737,
+        "h": 411
       },
       "perspective-2": {
         "file": "assets/print/huddle/perspective-2-grid.jpg",
-        "w": 720,
-        "h": 402
+        "w": 737,
+        "h": 411
       },
       "wasp-growth": {
         "file": "assets/print/huddle/wasp-growth-grid.jpg",
@@ -159,20 +164,47 @@
       }
     },
     "ballooning-market": {
-      "process": {
-        "file": "assets/print/ballooning-market/process-grid.jpg",
-        "w": 1312,
-        "h": 297
+      "plan-sketch": {
+        "file": "assets/print/ballooning-market/plan-sketch-grid.jpg",
+        "w": 701,
+        "h": 409
       },
-      "render-3": {
-        "file": "assets/print/ballooning-market/render-3-grid.jpg",
-        "w": 657,
-        "h": 367
+      "net-canopy": {
+        "file": "assets/print/ballooning-market/net-canopy-grid.jpg",
+        "w": 610,
+        "h": 409
       },
       "algorithm": {
         "file": "assets/print/ballooning-market/algorithm-grid.jpg",
-        "w": 1321,
-        "h": 558
+        "w": 968,
+        "h": 409
+      },
+      "exploded-layers": {
+        "file": "assets/print/ballooning-market/exploded-layers-grid.jpg",
+        "w": 1314,
+        "h": 578
+      }
+    },
+    "codependent": {
+      "slot-support-gather": {
+        "file": "assets/print/codependent/slot-support-gather-grid.jpg",
+        "w": 760,
+        "h": 475
+      },
+      "growth-logic": {
+        "file": "assets/print/codependent/growth-logic-grid.jpg",
+        "w": 760,
+        "h": 475
+      },
+      "design-space-30-10-1": {
+        "file": "assets/print/codependent/design-space-30-10-1-grid.jpg",
+        "w": 760,
+        "h": 475
+      },
+      "seaside-night": {
+        "file": "assets/print/codependent/seaside-night-grid.jpg",
+        "w": 1104,
+        "h": 736
       }
     },
     "verve": {
@@ -183,35 +215,13 @@
       },
       "lounge-interior": {
         "file": "assets/print/verve/lounge-interior-grid.jpg",
-        "w": 723,
-        "h": 707
+        "w": 739,
+        "h": 722
       },
       "amenities-plan": {
         "file": "assets/print/verve/amenities-plan-grid.jpg",
-        "w": 1254,
-        "h": 654
-      }
-    },
-    "falcon": {
-      "aircraft-anatomy-sketches": {
-        "file": "assets/print/falcon/aircraft-anatomy-sketches-grid.jpg",
-        "w": 670,
-        "h": 491
-      },
-      "takeoff-angle-sketches": {
-        "file": "assets/print/falcon/takeoff-angle-sketches-grid.jpg",
-        "w": 688,
-        "h": 491
-      },
-      "site-plan": {
-        "file": "assets/print/falcon/site-plan-grid.jpg",
-        "w": 870,
-        "h": 491
-      },
-      "process-01-mirroring": {
-        "file": "assets/print/falcon/process-01-mirroring-grid.jpg",
-        "w": 1308,
-        "h": 736
+        "w": 1256,
+        "h": 655
       }
     }
   }

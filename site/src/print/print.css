@@ -223,7 +223,11 @@
 /* THE LEDGER'S LINKS ROW (her R1 ruling then her C ruling, 2026-08-20): the
    live address, blog and github print the footer's exact red inside the
    plate's ledger — the one signal the table carries. */
-.pr-plate-links .pr-link {
+.pr-plate-links .pr-link,
+/* A DOOR INSIDE THE PROSE (the book swap v2, 2026-09-30): a spine that names a
+   thought links it (Ref, on paper), and red means press here, so it wears the
+   same red. The first is NeuroSpace's "Behavior Information Modeling (BeIM)". */
+.pr-ref {
   text-decoration: none;
   color: var(--pr-red);
 }

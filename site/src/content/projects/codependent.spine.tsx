@@ -29,6 +29,10 @@ const spine: ProjectSpine = {
   how: [
     <>Explore how that system can grow in the Grasshopper definition, using connection rules,
       spatial limits and support checks.</>,
+    // THE CLIENT WALKTHROUGH (ruling 99; her words, shaped 2026-09-30, C1):
+    // she built it in Unreal before the build; it set the seat and counter counts.
+    <>Walk the client around the options in Unreal VR to settle the priorities before the
+      build: how many seats, how many counters, at what height.</>,
     <>Narrow thirty arrangements to ten, and ten to one: option 29, 34 parts.</>,
     <>Turn the selected option into numbered parts and CNC cutting layouts, each part ID tied
       to its geometry, assembly and parts schedule.</>,

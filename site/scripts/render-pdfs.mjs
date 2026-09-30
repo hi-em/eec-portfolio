@@ -251,7 +251,9 @@ const CV_CONTACT_TARGETS = [
 // -each uniqueness cv.test.ts pins independently) + the podcast in the writing
 // line = 8 distinct /work/ doors. Was 9 until the Rings of Mars bullet left the
 // CV on 2026-09-16 (the website session; the award line still names it).
-const CV_WORK_TARGETS = 8
+// 11 since 2026-09-30 (book swap v2): NeuroSpace joined the MaCAD block, and
+// Tideline + Codependent lead the Dynamic Solution entry.
+const CV_WORK_TARGETS = 11
 // Chrome normalises a bare origin to a trailing slash in the annotation URI,
 // so the two sides are compared without one.
 const trimSlash = (u) => u.replace(/\/$/, '')

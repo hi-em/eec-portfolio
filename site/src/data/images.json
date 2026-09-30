@@ -1896,48 +1896,66 @@
       ]
     },
     {
-      "name": "souk-interior",
+      "name": "ground-floor",
       "role": "gallery",
-      "alt": "Render inside the souk under the settled balloon roof, daylight filtered through the colored membranes onto the stalls",
-      "aspect": 1.7917,
+      "alt": "The souk at ground level: stalls and spice sacks under the balloons, the net bridge carrying children overhead",
+      "aspect": 1.7919,
       "variants": [
         {
           "w": 640,
-          "file": "assets/projects/ballooning-market/souk-interior-640.webp",
-          "kb": 68
-        },
-        {
-          "w": 1024,
-          "file": "assets/projects/ballooning-market/souk-interior-1024.webp",
-          "kb": 162
-        },
-        {
-          "w": 1600,
-          "file": "assets/projects/ballooning-market/souk-interior-1600.webp",
-          "kb": 340
-        }
-      ]
-    },
-    {
-      "name": "render-3",
-      "role": "gallery",
-      "alt": "Render of the playscape tunnel through the balloon field, a kid running the voronoi net spine",
-      "aspect": 1.7917,
-      "variants": [
-        {
-          "w": 640,
-          "file": "assets/projects/ballooning-market/render-3-640.webp",
+          "file": "assets/projects/ballooning-market/ground-floor-640.webp",
           "kb": 77
         },
         {
           "w": 1024,
-          "file": "assets/projects/ballooning-market/render-3-1024.webp",
-          "kb": 194
+          "file": "assets/projects/ballooning-market/ground-floor-1024.webp",
+          "kb": 171
         },
         {
           "w": 1600,
-          "file": "assets/projects/ballooning-market/render-3-1600.webp",
-          "kb": 442
+          "file": "assets/projects/ballooning-market/ground-floor-1600.webp",
+          "kb": 330
+        }
+      ]
+    },
+    {
+      "name": "net-canopy",
+      "role": "gallery",
+      "alt": "Inside the net tunnel: the steel walkway threads between red, blue and green balloons toward the open sky",
+      "aspect": 1.4907,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/ballooning-market/net-canopy-640.webp",
+          "kb": 105
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/ballooning-market/net-canopy-1024.webp",
+          "kb": 247
+        }
+      ]
+    },
+    {
+      "name": "plan-sketch",
+      "role": "gallery",
+      "alt": "Market, flow and light in watercolour plan: the balloons carve pockets, a slow market loop, the bridge above",
+      "aspect": 1.714,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/ballooning-market/plan-sketch-640.webp",
+          "kb": 77
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/ballooning-market/plan-sketch-1024.webp",
+          "kb": 177
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/ballooning-market/plan-sketch-1600.webp",
+          "kb": 355
         }
       ]
     }

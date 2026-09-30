@@ -29,6 +29,10 @@ const spine: ProjectSpine = {
   how: [
     <>Shape the wave in Grasshopper with an attractor curve.</>,
     <>Set panel spacing and rotation to control what visitors can see as they move around it.</>,
+    // THE CLIENT WALKTHROUGH (ruling 99; her words, shaped 2026-09-30, T1):
+    // she built it in Unreal before the build. No number: she has none.
+    <>Walk the client around each option in Unreal VR: how much of the car shows? Then
+      simplify to cut production cost.</>,
     <>Test the balance between reflection, concealment and the weight of the assembly with
       physical prototypes and on-site checks.</>,
     <>Take the same definition to fabrication: profiles, ring intersections, part numbers,

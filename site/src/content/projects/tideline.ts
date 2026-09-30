@@ -25,7 +25,8 @@ const tideline: ProjectMeta = {
   dek: 'Sixty mirrored fins on a wave hide a Lincoln and pull visitors closer, until the enclosure lifts and the car takes over.',
   dekSigned: true, // SIGNED by Emilie (Gate 2, 2026-09-27)
   question: 'Can hiding a car be the reason everyone comes to look?',
-  tech: 'RHINO · GRASSHOPPER · 3D-PRINTED PROTOTYPES',
+  // UNREAL · VR (ruling 99, 2026-09-30): she built the client walkthrough before the build.
+  tech: 'RHINO · GRASSHOPPER · 3D-PRINTED PROTOTYPES · UNREAL · VR',
   links: [],
   image: {
     slug: 'tideline',

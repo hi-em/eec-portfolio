@@ -1556,6 +1556,9 @@ export const CORRELATIONS: readonly Correlation[] = [
   ['codependent', 'rules', 2], // DEC 2024 -> OCT 2025: connection rules grow the assembly, the definition decides
   ['tideline', 'rules', 2], // SEP 2025 -> OCT 2025: one attractor curve, sixty fins, the rule makes the form
   ['tideline', 'neuroaes', 1], // SEP 2025 -> DEC 2025: attention drawn by glimpses and reflections
+  // ---- THE BOOK SWAP v2 (2026-09-30): Codependent's plate names this, her pick --
+  ['codependent', 'solvers', 1], // DEC 2024 -> NOV 2025: 34 went to site, 39 stood, still balanced; the support checks
+  // ran in the definition, the solver note is where that curiosity went next. Strength 1: a check, not a simulation.
 ]
 
 // THE PAIRS SHE HAS LOOKED AT AND RULED ARE NOT NEAR-MISSES (2026-08-07).

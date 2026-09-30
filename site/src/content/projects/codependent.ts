@@ -27,7 +27,8 @@ const codependent: ProjectMeta = {
   dek: 'Two interlocking wooden panels, no glue or screws: seats and counters that stand only because each piece holds up another.',
   dekSigned: true, // SIGNED by Emilie (Gate 2, 2026-09-27)
   question: 'What if no piece could stand on its own?',
-  tech: 'RHINO · GRASSHOPPER · CNC CUTTING',
+  // UNREAL · VR (ruling 99, 2026-09-30): she built the client walkthrough before the build.
+  tech: 'RHINO · GRASSHOPPER · CNC CUTTING · UNREAL · VR',
   links: [],
   image: {
     slug: 'codependent',
@@ -37,6 +38,23 @@ const codependent: ProjectMeta = {
   // Her cover pick (B) is a 3x crop of the pre-assembly clip: a cut I made,
   // so card face ONLY; the full clip is its own deck page.
   coverMontage: true,
+  // THE BOOK (the book swap v2, 2026-09-30): Codependent replaces Falcon
+  // Square as the book's second practice pair (rulings 99 + 103): the one page
+  // that turns fabrication / DfMA green. Her picks off real renders, by the
+  // site's fig numbers. PAGE ONE = fig 12, the reality check: pieces went
+  // missing and the booth still stood (the story, over the built joints).
+  spreadAssets: [{ slug: 'codependent', name: 'reality-check' }],
+  // PAGE TWO: fig 1 leads (the booth at night; its 1536px carry it at ~220dpi
+  // at the lead's drawn width), then figs 2 and 3, and a still of the design-
+  // space clip where fig 13 (the joints) sat: frame 120, ten candidates and
+  // option 29 in red. Both the reality check and the joints are photographs of
+  // the same build, so the still says the thing no photo can: 30 -> 10 -> 1.
+  bookLead: { slug: 'codependent', name: 'seaside-night', corner: 'top-outer' },
+  bookRegister: [
+    { slug: 'codependent', name: 'slot-support-gather' },
+    { slug: 'codependent', name: 'growth-logic' },
+    { slug: 'codependent', name: 'design-space-30-10-1', frame: 120 },
+  ],
   showcaseDraft: false,
 }
 

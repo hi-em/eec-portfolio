@@ -23,6 +23,17 @@
 // the index. Also considered and left out: Encoding Urban Risk, Rings of Mars,
 // Tsukiji, Falcon's sibling The Encounter.
 //
+// THE BOOK SWAP v2 (Emilie, 2026-09-30, rulings 99 + 103). Falcon Square
+// LEFT and Codependent CAME IN. A heat map of 23 projects against the four
+// roles she is applying to found one must-have no page proved: fabrication /
+// DfMA (essential at Foster and Laing O'Rourke). Codependent turns it green
+// (connection rules, 30 -> 10 -> 1, numbered parts, CNC files, built). Ruling 99
+// took out A Ballooning Market; ruling 103, her call over a council that voted
+// to keep Falcon for range, took out Falcon instead: its two ambers (geometry,
+// shipped) are green on other pages, so nothing uncovered follows it out.
+// The same session re-baked the NeuroSpace pair from the rebuilt lab and the
+// Ballooning pair from her enhanced renders.
+//
 // EACH PROJECT NOW HOLDS A FACING PAIR: the project page (unchanged, she likes
 // it) on the verso, and an asset grid on the facing recto. 8 pairs + cover +
 // index + CV + colophon = 20 pages, which is what the object can afford at the
@@ -38,10 +49,12 @@ import { METAS_BY_SLUG, type ProjectMaster } from '../content/projects'
 import { SPINES_BY_SLUG } from '../content/projects/spines.eager'
 import { WORK_ENTRIES, type WorkEntry } from '../data/work'
 
-// Her order, verbatim: the five MaCAD projects as /work already ranks them,
-// then the two practice pages at the end. Verve is delivery inside a big team,
-// Falcon she led from the first sketch, and a reader takes those as two
-// different answers to "has she done this for real".
+// Her order, verbatim: the six MaCAD projects as /work already ranks them,
+// then the two practice pages at the end, NEWEST FIRST (2026-09-30: "verve
+// last ... its kinda chronological from newest to oldest"): Codependent, which
+// she led and built, then Verve, delivery inside a big team. (Until the swap
+// the pair was Verve then Falcon, "two different answers to has she done this
+// for real".)
 //
 // The list itself lives in bookPlates.ts with the asset declarations, so the
 // bake script can read them without evaluating a spine (see that file).

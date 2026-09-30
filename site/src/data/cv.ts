@@ -54,7 +54,7 @@
 // verbs are score / estimate / model, never "measure" · Dynamic Solution is the
 // current job, so the role appears and its project work does not. (REVERSED
 // ON THE SITE by Emilie, 2026-09-27: Tideline and Codependent now live on
-// /work. The CV bullets below stay unnamed, her 2026-09-16 pick.)
+// /work; REVERSED ON THE CV too by ruling 99, 2026-09-30: bullet 1 names both.)
 
 // One record entry. `projects` is the in-place project line added at the CV
 // pass: optional, because Dynamic Solution (the current job) cannot name its
@@ -141,12 +141,22 @@ export const EDUCATION: CvEntry[] = [
       // The one project allowed TWO printed lines: the Methods line below was
       // cut to pay for it (its words already print in the skills rows; only
       // "agent orchestration" left the page, "machine learning" moved up).
-      'The Lungs, the app that ran a three-team studio for ten weeks. In a data team of three, designed and built its UX, timeline, KPI map, stress-test game, guided tour and public page, saved to PostgreSQL.',
+      // THE RECRUITER PASS II (2026-09-30, her words): still the one two-line
+      // project, and the timeline says what it was FOR, "for management and
+      // clash detection between teams" (the spine: one timeline per team, so
+      // the overlaps show before they collide). The public page left the line.
+      'The Lungs, the platform a three-team studio ran on for ten weeks. In a data team of three, built its UX, timelines for management and cross-team clash detection, KPI map, stress-test game and tour, on PostgreSQL.',
       // THE SWEEP (2026-08-19, her ruling): the input is a TEXT prompt, not
       // images (the renders are the pipeline's intermediate), and "catalog"
       // takes the US spelling the spine already uses. 2026-09-28: her part
       // only; Charles is credited on the site sheet (her call).
-      'lEgoarCh, a text prompt turned into brick sets verified buildable. Built the brick solver and the whole interface.',
+      // "GenAI pipeline" is the posting word (2026-09-30); the LoRA stays Charles's, the solver and interface hers.
+      'lEgoarCh, a GenAI pipeline from text prompt to brick sets verified buildable. Built the brick solver and interface.',
+      // NEUROSPACE JOINS (her call, the book swap v2, 2026-09-30): the one
+      // MaCAD line that shows geometry written in code. Verbs stay score, never
+      // measure. Solo is her part whole.
+      // Claude Code named as on the page (ruling 106); Three.js still prints in the Ships-with row.
+      'NeuroSpace, a live lab scoring how a room works on you. Solo, with Claude Code: force-density form-finding.',
     ],
   },
   {
@@ -197,16 +207,26 @@ export const EXPERIENCE: CvEntry[] = [
       // bridge, feasibility. Each was measured at ONE printed line on the real
       // sheet before she picked it. "parametric design" is spelled WHOLE on
       // purpose: the build's keyword check reads literal strings.
-      // ⚠ Her pick for bullet 1 carries neither the count of three built
-      // installations nor the brand names (Lincoln, MG Motors, Red Bull, all
-      // cleared by her): both were offered and she chose the wording without
-      // them. Flagged at the time, not changed quietly.
-      'Drive parametric design in Grasshopper and Kangaroo: option studies, form-finding, fabrication files for the build.',
-      'Build generative AI workflows for imagery, video and decks, and set the quality bar on what reaches a client.',
+      // THE TWO BUILT INSTALLATIONS ARE NAMED, AND LEAD (ruling 99, built
+      // 2026-09-30, her call to give each its own linked line with production
+      // numbers from her facts). This REVERSES her 16 Sep pick, which carried
+      // neither the count nor the names. Names lead like the SOMA entry's, so
+      // splitProjectLink makes each one the door to its /work page.
+      // "simplified in VR reviews to cut cost" is her account of the Unreal walkthrough (2026-09-30).
+      'Tideline, 60 mirrored fins hiding a Lincoln: attractor definition to 62 nested parts, simplified in VR reviews to cut cost.',
+      // DfMA is the must-have the book review found under-proved: numbered parts, no fasteners, CNC files.
+      'Codependent, a DfMA kit of 39 CNC-cut panels on 48 slot joints, no glue or screws: 30 options to 1, part IDs, cut files.',
+      // ⚠ Her 16 Sep pick for this line carried neither the count of built
+      // installations nor the brand names; the two lines above now do both.
+      'Lead parametric design in Grasshopper and Kangaroo: option studies, form-finding, fabrication files for the build.',
+      // "AI-augmented design workflows" is a Tier 1 bank phrase (2026-09-30).
+      'Build AI-augmented design workflows for imagery, video and decks, and own the quality bar on what reaches a client.',
       // Unity is on the line at her confirmation (she builds the headset
       // prototypes in it); React and Three.js are the web half.
-      'Prototype event apps, brand games and VR in React, Three.js and Unity, AI-assisted, and test them with users on site.',
-      'Bridge creative and engineering: research decks, feasibility calls and tool trials, presented to clients and leadership.',
+      // UNREAL joins (ruling 99): she built the client VR walkthroughs of both
+      // installations in it. Paid for by "and test them with" -> "tested with".
+      'Prototype event apps, brand games and VR in React, Three.js, Unity and Unreal, AI-assisted, user-tested on site.',
+      'Bridge design and engineering: feasibility studies, tool evaluations and R&D decks presented to clients and leadership.',
     ],
   },
   {
@@ -223,7 +243,8 @@ export const EXPERIENCE: CvEntry[] = [
       'Verve City Walk, District O, Enara, Saria: led facade and massing studies on four towers in Rhino and Grasshopper.',
       // LOD 300 confirmed by her as true of the SOMA delivery too, 2026-07-27,
       // so the keyword is back on the project that earned it.
-      'Delivered those studies into the Revit BIM set at LOD 300: floorplans, interiors, masterplan documentation.',
+      // "construction documents" is the Tier 2 record word (2026-09-30).
+      'Carried those studies into the Revit BIM model at LOD 300: plans, interiors, masterplan construction documents.',
     ],
   },
   // BIM Modeler, BIM International, Beirut (Jun-Aug 2023) was CUT at her call
@@ -274,16 +295,9 @@ export const EXPERIENCE: CvEntry[] = [
       'Falcon Square, an Al Khobar monument: takeoff lines mirrored into a steel falcon, led from the first sketch.',
     ],
   },
-  {
-    dates: 'Sep 2021 - Jan 2023',
-    title: 'Research Assistant',
-    // Full institution name (her review): "LAU" alone means nothing to a
-    // European screener.
-    org: 'Lebanese American University XR Lab, Byblos',
-    projects: [
-      'Modeled and animated chemical reactions for AR learning, and researched VR integration in education.',
-    ],
-  },
+  // RESEARCH ASSISTANT, LAU XR Lab (Sep 2021 - Jan 2023) was CUT at her call
+  // (the book swap v2, 2026-09-30): the oldest entry, its AR/VR now proven by
+  // the current job, and its two lines paid for the named installations above.
 ]
 
 // ---- THE PROJECT NAME IS A DOOR (board B1, her ruling 2026-07-28) ----------
@@ -315,6 +329,9 @@ export const CV_PROJECT_LINKS: Record<string, string> = {
   Sensi: 'sensi',
   'The Lungs': 'lungs',
   lEgoarCh: 'legoarch',
+  NeuroSpace: 'neurospace',
+  Tideline: 'tideline',
+  Codependent: 'codependent',
   'The Homage': 'homage',
   // The showcase is filed under the practice that made them, not under one of
   // the four tower names the bullet lists.

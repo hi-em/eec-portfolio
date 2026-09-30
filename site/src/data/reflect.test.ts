@@ -45,7 +45,11 @@ import { WORLD_KINDS } from '../thoughts/world/worldGraph'
 // both. Requiring each to be present keeps them honest without merging them.
 const RECONCILE: Record<string, { cv: string | null; map: string; why?: string }> = {
   // milestones
-  'xrlab-start': { cv: 'Research Assistant', map: 'Research Assistant' },
+  'xrlab-start': {
+    cv: null,
+    map: 'Research Assistant',
+    why: 'cut from the CV at her call (2026-09-30, the book swap v2): the oldest entry, its AR/VR now proven by the current job; the map keeps the milestone',
+  },
   'self-open': { cv: 'Self-employed', map: 'Self-employed' },
   'barch-grad': { cv: 'Bachelor of Architecture', map: 'B.ARCH' },
   'soma-start': { cv: 'SOMA', map: 'SOMA' },

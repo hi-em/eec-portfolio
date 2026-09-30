@@ -23,8 +23,8 @@ export const BOOK_SLUGS = [
   'lungs',
   'huddle',
   'ballooning-market',
+  'codependent',
   'soma-towers',
-  'falcon',
 ] as const
 
 // THE THOUGHT EACH PLATE NAMES (Emilie, 2026-08-16, picked one by one).
@@ -48,7 +48,9 @@ export const BOOK_SLUGS = [
 // plates; an associative one is true on all of them.
 //
 // Six of these existed already; `soma` and `falcon` are the two threads she
-// wrote into CORRELATIONS in the same pass. Several projects carry more than
+// wrote into CORRELATIONS in the same pass. (2026-09-30, the book swap v2:
+// Falcon left the book; Codependent's plate names `solvers`, physics solvers,
+// her pick, a thread she added to CORRELATIONS for it.) Several projects carry more than
 // one thread (Sensi has seven) and the pick is hers per project, NOT the
 // strongest by strength — she overrode that on three of them. printBook's test
 // asserts every id here is a real thought AND that the map actually carries a
@@ -62,7 +64,7 @@ export const BOOK_THREAD: Record<string, string> = {
   huddle: 'rules',
   'ballooning-market': 'solvers',
   'soma-towers': 'xreal',
-  falcon: 'drawiface',
+  codependent: 'solvers',
 }
 
 // THE ONE WORD THE RAIL DOES NOT SHOUT (Emilie, 2026-08-16).

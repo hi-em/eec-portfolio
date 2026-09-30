@@ -89,7 +89,7 @@ const somaTowers: ProjectMeta = {
   //     the whole reason a plan earns a page, and it is the drawing this project
   //     is actually about once the massing is settled.
 
-  bookLead: { slug: 'verve', name: 'amenities-plan', corner: 'top-outer' },
+  bookLead: { slug: 'verve', name: 'amenities-plan', corner: 'top-bound' },
   // ⚠ THE ELEVATION LEFT THE BOOK ENTIRELY (Emilie, 2026-08-14: "go with A and
   // drop the elevation"). Not demoted, dropped. At 80mm in a register it stood
   // 56mm tall, and the balcony rhythm the whole facade study is about was not

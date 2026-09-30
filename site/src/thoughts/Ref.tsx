@@ -34,6 +34,8 @@ import { ENTRIES } from '../data/registry'
 // follows it in paint too. The _TAP variant keeps the 44px touch floor that
 // RED_LINK alone never had here.
 import { QUIET_LINK_TAP } from '../lib/linkStyles'
+import { SITE_ORIGIN } from '../lib/routes'
+import { useIsPrint } from '../print/PrintContext'
 
 /**
  * Resolve a registry id to the route that shows it: a thought's leaf, or a
@@ -49,9 +51,15 @@ export function routeForRef(id: string): string | undefined {
 
 export default function Ref({ id, children }: { id: string; children: ReactNode }) {
   const to = routeForRef(id)
+  const print = useIsPrint()
   // A thought whose note was cut, or a mistyped id: the words survive, the
   // link does not. Better a flat sentence than a 404 inside an essay.
   if (!to) return <>{children}</>
+  // ON PAPER (the book swap v2, 2026-09-30): the book renders spines outside
+  // any router, so a <Link> would throw there, and a relative href means
+  // nothing in a PDF. Paper gets the absolute address in the book's own link
+  // grammar (pr-link, red like every door), the same one the plate rail's thread opens.
+  if (print) return <a href={SITE_ORIGIN + to} className="pr-link pr-ref">{children}</a>
   return (
     <Link to={to} viewTransition className={QUIET_LINK_TAP}>
       {children}

@@ -129,8 +129,8 @@ export const MANIFEST = {
   // the app's own report, captured whole. The first version is ONE asset at
   // the end, a grid of its pictures (her ruling 106: "dont want to give it
   // importance"); its walkthrough video left the page.
-  // The v1 rows stay below as screen:false: the book reads view, score-1 and
-  // score-2 by name, and the book session re-bakes this pair after.
+  // The v1 rows stay below as screen:false, print only. The book no longer
+  // reads them: the book swap v2 (2026-09-30) re-baked the pair from v2.
   neurospace: [
     {
       src: 'academic/iaac/neurospace/v2/neuro-compare-cover.webp', role: 'gif', name: 'compare-cover', quality: 90,
@@ -427,13 +427,23 @@ export const MANIFEST = {
       src: 'academic/iaac/ballooning-market/blog/image-236.png', role: 'gallery', name: 'chromatic-study',
       alt: 'The chromatic coding study: overlapping ETFE balloons mix cyan, magenta and yellow light into market wayfinding',
     },
+    // THE ENHANCED THREE (her ask and her images, 2026-09-30, the book swap
+    // v2): they REPLACE the last two renders on the strip (souk-interior and
+    // render-3, RENDER (2) and (3), left the site) and add her watercolour
+    // plan. ⚠ STAND-INS:
+    // the originals she pasted in the session top out at 1679px; the full-res
+    // exports replace these files under the same names.
     {
-      src: 'academic/iaac/ballooning-market/IMAGES/BALLOONING-MARKET-RENDER (2).jpeg', role: 'gallery', name: 'souk-interior',
-      alt: 'Render inside the souk under the settled balloon roof, daylight filtered through the colored membranes onto the stalls',
+      src: 'academic/iaac/ballooning-market/enhanced/ground-floor.webp', role: 'gallery', name: 'ground-floor',
+      alt: 'The souk at ground level: stalls and spice sacks under the balloons, the net bridge carrying children overhead',
     },
     {
-      src: 'academic/iaac/ballooning-market/IMAGES/BALLOONING-MARKET-RENDER (3).jpeg', role: 'gallery', name: 'render-3',
-      alt: 'Render of the playscape tunnel through the balloon field, a kid running the voronoi net spine',
+      src: 'academic/iaac/ballooning-market/enhanced/net-canopy.webp', role: 'gallery', name: 'net-canopy',
+      alt: 'Inside the net tunnel: the steel walkway threads between red, blue and green balloons toward the open sky',
+    },
+    {
+      src: 'academic/iaac/ballooning-market/enhanced/plan-sketch.webp', role: 'gallery', name: 'plan-sketch',
+      alt: 'Market, flow and light in watercolour plan: the balloons carve pockets, a slow market loop, the bridge above',
     },
   ],
   // S4b · THE FIVE (2026-07-14): sources are Emilie’s public IAAC blog posts,
