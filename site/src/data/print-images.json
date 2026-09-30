@@ -1,10 +1,10 @@
 {
   "plates": {
     "sensi": {
-      "app-shape": {
-        "file": "assets/print/sensi/app-shape-print.jpg",
-        "w": 1388,
-        "h": 740
+      "galaxy-plate": {
+        "file": "assets/print/sensi/galaxy-plate-print.jpg",
+        "w": 1800,
+        "h": 957
       }
     },
     "legoarch": {
@@ -59,20 +59,20 @@
   },
   "grid": {
     "sensi": {
-      "onboarding": {
-        "file": "assets/print/sensi/onboarding-grid.jpg",
-        "w": 741,
-        "h": 398
+      "shape-scored": {
+        "file": "assets/print/sensi/shape-scored-grid.jpg",
+        "w": 824,
+        "h": 591
       },
-      "green-lens": {
-        "file": "assets/print/sensi/green-lens-grid.jpg",
-        "w": 743,
-        "h": 398
+      "grid-colour": {
+        "file": "assets/print/sensi/grid-colour-grid.jpg",
+        "w": 474,
+        "h": 592
       },
-      "report": {
-        "file": "assets/print/sensi/report-grid.jpg",
-        "w": 743,
-        "h": 398
+      "ripple-chord": {
+        "file": "assets/print/sensi/ripple-chord-grid.jpg",
+        "w": 981,
+        "h": 592
       },
       "act-2-flow": {
         "file": "assets/print/sensi/act-2-flow-grid.jpg",

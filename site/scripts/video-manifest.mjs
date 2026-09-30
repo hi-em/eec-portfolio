@@ -34,8 +34,14 @@ export const VIDEOS = {
   // since the demo round but shown nowhere — only vids[0] ever leads the
   // plate, and the report flow lives inside the scored demo. The folder
   // tells no lies (her pick over leaving it unused).
+  // THE TOUR (2026-09-30, ruling 108): 75 s, captured headless from the LIVE
+  // app (Wren, Garden House), captions signed and burned in as light cards so
+  // it reads muted, synthesised score kept (audio: true; autoplay stays muted).
+  // It teaches Sensi as a copilot and ends on the vision. It REPLACES the old
+  // 45 s scored demo (her yes, 30 Sep); the name stays 'demo'. Poster at 62 s
+  // = the Kitchen rendered before/after.
   sensi: [
-    { src: 'academic/iaac/sensi/demos/sensi-45s-16x9-scored.mp4', name: 'demo', audio: true, posterAt: 12, crf: 23 },
+    { src: 'academic/iaac/sensi/2026-09-refresh/film/sensi-tour-75s.mp4', name: 'demo', audio: true, posterAt: 62, crf: 23 },
   ],
   // NeuroSpace THE TOUR (2026-09-30, rulings 103-106; cut 2 after her notes: a
   // split-view beat with several parameters, plants on empty floor, SOUND, up

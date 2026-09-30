@@ -17,17 +17,33 @@ import type { ReactNode } from 'react'
 const VB = { viewBox: '0 0 160 90', xmlns: 'http://www.w3.org/2000/svg', 'aria-hidden': true } as const
 
 export const WORK_ARTIFACTS: Record<string, ReactNode> = {
-  // Sensi · the relationship galaxy
+  // Sensi · the ripple chord (her pick A, 2026-09-30): Wren's real chord from the
+  // scoring model's own sense→sense adjustments (web/public/demo-home.json), laid out
+  // as web/src/marks/Chord.jsx lays it out: six sense arcs (.ln), the ribbons that fired
+  // in 3+ rooms (.th), the six glyphs (.th), the ONE accent = acoustic drags thermal
+  // (4 rooms). The SAME drawing is the app's favicon and icon (sensi repo, web/public).
   sensi: (
     <svg {...VB}>
-      <path className="th" d="M38 34 61 24M61 24 84 42M84 42 108 28M108 28 126 47M84 42 66 62M66 62 98 66M98 66 126 47" />
-      <circle className="dt" cx="38" cy="34" r="3" />
-      <circle className="dt" cx="61" cy="24" r="2" />
-      <circle className="ac" cx="84" cy="42" r="4" />
-      <circle className="dt" cx="108" cy="28" r="2" />
-      <circle className="dt" cx="126" cy="47" r="2.5" />
-      <circle className="dt" cx="66" cy="62" r="2" />
-      <circle className="dt" cx="98" cy="66" r="2.5" />
+      <path className="th" d="M56.86,64.09 A30,30 0 0,1 53.67,59.38 Q80,45 77.15,15.14 A30,30 0 0,1 82.85,15.14 Q80,45 56.86,64.09 Z"/>
+      <path className="th" d="M109.96,46.46 A30,30 0 0,1 109.15,52.09 Q80,45 104.44,27.6 A30,30 0 0,1 107.29,32.53 Q80,45 109.96,46.46 Z"/>
+      <path className="th" d="M101.72,65.69 A30,30 0 0,1 97.42,69.42 Q80,45 82.14,74.92 A30,30 0 0,1 76.45,74.79 Q80,45 101.72,65.69 Z"/>
+      <path className="th" d="M72.94,15.84 A30,30 0 0,1 77.15,15.14 Q80,45 53.67,59.38 A30,30 0 0,1 51.9,55.49 Q80,45 72.94,15.84 Z"/>
+      <path className="th" d="M51.65,35.18 A30,30 0 0,1 53.34,31.25 Q80,45 104.44,62.4 A30,30 0 0,1 101.72,65.69 Q80,45 51.65,35.18 Z"/>
+      <path className="th" d="M106.66,58.75 A30,30 0 0,1 104.44,62.4 Q80,45 53.34,31.25 A30,30 0 0,1 55.56,27.6 Q80,45 106.66,58.75 Z"/>
+      <path className="acs" d="M109.15,52.09 A30,30 0 0,1 107.29,57.47 Q80,45 84.26,15.3 A30,30 0 0,1 89.79,16.64 Q80,45 109.15,52.09 Z"/>
+      <path className="ln" d="M69.23,13.81 A33,33 0 0,1 90.77,13.81"/>
+      <path className="ln" d="M106.88,25.86 A33,33 0 0,1 110.02,31.29"/>
+      <path className="ln" d="M112.96,46.6 A33,33 0 0,1 97.87,72.74"/>
+      <path className="ln" d="M83.91,77.77 A33,33 0 0,1 76.09,77.77"/>
+      <path className="ln" d="M54.55,66 A33,33 0 0,1 49.08,56.54"/>
+      <path className="ln" d="M48.82,34.19 A33,33 0 0,1 55.05,23.4"/>
+      <path d="M80,2.89L78.17,6.05L81.83,6.05L80,2.89" className="th" fill="none"/>
+      <circle cx="114.64" cy="25" r="1.87" className="th" fill="none"/>
+      <path d="M112.09,65L112.34,65.29L112.6,65.56L112.86,65.77L113.11,65.91L113.36,65.95L113.62,65.91L113.88,65.77L114.13,65.56L114.39,65.29L114.64,65L114.89,64.71L115.15,64.44L115.41,64.23L115.66,64.09L115.92,64.05L116.17,64.09L116.42,64.23L116.68,64.44L116.94,64.71L117.19,65" className="th" fill="none"/>
+      <path d="M81.63,83.37L78.37,83.37L78.37,86.63L81.63,86.63L81.63,83.37" className="th" fill="none"/>
+      <path d="M42.98,64.18L43.22,64.35L43.46,64.5L43.69,64.62L43.93,64.7L44.17,64.73L44.41,64.7L44.65,64.62L44.88,64.5L45.12,64.35L45.36,64.18L45.6,64.02L45.84,63.86L46.07,63.74L46.31,63.67L46.55,63.64L46.79,63.67L47.03,63.74L47.26,63.86L47.5,64.02L47.74,64.18 M42.98,65.82L43.22,65.98L43.46,66.14L43.69,66.26L43.93,66.33L44.17,66.36L44.41,66.33L44.65,66.26L44.88,66.14L45.12,65.98L45.36,65.82L45.6,65.65L45.84,65.5L46.07,65.38L46.31,65.3L46.55,65.27L46.79,65.3L47.03,65.38L47.26,65.5L47.5,65.65L47.74,65.82" className="th" fill="none"/>
+      <circle cx="45.36" cy="23.91" r="0.58" className="th"/>
+      <circle cx="45.36" cy="26.09" r="0.58" className="th"/>
     </svg>
   ),
   // lEgoarCh · the brick castle, studs and all (her tweak: lego-like)

@@ -91,7 +91,9 @@ for (const [slug, items] of Object.entries(MANIFEST)) {
       for (const w of widths) {
         const name = `${item.name}-static-${w}.webp`
         const out = join(outDir, name)
-        const r = await sharp(src, { limitInputPixels: false }) // omitting the animated option reads frame one only
+        // item.staticSrc (2026-09-30, the Sensi orbit): a loop whose frame one
+        // is off-centre can name its own composed still for this ladder.
+        const r = await sharp(item.staticSrc ? join(INCOMING, item.staticSrc) : src, { limitInputPixels: false }) // omitting the animated option reads frame one only
           .resize(...resizeArgs(w))
           .webp({ quality: 80, effort: 4 })
           .toFile(out)

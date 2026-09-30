@@ -103,13 +103,13 @@ describe('the book contents', () => {
 
   test('every plate has a committed print rung (manifest + file on disk + width floor)', () => {
     // The ~300dpi floor at the plate width. One original is honestly smaller
-    // (the Sensi shot is a 1388px screenshot) — SANCTIONED at its real width,
+    // (Verve's square export) — SANCTIONED at its real width,
     // so a REGRESSION below what exists today still fails while the known
     // softness does not. lEgoarCh's 1024px sagrada render left this list when
     // its plate moved to `outputs`, which is the point of pinning them.
     const PRINT_MIN_W = 1700
-    // ⚠ TWO SANCTIONS, both real originals rather than excuses:
-    //   sensi/app-shape is a 1388px screenshot, all that exists.
+    // ⚠ ONE SANCTION, a real original rather than an excuse (Sensi's 1388px
+    //   app-shape left on 2026-09-30: its plate is a 3840px galaxy now):
     //   verve/dusk-facade is an 880px square export, and so is every Verve
     //     render. Emilie asked for it as the plate, was shown that it lands near
     //     154dpi filled, and asked again. Sanctioned at what it really is.
@@ -122,7 +122,6 @@ describe('the book contents', () => {
     //     built. If the softness ever matters, the honest fix is a bigger
     //     export, not a better sentence.
     const SANCTIONED_SOFT = new Map([
-      ['sensi/app-shape', 1388],
       ['verve/dusk-facade', 880],
     ])
     for (const { master } of BOOK_SPREADS) {

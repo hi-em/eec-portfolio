@@ -188,7 +188,7 @@ export const ENTRIES: RegistryEntry[] = [
     image: {
       slug: 'sensi',
       name: 'galaxy-cover',
-      alt: "Sensi’s relationship galaxy: six senses as glowing constellations, every thread a coupling between two comfort scores",
+      alt: 'Sensi’s relationship galaxy turning: six senses as glyph clouds, rooms as blobs, ripples as travelling dots',
     },
     explore: { label: 'SENSI', nodeKind: 'project', order: 0 },
   },

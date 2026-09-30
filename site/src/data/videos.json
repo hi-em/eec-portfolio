@@ -3,7 +3,7 @@
     {
       "name": "demo",
       "aspect": 1.7778,
-      "duration": 44,
+      "duration": 75,
       "audio": true,
       "sources": [
         {
@@ -11,19 +11,19 @@
           "type": "video/mp4",
           "w": 1280,
           "h": 720,
-          "kb": 3416
+          "kb": 11073
         }
       ],
       "poster": [
         {
           "w": 640,
           "file": "assets/projects/sensi/demo-poster-640.webp",
-          "kb": 9
+          "kb": 22
         },
         {
           "w": 1024,
           "file": "assets/projects/sensi/demo-poster-1024.webp",
-          "kb": 18
+          "kb": 41
         }
       ]
     }

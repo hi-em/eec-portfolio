@@ -55,9 +55,10 @@ const sensi: ProjectMeta = {
   // THE COVER = THE GALAXY (Emilie’s pick at the desk, 2026-07-14): the sense
   // constellation sits still on the card and ripples on hover, rhyming with
   // the landing mind-graph. app-shape moved into the flip-through.
-  image: { slug: 'sensi', name: 'galaxy-cover', alt: "Sensi’s relationship galaxy: six senses as glowing constellations, every thread a coupling between two comfort scores" },
-  // G5: the book spread’s dominant plate stays app-shape; scripts/
-  // print-assets.mjs bakes the committed print-resolution rung.
+  // THE ORBIT (2026-09-30, ruling 108): the cover is the live galaxy turning
+  // now; the alt is her signed line.
+  image: { slug: 'sensi', name: 'galaxy-cover', alt: 'Sensi’s relationship galaxy turning: six senses as glyph clouds, rooms as blobs, ripples as travelling dots' },
+  // G5: scripts/print-assets.mjs bakes the committed print-resolution rung.
   // A PLATE NEVER CROPS (Emilie, 2026-08-12). The plate box is 145 x 96mm,
   // aspect 1.51, and the app screenshot is 1.88ish, so `cover` pushed a fifth of it
   // past the trim. On Sensi that was the entire SENSES / CONFLICTS column,
@@ -72,7 +73,11 @@ const sensi: ProjectMeta = {
   // flat (variation 6 and 15), so one colour between them disappears at each.
   // spreadFit left at round 2 (Emilie, 2026-08-19): the plate takes the
   // screenshot's own ~1.88 ratio now, so the hero fills with no ground.
-  spreadAssets: [{ slug: 'sensi', name: 'app-shape' }],
+  // THE GALAXY PLATE (Emilie, 2026-09-30, Sensi part B): the July workspace
+  // left with the July app. She picked the galaxy "zoomed in, a nice clean
+  // shot", and framed it herself: a 3840 px capture of the live galaxy, every
+  // room opened, the app's own UI hidden, cut to the plate's 1.88.
+  spreadAssets: [{ slug: 'sensi', name: 'galaxy-plate' }],
   // THE BOOK’S PAGE TWO (Emilie, 2026-08-11): "the system, then the thing".
   // act-2-flow leads at full width because Sensi’s explanatory images are
   // dense with small type and stop being information below about 150mm; the
@@ -85,11 +90,14 @@ const sensi: ProjectMeta = {
   // exactly four, which is the ceiling the register arithmetic sets.
   // The flowchart is the widest lead in the book at 2.15, so it runs 210mm and
   // stands 98mm, and the meta sits in the 77mm of white beside it.
+  // THE NEW SCREENS (Emilie, 2026-09-30): the flowchart still leads; under it
+  // the plan scored for Wren, the score grid, and the ripple chord, the
+  // question answered on paper: fix one sense and watch the other five.
   bookLead: { slug: 'sensi', name: 'act-2-flow', corner: 'top-outer' },
   bookRegister: [
-    { slug: 'sensi', name: 'onboarding' },
-    { slug: 'sensi', name: 'green-lens' },
-    { slug: 'sensi', name: 'report' },
+    { slug: 'sensi', name: 'shape-scored' },
+    { slug: 'sensi', name: 'grid-colour' },
+    { slug: 'sensi', name: 'ripple-chord' },
   ],
   showcaseDraft: false, // spine signed by Emilie (G4, 2026-07-12)
 }

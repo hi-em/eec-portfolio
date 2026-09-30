@@ -42,10 +42,22 @@ export const MANIFEST = {
   // screen:false rows sit last: print reads assets by NAME, never by order.
   // 00-landing captured headless from the live app 2026-08-25 (fresh browser:
   // the generic Google button ships, never her signed-in chip).
+  // THE REFRESH (Sensi part B, 2026-09-30, ruling 108): every July app screen
+  // left with the July app, and the new captures of the live app (Wren, Garden
+  // House, no browser frame) took their seats in the SAME deck order (her pick
+  // A): the entry chord where the persona was, then the scored plan, the
+  // ledger, the chord, a what-if, the galaxy, the grid, the vision, and the
+  // phone as the door out. The diagrams did not move. The 75 s tour leads. The
+  // new alts are Part A's drafts, SIGNED by her as written (2026-09-30).
   sensi: [
     {
-      src: 'academic/iaac/sensi/app-screenshots/galaxy-cover-web.webp', role: 'gif', name: 'galaxy-cover', frame16x9: true, bg: '#424242',
-      alt: "Sensi’s relationship galaxy at rest: six senses as glowing constellations, every thread a coupling between two scores",
+      // THE ORBIT (her pick B, 2026-09-30, ruling 108): the live galaxy turning,
+      // 1024x576, 6 s @ 12 fps (Tideline's spec), already 16:9 so no frame; q80
+      // lands the 1024 rung at 1.3 MB, near the source's 1.2. The still rung is
+      // her composed frame, not frame one (which sits off-centre).
+      src: 'academic/iaac/sensi/2026-09-refresh/cover/galaxy-cover-orbit-web.webp', role: 'gif', name: 'galaxy-cover', quality: 80,
+      staticSrc: 'academic/iaac/sensi/2026-09-refresh/cover/galaxy-cover-orbit-static.png',
+      alt: 'Sensi’s relationship galaxy turning: six senses as glyph clouds, rooms as blobs, ripples as travelling dots',
     },
     {
       src: 'academic/iaac/sensi/blog/Screenshot-2026-06-28-074954.png', role: 'gallery', name: 'sensory-layer',
@@ -64,12 +76,8 @@ export const MANIFEST = {
       alt: 'The same plan read through two people: a child who minds noise lights up the living room, a grandmother who minds cold, the bedroom',
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/01-onboarding.png', role: 'gallery', name: 'onboarding',
-      alt: "Sensi’s onboarding chat calibrating the comfort copilot to one person: their noise tolerance, their thermal grudges",
-    },
-    {
-      src: 'academic/iaac/sensi/app-screenshots/04-shape.png', role: 'gallery', name: 'comfort-profile',
-      alt: "The comfort profile beside the plan: Em’s priorities weighed against research baselines, the persona the scores answer to",
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/01-entry-chord.png', role: 'gallery', name: 'entry-chord', quality: 90,
+      alt: 'Sensi’s entry: Wren’s ripple chord above the line “every floor plan feels different to every body”',
     },
     {
       src: 'academic/iaac/sensi/blog/Screenshot-2026-06-28-080611.png', role: 'gallery', name: 'coupling-map',
@@ -84,37 +92,49 @@ export const MANIFEST = {
       alt: 'Act 2 of the pipeline as a flowchart: score, edit, ripple and galaxy loops around the plan while it is still soft',
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/06-shape.png', role: 'hero', name: 'app-shape',
-      alt: 'The Sensi workspace mid-edit: a floor plan scored across six senses, conflicts flagged while the layout is still soft',
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/02-shape-scored.png', role: 'gallery', name: 'shape-scored', quality: 90,
+      alt: 'A floor plan scored for Wren, each room ringed by its comfort score, the Kitchen’s ledger open beside it',
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/09-shape.png', role: 'gallery', name: 'room-graph',
-      alt: "The room graph over the plan: rooms as nodes, doors as edges, the kitchen’s sound and smell bleeding toward the bedroom",
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/03-ledger.png', role: 'gallery', name: 'ledger', quality: 90,
+      alt: 'The Living Room’s ledger: six sense bars from base to felt, and the small pulls between senses that moved each one',
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/08-shape.png', role: 'gallery', name: 'checkpoints-timeline',
-      alt: 'Senses across checkpoints: each edit a step on the timeline, six sense lines rising and trading as the layout learns',
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/04-ripple-chord.png', role: 'gallery', name: 'ripple-chord', quality: 90,
+      alt: 'The ripple chord: six senses around a ring, a ribbon wherever one sense pulled on another, red lowers, green lifts',
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/10-shape.png', role: 'gallery', name: 'galaxy-problems',
-      alt: 'The relationship galaxy in its problems lens: six senses named, the rooms failing each one drawn larger, every thread a coupling',
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/05-what-if.png', role: 'gallery', name: 'what-if', quality: 90,
+      alt: 'A what-if landing: triple glazing glows on the Kitchen while its scores move',
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/13-report.png', role: 'gallery', name: 'vision-report',
-      alt: "The report’s kitchen card: scores become a prompt, the prompt becomes a render, discomfort made visible room by room",
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/06-galaxy-burst.png', role: 'gallery', name: 'galaxy-burst', quality: 90,
+      alt: 'The relationship galaxy with one room opened into its six scores',
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/00-landing.png', role: 'gallery', name: 'landing',
-      alt: "Sensi’s front door: borrow Wren’s senses for an instant read-only tour, or be the person the next plan is scored for",
-    },
-    // print only from here: the book register reads these by name.
-    {
-      src: 'academic/iaac/sensi/app-screenshots/09.2-shape.png', role: 'gallery', name: 'green-lens', screen: false,
-      alt: 'The green lens over a city apartment plan: what shapes nature here, the kitchen flagged thirsty for daylight and plants',
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/09-grid-colour.png', role: 'gallery', name: 'grid-colour', quality: 90,
+      alt: 'The score grid: every room by every sense, numbers on tinted squares, red where a score sits below Wren’s line',
     },
     {
-      src: 'academic/iaac/sensi/app-screenshots/11-report.png', role: 'gallery', name: 'report', screen: false,
-      alt: 'The vision report Sensi hands over: comfort scores shaped for one person, with the edits the layout absorbed',
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/11-grid-ledger.png', role: 'gallery', name: 'grid-ledger', quality: 90,
+      alt: 'A row of the grid opened into its ledger in place',
+    },
+    {
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/14-vision-before-after.png', role: 'gallery', name: 'vision-before-after', quality: 90,
+      alt: 'The Kitchen rendered from its scores, before and after triple glazing',
+    },
+    {
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/15-vision-room-card.png', role: 'gallery', name: 'vision-room-card', quality: 90,
+      alt: 'A report card: the Kitchen’s scores become a prompt, and the prompt becomes an image',
+    },
+    {
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/12-phone-three.png', role: 'gallery', name: 'phone-three', quality: 90,
+      alt: 'Sensi on a phone: Wren’s home as a read-only chord and grid',
+    },
+    // print only: the book plate (her framing, 2026-09-30), read by name.
+    {
+      src: 'academic/iaac/sensi/2026-09-refresh/stills/galaxy-plate.png', role: 'hero', name: 'galaxy-plate', screen: false,
+      alt: 'The relationship galaxy up close, every room opened into its six scores',
     },
   ],
   // NEUROSPACE (finalized with Emilie, 2026-07-15; REBUILT 2026-09-30, rulings

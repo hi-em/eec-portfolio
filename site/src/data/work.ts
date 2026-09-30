@@ -173,9 +173,8 @@ const originOf = (p: Project): string =>
 // authored line (S4b: 80-140 chars, context not contents) and derives from
 // the frame name otherwise; never blank.
 // `screen: false` (the sensi refresh, 2026-08-25): an image the BOOK still
-// prints but the screen strip no longer shows — sensi's app-shape and report
-// were replaced on screen by richer captures, while the printed spread and
-// register keep their ruled plates untouched (image-manifest.mjs carries the
+// prints but the screen strip no longer shows — sensi's galaxy plate, a crop
+// made for the page, and neurospace's first-version rows (image-manifest.mjs carries the
 // flag; the print surfaces read assets by NAME and never through this strip).
 function stripFor(slug: string | undefined, coverName: string | undefined, title: string): WorkPicture[] {
   if (!slug || SHARED_SLUGS.has(slug)) return []
