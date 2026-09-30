@@ -37,14 +37,18 @@ export const VIDEOS = {
   sensi: [
     { src: 'academic/iaac/sensi/demos/sensi-45s-16x9-scored.mp4', name: 'demo', audio: true, posterAt: 12, crf: 23 },
   ],
-  // NeuroSpace slider-tour screen capture (Session 9 tail; RE-CUT 2026-07-15,
-  // Emilie's pick at the gallery review): the motion beat for P-102, drag a
-  // slider and the score answers. Silent (her confirmation: the track holds
-  // nothing), flagship crf. THE CROP IS BINDING (privacy): the raw recording
-  // includes the browser chrome with her personal tabs; crop=1280:630:0:56
-  // slices exactly above the app so no re-encode can ever ship them again.
+  // NeuroSpace THE TOUR (2026-09-30, rulings 103-106; cut 2 after her notes: a
+  // split-view beat with several parameters, plants on empty floor, SOUND, up
+  // to 1:30): ~86 s, captured headless
+  // from the LIVE app at 3840x2160 (no browser frame ever in shot), a visible
+  // cursor making real clicks, captions composited after capture in the app's
+  // own Inter + Roboto Mono so it reads without sound, ending on the mark.
+  // The sound is synthesised from the take's own cues (every click, drag,
+  // score change, plant, step and drawer), in the language of her films.
+  // The old slider-tour left the page (her ruling 106: the first
+  // version is one picture grid at the end, "dont want to give it importance").
   neurospace: [
-    { src: 'academic/iaac/neurospace/Images/neuro-recording-demo.mp4', name: 'slider-tour', audio: false, posterAt: 12, crf: 23, vf: 'crop=1280:630:0:56' },
+    { src: 'academic/iaac/neurospace/v2/neuro-tour.mp4', name: 'tour', audio: true, posterAt: 9, crf: 23 },
   ],
   // (XR for Education: NO video entry, decided S2 2026-07-16. A 12s clip of
   // the SN2 render was encoded and REJECTED as the plate lead: the molecule

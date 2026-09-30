@@ -14,12 +14,16 @@ const spine: ProjectSpine = {
     { q: 'Does the score prove the hypothesis, hand you a new one, or the opposite?', beat: 'outcome' },
     { q: 'What happens when BIM starts describing you instead of the building?', beat: 'why' },
   ],
+  // WHAT, HOW and WHAT CAME OF IT re-signed by Emilie as drafted, 2026-09-30
+  // (the v2 rebuild; her rulings 103-106). The rebuild lives here as
+  // context, not as a tag or a dated line (her ruling).
   what: (
     <>
       You are sitting in a room right now, and its defaults are quietly working on you: the
       ceiling height nudging your cortisol, the daylight setting your circadian clock. NeuroSpace
-      makes that invisible layer legible: move a slider and the room rebuilds while a score
-      answers back, live. It is built to be played with, not read.
+      makes that invisible layer legible: change one thing, and a membrane room form-finds itself
+      live while a score answers back. The first version ran its geometry through Grasshopper, on
+      a server that has since died. This one runs entirely in your browser.
     </>
   ),
   why: (
@@ -29,21 +33,24 @@ const spine: ProjectSpine = {
       made of; it is what the building is doing to the person inside it.
     </>
   ),
+  // The Claude Code clause is hers to keep (ruling 106): two of her four target
+  // roles are AI-centric, and the clause shows the work directed and checked.
   how: [
     <>
-      Describe the room as parameters, not geometry: ceiling height, wall count and curvature,
-      openings, organic form, plants. Every one is a slider.
+      Describe the room as parameters, not geometry: ceiling, walls, openings, organic form,
+      plants, each a slider.
     </>,
     <>
-      Send the parameters to a Grasshopper definition on the server; Rhino.Compute evaluates it
-      and streams the heavy geometry back, so the browser never has to model anything itself.
+      Form-find it as one tensioned membrane by force density, the method written for Frei Otto’s
+      Munich Olympic roof: each drag re-solves it in milliseconds.
     </>,
     <>
-      Draw the returned room with Three.js.
+      Score it in the browser against a control room: a transparent weighted sum you can split the
+      screen with, or flip to by holding F.
     </>,
     <>
-      Score the behavior on the fast path, in the browser, the instant a slider settles: a
-      transparent weighted sum over the dimensions the research cares about.
+      Write every rule in code with Claude Code as a pair: I set the rule, then check it against
+      its source.
     </>,
   ],
   // ✔ SIGNED by Emilie, 2026-08-18 (the book audit): the slot used to carry no
@@ -53,12 +60,12 @@ const spine: ProjectSpine = {
   // field; her feedback on NeuroSpace itself came up in the interview round.
   outcome: (
     <>
-      It shipped live: the app runs in the browser today, and the weights it scores with sit in
-      the public repo, which means you can read them and argue with them.
-      <NB note="a score you can argue with beats a number you have to trust." /> The score stays
-      a heuristic, not an instrument: it never measures your body. When Dr. Cleo
-      Valentine saw it, her note set the frame I kept: treat every score as a hypothesis, then
-      watch how it translates.
+      It shipped live, then the server under it died. I rebuilt it instead of letting it go,
+      partly for Dr. Cleo Valentine’s note, the frame I kept: treat every score as a hypothesis.
+      So the lab now tests one at a time, against a control. Partly as an excuse to form-find
+      without Grasshopper. The weights sit in the public repo, to argue with.
+      <NB note="a score you can argue with beats a number you have to trust." /> The score stays a
+      heuristic: it never measures your body.
     </>
   ),
 }

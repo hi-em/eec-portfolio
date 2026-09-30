@@ -117,39 +117,109 @@ export const MANIFEST = {
       alt: 'The vision report Sensi hands over: comfort scores shaped for one person, with the edits the layout absorbed',
     },
   ],
-  // NEUROSPACE (finalized with Emilie, 2026-07-15): the cover is a live cut
-  // of the red room morphing under a slider drag (neuro-cover-web.webp,
-  // ffmpeg 8s @ 8fps from the recording, cropped INSIDE the app: the raw
-  // capture’s browser chrome held personal tabs and never ships). Landing
-  // moved into the strip; the cropped silent slider-tour video leads.
+  // NEUROSPACE (finalized with Emilie, 2026-07-15; REBUILT 2026-09-30, rulings
+  // 103-106). The app was rebuilt in code (a
+  // force-density membrane, a one-screen lab), so the screen strip is new:
+  // every still is a clean 3840x2160 capture of the LIVE app, headless, no
+  // browser frame and no cursor, on the same rounded room the tour uses. The
+  // cover is her pick B1 (the comparison: the app's ordinary room against a
+  // rounded, open one, the variant morphing live), a crop of that take, so it
+  // is a card-face cut. The two diagrams are drawn in the book's ink grammar,
+  // every glyph in THE RULES from the app's own solver. The report pages are
+  // the app's own report, captured whole. The first version is ONE asset at
+  // the end, a grid of its pictures (her ruling 106: "dont want to give it
+  // importance"); its walkthrough video left the page.
+  // The v1 rows stay below as screen:false: the book reads view, score-1 and
+  // score-2 by name, and the book session re-bakes this pair after.
   neurospace: [
     {
-      src: 'academic/iaac/neurospace/Images/neuro-cover-web.webp', role: 'gif', name: 'demo-cover',
-      alt: 'The red parametric room mid-morph as a slider drags, the NeuroScore answering live in the corner of the lab',
+      src: 'academic/iaac/neurospace/v2/neuro-compare-cover.webp', role: 'gif', name: 'compare-cover', quality: 90,
+      alt: 'The ordinary room against a rounded, open one: the variant form-finds live beside its control, the difference on the seam',
     },
     {
-      src: 'academic/iaac/neurospace/Images/landing page.png', role: 'hero', name: 'landing',
+      src: 'academic/iaac/neurospace/v2/form-finding.png', role: 'gallery', name: 'form-finding', quality: 90,
+      alt: 'The room as one tensioned membrane, its cable net drawn: force density solves every node as the ceiling rises to 7.5 m',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/compare.png', role: 'gallery', name: 'compare', quality: 90,
+      alt: 'Split screen: the control room beside the variant with a 4.2 m ceiling, the estimated difference, +13, on the seam',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/observe.png', role: 'gallery', name: 'observe', quality: 90,
+      alt: 'The Observe step, 48 to 61: the leaf rose shows which dimension moved, the control’s leaves dashed behind the variant’s',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/plan.png', role: 'gallery', name: 'plan', quality: 90,
+      alt: 'The drawn plan cut at 1 m: plants placed on the floor, the equinox sun path over Barcelona, shadows at half past nine',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/inside.png', role: 'gallery', name: 'inside', quality: 90,
+      alt: 'Walking inside at eye height: the arched openings in the membrane, and a 1.75 m figure standing in for scale',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/diagram-rules.png', role: 'gallery', name: 'the-rules', quality: 90, frame16x9: true, bg: '#ffffff',
+      alt: 'The rules, drawn by the app’s own solver: each slider, what it does to the membrane, and the score dimension it feeds',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/diagram-formfinding.png', role: 'gallery', name: 'the-form-finding', quality: 90, frame16x9: true, bg: '#ffffff',
+      alt: 'How the room finds its shape: the net, what is fixed, one node’s pulls cancelling, and the solve relaxing sweep by sweep',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/diagram-pipeline.png', role: 'gallery', name: 'the-pipeline', quality: 90, frame16x9: true, bg: '#ffffff',
+      alt: 'One slider move: force density, the membrane, three.js, the score, the report and the .obj, all inside the browser',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/method-drawer.png', role: 'gallery', name: 'method', quality: 90,
+      alt: 'The Method panel: how seven sliders feed five dimensions, each band as wide as the points that slider can add',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/weights-drawer.png', role: 'gallery', name: 'weights', quality: 90,
+      alt: 'The model as a matrix: each slider’s weight into each dimension, readable in the app and in the public repo',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/report-1.png', role: 'gallery', name: 'report-1', quality: 90,
+      alt: 'Report, page one: the question, 61 to 74 after the plants, the variant from outside, inside and in plan, the control beside it',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/report-2.png', role: 'gallery', name: 'report-2', quality: 90,
+      alt: 'Report, page two: the score by dimension, then the geometry measured on the solved film: volume, headroom, glazed area',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/report-4.png', role: 'gallery', name: 'report-4', quality: 90,
+      alt: 'Report, page four: every logged room as a row, every dimension as a column, and the ledger of what each change did',
+    },
+    {
+      src: 'academic/iaac/neurospace/v2/grasshopper-version.png', role: 'gallery', name: 'grasshopper-version', quality: 90, frame16x9: true, bg: '#ffffff',
+      alt: 'The Grasshopper version: the first NeuroSpace’s landing, red room, score pages and pipeline, computed on a server since retired',
+    },
+    // the first version, print only from here: the book reads these by name.
+    {
+      src: 'academic/iaac/neurospace/Images/neuro-cover-web.webp', role: 'gif', name: 'demo-cover', screen: false,
+      alt: 'The red parametric room of the first NeuroSpace mid-morph as a slider drags, the NeuroScore answering live in the corner',
+    },
+    {
+      src: 'academic/iaac/neurospace/Images/landing page.png', role: 'gallery', name: 'landing', screen: false,
       alt: 'NeuroSpace landing page: enter the lab where sliders reshape a room and a live score estimates what it does to you',
     },
     {
-      src: 'academic/iaac/neurospace/Images/view page.png', role: 'gallery', name: 'view',
+      src: 'academic/iaac/neurospace/Images/view page.png', role: 'gallery', name: 'view', screen: false,
       alt: 'The NeuroSpace lab in the browser: sliders reshape a parametric room while the live score answers back instantly',
     },
     {
-      src: 'academic/iaac/neurospace/blog/image-408.png', role: 'gallery', name: 'pipeline',
+      src: 'academic/iaac/neurospace/blog/image-408.png', role: 'gallery', name: 'pipeline', screen: false,
       alt: 'Pipeline diagram: slider values ride to Rhino.Compute for geometry while the browser scores the behavior instantly on its own',
     },
     {
-      src: 'academic/iaac/neurospace/blog/image-409.png', role: 'gallery', name: 'score-formula',
+      src: 'academic/iaac/neurospace/blog/image-409.png', role: 'gallery', name: 'score-formula', screen: false,
       alt: 'The NeuroScore formula opened up: five weighted dimensions and every assumption behind the estimate, readable and arguable',
     },
     {
-      src: 'academic/iaac/neurospace/Images/score01.png', role: 'gallery', name: 'score-1',
+      src: 'academic/iaac/neurospace/Images/score01.png', role: 'gallery', name: 'score-1', screen: false,
       alt: 'Top of the NeuroSpace report: what this design predicts, hypothesis cards and the estimated wellbeing score dial',
     },
     {
-      src: 'academic/iaac/neurospace/Images/score02.png', role: 'gallery', name: 'score-2',
-      alt: "The report’s breakdown: contribution bars and a brain impact map behind the room’s estimated wellbeing score",
+      src: 'academic/iaac/neurospace/Images/score02.png', role: 'gallery', name: 'score-2', screen: false,
+      alt: 'The report’s breakdown: contribution bars and a brain impact map behind the room’s estimated wellbeing score',
     },
   ],
   // THE HUDDLE (Emilie, 2026-07-15): the cover is the WASP growth gif (the

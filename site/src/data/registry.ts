@@ -204,8 +204,8 @@ export const ENTRIES: RegistryEntry[] = [
     // = the content project's image, by the same rule as Sensi's above.
     image: {
       slug: 'neurospace',
-      name: 'demo-cover',
-      alt: 'The red parametric room of NeuroSpace mid-morph, the live NeuroScore answering a slider drag',
+      name: 'compare-cover',
+      alt: 'The ordinary room against a rounded, open one: the variant form-finds live beside its control, the difference on the seam',
     },
     explore: { label: 'NEUROSPACE', nodeKind: 'project', order: 1 },
   },

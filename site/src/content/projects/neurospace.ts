@@ -7,6 +7,12 @@
 // cognitive-load effects, never MEASURES; no clinical claims. NO stat by
 // ruling: the live app is the stronger proof than any digit.
 // Spine prose SIGNED by Emilie (G4, 2026-07-12).
+// REBUILT 2026-09-30 (her rulings 103-106): the app is v2, the room
+// form-found in code as a force-density membrane, so the card leads with it:
+// the tour video, the comparison cover, stills of the live app, and the first
+// version as ONE picture grid at the end of the strip. NO version number on
+// the card (ruling 104); the rebuild is context inside WHAT (her ruling 106).
+// WHAT, HOW and WHAT CAME OF IT re-signed as drafted the same day.
 import type { ProjectMeta } from './types'
 
 const neurospace: ProjectMeta = {
@@ -26,7 +32,12 @@ const neurospace: ProjectMeta = {
   // (the locked hero asks the same); the TOOL’s claim stays score/estimate in
   // the dek and spine, never measure. Question + dot set SIGNED by Emilie (REINDEX batch A, 2026-07-16).
   question: 'Can you visualize the parameters that affect how a room makes you feel?',
-  // ⚠ ALL FOUR ITEMS STAY (Emilie, 2026-08-16). Grasshopper was taken off this
+  // v2 LEADS (her ruling 106, 2026-09-30): the stack the app runs on today.
+  // Grasshopper and Rhino Compute live on where the first version does: the
+  // WHAT and the Grasshopper-version grid. This supersedes the 16 Aug line
+  // below knowingly (it guarded a v1 stack), and the new line is SHORTER, so
+  // the book rail it was protecting still fits.
+  // (was) ⚠ ALL FOUR ITEMS STAY (Emilie, 2026-08-16). Grasshopper was taken off this
   // line for one round, when the book’s footer rail started naming the thought
   // each project made her think of and this plate’s ran 96 characters against a
   // rail that measures 78. Trimming the stack was the wrong lever and it was
@@ -34,24 +45,30 @@ const neurospace: ProjectMeta = {
   // prints the coinage’s short form, so the whole stack fits with room to
   // spare. If this line ever grows, printBook.test.tsx fails with the measured
   // ceiling rather than letting the PDF wrap.
-  tech: 'GRASSHOPPER · RHINO.COMPUTE · VUE 3 · THREE.JS',
+  tech: 'VUE 3 · THREE.JS · FORCE DENSITY',
   links: [
-    // THE HONEST LABEL (2026-07-26). IAAC’s Rhino Compute server is gone, so the
-    // room geometry never renders: the sliders, the score and the report still
-    // work because the scoring runs in the browser. The link stays, because the
-    // working half is the interesting half, but nobody should click into a
-    // half-broken demo unwarned. Emilie’s voice for it ("maybe try it, almost").
+    // THE LABEL IS WHOLE AGAIN (2026-09-30, her pick): v2 draws the room in the
+    // browser, so the 2026-07-26 apology ("TRY IT LIVE, ALMOST (NO 3D)", written
+    // when IAAC's Rhino Compute server died) retired with the server. Same
+    // label as Sensi. A browser with WebGL switched off gets a picture of the
+    // room and a line saying so, inside the app itself.
     // CONSTRAINT: `live` must survive as a standalone word or the red liveness
     // dot in the links row (WorkOverlay’s /\blive\b/i test) silently vanishes.
-    { label: 'TRY IT LIVE, ALMOST (NO 3D)', href: 'https://hi-em.github.io/neurospace' },
+    { label: 'LIVE APP', href: 'https://hi-em.github.io/neurospace' },
     { label: 'GITHUB', href: 'https://github.com/hi-em/neurospace' },
     { label: 'BLOG', href: 'https://blog.iaac.net/the-data-pipeline-behind-neurospace-from-sliders-to-synapses/' },
   ],
-  // THE COVER = THE ROOM, ALIVE (Emilie’s pick, 2026-07-15): a still of the
-  // red parametric room at rest, morphing under a slider drag on hover; cut
-  // from the demo recording inside the app frame (never the browser chrome).
-  // The landing screenshot moved into the flip-through.
-  image: { slug: 'neurospace', name: 'demo-cover', alt: 'The red parametric room of NeuroSpace mid-morph, the live NeuroScore answering a slider drag' },
+  // THE COVER = THE COMPARISON (her pick B1, 2026-09-30, over a form-finding
+  // and a day-long cover): the app's ordinary room against a rounded, open
+  // one, the variant morphing live, the difference on the seam. The loop
+  // opens on the result, so the resting face is the finished comparison.
+  // Recorded headless from the live app; the red-room cover of 2026-07-15
+  // stays in the manifest for print only (demo-cover, screen:false).
+  image: {
+    slug: 'neurospace',
+    name: 'compare-cover',
+    alt: 'The ordinary room against a rounded, open one: the variant form-finds live beside its control, the difference on the seam',
+  },
   // G5: the book spread’s dominant plate (print-assets.mjs bakes the rung).
   // THE PLATE MOVED (Emilie, 2026-08-11): `landing` is the marketing page, all
   // white space and a headline. `view` is the tool working, the red room with

@@ -47,13 +47,20 @@ export const WORK_ARTIFACTS: Record<string, ReactNode> = {
       <path className="ac" d="M80 7h10l-10 6z" />
     </svg>
   ),
-  // NeuroSpace · wireframe volumes on the grid
+  // NeuroSpace · one leaf grown past its control (her pick 3, 2026-09-30,
+  // ruling 105). The app's own Observe rose (PetalRose.vue): five leaves for
+  // the five score dimensions, the control dashed, one leaf (the ceiling)
+  // grown to full. Change one thing. The SAME drawing is the app's icon: both
+  // come out of neurospace/scripts/mark.mjs, which prints this plate.
   neurospace: (
     <svg {...VB}>
-      <path className="th" d="M32 70h96" />
-      <path className="ln" d="M56 40l16-9 16 9v18l-16 9-16-9zM56 40l16 9 16-9M72 49v18" />
-      <path className="ln" d="M98 52l10-6 10 6v11l-10 6-10-6zM98 52l10 6 10-6M108 58v11" />
-      <circle className="ac" cx="72" cy="40" r="3.5" />
+      <path className="th" strokeDasharray="2 2.5" d="M83.64 40.98C79.08 33.82 84.82 21.21 95.08 25.24C102.09 33.76 91.87 43.11 83.64 40.98Z" />
+      <path className="acs" d="M83.64 40.98C78.76 29.53 87.42 7.83 103.51 13.64C114 27.15 96.05 42.09 83.64 40.98Z" />
+      <path className="ln" d="M85.9 47.92C91.3 41.36 105.07 42.92 104.4 53.93C98.47 63.22 86.42 56.4 85.9 47.92Z" />
+      <path className="ln" d="M80 52.2C87.91 55.32 90.67 68.89 80 71.66C69.33 68.89 72.09 55.32 80 52.2Z" />
+      <path className="ln" d="M74.1 47.92C73.58 56.4 61.53 63.22 55.6 53.93C54.93 42.92 68.7 41.36 74.1 47.92Z" />
+      <path className="ln" d="M76.36 40.98C68.13 43.11 57.91 33.76 64.92 25.24C75.18 21.21 80.92 33.82 76.36 40.98Z" />
+      <circle className="dt" cx="80" cy="46" r="5.6" />
     </svg>
   ),
   // The Lungs · the tower breathing, one trunk branching

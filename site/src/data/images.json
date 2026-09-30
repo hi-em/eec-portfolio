@@ -382,9 +382,348 @@
   ],
   "neurospace": [
     {
+      "name": "compare-cover",
+      "role": "gif",
+      "alt": "The ordinary room against a rounded, open one: the variant form-finds live beside its control, the difference on the seam",
+      "aspect": 1.7778,
+      "animated": true,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/compare-cover-640.webp",
+          "kb": 272
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/compare-cover-1024.webp",
+          "kb": 492
+        }
+      ],
+      "static": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/compare-cover-static-640.webp",
+          "kb": 4
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/compare-cover-static-1024.webp",
+          "kb": 8
+        }
+      ]
+    },
+    {
+      "name": "form-finding",
+      "role": "gallery",
+      "alt": "The room as one tensioned membrane, its cable net drawn: force density solves every node as the ceiling rises to 7.5 m",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/form-finding-640.webp",
+          "kb": 20
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/form-finding-1024.webp",
+          "kb": 41
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/form-finding-1600.webp",
+          "kb": 81
+        }
+      ]
+    },
+    {
+      "name": "compare",
+      "role": "gallery",
+      "alt": "Split screen: the control room beside the variant with a 4.2 m ceiling, the estimated difference, +13, on the seam",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/compare-640.webp",
+          "kb": 15
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/compare-1024.webp",
+          "kb": 30
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/compare-1600.webp",
+          "kb": 58
+        }
+      ]
+    },
+    {
+      "name": "observe",
+      "role": "gallery",
+      "alt": "The Observe step, 48 to 61: the leaf rose shows which dimension moved, the control’s leaves dashed behind the variant’s",
+      "aspect": 1.1111,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/observe-640.webp",
+          "kb": 22
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/observe-1024.webp",
+          "kb": 43
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/observe-1600.webp",
+          "kb": 80
+        }
+      ]
+    },
+    {
+      "name": "plan",
+      "role": "gallery",
+      "alt": "The drawn plan cut at 1 m: plants placed on the floor, the equinox sun path over Barcelona, shadows at half past nine",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/plan-640.webp",
+          "kb": 21
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/plan-1024.webp",
+          "kb": 41
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/plan-1600.webp",
+          "kb": 76
+        }
+      ]
+    },
+    {
+      "name": "inside",
+      "role": "gallery",
+      "alt": "Walking inside at eye height: the arched openings in the membrane, and a 1.75 m figure standing in for scale",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/inside-640.webp",
+          "kb": 19
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/inside-1024.webp",
+          "kb": 41
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/inside-1600.webp",
+          "kb": 82
+        }
+      ]
+    },
+    {
+      "name": "the-rules",
+      "role": "gallery",
+      "alt": "The rules, drawn by the app’s own solver: each slider, what it does to the membrane, and the score dimension it feeds",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/the-rules-640.webp",
+          "kb": 17
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/the-rules-1024.webp",
+          "kb": 36
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/the-rules-1600.webp",
+          "kb": 72
+        }
+      ]
+    },
+    {
+      "name": "the-form-finding",
+      "role": "gallery",
+      "alt": "How the room finds its shape: the net, what is fixed, one node’s pulls cancelling, and the solve relaxing sweep by sweep",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/the-form-finding-640.webp",
+          "kb": 34
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/the-form-finding-1024.webp",
+          "kb": 74
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/the-form-finding-1600.webp",
+          "kb": 149
+        }
+      ]
+    },
+    {
+      "name": "the-pipeline",
+      "role": "gallery",
+      "alt": "One slider move: force density, the membrane, three.js, the score, the report and the .obj, all inside the browser",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/the-pipeline-640.webp",
+          "kb": 18
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/the-pipeline-1024.webp",
+          "kb": 37
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/the-pipeline-1600.webp",
+          "kb": 72
+        }
+      ]
+    },
+    {
+      "name": "method",
+      "role": "gallery",
+      "alt": "The Method panel: how seven sliders feed five dimensions, each band as wide as the points that slider can add",
+      "aspect": 0.8333,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/method-640.webp",
+          "kb": 31
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/method-1024.webp",
+          "kb": 55
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/method-1600.webp",
+          "kb": 92
+        }
+      ]
+    },
+    {
+      "name": "weights",
+      "role": "gallery",
+      "alt": "The model as a matrix: each slider’s weight into each dimension, readable in the app and in the public repo",
+      "aspect": 0.8333,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/weights-640.webp",
+          "kb": 50
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/weights-1024.webp",
+          "kb": 97
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/weights-1600.webp",
+          "kb": 162
+        }
+      ]
+    },
+    {
+      "name": "report-1",
+      "role": "gallery",
+      "alt": "Report, page one: the question, 61 to 74 after the plants, the variant from outside, inside and in plan, the control beside it",
+      "aspect": 0.707,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/report-1-640.webp",
+          "kb": 26
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/report-1-1024.webp",
+          "kb": 49
+        }
+      ]
+    },
+    {
+      "name": "report-2",
+      "role": "gallery",
+      "alt": "Report, page two: the score by dimension, then the geometry measured on the solved film: volume, headroom, glazed area",
+      "aspect": 0.5995,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/report-2-640.webp",
+          "kb": 58
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/report-2-1024.webp",
+          "kb": 121
+        }
+      ]
+    },
+    {
+      "name": "report-4",
+      "role": "gallery",
+      "alt": "Report, page four: every logged room as a row, every dimension as a column, and the ledger of what each change did",
+      "aspect": 0.707,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/report-4-640.webp",
+          "kb": 30
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/report-4-1024.webp",
+          "kb": 58
+        }
+      ]
+    },
+    {
+      "name": "grasshopper-version",
+      "role": "gallery",
+      "alt": "The Grasshopper version: the first NeuroSpace’s landing, red room, score pages and pipeline, computed on a server since retired",
+      "aspect": 1.7778,
+      "variants": [
+        {
+          "w": 640,
+          "file": "assets/projects/neurospace/grasshopper-version-640.webp",
+          "kb": 18
+        },
+        {
+          "w": 1024,
+          "file": "assets/projects/neurospace/grasshopper-version-1024.webp",
+          "kb": 33
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/neurospace/grasshopper-version-1600.webp",
+          "kb": 61
+        }
+      ]
+    },
+    {
       "name": "demo-cover",
       "role": "gif",
-      "alt": "The red parametric room mid-morph as a slider drags, the NeuroScore answering live in the corner of the lab",
+      "alt": "The red parametric room of the first NeuroSpace mid-morph as a slider drags, the NeuroScore answering live in the corner",
+      "screen": false,
       "aspect": 1.784,
       "animated": true,
       "variants": [
@@ -414,8 +753,9 @@
     },
     {
       "name": "landing",
-      "role": "hero",
+      "role": "gallery",
       "alt": "NeuroSpace landing page: enter the lab where sliders reshape a room and a live score estimates what it does to you",
+      "screen": false,
       "aspect": 1.9192,
       "variants": [
         {
@@ -439,6 +779,7 @@
       "name": "view",
       "role": "gallery",
       "alt": "The NeuroSpace lab in the browser: sliders reshape a parametric room while the live score answers back instantly",
+      "screen": false,
       "aspect": 1.8696,
       "variants": [
         {
@@ -462,6 +803,7 @@
       "name": "pipeline",
       "role": "gallery",
       "alt": "Pipeline diagram: slider values ride to Rhino.Compute for geometry while the browser scores the behavior instantly on its own",
+      "screen": false,
       "aspect": 1.5351,
       "variants": [
         {
@@ -475,6 +817,7 @@
       "name": "score-formula",
       "role": "gallery",
       "alt": "The NeuroScore formula opened up: five weighted dimensions and every assumption behind the estimate, readable and arguable",
+      "screen": false,
       "aspect": 1.8079,
       "variants": [
         {
@@ -488,6 +831,7 @@
       "name": "score-1",
       "role": "gallery",
       "alt": "Top of the NeuroSpace report: what this design predicts, hypothesis cards and the estimated wellbeing score dial",
+      "screen": false,
       "aspect": 1.9104,
       "variants": [
         {
@@ -511,6 +855,7 @@
       "name": "score-2",
       "role": "gallery",
       "alt": "The report’s breakdown: contribution bars and a brain impact map behind the room’s estimated wellbeing score",
+      "screen": false,
       "aspect": 1.8873,
       "variants": [
         {
