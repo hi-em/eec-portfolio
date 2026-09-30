@@ -45,9 +45,8 @@ const ballooningMarket: ProjectMeta = {
   // strip and stays the book plate below.
   image: { slug: 'ballooning-market', name: 'process', alt: 'The Kangaroo inflation running: balloons seeding, anchoring and settling into a roof over Bab al-Luq market' },
   // THE PLATE = THE GROUND FLOOR (her pick, 2026-09-30): the souk under the
-  // balloons with the net bridge overhead, her enhanced render. It is 1679px,
-  // the largest she has, so it bakes at ~294dpi and printBook.test.tsx
-  // sanctions it at its real width (her ruling: "we have to work with that").
+  // balloons with the net bridge overhead, her enhanced render, from her 4K
+  // export (3840px, baked to the 1800px plate rung like every other plate).
   // No spreadFit, and that is still the rule (Emilie, 2026-08-12): a render
   // crops to the plate's shape and loses only framing.
   // (was) render-1, the aerial over Bab al-Luq.

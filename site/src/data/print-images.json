@@ -38,8 +38,8 @@
     "ballooning-market": {
       "ground-floor": {
         "file": "assets/print/ballooning-market/ground-floor-print.jpg",
-        "w": 1679,
-        "h": 937
+        "w": 1800,
+        "h": 1005
       }
     },
     "codependent": {
@@ -166,18 +166,18 @@
     "ballooning-market": {
       "plan-sketch": {
         "file": "assets/print/ballooning-market/plan-sketch-grid.jpg",
-        "w": 701,
-        "h": 409
+        "w": 719,
+        "h": 404
       },
       "net-canopy": {
         "file": "assets/print/ballooning-market/net-canopy-grid.jpg",
-        "w": 610,
-        "h": 409
+        "w": 603,
+        "h": 405
       },
       "algorithm": {
         "file": "assets/print/ballooning-market/algorithm-grid.jpg",
-        "w": 968,
-        "h": 409
+        "w": 958,
+        "h": 405
       },
       "exploded-layers": {
         "file": "assets/print/ballooning-market/exploded-layers-grid.jpg",

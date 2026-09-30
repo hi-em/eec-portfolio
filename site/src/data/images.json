@@ -1773,22 +1773,22 @@
       "name": "render-1",
       "role": "hero",
       "alt": "Aerial render of the Bab al-Luq block, the settled balloon roof filling the historic steel frame with color",
-      "aspect": 1.7917,
+      "aspect": 1.791,
       "variants": [
         {
           "w": 640,
           "file": "assets/projects/ballooning-market/render-1-640.webp",
-          "kb": 68
+          "kb": 76
         },
         {
           "w": 1024,
           "file": "assets/projects/ballooning-market/render-1-1024.webp",
-          "kb": 161
+          "kb": 192
         },
         {
           "w": 1600,
           "file": "assets/projects/ballooning-market/render-1-1600.webp",
-          "kb": 345
+          "kb": 444
         }
       ]
     },
@@ -1899,22 +1899,22 @@
       "name": "ground-floor",
       "role": "gallery",
       "alt": "The souk at ground level: stalls and spice sacks under the balloons, the net bridge carrying children overhead",
-      "aspect": 1.7919,
+      "aspect": 1.791,
       "variants": [
         {
           "w": 640,
           "file": "assets/projects/ballooning-market/ground-floor-640.webp",
-          "kb": 77
+          "kb": 81
         },
         {
           "w": 1024,
           "file": "assets/projects/ballooning-market/ground-floor-1024.webp",
-          "kb": 171
+          "kb": 195
         },
         {
           "w": 1600,
           "file": "assets/projects/ballooning-market/ground-floor-1600.webp",
-          "kb": 330
+          "kb": 428
         }
       ]
     },
@@ -1922,7 +1922,7 @@
       "name": "net-canopy",
       "role": "gallery",
       "alt": "Inside the net tunnel: the steel walkway threads between red, blue and green balloons toward the open sky",
-      "aspect": 1.4907,
+      "aspect": 1.4898,
       "variants": [
         {
           "w": 640,
@@ -1932,7 +1932,12 @@
         {
           "w": 1024,
           "file": "assets/projects/ballooning-market/net-canopy-1024.webp",
-          "kb": 247
+          "kb": 274
+        },
+        {
+          "w": 1600,
+          "file": "assets/projects/ballooning-market/net-canopy-1600.webp",
+          "kb": 654
         }
       ]
     },
@@ -1940,22 +1945,22 @@
       "name": "plan-sketch",
       "role": "gallery",
       "alt": "Market, flow and light in watercolour plan: the balloons carve pockets, a slow market loop, the bridge above",
-      "aspect": 1.714,
+      "aspect": 1.7778,
       "variants": [
         {
           "w": 640,
           "file": "assets/projects/ballooning-market/plan-sketch-640.webp",
-          "kb": 77
+          "kb": 75
         },
         {
           "w": 1024,
           "file": "assets/projects/ballooning-market/plan-sketch-1024.webp",
-          "kb": 177
+          "kb": 191
         },
         {
           "w": 1600,
           "file": "assets/projects/ballooning-market/plan-sketch-1600.webp",
-          "kb": 355
+          "kb": 437
         }
       ]
     }

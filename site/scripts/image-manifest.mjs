@@ -404,7 +404,7 @@ export const MANIFEST = {
       alt: 'Four stages of the Kangaroo inflation: seeding the balloons, anchoring, settling, and threading the spine path',
     },
     {
-      src: 'academic/iaac/ballooning-market/IMAGES/BALLOONING-MARKET-RENDER (1).jpeg', role: 'hero', name: 'render-1',
+      src: 'academic/iaac/ballooning-market/enhanced/4k/ballooning-market-aerial-4k.png', role: 'hero', name: 'render-1',
       alt: 'Aerial render of the Bab al-Luq block, the settled balloon roof filling the historic steel frame with color',
     },
     {
@@ -430,19 +430,18 @@ export const MANIFEST = {
     // THE ENHANCED THREE (her ask and her images, 2026-09-30, the book swap
     // v2): they REPLACE the last two renders on the strip (souk-interior and
     // render-3, RENDER (2) and (3), left the site) and add her watercolour
-    // plan. ⚠ STAND-INS:
-    // the originals she pasted in the session top out at 1679px; the full-res
-    // exports replace these files under the same names.
+    // plan. Her 4K exports (3504-3840px), found the same day; the aerial
+    // (render-1) moved to its 4K version too.
     {
-      src: 'academic/iaac/ballooning-market/enhanced/ground-floor.webp', role: 'gallery', name: 'ground-floor',
+      src: 'academic/iaac/ballooning-market/enhanced/4k/persp-ground-floor-4k.png', role: 'gallery', name: 'ground-floor',
       alt: 'The souk at ground level: stalls and spice sacks under the balloons, the net bridge carrying children overhead',
     },
     {
-      src: 'academic/iaac/ballooning-market/enhanced/net-canopy.webp', role: 'gallery', name: 'net-canopy',
+      src: 'academic/iaac/ballooning-market/enhanced/4k/persp-01-high-resolution.png', role: 'gallery', name: 'net-canopy',
       alt: 'Inside the net tunnel: the steel walkway threads between red, blue and green balloons toward the open sky',
     },
     {
-      src: 'academic/iaac/ballooning-market/enhanced/plan-sketch.webp', role: 'gallery', name: 'plan-sketch',
+      src: 'academic/iaac/ballooning-market/enhanced/4k/market-plan-annotated-sketch-4k.png', role: 'gallery', name: 'plan-sketch',
       alt: 'Market, flow and light in watercolour plan: the balloons carve pockets, a slow market loop, the bridge above',
     },
   ],
