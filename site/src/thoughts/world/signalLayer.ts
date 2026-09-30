@@ -273,6 +273,17 @@ export function startSignal(env: SignalEnv): SignalApi {
     quietSince = 0
     raf = requestAnimationFrame(frame)
   }
+  // THE CHOSEN RUNG RESTS, AND SO DOES THE WAY BACK FROM IT (her recording,
+  // 2026-09-29: "when i am inside the isolated state of sensi, if i go back to
+  // the held state it glitches"). Releasing the fold flies the camera home over
+  // 820ms (.nw-cam), but this canvas maps the world with NO camera, so the
+  // moment is-folded left it drew impulses where the threads WILL be while the
+  // drawing was still flying: teal strokes floating off every thread. Mounting
+  // it mid-flight also turned the stage's ground transparent under a moving
+  // 4K layer, which is when the map blanked for a few frames. NeuralWorld marks
+  // the flight with data-landing; the layer waits it out, and the 250ms beat
+  // wakes it once the camera is home.
+  const resting = () => stage.classList.contains('is-folded') || stage.dataset.landing === '1'
   let drew = true
   function frame(now: number) {
     if (!mounted) {
@@ -288,7 +299,7 @@ export function startSignal(env: SignalEnv): SignalApi {
     ctx.lineCap = 'round'
     // the chosen rung rests: the fold's own pulse names the subject there
     let busy = false
-    if (!stage.classList.contains('is-folded')) {
+    if (!resting()) {
       const a = drawSignal(now)
       const b = drawCones(now)
       const c = drawShow(now)
@@ -473,7 +484,7 @@ export function startSignal(env: SignalEnv): SignalApi {
   function wanted(): boolean {
     if (show) return true
     // the chosen rung draws nothing here (its own pulse runs in the SVG)
-    if (stage.classList.contains('is-folded')) return false
+    if (resting()) return false
     for (const n of nodes.values()) if (n.E >= AWAKE && touched(n.id)) return true
     if (!coarse && !quietNow()) for (const c of conns.values()) if (c.E >= DRAWN) return true
     return false

@@ -534,6 +534,7 @@ export default function NeuralWorld() {
   // gestures, where before one tap jumped straight into a full fold.
   const [heldId, setHeldId] = useState<string | null>(null)
   const foldRef = useRef(false)
+  const landTimer = useRef(0)
   const ambientRef = useRef(true)
   ambientRef.current = heldId === null
 
@@ -1603,6 +1604,18 @@ export default function NeuralWorld() {
     if (cam) {
       cam.style.transition = ''
       cam.style.transform = ''
+    }
+    // THE FLIGHT HOME IS MARKED (2026-09-30, her glitch): the signal canvas
+    // has no camera, so it waits until .nw-cam's 820ms return has landed
+    // (signalLayer.ts, `resting`). A data attribute, not a class: React owns
+    // the stage's className and rewrites it on this very render.
+    const st = stageRef.current
+    if (st) {
+      st.dataset.landing = '1'
+      window.clearTimeout(landTimer.current)
+      landTimer.current = window.setTimeout(() => {
+        delete st.dataset.landing
+      }, 860)
     }
     camAt.current = { tx: 0, ty: 0, k: 1 }
     foldRef.current = false
