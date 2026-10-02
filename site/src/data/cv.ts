@@ -151,7 +151,8 @@ export const EDUCATION: CvEntry[] = [
       // takes the US spelling the spine already uses. 2026-09-28: her part
       // only; Charles is credited on the site sheet (her call).
       // "GenAI pipeline" is the posting word (2026-09-30); the LoRA stays Charles's, the solver and interface hers.
-      'lEgoarCh, a GenAI pipeline from text prompt to brick sets verified buildable. Built the brick solver and interface.',
+      // "live" (the keyword pass, 2026-10-02, her call): the app is deployed; the /work page carries the address.
+      'lEgoarCh, a live GenAI pipeline from text prompt to brick sets verified buildable. Built the brick solver and interface.',
       // NEUROSPACE JOINS (her call, the book swap v2, 2026-09-30): the one
       // MaCAD line that shows geometry written in code. Verbs stay score, never
       // measure. Solo is her part whole.
@@ -215,18 +216,31 @@ export const EXPERIENCE: CvEntry[] = [
       // "simplified in VR reviews to cut cost" is her account of the Unreal walkthrough (2026-09-30).
       'Tideline, 60 mirrored fins hiding a Lincoln: attractor definition to 62 nested parts, simplified in VR reviews to cut cost.',
       // DfMA is the must-have the book review found under-proved: numbered parts, no fasteners, CNC files.
-      'Codependent, a DfMA kit of 39 CNC-cut panels on 48 slot joints, no glue or screws: 30 options to 1, part IDs, cut files.',
+      // THE KEYWORD PASS (2026-10-02, her rulings, one question per line, each
+      // measured at one printed line before she picked it): the lines of this
+      // block were re-read against two live postings and now say, where true,
+      // the postings' own words. "manufacturing" is spelled out beside the
+      // acronym; "no glue or screws" and "cut files" paid for it.
+      'Codependent, a DfMA kit, designed for manufacturing: 39 CNC-cut panels, 48 slot joints, 30 options to 1, part IDs.',
       // ⚠ Her 16 Sep pick for this line carried neither the count of built
       // installations nor the brand names; the two lines above now do both.
-      'Lead parametric design in Grasshopper and Kangaroo: option studies, form-finding, fabrication files for the build.',
+      // "simulation" joins form-finding (Kangaroo is a physics solver); "for the build" paid for it.
+      'Lead parametric design in Grasshopper and Kangaroo: option studies, form-finding simulation, fabrication files.',
       // "AI-augmented design workflows" is a Tier 1 bank phrase (2026-09-30).
-      'Build AI-augmented design workflows for imagery, video and decks, and own the quality bar on what reaches a client.',
+      // ⚠ 2026-10-02 (her pick): "design" left that phrase to seat "visual
+      // communication", and "own" became "take ownership of", the noun both
+      // postings use.
+      'Build AI-augmented workflows for visual communication (imagery, video, decks); take ownership of the quality bar.',
       // Unity is on the line at her confirmation (she builds the headset
       // prototypes in it); React and Three.js are the web half.
       // UNREAL joins (ruling 99): she built the client VR walkthroughs of both
       // installations in it. Paid for by "and test them with" -> "tested with".
-      'Prototype event apps, brand games and VR in React, Three.js, Unity and Unreal, AI-assisted, user-tested on site.',
-      'Bridge design and engineering: feasibility studies, tool evaluations and R&D decks presented to clients and leadership.',
+      // 2026-10-02: "Develop software" leads (the page said neither word);
+      // "AI-assisted" left this line and still prints in the lead.
+      'Develop software prototypes (event apps, brand games, VR) in React, Three.js, Unity and Unreal, user-tested on site.',
+      // 2026-10-02: "strategy" is claimed at her confirmation; "presentations"
+      // and "stakeholders" replace "decks presented to clients and leadership".
+      'Bridge design and engineering: feasibility and strategy studies, tool evaluations, R&D presentations to stakeholders.',
     ],
   },
   {
@@ -244,7 +258,8 @@ export const EXPERIENCE: CvEntry[] = [
       // LOD 300 confirmed by her as true of the SOMA delivery too, 2026-07-27,
       // so the keyword is back on the project that earned it.
       // "construction documents" is the Tier 2 record word (2026-09-30).
-      'Carried those studies into the Revit BIM model at LOD 300: plans, interiors, masterplan construction documents.',
+      // "drawings" replaces "plans" (the keyword pass, 2026-10-02).
+      'Carried those studies into the Revit BIM model at LOD 300: drawings, interiors, masterplan, construction documents.',
     ],
   },
   // BIM Modeler, BIM International, Beirut (Jun-Aug 2023) was CUT at her call
@@ -266,14 +281,18 @@ export const EXPERIENCE: CvEntry[] = [
       // printed book and the share cards), and the term is near-universal in
       // big-tech design-technologist listings. No card count in the string, so
       // the line can never go stale.
-      "Pen Table, this portfolio's design system: one token set governing the site, a printed book and the share cards.",
+      // 2026-10-02 (her ruling): "documented standards" and "maintained" join;
+      // the spec and the token file are the documents.
+      "Pen Table, this portfolio's design system: documented standards, one maintained token set for site, book and cards.",
       // Workshops dropped: she ATTENDS them, and attending a workshop is not a
       // self-employed activity. Only the research claim survives.
       // HER OWN WORDING (2026-09-16, the website session): she noticed the CV
       // never said neuroarchitecture plainly, asked for the essays as the proof
       // of research, and wrote this line herself from two drafted mixes.
       // "tech" is her word. Measured at one printed line before it went in.
-      'Ongoing research in neuroarchitecture, computational design and emerging tech, written up in essays and tools.',
+      // ⚠ 2026-10-02: her own line, reworded with her yes: "trends" and
+      // "diagrams" join, "written up in" became a colon. "tech" stays hers.
+      'Ongoing research in neuroarchitecture, computational design and emerging tech trends: essays, diagrams and tools.',
     ],
   },
   {
@@ -292,7 +311,8 @@ export const EXPERIENCE: CvEntry[] = [
       // Aligned DOWN at the sweep (2026-08-19, her ruling): the project master
       // says "concept support" and she ruled the CV was overstating.
       'The Encounter, an Anfeh cemetery in planted tomb terraces: concept support, landscape and tomb details. Finalist.',
-      'Falcon Square, an Al Khobar monument: takeoff lines mirrored into a steel falcon, led from the first sketch.',
+      // "early-stage concept" replaces "from the first sketch" (her pick, 2026-10-02).
+      'Falcon Square, an Al Khobar monument: takeoff lines mirrored into a steel falcon; led the early-stage concept.',
     ],
   },
   // RESEARCH ASSISTANT, LAU XR Lab (Sep 2021 - Jan 2023) was CUT at her call
@@ -450,8 +470,13 @@ export const SKILLS = [
     // on two lines (measured).
     // 2026-09-28 ("what I built" pass): "machine learning" moves up from the
     // cut Methods line; "AI agents and LLM copilots" shortens to pay for it.
+    // THE KEYWORD PASS (2026-10-02, her ruling): "cloud AI inference" joins
+    // (Sensi's LLM calls from Cloud Run; GenAI models she ran on a cloud GPU).
+    // ⚠ This REVERSES pick P1b above: Cursor leaves the page, and Claude Code
+    // leaves this row because the NeuroSpace line already names it. Dropping
+    // Cursor alone wrapped the row to three lines (measured).
     items:
-      'LLM agents (LangGraph) · machine learning · evals and benchmarking · GenAI pipelines (LoRA fine-tuning · FLUX · ComfyUI · ControlNet) · Weights & Biases · Claude Code · Cursor · rapid prototyping · design automation',
+      'LLM agents (LangGraph) · machine learning · evals and benchmarking · GenAI pipelines (LoRA fine-tuning · FLUX · ComfyUI · ControlNet) · Weights & Biases · cloud AI inference · rapid prototyping · design automation',
   },
   {
     // THE WEBSITE SESSION (2026-09-16, checklist item 1, her ruling): the
@@ -459,9 +484,17 @@ export const SKILLS = [
     // experience bullets now sit in ONE row, which is also what puts the word
     // "geometry" on the page (it appeared zero times). Nothing here is new:
     // every token was already on the sheet. Measured at one printed line.
+    // ⚠ TWO PRINTED LINES since 2026-10-02 (her ruling, cost shown to her: one
+    // of the page's two free lines). Grasshopper is glossed in the screened
+    // words for what it is (node-based programming, low-code), the Adobe suite
+    // returns (she uses it; it had appeared nowhere since PROFESSIONAL RECORD
+    // retired) and 3D printing joins (printed parts at every practice).
+    // Rhino Compute sits BEFORE Rhino.Inside now: in the old order the row
+    // broke between "Rhino" and "Compute", and the build's ATS check (the
+    // name must read with its space) failed on the wrapped text layer.
     group: 'Geometry and BIM',
     items:
-      'Rhino · Grasshopper · Kangaroo · Rhino.Inside · Rhino Compute · Revit (LOD 300) · Speckle',
+      'Rhino · Grasshopper (node-based programming, low-code) · Kangaroo · Rhino Compute · Rhino.Inside · Revit (LOD 300) · Speckle · Adobe Creative Suite · 3D printing',
   },
   {
     // Speckle, Rhino.Inside and Rhino Compute moved UP to the Geometry and BIM
@@ -497,8 +530,14 @@ export const SKILLS = [
     // (the row now reads "demo and narrative") and "daylighting" gives up its
     // slot. ⚠ daylighting was a real AEC/performance screening term and it now
     // appears NOWHERE on the CV — raised with her, cut on her instruction.
+    // THE KEYWORD PASS (2026-10-02, her ruling): "built environment",
+    // "product development" (Codependent, Sensi, NeuroSpace, her words) and
+    // "artificial intelligence", spelled out for the first time, take the
+    // seats of "benchmarking" (a duplicate of the AI row), "evaluation
+    // methods" and ⚠ "Rhino-Revit interoperability" (her offer; Rhino.Inside
+    // in the row above still evidences it). Still two printed lines.
     items:
-      'design technology · human experience · occupant wellbeing · evidence-based design · research design · evaluation methods · benchmarking · Rhino-Revit interoperability · human-AI interaction · demo and narrative',
+      'design technology · built environment · product development · artificial intelligence · human experience · occupant wellbeing · evidence-based design · research design · human-AI interaction · demo and narrative',
   },
 ]
 

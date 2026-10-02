@@ -26,7 +26,10 @@ const legoarch: ProjectMeta = {
   question: 'How can AI turn a text prompt into a LEGO set that actually snaps together?',
   stat: 'LORA · 40 IMAGES · 3 BENCHMARKS',
   tech: 'FLUX.2 KLEIN · TRELLIS-2 · LORA · LDRAW',
+  // LIVE APP LEADS, as on Sensi (her call, 2026-10-02): the app is deployed
+  // on Charles's domain. `liveApp` is NOT set: the book's rail is unchanged.
   links: [
+    { label: 'LIVE APP', href: 'https://legoarch.charlesabichahine.com/' },
     { label: 'GITHUB', href: 'https://github.com/hi-em/genai-legoarch' },
     { label: 'BLOG', href: 'https://blog.iaac.net/legoarch-behind-the-sets/' },
   ],
