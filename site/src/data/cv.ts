@@ -145,7 +145,8 @@ export const EDUCATION: CvEntry[] = [
       // project, and the timeline says what it was FOR, "for management and
       // clash detection between teams" (the spine: one timeline per team, so
       // the overlaps show before they collide). The public page left the line.
-      'The Lungs, the platform a three-team studio ran on for ten weeks. In a data team of three, built its UX, timelines for management and cross-team clash detection, KPI map, stress-test game and tour, on PostgreSQL.',
+      // THE FINAL PASS (2026-10-03, her yes): "Collaborating" (six of nine postings ask for collaboration).
+      'The Lungs, the platform a three-team studio ran on for ten weeks. Collaborating in a data team of three, built its UX, timelines for management and cross-team clash detection, KPI map, stress-test game and tour, on PostgreSQL.',
       // THE SWEEP (2026-08-19, her ruling): the input is a TEXT prompt, not
       // images (the renders are the pipeline's intermediate), and "catalog"
       // takes the US spelling the spine already uses. 2026-09-28: her part
@@ -214,7 +215,8 @@ export const EXPERIENCE: CvEntry[] = [
       // neither the count nor the names. Names lead like the SOMA entry's, so
       // splitProjectLink makes each one the door to its /work page.
       // "simplified in VR reviews to cut cost" is her account of the Unreal walkthrough (2026-09-30).
-      'Tideline, 60 mirrored fins hiding a Lincoln: attractor definition to 62 nested parts, simplified in VR reviews to cut cost.',
+      // THE FOSTER PASS (2026-10-03, her yes): "geometry-driven" is the DSA's word for the attractor definition; "reviews" paid for it.
+      'Tideline, 60 mirrored fins hiding a Lincoln: geometry-driven definition, 62 nested parts, simplified in VR to cut cost.',
       // DfMA is the must-have the book review found under-proved: numbered parts, no fasteners, CNC files.
       // THE KEYWORD PASS (2026-10-02, her rulings, one question per line, each
       // measured at one printed line before she picked it): the lines of this
@@ -225,12 +227,15 @@ export const EXPERIENCE: CvEntry[] = [
       // ⚠ Her 16 Sep pick for this line carried neither the count of built
       // installations nor the brand names; the two lines above now do both.
       // "simulation" joins form-finding (Kangaroo is a physics solver); "for the build" paid for it.
-      'Lead parametric design in Grasshopper and Kangaroo: option studies, form-finding simulation, fabrication files.',
+      // THE FOSTER PASS (2026-10-03, her yes): "modelling" (the DSA sits in Specialist Modelling) and "digital fabrication"
+      // join; "parametric design" stays whole (a must-hit). "option studies" and "files" paid for them.
+      'Lead parametric design and modelling in Grasshopper and Kangaroo: form-finding simulation, digital fabrication.',
       // "AI-augmented design workflows" is a Tier 1 bank phrase (2026-09-30).
       // ⚠ 2026-10-02 (her pick): "design" left that phrase to seat "visual
       // communication", and "own" became "take ownership of", the noun both
       // postings use.
-      'Build AI-augmented workflows for visual communication (imagery, video, decks); take ownership of the quality bar.',
+      // THE FOSTER PASS (2026-10-03, her yes): "visualisation" (UK spelling, the DSA's) replaces imagery; "decks" paid for it.
+      'Build AI-augmented workflows for visual communication (visualisation, video); take ownership of the quality bar.',
       // Unity is on the line at her confirmation (she builds the headset
       // prototypes in it); React and Three.js are the web half.
       // UNREAL joins (ruling 99): she built the client VR walkthroughs of both
@@ -240,7 +245,9 @@ export const EXPERIENCE: CvEntry[] = [
       'Develop software prototypes (event apps, brand games, VR) in React, Three.js, Unity and Unreal, user-tested on site.',
       // 2026-10-02: "strategy" is claimed at her confirmation; "presentations"
       // and "stakeholders" replace "decks presented to clients and leadership".
-      'Bridge design and engineering: feasibility and strategy studies, tool evaluations, R&D presentations to stakeholders.',
+      // THE FINAL PASS (2026-10-03, her yes): "problem-solving" (LEGO, PLP, Laing O'Rourke, Anthropic) and "clients"
+      // (Arcadis) join; "feasibility" and "tool evaluations" paid for them.
+      'Bridge design and engineering: problem-solving, strategy studies, R&D presentations to clients and stakeholders.',
     ],
   },
   {
@@ -254,12 +261,14 @@ export const EXPERIENCE: CvEntry[] = [
     // door to the bullet's leading string, and a number in front would kill
     // the link annotation and fail cv.test.ts.
     projects: [
-      'Verve City Walk, District O, Enara, Saria: led facade and massing studies on four towers in Rhino and Grasshopper.',
+      // THE FOSTER PASS (2026-10-03, her yes): "geometry" joins the facade; "studies" paid for it.
+      'Verve City Walk, District O, Enara, Saria: led facade geometry and massing on four towers in Rhino and Grasshopper.',
       // LOD 300 confirmed by her as true of the SOMA delivery too, 2026-07-27,
       // so the keyword is back on the project that earned it.
       // "construction documents" is the Tier 2 record word (2026-09-30).
       // "drawings" replaces "plans" (the keyword pass, 2026-10-02).
-      'Carried those studies into the Revit BIM model at LOD 300: drawings, interiors, masterplan, construction documents.',
+      // THE FOSTER PASS (2026-10-03, her yes): "Delivered" (the DSA's 3D project delivery, LEGO's deliver).
+      'Delivered those studies in the Revit BIM model at LOD 300: drawings, interiors, masterplan, construction documents.',
     ],
   },
   // BIM Modeler, BIM International, Beirut (Jun-Aug 2023) was CUT at her call
@@ -292,7 +301,9 @@ export const EXPERIENCE: CvEntry[] = [
       // "tech" is her word. Measured at one printed line before it went in.
       // ⚠ 2026-10-02: her own line, reworded with her yes: "trends" and
       // "diagrams" join, "written up in" became a colon. "tech" stays hers.
-      'Ongoing research in neuroarchitecture, computational design and emerging tech trends: essays, diagrams and tools.',
+      // THE FINAL PASS (2026-10-03, her yes): "AI ethics" replaces "computational design" (still in the degree title);
+      // the proof is her essays on scoring people (T-106 comfort, T-118 when the tool scores people).
+      'Ongoing research in neuroarchitecture, AI ethics and emerging tech trends: essays, diagrams and tools.',
     ],
   },
   {
@@ -492,9 +503,13 @@ export const SKILLS = [
     // Rhino Compute sits BEFORE Rhino.Inside now: in the old order the row
     // broke between "Rhino" and "Compute", and the build's ATS check (the
     // name must read with its space) failed on the wrapped text layer.
-    group: 'Geometry and BIM',
+    // THE FOSTER PASS (2026-10-03, her yes + her facts): the row is titled
+    // with the DSA's essential phrase, "Architectural geometry"; Python
+    // scripting (hers, in Rhino and Grasshopper) and CAD/CAM (AutoCAD, the
+    // CNC cut files) join. Still two printed lines.
+    group: 'Architectural geometry and BIM',
     items:
-      'Rhino · Grasshopper (node-based programming, low-code) · Kangaroo · Rhino Compute · Rhino.Inside · Revit (LOD 300) · Speckle · Adobe Creative Suite · 3D printing',
+      'Rhino · Grasshopper (node-based programming, low-code, Python scripting) · Kangaroo · Rhino Compute · Rhino.Inside · Revit (LOD 300) · Speckle · CAD/CAM · Adobe Creative Suite · 3D printing',
   },
   {
     // Speckle, Rhino.Inside and Rhino Compute moved UP to the Geometry and BIM
@@ -510,9 +525,14 @@ export const SKILLS = [
     // and Cloud Run (Sensi's host, her deploy) replace SSE streaming and
     // WebGL; Vue stays; "Cloud Run" not "Google Cloud Run" so the row keeps
     // one printed line.
+    // ⚠ THE FOSTER PASS (2026-10-03, her yes, cost shown: the page's LAST
+    // free line): HTML and CSS (her site, the Pen Table tokens) and WebGL
+    // (back beside Three.js) join, all desirable on the DSA. TWO printed lines.
+    // C# is NOT here: she did not claim it.
     group: 'Ships with',
     items:
-      'Python · JavaScript · TypeScript · React · Vue · FastAPI · PostgreSQL · Docker · Cloud Run · pytest · Three.js',
+      // THE FINAL PASS (2026-10-03): REST APIs (Sensi's FastAPI server) and MCP (Sensi's stack) join; same two lines.
+      'Python · JavaScript · TypeScript · HTML · CSS · React · Vue · FastAPI · REST APIs · MCP · PostgreSQL · Docker · Cloud Run · pytest · Three.js · WebGL',
   },
   {
     // The vocabulary a hiring manager uses for this subject, plus the research
@@ -537,7 +557,10 @@ export const SKILLS = [
     // methods" and ⚠ "Rhino-Revit interoperability" (her offer; Rhino.Inside
     // in the row above still evidences it). Still two printed lines.
     items:
-      'design technology · built environment · product development · artificial intelligence · human experience · occupant wellbeing · evidence-based design · research design · human-AI interaction · demo and narrative',
+      // THE FINAL PASS (2026-10-03, her ruling: the base CV leans into human-centred evidence and neuroscience):
+      // "human-centred design" and "neuroscience for architecture" take the seats of "human experience" and
+      // "human-AI interaction". Still two printed lines (measured, 4px spare).
+      'design technology · built environment · product development · artificial intelligence · human-centred design · neuroscience for architecture · evidence-based design · occupant wellbeing · research design · demo and narrative',
   },
 ]
 
