@@ -282,7 +282,9 @@ export const EXPERIENCE: CvEntry[] = [
   // LOD 300 keyword survives in the SOMA entry's "Revit BIM set".
   {
     dates: 'Jan 2022 - Present',
-    title: 'Design Architect',
+    // THE LEGO PASS (2026-10-04, her call): the title LinkedIn has carried since
+    // 25 Aug, so CV, LinkedIn and application forms say the same thing.
+    title: 'Computational Designer',
     org: 'Self-employed',
     projects: [
       // RINGS OF MARS LEFT THIS BLOCK (the website session, 2026-09-16): the
