@@ -515,9 +515,10 @@ describe('the ATS CV page', () => {
     // education entry may carry dates, and it must be the MaCAD one: if a
     // second ever appears, the block has drifted back into the mixed dating
     // her 2026-07-27 audit removed, and that is a decision, not a typo.
-    const datedEducation = EDUCATION.filter(e => e.dates)
-    expect(datedEducation.length).toBe(1)
-    expect(datedEducation[0]!.title).toContain('MaCAD')
+    // THE LEGO PASS (2026-10-04, her call): that decision was made: Workday's
+    // parser asks for dates on every entry — so now EVERY education entry is
+    // dated, which keeps the block uniform instead of mixed.
+    expect(EDUCATION.every(e => e.dates)).toBe(true)
     // Every entry that DOES declare dates must still print them.
     for (const e of [...EDUCATION, ...EXPERIENCE].filter(e => e.dates)) {
       expect(cvHtml).toContain(e.dates)
