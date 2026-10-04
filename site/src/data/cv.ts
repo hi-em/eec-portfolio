@@ -258,7 +258,7 @@ export const EXPERIENCE: CvEntry[] = [
   {
     dates: 'Aug 2023 - Jul 2024',
     title: 'Design Architect',
-    org: 'SOMA, Dubai and Beirut (hybrid)',
+    org: 'SOMA, Beirut (hybrid)',
     // Project names lead (her review): they are the scannable part.
     // B5 (her ruling 2026-08-26): the bullet named four towers without ever
     // saying "four", so the number was already earned and simply unsaid. It
