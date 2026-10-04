@@ -60,8 +60,8 @@
 // pass: optional, because Dynamic Solution (the current job) cannot name its
 // work and two of the older roles have none worth a line.
 export type CvEntry = {
-  // Optional. Every EXPERIENCE entry carries dates; in EDUCATION only the
-  // degree in progress does (her amendment 2026-08-26, see the note above).
+  // Optional. Every EXPERIENCE entry carries dates; since 2026-10-04 both
+  // EDUCATION entries do as well (see the date note below).
   dates?: string
   title: string
   org: string
@@ -84,6 +84,10 @@ export type CvEntry = {
 // earlier hybrid (months on the recent roles, bare years on the older two)
 // was defensible on parsing grounds and still read as an inconsistency to a
 // human, which is the reader who was going to notice.
+// THE LEGO PASS (2026-10-04, her call): the bachelor now carries "Sep 2018 -
+// Jun 2023" too. Workday's parsing tips ask for dates on every entry and a
+// dateless degree left the field blank; it also lets a "3-6 years" screen count.
+// Months stay abbreviated: spelled out, both degree lines wrapped.
 // THE RECRUITER PASS (2026-08-26) re-measured this ceiling off the shipped
 // PDF rather than trusting the number: the text column's right edge is 547pt,
 // the longest surviving bullet ends at 544pt, and a character costs ~4pt. Every
@@ -163,6 +167,7 @@ export const EDUCATION: CvEntry[] = [
   },
   {
     title: 'Bachelor of Architecture (NAAB & NASAD accredited)',
+    dates: 'Sep 2018 - Jun 2023',
     org: 'Lebanese American University, Byblos',
     notes: "Dean's Distinction List. Honor scholarship all consecutive terms.",
     projects: [
@@ -253,7 +258,7 @@ export const EXPERIENCE: CvEntry[] = [
   {
     dates: 'Aug 2023 - Jul 2024',
     title: 'Design Architect',
-    org: 'SOMA, Dubai | Beirut',
+    org: 'SOMA, Dubai and Beirut (hybrid)',
     // Project names lead (her review): they are the scannable part.
     // B5 (her ruling 2026-08-26): the bullet named four towers without ever
     // saying "four", so the number was already earned and simply unsaid. It
