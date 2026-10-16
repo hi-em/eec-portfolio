@@ -272,7 +272,7 @@ export default function Rights() {
                 third party, or processed for any further purpose. No mailing list is operated.
               </Clause>
               <Clause n="3.2">
-                Aggregate page views are recorded via{' '}
+                Individual page views are recorded via{' '}
                 <a
                   href="https://www.goatcounter.com/help/privacy"
                   target="_blank"
