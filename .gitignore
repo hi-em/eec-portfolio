@@ -8,6 +8,9 @@ content/*.local.*
 # Raw asset staging — never publish to GitHub Pages
 incoming/
 
+# The thesis has its own private repo; it never lives here.
+thesis/
+
 # Local archive of the pre-rebrand site and working files (not repo content)
 archive/
 
