@@ -637,6 +637,13 @@ h3 {
    bottom stays 68 because the key rides the empty middle of a band that was
    already that tall. Below lg the two bands are still split and the phone
    numbers above are untouched. */
+/* the page's name takes its own row above the key on a phone (2026-10-18),
+   so the world starts one row lower there */
+@media (max-width: 639px) {
+  .nw-stage {
+    top: 146px;
+  }
+}
 @media (min-width: 1024px) {
   .nw-stage {
     top: 84px;
@@ -657,6 +664,22 @@ h3 {
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 34px, #000 calc(100% - 34px), transparent 100%);
   mask-image: linear-gradient(to right, transparent 0, #000 34px, #000 calc(100% - 34px), transparent 100%);
+}
+/* THE ROOM RISES once the gather flight has begun (2026-10-18). */
+@media (prefers-reduced-motion: no-preference) {
+  .nw-room {
+    animation: nw-room-rise 520ms cubic-bezier(0.22, 0.61, 0.36, 1) 380ms both;
+  }
+}
+@keyframes nw-room-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 .nw-stage.dragging {
   cursor: grabbing;
@@ -1097,37 +1120,15 @@ h3 {
   pointer-events: stroke;
   cursor: var(--cursor-live);
 }
-/* THE RING BREATHES, so a held mark says it has another move in it (her ask
-   2026-08-07: "add an animation cue on the mark that is held so the user knows
-   it's clickable again to isolate"). One slow breath every 2.4s at a 0.42-0.62
-   amplitude — under the threshold where motion starts pulling the eye off the
-   map, and it stops the moment the mark is gathered, because by then the cue
-   has been taken. */
+/* THE RING IS STILL (2026-10-18). It breathed to say "there is another move
+   on this mark" (her ask 2026-08-07); with one-step choosing and one door on
+   the room's card, there is none, so the ring only says "you are here". */
 .nw-heldring {
   fill: none;
   stroke: var(--lang-ink);
   stroke-width: 1;
-  opacity: 0.42;
+  opacity: 0.5;
   vector-effect: non-scaling-stroke;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: nw-ring-breathe 2400ms ease-in-out infinite;
-}
-@keyframes nw-ring-breathe {
-  0%,
-  100% {
-    opacity: 0.42;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.62;
-    transform: scale(1.09);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .nw-heldring {
-    animation: none;
-  }
 }
 /* Nothing else answers a pointer once something is held — the rule that stops
    the map talking over itself. The engine enforces the wake; this stops the
@@ -1135,10 +1136,12 @@ h3 {
 .nw-stage.is-held .nw-hit {
   cursor: default;
 }
-.nw-stage.is-held .nw-node.is-held .nw-hit,
-.nw-stage.is-held .nw-heldring,
-.nw-stage.is-folded .nw-heldring {
+.nw-stage.is-held .nw-node.is-held .nw-hit {
   cursor: var(--cursor-live);
+}
+/* the room's own mark answers nothing, and the cursor says so */
+.nw-stage.is-folded .nw-node.in-fold.is-subject .nw-hit {
+  cursor: default;
 }
 /* what the NOW card used to say, now drawn in the map while it is held */
 .nw-nowlines text {

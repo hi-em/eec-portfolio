@@ -43,6 +43,10 @@ import WorldSrNav from './WorldSrNav'
 import { LABEL_GROW, labelBaseline, planFold, type FoldPlan } from './foldView'
 import { PRERENDERING } from '../../lib/prerender'
 import type { SignalApi } from './signalLayer'
+import type { OrganismApi } from './organismLayer'
+import { THOUGHT_OPENINGS } from '../openings'
+import { WORK_ARTIFACTS } from '../../components/work/artifacts'
+import type { CSSProperties, ReactNode } from 'react'
 
 // The lens accents come from the one source (components/Lens.tsx): these land
 // on SVG presentation attributes, so they must be the literal light-dark()
@@ -53,12 +57,29 @@ const lensColor = (lens: Lens | undefined) => (lens ? LENSES[lens].accent : 'var
 // phones and rides the foot band from lg up (Emilie's ruling; the reasoning is
 // beside each call site). The marks are drawn 1:1 with the field's own, never
 // as glyphs, so the key and the map cannot drift apart.
-function KeyMarks() {
+// T1 (her pick, 2026-10-18): the one visible line of meaning. Across fifteen
+// blind first readings, none said "mind": the page read as "a designer's
+// timeline" without a name. It sits in the chrome (the header line on a
+// desktop, the key's row below lg), never on the canvas (her 2026-07-19 rule).
+// HER PICK (2026-10-18), after an A/B of blind first readings: lines that say
+// how the mind BEHAVES scored (neuroplasticity 5.6/6, connections over
+// conclusions 4.6), a label naming "a map" read as a timeline (3.0). "In
+// progress" is her own word: the rewiring is not done, and nothing is claimed.
+const MAP_TITLE = 'MY MIND: NEUROPLASTICITY, IN PROGRESS'
+
+function KeyMarks({ title = false }: { title?: boolean }) {
   return (
     <div
       aria-hidden="true"
       className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-micro tracking-[0.08em] text-[var(--lang-ink-muted)] sm:gap-x-4 sm:text-micro sm:tracking-[0.1em]"
     >
+      {/* the page's name reads FIRST: its own row on a phone, the head of
+          the key's one row on a tablet */}
+      {title && (
+        <span className="basis-full text-center text-[var(--lang-ink)] sm:basis-auto" aria-hidden="true">
+          {MAP_TITLE}
+        </span>
+      )}
       <span className="inline-flex items-center gap-1.5">
         <svg width="16" height="16" viewBox="0 0 16 16" className="overflow-visible">
           <circle cx="8" cy="8" r="6" fill="var(--lang-ink)" />
@@ -86,6 +107,163 @@ function KeyMarks() {
       </span>
       <span className="text-[var(--lang-interaction)]">RED = LIVE</span>
     </div>
+  )
+}
+
+// THE IDEA ROOM (her ruling 2026-10-18, after the 10-second audit and three
+// rounds of prototypes: "point-room", layout R4). Choosing a mark gathers the
+// map into its neuron; the room beside it says what the idea IS and holds the
+// ONE door into it. The project's own ink plate from /work stands for it (a
+// thought has none, so its opening lines take the slot), and nothing on the
+// map opens a piece any more, not the name and not the mark.
+//
+// Three shapes of one room, by frame:
+//   third  lying down from 1000px: the neuron on two thirds, the room on one
+//   card   lying down below that: a card under the neuron (a third of 800px
+//          is 267px, too narrow for the words)
+//   sheet  turned (her pick P2): a sheet that PEEKS with the name and the
+//          door, so the neuron keeps nearly the whole stage, and rises with a
+//          swipe to show the ink and the opening
+type RoomLayout = 'third' | 'card' | 'sheet'
+/** The part of the stage the neuron gets beside each room. */
+const ROOM_FRAME: Record<RoomLayout, { fx: number; fy: number; fw: number; fh: number }> = {
+  third: { fx: 0, fy: 0, fw: 2 / 3, fh: 1 },
+  card: { fx: 0, fy: 0, fw: 1, fh: 0.66 },
+  // a twelve-member fold keeps ~45px a member here (the full stage gave ~49)
+  sheet: { fx: 0, fy: 0, fw: 1, fh: 0.82 },
+}
+
+function IdeaRoom({
+  n,
+  routeKey,
+  words,
+  layout,
+  onOpen,
+}: {
+  n: WorldNode
+  routeKey: string
+  words?: string
+  layout: RoomLayout
+  onOpen: () => void
+}) {
+  const thought = n.route?.startsWith('/thoughts/') ?? false
+  const plate = thought ? null : WORK_ARTIFACTS[routeKey]
+  // the plate's one accent is the project's lens pen, exactly as on /work
+  const pen = { '--plate-accent': n.lens ? LENSES[n.lens as Lens].pen : 'var(--lang-ink)' } as CSSProperties
+  // ⚠ `.work-art` is `flex: 1 1 0` in unlayered CSS and outranks Tailwind's
+  // flex-none, so inside a column it collapsed to zero height: it always sits
+  // in a sized flex box of its own
+  const ink = (box: string) =>
+    plate ? (
+      <span className={`flex w-full flex-none ${box}`}>
+        <span className="work-art h-full" style={pen}>
+          {plate}
+        </span>
+      </span>
+    ) : null
+  const meta = (
+    <p className="font-mono text-micro tracking-[0.12em] text-[var(--lang-ink-muted)]">
+      {KIND_NAME[n.kind].toUpperCase()} · {n.date}
+    </p>
+  )
+  const door = (
+    <button
+      type="button"
+      onClick={onOpen}
+      className="pointer-events-auto inline-flex min-h-11 shrink-0 items-center gap-2 rounded-[var(--r-pill)] border border-[var(--lang-ink)] px-4 font-mono text-micro tracking-[0.12em] text-[var(--lang-ink)] transition-colors hover:bg-[var(--lang-ink)] hover:text-[var(--lang-ground)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--lang-interaction)]"
+    >
+      {thought ? 'READ THE THOUGHT' : 'OPEN THE PROJECT'} <span aria-hidden="true">→</span>
+    </button>
+  )
+  if (layout === 'sheet') return <RoomSheet title={n.title} ink={ink('mb-4 h-[110px]')} meta={meta} words={words} door={door} />
+  if (layout === 'third') {
+    return (
+      <section
+        aria-label={n.title}
+        className="nw-room fixed top-[5.5rem] right-0 bottom-[5.25rem] z-[4] flex w-1/3 flex-col justify-center overflow-y-auto border-l border-[var(--lang-hairline)] bg-[var(--lang-ground)] px-8"
+      >
+        {ink('mb-6 h-[170px] max-w-[420px]')}
+        {meta}
+        <h2 className="mt-1 font-serif text-[30px] italic leading-tight text-[var(--lang-ink)]">{n.title}</h2>
+        {words && <p className="mt-3 max-w-[34rem] font-serif text-[17px] leading-relaxed text-[var(--lang-ink)]">{words}</p>}
+        <div className="mt-6">{door}</div>
+      </section>
+    )
+  }
+  return (
+    <section
+      aria-label={n.title}
+      className="nw-room lang-glass-1 fixed inset-x-4 bottom-[5.25rem] z-[4] mx-auto flex max-w-[44rem] items-center gap-5 rounded-[var(--r-card)] p-5"
+    >
+      {ink('h-[112px] w-[190px]')}
+      <div className="min-w-0 flex-1">
+        {meta}
+        <h2 className="mt-1 font-serif text-[20px] italic leading-tight text-[var(--lang-ink)]">{n.title}</h2>
+        {words && <p className="mt-2 line-clamp-3 font-serif text-[15px] leading-snug text-[var(--lang-ink)]">{words}</p>}
+        <div className="mt-3">{door}</div>
+      </div>
+    </section>
+  )
+}
+
+/** The turned room. A new room always arrives peeking. */
+function RoomSheet({
+  title,
+  ink,
+  meta,
+  words,
+  door,
+}: {
+  title: string
+  ink: ReactNode
+  meta: ReactNode
+  words?: string
+  door: ReactNode
+}) {
+  const [up, setUp] = useState(false)
+  const y0 = useRef<number | null>(null)
+  return (
+    <section
+      aria-label={title}
+      className="nw-room fixed inset-x-2 bottom-[5.75rem] z-[4] flex flex-col overflow-hidden rounded-t-[var(--r-card)] border border-b-0 border-[var(--lang-hairline)] bg-[var(--lang-ground)] transition-[max-height] duration-500"
+      // ⚠ TOUCH EVENTS, and no browser pan while it peeks: a vertical drag is
+      // claimed by the browser as a scroll, which sends pointercancel and never
+      // a pointerup, so a pointer-driven swipe went nowhere
+      style={{
+        maxHeight: up ? '62vh' : '5.2rem',
+        transitionTimingFunction: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
+        touchAction: up ? 'pan-y' : 'none',
+      }}
+      onTouchStart={(e) => {
+        y0.current = e.touches[0]?.clientY ?? null
+      }}
+      onTouchEnd={(e) => {
+        if (y0.current == null) return
+        const dy = (e.changedTouches[0]?.clientY ?? y0.current) - y0.current
+        y0.current = null
+        if (dy < -24) setUp(true)
+        else if (dy > 24) setUp(false)
+      }}
+    >
+      <button
+        type="button"
+        aria-expanded={up}
+        aria-label={up ? 'Lower the room' : 'Raise the room'}
+        onClick={() => setUp((v) => !v)}
+        className="flex min-h-6 w-full flex-none items-center justify-center pt-2"
+      >
+        <span aria-hidden="true" className="h-1 w-9 rounded-full bg-[var(--lang-hairline)]" />
+      </button>
+      <div className="flex flex-none items-center gap-3 px-5 pb-3">
+        <h2 className="min-w-0 flex-1 truncate font-serif text-[20px] italic leading-tight text-[var(--lang-ink)]">{title}</h2>
+        {door}
+      </div>
+      <div className="min-h-0 flex-1 overflow-y-auto px-5 pb-5" aria-hidden={!up}>
+        {ink}
+        {meta}
+        {words && <p className="mt-2 font-serif text-[16px] leading-relaxed text-[var(--lang-ink)]">{words}</p>}
+      </div>
+    </section>
   )
 }
 
@@ -223,12 +401,9 @@ const VLIVE_SIDE = 9
 const VYEAR_X = 10
 const VLEFT_EDGE = VYEAR_X + 6
 
-/** The grace of the gathering press (her pick 2026-08-21; the refs that use
- *  these live on the component, the consumers are the fold's dismiss handler
- *  and onNodeClick — one set of numbers so the three catchers agree). */
-const GRACE_MS = 1600
+/** The gather flight's settle (measured 836ms), plus a beat: a field press
+ *  while the neuron is still flying is not a decision to leave. */
 const FLIGHT_MS = 1000
-const GRACE_R = 48
 
 const vTurn = (x: number, y: number) =>
   `matrix(0 ${(-1 / VCOMP).toFixed(4)} -1 0 ${(x + y).toFixed(1)} ${(y + x / VCOMP).toFixed(1)})`
@@ -454,6 +629,18 @@ export function turnedLayout(frameWidth: number): TurnedLayout {
 
 export default function NeuralWorld() {
   const prm = usePrefersReducedMotion()
+  /** LIVING / WIRED (her pick T2, 2026-10-18). Living: the organism moves.
+   *  Wired: every thread drawn faintly, nothing moves. Reduced motion starts
+   *  Wired; a visitor's choice is kept for the next visit. */
+  const [view, setView] = useState<'living' | 'wired'>(() => {
+    if (typeof window === 'undefined') return 'living'
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return 'wired'
+    try {
+      return localStorage.getItem('nw-view') === 'wired' ? 'wired' : 'living'
+    } catch {
+      return 'living'
+    }
+  })
   const [vertical, setVertical] = useState(
     () => typeof window !== 'undefined' && !PRERENDERING && window.innerWidth < TURN_AT
   )
@@ -465,6 +652,12 @@ export default function NeuralWorld() {
   const [frameW, setFrameW] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth : VREF,
   )
+  /** Which room (her pick R4, 2026-10-18): the neuron on two thirds and the
+   *  room on one; below ~1000px lying down a third is too narrow (267px at
+   *  800), so the room becomes the card under the neuron; turned, a sheet. */
+  const roomLayout: RoomLayout = vertical ? 'sheet' : frameW < 1000 ? 'card' : 'third'
+  const foldAtLayout = useRef(roomLayout)
+  foldAtLayout.current = roomLayout
   useEffect(() => {
     const onResize = () => {
       setVertical(window.innerWidth < TURN_AT)
@@ -610,7 +803,6 @@ export default function NeuralWorld() {
   }, [])
 
   const signalRef = useRef<SignalApi | null>(null)
-  const codaTimer = useRef(0)
   // ONE MOTION ACROSS THE RUNGS (her pick F1, 2026-09-29): the chosen rung's
   // pulse runs in each thread's own lens, older to newer, like every other
   // signal on the map. It used to run INWARD in red at 2.2px, which said
@@ -650,6 +842,46 @@ export default function NeuralWorld() {
     }
   }, [prm, vertical])
 
+  // THE ORGANISM (her ruling 2026-10-18: it stays, "less gimmicky, more
+  // professional"). One canvas under the drawing, from the first frame, where
+  // every motion is one fact from the data (organismLayer.ts has the
+  // grammar). It quiets the moment a visitor holds or hovers.
+  const organismRef = useRef<OrganismApi | null>(null)
+  const viewRef = useRef(view)
+  viewRef.current = view
+  useEffect(() => {
+    if (PRERENDERING) return
+    let on = true
+    import('./organismLayer').then((m) => {
+      const stage = stageRef.current
+      const svg = svgRef.current
+      if (!on || !stage || !svg) return
+      organismRef.current = m.startOrganism({
+        stage,
+        svg,
+        nodes: nodesRef.current,
+        vertical,
+        quiet: () => stage.classList.contains('is-held') || [...nodesRef.current.values()].some((h) => h.forceT > 0.5),
+        active: () => window.location.pathname === '/thoughts',
+        mode: viewRef.current,
+        prm,
+      })
+    })
+    return () => {
+      on = false
+      organismRef.current?.stop()
+      organismRef.current = null
+    }
+  }, [prm, vertical])
+  useEffect(() => {
+    organismRef.current?.setMode(view)
+    try {
+      localStorage.setItem('nw-view', view)
+    } catch {
+      /* private mode: the choice lasts the visit */
+    }
+  }, [view])
+
   // Arrival: a #<id> deep link centres + wakes its piece (the notes' "SEE
   // THIS THOUGHT IN TIME" corridor); otherwise restore the last scroll (so
   // returning from a note lands where you left), else start mid-world.
@@ -660,7 +892,6 @@ export default function NeuralWorld() {
     const id = window.location.hash.slice(1)
     const target = id ? nodesRef.current.get(id) : undefined
     let wakeTimer = 0
-    let inviteTimer = 0
     const raf = requestAnimationFrame(() => {
       const scale = svg.getBoundingClientRect().height / WORLD.h || 1
       // The arrival position is chosen, so the year snap must not adjust it.
@@ -711,85 +942,27 @@ export default function NeuralWorld() {
           return
         }
 
-        // THE DOOR IS THE MAP GROWING (Emilie's ruling 2026-08-07). The room
-        // used to open on a still frame of TODAY, which is the thinnest end of
-        // the record: a stranger met three marks on empty paper and had no
-        // reason to think there was anything behind them. So the arrival plays
-        // the sweep the WATCH IT GROW button already plays, from 2021 forward,
-        // and comes to rest in exactly the place the still frame used to be.
-        // Nothing about where you end up changes; only how you got there.
-        //
-        // IT IS THE SAME GESTURE TOLD MORE QUIETLY. The button's sweep holds
-        // every rank lit until the end, so by 2026 the whole map is at full
-        // wake — that is right when you asked for it and too much when you did
-        // not. The arrival keeps the peak below the button's and lets each mark
-        // fall back over 900ms, so what travels is a pulse rather than a flood.
-        // Any input at all takes the map back on the spot.
-        // Her dials, 2026-08-07: slower than the first cut (62 -> 90ms a rank,
-        // ~4.3s -> ~5.8s) and brighter (0.55 -> 0.75). The two move in opposite
-        // directions on purpose — a brighter wave can afford to travel slower,
-        // because the thing you are being given time to read is now legible.
-        const first =
-          !(Number.isFinite(stored) && stored > 0) &&
-          !prm &&
-          !sessionStorage.getItem('nw-grew')
-        if (first) {
-          try {
-            sessionStorage.setItem('nw-grew', '1')
-          } catch {
-            /* private mode: the door simply opens again next time */
-          }
-          // THE PHONE GETS A THINNER WAVE (her report 2026-08-07: "on the
-          // phone it seems a bit laggy"). How many marks are lit at once is
-          // decay / step, and that number IS the per-frame cost: every lit
-          // mark is writing inline styles to its soma, its label, its date and
-          // its fibres, inside a 1559-element drawing.
-          // Measured on the production bundle at 390x844: 60fps with the CPU
-          // throttled 2x, 20fps at 4x, 12fps at 6x — a cliff, and a real phone
-          // sits on it. Desktop lights ten at a time; a coarse pointer lights
-          // four, by slowing the wave and shortening its tail. It reads as the
-          // same gesture, just a narrower band of light travelling.
-          const coarse = window.matchMedia('(pointer: coarse)').matches
-          // Turned, the sweep climbs from the oldest at the bottom and comes
-          // to rest at the top, which is now (her ruling 2026-08-07: "the
-          // opening should start from bottom to top so we see the full map and
-          // then land on now at the top").
-          const step = coarse ? 115 : 90
-          engine.replay(
-            coarse
-              ? { step, peak: 0.75, decay: 460, to: vertical ? 0 : rest, vertical }
-              : { step, peak: 0.75, decay: 900, to: vertical ? 0 : rest, vertical },
-          )
-          // THE INVITATION (her pick F2, 2026-09-29): once the door has landed
-          // on NOW, the near-miss nearest NOW reaches once. The map opens on
-          // what is almost connected, and then it is yours.
-          inviteTimer = window.setTimeout(() => signalRef.current?.invite(), ranks.length * step + 900)
-        }
+        // NO MOVIE (her ruling 2026-10-18). The arrival used to play the
+        // growth sweep (her 2026-08-07 ruling) and end on a near miss reaching
+        // (F2, 2026-09-29). The audit measured the cost: a 6.2s wait in which
+        // a press stranded you mid-history, and a still map at the end of it.
+        // The map now opens still, on the present, already alive: the organism
+        // layer carries "living" from the first frame.
       }
     })
     return () => {
       cancelAnimationFrame(raf)
       window.clearTimeout(wakeTimer)
-      window.clearTimeout(inviteTimer)
     }
     // engine is stable; run once on mount.
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // THE PRESS SPOT STAYS THE DOOR (her pick 2026-08-21, off the entry-flow
-  // audit). Choosing a mark sends it flying — measured, the gather flight is
-  // 849px over ~840ms on desktop — so the spot the visitor pressed twice is
-  // empty field by the time a third press lands there, and "a tap on nothing
-  // steps back" read that press as an exit. Three fast presses on one mark
-  // ended one rung DOWN. The spot of the gathering press is remembered here,
-  // and for a short grace it still answers for the subject — whoever takes
-  // the press: the fold's dismiss handler (empty field), onNodeClick (a mark
-  // transiting the spot mid-flight), or the retargeted-click catch (down on
-  // a moving mark, up over nothing). `lastPress` is stamped on every
-  // pointerdown so a keyboard-driven gather (no press) leaves the grace
-  // unset. GRACE_MS outlasts the measured settle (836ms) by a beat; within
-  // FLIGHT_MS a stray field press is not a decision; GRACE_R is a thumb.
-  const lastPress = useRef({ x: 0, y: 0, t: -Infinity })
-  const graceRef = useRef<{ x: number; y: number; t: number } | null>(null)
+  // THE FLIGHT GUARD. Opening a room sends the mark flying (~840ms on a
+  // desktop), so a press on the field during the flight is a press against a
+  // moving drawing, not a decision to leave. The grace that let such a press
+  // OPEN the subject (her pick 2026-08-21) went with the map's door: the room
+  // has one door, the card (her ruling 2026-10-18).
+  const foldAt = useRef(-Infinity)
 
   // Drag-to-pan + non-passive wheel (React's onWheel is passive; the
   // preventDefault needs a real listener) + the scroll-position save (from
@@ -824,9 +997,6 @@ export default function NeuralWorld() {
     let moved = 0
     let scrolls = false
     const down = (e: PointerEvent) => {
-      // Stamped for EVERY press, marks included — the grace above needs the
-      // coordinates of the press that gathers, and that press is on a mark.
-      lastPress.current = { x: e.clientX, y: e.clientY, t: performance.now() }
       // `.nw-foldopen` IS ON THIS LIST, and leaving it off made the map's only
       // door unusable (found 2026-08-07 by clicking it): OPEN is a <g role=link>
       // inside the drawing, not an <a>, so without naming it here a click on the
@@ -1186,6 +1356,15 @@ export default function NeuralWorld() {
     const vw = stage.clientWidth
     const vh = stage.clientHeight
     const PAD = 0.86 // a little air at the edges
+    foldAt.current = performance.now()
+    // THE ROOM'S FRAME (2026-10-18). The room takes part of the stage, so the
+    // camera fits and centres the neuron in what is left: the left two thirds
+    // (R4), the top two thirds above the card, or all but the sheet's peek.
+    const fr = ROOM_FRAME[foldAtLayout.current]
+    const fw = vw * fr.fw
+    const fh = vh * fr.fh
+    const fcx = vw * (fr.fx + fr.fw / 2)
+    const fcy = vh * (fr.fy + fr.fh / 2)
 
     // ITERATE TO CONVERGENCE, not a fixed two passes. A label's width in WORLD
     // units is 1/k, so the box grows as the camera pulls back and the two chase
@@ -1270,7 +1449,7 @@ export default function NeuralWorld() {
       const acrossScreen = vertical ? bh * VCOMP : bw
       const downScreen = vertical ? bw : bh
       // k is the camera's own factor; the rendered scale is k * s0.
-      const next = Math.min((vw * PAD) / (acrossScreen * s0), (vh * PAD) / (downScreen * s0), 1.6)
+      const next = Math.min((fw * PAD) / (acrossScreen * s0), (fh * PAD) / (downScreen * s0), 1.6)
       const settled = Math.abs(next - k) / k < 0.005
       k = next
       // ⚠ THE STRETCH IS SIZED OFF THE AXIS THE CAMERA IS NOT USING, and BOTH
@@ -1290,7 +1469,7 @@ export default function NeuralWorld() {
       // that is the one she asked to fill ("it can definitely be stretched
       // sideways for the threads to be clearer").
       if (tb) {
-        const room = (vw * PAD) / (s0 * k) - 2 * tb.halfW
+        const room = (fw * PAD) / (s0 * k) - 2 * tb.halfW
         spread = tb.rawSpan > 1 ? Math.min(Math.max(room / tb.rawSpan, 1), 8) : 1
       }
       plan = planFold(id, fs(k), measure, spread)!
@@ -1306,10 +1485,12 @@ export default function NeuralWorld() {
     // tx is what moves the drawing DOWN the screen and ty is what moves it
     // ACROSS, and both run backwards, because the matrix maps (x, y) to
     // (h - y, w - x).
+    // ⚠ LYING DOWN, scrollTop COUNTS TOO: at 800x600 the stage also scrolls
+    // vertically, and without it the neuron landed above the frame (2026-10-18)
     const tx = vertical
-      ? WORLD.w - (stage.scrollTop + vh / 2) / s0 - cx * k
-      : (stage.scrollLeft + vw / 2) / s0 - cx * k
-    const ty = vertical ? WORLD.h - vw / 2 / (s0 * VCOMP) - cy * k : vh / 2 / s0 - cy * k
+      ? WORLD.w - (stage.scrollTop + fcy) / s0 - cx * k
+      : (stage.scrollLeft + fcx) / s0 - cx * k
+    const ty = vertical ? WORLD.h - fcx / (s0 * VCOMP) - cy * k : (stage.scrollTop + fcy) / s0 - cy * k
     camAt.current = { tx, ty, k }
     writeCam(true)
 
@@ -1497,55 +1678,16 @@ export default function NeuralWorld() {
       if (!from) return
       moved = Math.max(moved, Math.abs(e.clientX - from.x), Math.abs(e.clientY - from.y))
     }
-    // THE GRACE (her pick 2026-08-21, board 1 of the entry-flow audit). The
-    // gathering press is the second press on the same mark, and the fold then
-    // moves that mark 849px away — so the trained third press lands on empty
-    // field. For GRACE_MS after the gather, a still press within GRACE_R of
-    // the gathering press means the subject, and opens it; anywhere else on
-    // the field while the fold is still flying (FLIGHT_MS, measured settle
-    // 836ms) is a stray press against a moving drawing, not a decision, and
-    // does nothing. After both windows the field means what it always meant.
-    // Escape is untouched — a deliberate exit never waits.
-    const graceHit = (e: PointerEvent) => {
-      const g = graceRef.current
-      if (!g || !fold.open) return false
-      if (performance.now() - g.t >= GRACE_MS) return false
-      return Math.hypot(e.clientX - g.x, e.clientY - g.y) <= GRACE_R
-    }
-    const up = (e: PointerEvent) => {
-      // A press that went DOWN on a mark and came UP over nothing is the
-      // retargeted-click case above: no click will fire anywhere. If it sits
-      // in the grace it means the subject — open it; otherwise let it
-      // dissolve, which is also right (a press on a moving mark that ended
-      // nowhere is not a decision). A press that stayed on its element is
-      // left entirely to the click handlers, as ever.
-      if (nodePress && moved <= 4) {
-        const still =
-          document
-            .elementFromPoint(e.clientX, e.clientY)
-            ?.closest('.nw-node, .nw-foldopen, a, button') ?? null
-        if (still !== nodePress.el && graceHit(e)) {
-          nodePress = null
-          graceRef.current = null
-          travel(fold.open!.route)
-          return
-        }
+    const up = () => {
+      // A press that went down on a mark is left to the click handlers (a
+      // mark that slid away mid-press simply dissolves: no door to catch it).
+      if (nodePress) {
         nodePress = null
         return
       }
-      nodePress = null
-      // A tap on empty field releases; a drag never does.
-      if (drag && moved <= 4) {
-        const dt = graceRef.current ? performance.now() - graceRef.current.t : Infinity
-        if (graceHit(e)) {
-          drag = null
-          stage.classList.remove('dragging')
-          graceRef.current = null
-          travel(fold.open!.route)
-          return
-        }
-        if (dt >= FLIGHT_MS) stepBack()
-      }
+      // A tap on empty field goes back to the map; a drag never does, and
+      // neither does a press while the neuron is still flying.
+      if (drag && moved <= 4 && performance.now() - foldAt.current >= FLIGHT_MS) stepBack()
       drag = null
       stage.classList.remove('dragging')
     }
@@ -1620,8 +1762,6 @@ export default function NeuralWorld() {
     camAt.current = { tx: 0, ty: 0, k: 1 }
     foldRef.current = false
     setFold(null)
-    // Releasing lands on HELD again, the rung below: the mark you were looking
-    // at stays lit and stays chosen, so one step back is one step, never two.
   }
 
   /** CHOOSING A MARK. One step, not two (Emilie's ruling 2026-08-07).
@@ -1642,45 +1782,6 @@ export default function NeuralWorld() {
    *  `hold` stays as the mechanism — the fold's subject is still the held mark,
    *  and the NOW tip still only ever holds, because it has no page to open and
    *  no threads to gather. It is simply no longer a rung of its own. */
-  // WATCH IT GROW (her pick G1, 2026-09-29). The flood stays as signed, with
-  // two changes. TURNED, IT CLIMBS, as the door does: the button called replay
-  // bare, which pans scrollLeft, and a turned map has no width to pan, so on a
-  // phone it sat on NOW while the threads arrived from off-screen. And AS THE
-  // WIRING LETS GO, THE NEAR-MISSES STAY REACHING for a few seconds: the
-  // button ends on what could grow next. Through the flood the signal layer
-  // is quiet (a light on every thread is noise); the coda is the one beat.
-  function grow() {
-    engine.replay(vertical ? { vertical: true, to: 0 } : undefined)
-    // the replay's own clock: 130ms a rank, held lit 2200ms, then the fade
-    const lit = ranks.length * 130 + 2200
-    signalRef.current?.quiet(lit + 8000)
-    window.clearTimeout(codaTimer.current)
-    // the coda starts once the wiring is visibly letting go (the threads fall
-    // with their marks over ~3s), so the near-misses are not lost inside it
-    // On a phone it waits for the wiring to finish letting go: measured at
-    // 390x844 with the CPU throttled 4x, a coda that overlapped the fade (850
-    // threads repainting under a cleared stage) collapsed 2 runs in 4 to 12-15fps.
-    const coarse = window.matchMedia('(pointer: coarse)').matches
-    codaTimer.current = window.setTimeout(() => signalRef.current?.coda(), lit + (coarse ? 3300 : 400))
-    const stage = stageRef.current
-    if (!stage) return
-    // any real input takes the map back, the coda included
-    const off = () => {
-      stage.removeEventListener('pointerdown', cancel)
-      stage.removeEventListener('wheel', cancel)
-      window.removeEventListener('keydown', cancel)
-    }
-    const cancel = () => {
-      window.clearTimeout(codaTimer.current)
-      signalRef.current?.quiet(0)
-      off()
-    }
-    stage.addEventListener('pointerdown', cancel)
-    stage.addEventListener('wheel', cancel)
-    window.addEventListener('keydown', cancel)
-    window.setTimeout(off, lit + 8200)
-  }
-
   function hold(id: string) {
     if (lockedId.current && lockedId.current !== id) setForce(lockedId.current, 0)
     lockedId.current = id
@@ -1694,10 +1795,9 @@ export default function NeuralWorld() {
    *  It reads foldRef, NOT the fold state: the drag and Escape handlers are
    *  installed once at mount and would close over the first render forever. */
   function stepBack() {
-    if (foldRef.current) {
-      releaseFold()
-      return
-    }
+    // THE ROOM STEPS STRAIGHT BACK TO THE MAP (2026-10-18): with no held rung
+    // between them there is nothing to land on, so the mark lets go as well
+    if (foldRef.current) releaseFold()
     if (lockedId.current) {
       setForce(lockedId.current, 0)
       lockedId.current = null
@@ -1705,70 +1805,24 @@ export default function NeuralWorld() {
     }
   }
 
-  /** The grace is armed by the press that reorganises the map — gathering,
-   *  and switching inside the fold, which re-gathers just the same. Only a
-   *  real press arms it: a keyboard Enter leaves `lastPress` stale and the
-   *  age check turns it away. */
-  function armGrace() {
-    const p = lastPress.current
-    graceRef.current =
-      performance.now() - p.t < 800 ? { x: p.x, y: p.y, t: performance.now() } : null
-  }
-
+  /** CHOOSING OPENS THE ROOM (her ruling 2026-10-18, "point-room"). The
+   *  ladder was three rungs (hold, gather, open); it is one now. Hover glances
+   *  on a pointer; a click or a tap gathers the map into this idea's neuron and
+   *  opens its room beside it, and the room's card is the only door into the
+   *  piece. A mark with no page (the NOW tip, most milestones) only lights up.
+   *
+   *  Inside the room the subject's own mark does NOTHING (her ruling, same
+   *  day): it is "you are here". Another mark opens its room; anywhere else,
+   *  or Escape, goes back to the map. */
   function onNodeClick(n: WorldNode) {
-    if (fold) {
-      // ONE BODY, ONE VERB (her pick 2026-08-21, board 2). The subject's mark
-      // used to let go here — her "two targets, two verbs" — but the door's
-      // hit rect paints over most of the mark, so the same mark answered a
-      // press two opposite ways depending on which sliver took it: measured,
-      // the top edge of the hit ring released while everything below opened.
-      // Inside the fold the subject now means one thing, IN; letting go
-      // belongs to the field and to Escape, which both already say so.
-      if (n.id === fold.subject) {
-        if (fold.open) travel(fold.open.route)
-        else releaseFold()
-        return
-      }
-      // THE GRACE OUTRANKS A TRANSITING MARK (the phone found this: the
-      // gather flight is short and slow turned, and the members sweep
-      // through the pressed spot on their way to their folded places — a
-      // fast third press on the same spot landed on "comfort as data"
-      // passing underneath and switched the whole fold onto it). A still
-      // press inside the grace means the subject, whatever is crossing.
-      {
-        const g = graceRef.current
-        const p = lastPress.current
-        if (
-          g &&
-          fold.open &&
-          performance.now() - g.t < GRACE_MS &&
-          performance.now() - p.t < 800 &&
-          Math.hypot(p.x - g.x, p.y - g.y) <= GRACE_R
-        ) {
-          graceRef.current = null
-          travel(fold.open.route)
-          return
-        }
-      }
-      // choosing any other member re-folds on it (walking the neighbourhood)
-      armGrace()
+    if (fold && n.id === fold.subject) return
+    if (!n.route) {
+      if (fold) stepBack()
       hold(n.id)
-      applyFold(n.id)
       return
     }
-    // THE LADDER IS THREE RUNGS AGAIN (Emilie's ruling 2026-08-07, over my
-    // recommendation — recorded because the reasoning against it still stands
-    // and should not be re-argued from scratch: on a pointer, hover already
-    // does what held does, and a third rung puts the writing three actions
-    // away). What is different from the ladder we deleted this morning is
-    // everything around it: the door works, the chosen view cannot be scrolled
-    // or zoomed away, and each rung now says what it can do.
-    if (lockedId.current === n.id) {
-      armGrace()
-      applyFold(n.id) // HELD -> CHOSEN
-      return
-    }
-    hold(n.id) // BROWSE -> HELD, or hold a different mark
+    hold(n.id)
+    applyFold(n.id)
   }
 
   const sk = WORLD.skeleton
@@ -1784,31 +1838,29 @@ export default function NeuralWorld() {
       >
         Skip to content
       </a>
-      {/* THE HEADER LINE (the design audit, Emilie 2026-07-19: header + footer
-          lines identical everywhere, the canvas clean of chrome): the pill
-          left, WATCH IT GROW on the header line right, exactly like every
-          other page's tools. */}
-      {/* ON THE HEADER LINE FROM lg UP, and nowhere near it below (Emilie,
-          2026-08-02: "we need to find a better placement for the WATCH IT GROW
-          and spacing and size"). Measured at 390: the button was 149x32 with
-          its top edge at 70px, which is the pill's bottom edge exactly, so it
-          touched the chrome above it AND missed the 44px touch floor by 12px.
-          Below lg it moves to the corner (further down), as a round 44px
-          control. The header line keeps it where there is room for words. */}
+      {/* THE HEADER LINE carries no tools on this page now: WATCH IT GROW left
+          with the arrival movie (her ruling 2026-10-18), and the view toggle
+          that replaced it lives in the foot band at every width. */}
+      {/* THE NAME, CENTRED ON THE HEADER LINE (her ask, 2026-10-18), from
+          1280px: between 1024 and 1280 the centre is under the nav pill, so
+          there it rides the tools slot on the right; below 1024 it heads the key. */}
       <TitleBlock
         toolsKey="world"
         tools={
-          !prm ? (
-            <button
-              type="button"
-              onClick={grow}
-              className="hidden min-h-11 items-center rounded-[var(--r-pill)] border border-[var(--lang-hairline)] px-3 font-mono text-label tracking-[0.1em] text-[var(--lang-ink)] hover:border-[var(--lang-interaction)] hover:text-[var(--lang-interaction)] focus-visible:outline-2 focus-visible:outline-[var(--lang-interaction)] lg:inline-flex"
-            >
-              ⟳ WATCH IT GROW
-            </button>
-          ) : undefined
+          <span
+            aria-hidden="true"
+            className="hidden min-h-11 items-center font-mono text-label tracking-[0.1em] text-[var(--lang-ink)] lg:inline-flex xl:hidden"
+          >
+            {MAP_TITLE}
+          </span>
         }
       />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none fixed top-[19px] left-1/2 z-[41] hidden h-11 -translate-x-1/2 items-center font-mono text-label tracking-[0.1em] whitespace-nowrap text-[var(--lang-ink)] xl:flex"
+      >
+        {MAP_TITLE}
+      </span>
       <main id="main" tabIndex={-1} className="outline-none">
         {/* THE CLEAR CANVAS (the design audit round 2, Emilie 2026-07-19:
             "remove 'points in time' and the other words from the content
@@ -1818,7 +1870,7 @@ export default function NeuralWorld() {
             (headData still needs it). The stage itself is inset between the
             header and footer lines (.nw-stage, index.css), so no node ever
             runs under the chrome; the old fade scrims retired (round 3). */}
-        <h1 className="sr-only">The mind in time: every project, thought, milestone and award since 2021</h1>
+        <h1 className="sr-only">The mind in time: every project, thought, milestone and award since 2020</h1>
 
         {/* THE FOOTER LINE (Emilie's pick 2026-07-19: the world's key lives on
             a footer line, no name/contact footer on this immersive page):
@@ -1861,7 +1913,7 @@ export default function NeuralWorld() {
             should have been: a phone rule, not a site rule. */}
         <div className="pointer-events-none fixed inset-x-0 top-[5.5rem] z-[3] px-5 sm:px-8 lg:hidden">
           <div className="mx-auto flex max-w-[1856px] flex-wrap items-center justify-center gap-x-6 gap-y-1 px-1">
-            <KeyMarks />
+            <KeyMarks title />
           </div>
         </div>
 
@@ -1872,15 +1924,34 @@ export default function NeuralWorld() {
         <div className="pointer-events-none fixed inset-x-0 bottom-2 z-[3] px-5 sm:px-8">
           <div className="lang-glass-1 mx-auto flex max-w-[1856px] flex-wrap items-center justify-between gap-x-6 gap-y-1 rounded-[var(--r-card)] px-5 py-1.5 sm:px-7">
             <span className="flex items-center gap-x-4">
-              {!prm && (
-                <button
-                  type="button"
-                  onClick={grow}
-                  className="pointer-events-auto inline-flex min-h-11 items-center gap-1.5 font-mono text-micro tracking-[0.12em] text-[var(--lang-ink)] transition-colors hover:text-[var(--lang-interaction)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--lang-interaction)] lg:hidden"
-                >
-                  <span aria-hidden="true">⟳</span> WATCH IT GROW
-                </button>
-              )}
+              {/* LIVING / WIRED (her pick T2, 2026-10-18), in the slot WATCH IT
+                  GROW held. Living: the organism moves. Wired: every thread is
+                  drawn faintly and nothing moves, the network as structure.
+                  Reduced motion starts on Wired and cannot turn Living on. */}
+              <span
+                role="group"
+                aria-label="How the map is drawn"
+                className="pointer-events-auto inline-flex items-center gap-0.5 font-mono text-micro tracking-[0.12em]"
+              >
+                {(['living', 'wired'] as const).map((v) => (
+                  <button
+                    key={v}
+                    type="button"
+                    aria-pressed={view === v}
+                    disabled={v === 'living' && prm}
+                    onClick={() => setView(v)}
+                    className={`inline-flex min-h-11 items-center px-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--lang-interaction)] disabled:opacity-40 ${
+                      view === v
+                        ? 'text-[var(--lang-ink)] underline decoration-1 underline-offset-[6px]'
+                        : 'text-[var(--lang-ink-muted)] hover:text-[var(--lang-ink)]'
+                    }`}
+                  >
+                    {/* named for what each SHOWS (the final review: 3 of 5
+                        blind readers asked what LIVING / WIRED switched) */}
+                    {v === 'living' ? 'SIGNALS' : 'ALL THREADS'}
+                  </button>
+                ))}
+              </span>
               {/* THE WAY BACK TO TODAY (Emilie's pick 2026-08-02). The map opens
                   on the present now, but it is a wide thing to pan and there was
                   no way home once you had travelled: you could get lost in 2022
@@ -1969,13 +2040,15 @@ export default function NeuralWorld() {
                     Two strings, not one with words hidden: hiding the tail of
                     each clause once left "ANOTHER MARK ·" standing with no verb
                     at all. */}
+                {/* THE ROOM HAS ONE DOOR (2026-10-18), so the legend says where
+                    it is; the phone's sheet carries its door in plain sight. */}
                 <span className="hidden sm:inline">
-                  <b className="font-normal text-[var(--lang-ink)]">CLICK THE NAME</b> TO OPEN ·{' '}
+                  <b className="font-normal text-[var(--lang-ink)]">OPEN</b> FROM THE CARD ·{' '}
                   <b className="font-normal text-[var(--lang-ink)]">A MARK</b> TO SWITCH ·{' '}
                   <b className="font-normal text-[var(--lang-ink)]">AWAY</b> TO GO BACK
                 </span>
                 <span className="sm:hidden">
-                  <b className="font-normal text-[var(--lang-ink)]">TAP THE NAME</b> TO OPEN ·{' '}
+                  <b className="font-normal text-[var(--lang-ink)]">TAP A MARK</b> TO SWITCH ·{' '}
                   <b className="font-normal text-[var(--lang-ink)]">AWAY</b> TO GO BACK
                 </span>
               </p>
@@ -1984,13 +2057,13 @@ export default function NeuralWorld() {
                 aria-hidden="true"
                 className="font-mono text-micro tracking-[0.12em] text-[var(--lang-ink-muted)]"
               >
+                {/* Held is only for a mark with no page now (the NOW tip, most
+                    milestones): it lights, and there is nowhere further to go. */}
                 <span className="hidden sm:inline">
-                  <b className="font-normal text-[var(--lang-ink)]">CLICK IT AGAIN</b> TO GATHER ITS
-                  THREADS · <b className="font-normal text-[var(--lang-ink)]">AWAY</b> TO GO BACK
+                  <b className="font-normal text-[var(--lang-ink)]">CLICK AWAY</b> TO GO BACK
                 </span>
                 <span className="sm:hidden">
-                  <b className="font-normal text-[var(--lang-ink)]">TAP AGAIN</b> TO GATHER ·{' '}
-                  <b className="font-normal text-[var(--lang-ink)]">AWAY</b> TO GO BACK
+                  <b className="font-normal text-[var(--lang-ink)]">TAP AWAY</b> TO GO BACK
                 </span>
               </p>
             ) : (
@@ -2003,10 +2076,12 @@ export default function NeuralWorld() {
                 <span className="hidden sm:inline">
                   <b className="font-normal text-[var(--lang-ink)]">DRAG</b> TO MOVE ·{' '}
                   <b className="font-normal text-[var(--lang-ink)]">HOVER</b> TO WAKE ·{' '}
-                  {/* CHOOSE became HOLD when the middle rung came back: a click
-                      now lights a mark, and it takes a second one to gather it.
-                      A legend that names the wrong outcome is worse than none. */}
-                  <b className="font-normal text-[var(--lang-ink)]">CLICK</b> TO HOLD
+                  {/* HOLD became OPEN when the ladder became one step
+                      (2026-10-18): a click opens the mark's room. "GATHER"
+                      was tried first and a blind reader could not tell it
+                      opened anything. A legend naming the wrong outcome is
+                      worse than none. */}
+                  <b className="font-normal text-[var(--lang-ink)]">CLICK</b> TO OPEN
                 </span>
                 {/* ⚠ AND THE PHONE GETS ONE NOW (her ruling B, 2026-08-08).
                     It was desktop-only because the clause that earned it was
@@ -2018,8 +2093,7 @@ export default function NeuralWorld() {
                     a visitor who does not guess leaves with a field of dots.
                     It names only what a finger can do. */}
                 <span className="sm:hidden">
-                  <b className="font-normal text-[var(--lang-ink)]">TAP A MARK</b> TO WAKE ITS
-                  THREADS
+                  <b className="font-normal text-[var(--lang-ink)]">TAP A MARK</b> TO OPEN IT
                 </span>
               </p>
             )}
@@ -2059,8 +2133,13 @@ export default function NeuralWorld() {
         <section
           ref={stageRef}
           tabIndex={0}
-          className={`nw-stage z-0 bg-[var(--lang-ground)] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[var(--lang-interaction)]${fold ? ' is-folded' : heldId ? ' is-held' : ''}${vertical ? ' is-vertical' : ''}`}
-          aria-label="The whole mind as one neural world: every project, thought, milestone and award in time. It wakes near your pointer; drag sideways to explore."
+          className={`nw-stage z-0 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[var(--lang-interaction)]${fold ? ' is-folded' : heldId ? ' is-held' : ''}${vertical ? ' is-vertical' : ''}`}
+          aria-label={
+            // turned, the map scrolls down and a phone has no pointer (audit)
+            vertical
+              ? 'The whole mind as one neural world: every project, thought, milestone and award in time, newest at the top. Scroll down through the years; tap a mark to open it.'
+              : 'The whole mind as one neural world: every project, thought, milestone and award in time. It wakes near your pointer; drag sideways to explore.'
+          }
         >
           {/* The seven things a flick can settle on (index.css, .nw-snap).
               Zero-width, 1px tall, pointer-events: none — they exist only so the
@@ -2470,7 +2549,7 @@ export default function NeuralWorld() {
                   <g
                     key={n.id}
                     ref={nodeRefs.get(n.id)}
-                    className={`nw-node${n.route ? '' : ' still'}${fold ? (inFold ? ' in-fold' : ' out-fold') : ''}`}
+                    className={`nw-node${n.route ? '' : ' still'}${fold ? (inFold ? ' in-fold' : ' out-fold') : ''}${fold?.subject === n.id ? ' is-subject' : ''}`}
                     // The slide, and only the slide: no node changes height,
                     // because height is the axis that now means relatedness.
                     // The stagger is oldest-first, so the direction of the whole
@@ -2759,101 +2838,9 @@ export default function NeuralWorld() {
               })}
             </g>
 
-            {/* THE NAME IS THE DOOR (Emilie's ruling 2026-08-07: "i dont like
-                the open door we should find a better way to implement it").
-                It used to be the words OPEN › in a 10px caption a line under
-                the date — the smallest thing in the frame doing the biggest
-                job, and competing with the date for the same slot.
-                Now the subject's own name carries it: underlined, with one
-                arrow on its baseline. Nothing is added to the drawing but a
-                single glyph, and it matches how the rest of the site already
-                behaves, where a project's name is the way into it.
-                The arrow is not decoration — it is what says "door" on a phone,
-                which has no hover to reveal the underline.
-                This group is drawn AFTER the neurons, so its hit area sits over
-                the name and takes the click.
-                (Two targets, two verbs retired 2026-08-21, her pick: the rect
-                painted over most of the mark anyway, so the mark's own verb is
-                also IN now — see onNodeClick — and the field and Escape carry
-                letting go.) */}
-            {fold?.open && (
-              <g
-                className="nw-foldopen"
-                role="link"
-                tabIndex={0}
-                aria-label={`Open ${WORLD.nodes.find((n) => n.id === fold.open!.id)?.title ?? ''}`}
-                onClick={() => travel(fold.open!.route)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    travel(fold.open!.route)
-                  }
-                }}
-              >
-                {(() => {
-                  // Turned, the lane shift is baked into the coordinate with the
-                  // opposite sign — the same inversion the labels carry.
-                  // turned there are no lanes, so there is no lane shift
-                  const base = vertical ? fold.open.y : fold.open.y + fold.openLane * fold.font * 1.42
-                  const w = Math.max(fold.font * 3, fold.openW)
-                  // UNDER THE NAME BLOCK, centred: the name, then its date,
-                  // then the way in. Beside the name it read as punctuation on
-                  // the end of a word; under it, it reads as a next step.
-                  // ⚠ MEASURED OFF THE DATE'S OWN BASELINE, not off a multiple
-                  // of the font. The date hangs at `+12 world units + font/2`
-                  // (the render's `ly + 12` plus the fold's lane shift), and 12
-                  // of those units are FIXED — so any pure font multiple drifts
-                  // into the date at some camera scales and floats away at
-                  // others. That mixed arithmetic is what put the arrow through
-                  // the numerals in her screenshot.
-                  const a = fold.font * 0.42
-                  // turned, the date's gap is a pure font multiple (see the
-                  // fold branch in the label geometry), so the arrow measures
-                  // off the same number rather than a mixed one
-                  const dateBaseline = vertical ? base + fold.font * 1.35 : base + 12 + fold.font * 1.2
-                  const arrowX = fold.open.x - a * 1.1
-                  const arrowY = dateBaseline + fold.font * 0.95
-                  // ONE BODY, ONE DOOR (her pick 2026-08-21, board 2 of the
-                  // entry-flow audit). The hit rect used to stop above the
-                  // arrow, leaving a 17px dead band and an arrow hittable only
-                  // on its own 1.5px strokes — measured, a click dead-centre
-                  // on the arrow read as empty field and stepped back. The
-                  // reddest, most button-shaped thing in the frame did the
-                  // opposite of opening. The rect now runs from over the mark
-                  // to under the arrow, and its width floors at the same 44px
-                  // the height always floored at: "sensi" measured 36px wide
-                  // on a phone, under the touch floor, because a short name
-                  // made a narrow door.
-                  const rectW = Math.max(w + fold.font * 0.8, fold.hit)
-                  const rectY = base - Math.max(fold.hit, fold.font * 1.5) * 0.74
-                  const rectH = Math.max(arrowY + a + fold.font * 0.25 - rectY, fold.hit)
-                  return (
-                    // THE DOOR IS DRAWN UPRIGHT AND LEFT ALONE. Counter-turning
-                    // the whole group about the subject's baseline makes its
-                    // local axes agree with the screen again, so every offset
-                    // below — "under the name", "the width of the name" — means
-                    // on a phone exactly what it means on the web, and none of
-                    // this arithmetic had to be written twice.
-                    <g transform={vertical ? vTurn(fold.open!.x, base) : undefined}>
-                      <rect
-                        className="nw-doorring"
-                        x={fold.open.x - rectW / 2}
-                        y={rectY}
-                        width={rectW}
-                        height={rectH}
-                        rx={fold.font * 0.5}
-                        fill="transparent"
-                        stroke="none"
-                      />
-                      <path
-                        className="nw-doorarrow"
-                        d={`M${arrowX} ${arrowY}L${arrowX + a * 2.2} ${arrowY}M${arrowX + a * 1.3} ${arrowY - a}L${arrowX + a * 2.2} ${arrowY}L${arrowX + a * 1.3} ${arrowY + a}`}
-                      />
-                    </g>
-                  )
-                })()}
-              </g>
-            )}
+            {/* (THE MAP'S DOOR IS GONE, 2026-10-18: the arrow under the
+                subject's name and its hit area. The room has one door, its
+                card; see IdeaRoom. The subject's mark answers nothing.) */}
 
             <defs>
               <radialGradient id="nw-glow-grad">
@@ -2869,6 +2856,27 @@ export default function NeuralWorld() {
 
         {/* (the field card is gone: the fold answers for every node and the NOW
             tip says its lines in the map. 2026-08-07.) */}
+
+        {/* THE IDEA ROOM (her ruling 2026-10-18: point-room, layout R4). The
+            map has gathered into this idea's neuron; the room says what the
+            idea IS and holds the one door into it. */}
+        {fold &&
+          (() => {
+            const n = WORLD.nodes.find((m) => m.id === fold.subject)
+            if (!n?.route) return null
+            const key = n.route.split('/').pop() ?? ''
+            const words = n.route.startsWith('/thoughts/') ? THOUGHT_OPENINGS[key] : dekMap.current?.get(key)
+            return (
+              <IdeaRoom
+                key={n.id}
+                n={n}
+                routeKey={key}
+                words={words}
+                layout={roomLayout}
+                onOpen={() => travel(n.route!)}
+              />
+            )
+          })()}
 
         <WorldSrNav />
       </main>
